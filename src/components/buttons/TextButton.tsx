@@ -5,6 +5,7 @@ import { ButtonProps } from './types';
 
 type TextButtonProps = Omit<ButtonProps, 'children'> & {
   label: string;
+  buttonClassName?: string;
 };
 
 const AnimationWrapper = styled.div`
@@ -19,6 +20,10 @@ const StyledButton = styled(Button)`
   padding: ${({ theme }) => theme.spacing[12]};
   min-width: 9.875rem;
   border-radius: 500px;
+  border: ${({ theme, variant }) =>
+    `solid 3px ${
+      variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
+    }`};
   ::before {
     content: ' ';
     position: absolute;
@@ -52,9 +57,15 @@ const TextButton: React.FC<TextButtonProps> = ({
   label,
   onClick,
   variant = 'primary',
+  className,
+  buttonClassName,
 }) => (
-  <AnimationWrapper>
-    <StyledButton variant={variant} onClick={onClick}>
+  <AnimationWrapper className={className}>
+    <StyledButton
+      className={buttonClassName}
+      variant={variant}
+      onClick={onClick}
+    >
       <StyledText bold variant={variant}>
         {label}
       </StyledText>

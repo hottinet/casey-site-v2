@@ -37,6 +37,7 @@
     "prefer-arrow-callback": "warn",
     "semi": "off",
     "indent": "off",
+    "comma-dangle": "off",
 
     // import
     "import/no-named-as-default": "off",

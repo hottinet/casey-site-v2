@@ -3,10 +3,6 @@ import { ButtonProps } from './types';
 
 const StyledButton = styled.button<Pick<ButtonProps, 'variant'>>`
   background-color: transparent;
-  border: ${({ theme, variant }) =>
-    `solid 3px ${
-      variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-    }`};
   cursor: pointer;
 `;
 
