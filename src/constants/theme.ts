@@ -31,6 +31,12 @@ const theme = {
     48: '3rem',
     64: '4rem',
   },
+  border: {
+    borderWidth: {
+      1: '1px',
+      3: '0.1875rem',
+    },
+  },
   fontSize: {
     subBody: '1rem',
     body: '1.125rem',

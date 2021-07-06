@@ -27,13 +27,13 @@ const StyledButton = styled(Button)`
   border-color: ${({ theme, variant }) =>
     variant === 'primary' ? theme.colors.text : theme.colors.textSecondary};
   border-style: solid;
-  border-width: 0.1875rem;
+  border-width: ${({ theme }) => theme.border.borderWidth[3]};
   &:hover {
-    border-width: 1px;
+    border-width: ${({ theme }) => theme.border.borderWidth[1]};
     ${Animator} {
       transform: scale(0.81);
       border: ${({ theme, variant }) =>
-        `solid 3px ${
+        `solid ${theme.border.borderWidth[3]} ${
           variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
         }`};
     }

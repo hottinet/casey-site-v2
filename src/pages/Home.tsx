@@ -1,5 +1,5 @@
-import IconButton from '~/components/buttons/IconButton';
 import Layout from '~/components/meta/Layout';
+import Pickle from '~/components/Pickle';
 import Body from '~/components/typography/Body';
 
 const Home: React.FC = () => (
@@ -7,9 +7,50 @@ const Home: React.FC = () => (
     <div>
       <Body>Welcome to Next JS! Edit src/pages/Home.tsx to get started...</Body>
     </div>
-    <IconButton onClick={() => null}>
-      <div style={{ height: 50, width: 50 }}>hi</div>
-    </IconButton>
+    <Pickle>
+      <div
+        style={{
+          height: 100,
+          width: 200,
+          margin: 16,
+          border: '1px solid black',
+        }}
+      >
+        okay heres some text or whatever
+      </div>
+      <div
+        style={{
+          height: 100,
+          width: 200,
+          margin: 16,
+          border: '1px solid black',
+        }}
+      >
+        okay heres some text or whatever
+      </div>
+    </Pickle>
+    <Pickle color="green">
+      <div
+        style={{
+          height: 100,
+          width: 200,
+          margin: 16,
+          border: '1px solid black',
+        }}
+      >
+        okay heres some text or whatever
+      </div>
+      <div
+        style={{
+          height: 100,
+          width: 200,
+          margin: 16,
+          border: '1px solid black',
+        }}
+      >
+        okay heres some text or whatever
+      </div>
+    </Pickle>
   </Layout>
 );
 
