@@ -1,15 +1,13 @@
 import styled from '@emotion/styled';
 import Button from './Button';
+import FlexBox from '../FlexBox';
 import { ButtonProps } from './types';
 
 type IconButtonProps = Omit<ButtonProps, 'childre'> & {
   children: React.ReactNode;
 };
 
-const AnimationWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const AnimationWrapper = styled(FlexBox)`
   width: 100%;
   height: 100%;
 `;
@@ -49,7 +47,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   variant = 'primary',
 }) => (
   <StyledButton className={className} variant={variant} onClick={onClick}>
-    <AnimationWrapper>
+    <AnimationWrapper center>
       <Animator variant={variant}>{children}</Animator>
     </AnimationWrapper>
   </StyledButton>
