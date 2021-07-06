@@ -3,16 +3,22 @@ import styled from '@emotion/styled';
 type BodyProps = {
   className?: string;
   children: string;
+  bold?: boolean;
 };
 
-const BodyText = styled.p`
+const BodyText = styled.p<Pick<BodyProps, 'bold'>>`
   font-size: ${({ theme }) => theme.fontSize.body};
-  font-weight: ${({ theme }) => theme.fontWeight.regular};
+  font-weight: ${({ theme, bold }) =>
+    bold ? theme.fontWeight.bold : theme.fontWeight.regular};
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fontFamily};
+  line-height: ${({ theme }) => theme.lineHeight.body};
 `;
 
-const Body: React.FC<BodyProps> = ({ children, className }) => (
-  <BodyText className={className}>{children}</BodyText>
+const Body: React.FC<BodyProps> = ({ children, className, bold }) => (
+  <BodyText bold={bold} className={className}>
+    {children}
+  </BodyText>
 );
 
 export default Body;
