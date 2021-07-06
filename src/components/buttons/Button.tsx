@@ -7,7 +7,6 @@ const StyledButton = styled.button<Pick<ButtonProps, 'variant'>>`
     `solid 3px ${
       variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
     }`};
-  border-radius: 50%;
   cursor: pointer;
 `;
 

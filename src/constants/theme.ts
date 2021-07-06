@@ -32,6 +32,7 @@ const theme = {
     64: '4rem',
   },
   fontSize: {
+    subBody: '1rem',
     body: '1.125rem',
     heading: '1.75rem',
     title: '3.125rem',
