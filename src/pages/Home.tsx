@@ -29,7 +29,7 @@ const Home: React.FC = () => (
         okay heres some text or whatever
       </div>
     </Pickle>
-    <Pickle color="green">
+    <Pickle origin="right">
       <div
         style={{
           height: 100,
