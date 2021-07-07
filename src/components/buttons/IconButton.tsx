@@ -1,3 +1,4 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import FlexBox from '../box/FlexBox';
@@ -11,6 +12,15 @@ type IconButtonProps = Omit<ButtonProps, 'childre'> & {
 const AnimationWrapper = styled(FlexBox)`
   width: 100%;
   height: 100%;
+`;
+
+const wobble = keyframes`
+  from {
+    transform: rotate(0)
+  }
+  to {
+    transform: rotate(-30deg)
+  }
 `;
 
 const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
@@ -33,6 +43,7 @@ const StyledButton = styled(Button)`
   border-width: ${({ theme }) => theme.border.borderWidth[3]};
   &:hover {
     border-width: ${({ theme }) => theme.border.borderWidth[1]};
+    animation: ${wobble} 0.5s alternate infinite;
     ${Animator} {
       transform: scale(0.81);
       border: ${({ theme, variant }) =>
