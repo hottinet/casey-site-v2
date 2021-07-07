@@ -43,7 +43,7 @@ const StyledButton = styled(Button)`
   border-width: ${({ theme }) => theme.border.borderWidth[3]};
   &:hover {
     border-width: ${({ theme }) => theme.border.borderWidth[1]};
-    animation: ${wobble} 0.5s alternate infinite;
+    animation: ${wobble} 0.5s forwards;
     ${Animator} {
       transform: scale(0.81);
       border: ${({ theme, variant }) =>
