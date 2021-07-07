@@ -1,3 +1,4 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import Arrow from '../icons/Arrow';
@@ -9,6 +10,21 @@ type ArrowButton = Pick<ButtonProps, 'onClick' | 'variant'> & {
   title: string;
 };
 
+const wobble = keyframes`
+  from {
+    transform: rotate(0)
+  }
+  to {
+    transform: rotate(-30deg)
+  }
+`;
+
+const Button = styled(IconButton)`
+  :hover {
+    animation: ${wobble} 0.5s alternate infinite;
+  }
+`;
+
 const ArrowIcon = styled(Arrow)`
   height: ${({ theme }) => theme.spacing[32]};
   width: ${({ theme }) => theme.spacing[32]};
@@ -19,9 +35,9 @@ const ArrowButton: React.FC<ArrowButton> = ({
   title,
   variant = 'secondary',
 }) => (
-  <IconButton variant={variant} onClick={onClick}>
+  <Button variant={variant} onClick={onClick}>
     <ArrowIcon title={`Navigate to ${title}`} titleId={`${title}Id`} />
-  </IconButton>
+  </Button>
 );
 
 export default ArrowButton;
