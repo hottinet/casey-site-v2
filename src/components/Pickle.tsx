@@ -14,11 +14,7 @@ type PicklePieceProps = Pick<PickleProps, 'color' | 'origin'>;
 const PickleWrapper = styled.div<Pick<PickleProps, 'origin'>>`
   display: grid;
   grid-template-columns: ${({ origin }) =>
-    origin === 'left' ? '3fr 1fr' : '1fr 3fr'};
-  ${({ theme }) => theme.breakpoints.sm} {
-    grid-template-columns: ${({ origin }) =>
-      origin === 'left' ? '6fr 1fr' : '1fr 6fr'};
-  }
+    origin === 'left' ? '80% 20%' : '20% 80%'};
 `;
 
 const PickleCap = styled.div<PicklePieceProps>(
