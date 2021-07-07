@@ -6,7 +6,7 @@ import Link from '../Link';
 import Title from '../typography/Title';
 
 const NavWrapper = styled(FlexBox)`
-  margin: ${({ theme }) => theme.spacing[48]};
+  padding: ${({ theme }) => theme.spacing[48]};
 `;
 
 const NavLink = styled(Link)`

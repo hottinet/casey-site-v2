@@ -6,7 +6,7 @@ import Link from '../Link';
 import Heading from '../typography/Heading';
 
 const FooterWrapper = styled.div`
-  margin: ${({ theme }) => theme.spacing[48]};
+  padding: ${({ theme }) => theme.spacing[48]};
 `;
 
 const FooterDivider = styled(Divider)`
