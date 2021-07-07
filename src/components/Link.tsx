@@ -17,20 +17,16 @@ const StyledLink = styled.a`
   }
 `;
 
-const LinkWrapper: React.FC<LinkProps> = ({ internal, href, children }) =>
-  internal ? <NextLink href={href}>{children}</NextLink> : <>{children}</>;
-
 const Link: React.FC<LinkProps> = ({ internal, href, children, className }) => (
-  <LinkWrapper href={href} internal={internal}>
+  <NextLink href={href} passHref>
     <StyledLink
       className={className}
-      href={internal ? undefined : href}
       rel="noopener noreferrer"
-      target="_blank"
+      target={internal ? '_self' : '_blank'}
     >
       {children}
     </StyledLink>
-  </LinkWrapper>
+  </NextLink>
 );
 
 export default Link;

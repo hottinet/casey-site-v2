@@ -7,7 +7,7 @@ const Home: React.FC = () => (
     <div>
       <Body>Welcome to Next JS! Edit src/pages/Home.tsx to get started...</Body>
     </div>
-    <Link href="www.wikipedia.com">
+    <Link href="/dog">
       <Body>hi i am a link</Body>
     </Link>
   </Layout>
