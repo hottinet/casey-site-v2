@@ -20,11 +20,17 @@ const FooterLink = styled(Link)`
   }
 `;
 
+const CaseyLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const Footer: React.FC = () => (
   <FooterWrapper>
     <FooterDivider />
     <FlexBox alignItems="center" justifyContent="space-between">
-      <Heading bold>Casey Bradford</Heading>
+      <CaseyLink href="/" internal noHover>
+        <Heading bold>Casey Bradford</Heading>
+      </CaseyLink>
       <FlexBox>
         <FooterLink href="mailto:caseyebradford@gmail.com">
           <Heading>Email</Heading>

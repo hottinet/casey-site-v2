@@ -9,22 +9,22 @@ const NavWrapper = styled(FlexBox)`
   padding: ${({ theme }) => theme.spacing[48]};
 `;
 
-const NavLink = styled(Link)`
-  :hover {
-    background-color: transparent;
-  }
+const CaseyLink = styled(Link)`
+  text-decoration: none;
 `;
 
 const NavBar: React.FC = () => (
   <NavWrapper justifyContent="space-between">
-    <Title bold>Casey Bradford</Title>
+    <CaseyLink href="/" internal noHover>
+      <Title bold>Casey Bradford</Title>
+    </CaseyLink>
     <FlexBox>
-      <NavLink href="/" internal noHover>
+      <Link href="/" internal noHover>
         <TextButton label="Home" onClick={undefined} />
-      </NavLink>
-      <NavLink href="/about" internal noHover>
+      </Link>
+      <Link href="/about" internal noHover>
         <TextButton label="About Me" onClick={undefined} />
-      </NavLink>
+      </Link>
     </FlexBox>
   </NavWrapper>
 );
