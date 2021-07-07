@@ -8,6 +8,7 @@ type GridBoxProps = {
   alignItems?: AlignItems;
   inline?: boolean;
   columns?: 2 | 3 | 4;
+  className?: string;
 };
 
 const GridContainer = styled.div<Omit<GridBoxProps, 'children'>>(
