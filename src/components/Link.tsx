@@ -7,8 +7,8 @@ type LinkProps = {
   href: string;
   children: React.ReactNode;
   className?: string;
-  onMouseEnter: MouseEventHandler<HTMLAnchorElement>;
-  onMouseLeave: MouseEventHandler<HTMLAnchorElement>;
+  onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
+  onMouseLeave?: MouseEventHandler<HTMLAnchorElement>;
 };
 
 const StyledLink = styled.a`

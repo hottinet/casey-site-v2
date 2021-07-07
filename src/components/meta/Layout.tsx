@@ -1,15 +1,17 @@
 import Head from './Head';
+import NavBar from './NavBar';
 
 type LayoutProps = {
   children?: React.ReactNode;
-  title?: string;
+  title: string;
 };
 
 const Layout: React.FC<LayoutProps> = ({ children, title }) => (
-  <div>
+  <>
     <Head title={title} />
+    <NavBar />
     {children}
-  </div>
+  </>
 );
 
 export default Layout;
