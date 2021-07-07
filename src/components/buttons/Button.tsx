@@ -15,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => (
   <StyledButton
     className={className}
+    role={onClick ? 'button' : 'link'}
     type="button"
     variant={variant}
     onClick={onClick}

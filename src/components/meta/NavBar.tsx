@@ -20,10 +20,10 @@ const NavBar: React.FC = () => (
     <Title bold>Casey Bradford</Title>
     <FlexBox>
       <NavLink href="/" internal>
-        <TextButton label="Home" onClick={() => null} />
+        <TextButton label="Home" onClick={undefined} />
       </NavLink>
       <NavLink href="/about" internal>
-        <TextButton label="About Me" onClick={() => null} />
+        <TextButton label="About Me" onClick={undefined} />
       </NavLink>
     </FlexBox>
   </NavWrapper>
