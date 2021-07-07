@@ -19,10 +19,10 @@ const NavBar: React.FC = () => (
   <NavWrapper justifyContent="space-between">
     <Title bold>Casey Bradford</Title>
     <FlexBox>
-      <NavLink href="/" internal>
+      <NavLink href="/" internal noHover>
         <TextButton label="Home" onClick={undefined} />
       </NavLink>
-      <NavLink href="/about" internal>
+      <NavLink href="/about" internal noHover>
         <TextButton label="About Me" onClick={undefined} />
       </NavLink>
     </FlexBox>

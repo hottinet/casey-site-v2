@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import Head from './Head';
 import NavBar from './NavBar';
 
@@ -11,6 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => (
     <Head title={title} />
     <NavBar />
     {children}
+    <Footer />
   </>
 );
 
