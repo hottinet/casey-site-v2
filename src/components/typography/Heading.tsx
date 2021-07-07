@@ -11,8 +11,6 @@ const Text = styled.h3<Omit<HeadingProps, 'children'>>`
   font-size: ${({ theme }) => theme.fontSize.heading};
   font-weight: ${({ theme, bold }) =>
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
-  color: ${({ theme, secondary }) =>
-    secondary ? theme.colors.textSecondary : theme.colors.text};
 `;
 
 const Heading: React.FC<HeadingProps> = ({ bold, secondary, children }) => (

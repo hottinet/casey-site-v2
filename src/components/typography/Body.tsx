@@ -10,7 +10,6 @@ const BodyText = styled.p<Pick<BodyProps, 'bold'>>`
   font-size: ${({ theme }) => theme.fontSize.body};
   font-weight: ${({ theme, bold }) =>
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
-  color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fontFamily};
   line-height: ${({ theme }) => theme.lineHeight.body};
 `;
