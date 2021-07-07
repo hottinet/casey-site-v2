@@ -13,6 +13,7 @@ const baseStyle = css`
   ${marPadZero};
   font-size: 1rem;
   color: ${theme.colors.text};
+  background-color: ${theme.colors.background};
 `;
 
 const globalStyles = css`
