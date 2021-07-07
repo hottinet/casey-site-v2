@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Button from './Button';
-import FlexBox from '../FlexBox';
+import FlexBox from '../box/FlexBox';
 import { ButtonProps } from './types';
 
 type IconButtonProps = Omit<ButtonProps, 'childre'> & {

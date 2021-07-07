@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Theme } from '~/constants/theme';
-import FlexBox from './FlexBox';
+import FlexBox from './box/FlexBox';
 
 type PickleProps = {
   children: React.ReactNode | React.ReactNode[];

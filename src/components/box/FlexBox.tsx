@@ -1,27 +1,13 @@
 import styled from '@emotion/styled';
+import { AlignItems, JustifyContent } from './types';
 
 type FlexBoxProps = {
   center?: boolean;
   column?: boolean;
   wrap?: boolean;
   inline?: boolean;
-  justifyContent?:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly'
-    | 'initial'
-    | 'inherit';
-  alignItems?:
-    | 'stretch'
-    | 'center'
-    | 'flex-start'
-    | 'flex-end'
-    | 'baseline'
-    | 'initial'
-    | 'inherit';
+  justifyContent?: JustifyContent;
+  alignItems?: AlignItems;
   flex?: number;
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
