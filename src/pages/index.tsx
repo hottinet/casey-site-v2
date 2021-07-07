@@ -1,12 +1,11 @@
-import Link from '~/components/Link';
+import ArrowButton from '~/components/buttons/ArrowButton';
 import Layout from '~/components/meta/Layout';
-import Body from '~/components/typography/Body';
 
 const Home: React.FC = () => (
   <Layout title="Casey Bradford">
-    <Link href="/dog">
-      <Body>hi i am a link</Body>
-    </Link>
+    <div style={{ backgroundColor: 'black' }}>
+      <ArrowButton title="some page" onClick={undefined} />
+    </div>
   </Layout>
 );
 
