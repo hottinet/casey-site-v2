@@ -1,13 +1,14 @@
-import NextLink from 'next/link';
 import styled from '@emotion/styled';
+import NextLink from 'next/link';
+import { MouseEventHandler } from 'react';
 
 type LinkProps = {
   internal?: boolean;
   href: string;
   children: React.ReactNode;
   className?: string;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onMouseEnter: MouseEventHandler<HTMLAnchorElement>;
+  onMouseLeave: MouseEventHandler<HTMLAnchorElement>;
 };
 
 const StyledLink = styled.a`

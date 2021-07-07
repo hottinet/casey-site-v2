@@ -8,12 +8,7 @@
   "globals": {
     "React": true
   },
-  "plugins": [
-    "react",
-    "@emotion",
-    "@typescript-eslint",
-    "sort-imports-es6-autofix"
-  ],
+  "plugins": ["react", "@emotion", "@typescript-eslint", "simple-import-sort"],
   "extends": [
     "eslint:recommended",
     "airbnb",
@@ -45,6 +40,8 @@
     "import/prefer-default-export": "off",
     "import/no-unresolved": "off",
     "import/no-anonymous-default-export": "error",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
 
     // jsx-a11y
     "jsx-a11y/href-no-hash": "off",

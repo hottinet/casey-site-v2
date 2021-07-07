@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { ButtonProps } from './types';
 
 const StyledButton = styled.button<Pick<ButtonProps, 'variant'>>`
