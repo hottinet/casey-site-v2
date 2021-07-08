@@ -7,6 +7,7 @@ type BodyProps = {
 };
 
 const BodyText = styled.p<Pick<BodyProps, 'bold'>>`
+  display: inline;
   font-size: ${({ theme }) => theme.fontSize.body};
   font-weight: ${({ theme, bold }) =>
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};

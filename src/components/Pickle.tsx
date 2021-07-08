@@ -11,35 +11,18 @@ type PickleProps = {
   origin?: 'right' | 'left';
 };
 
-type PicklePieceProps = Pick<PickleProps, 'color' | 'origin'>;
-
-const PickleWrapper = styled.div<Pick<PickleProps, 'origin'>>`
-  display: grid;
-  grid-template-columns: ${({ origin }) =>
-    origin === 'left' ? '80% 20%' : '20% 80%'};
-`;
-
-const PickleCap = styled.div<PicklePieceProps>(
-  {
-    borderStyle: 'solid',
-  },
-  ({ theme, origin, color }) => ({
-    borderWidth: theme.border.borderWidth[3],
-    backgroundColor: color ? theme.colors[color] : 'transparent',
-    borderColor: color ? theme.colors[color] : theme.colors.text,
-    borderRadius: '0 1000px 1000px 0',
-    borderLeftWidth: 0,
+const PickleBody = styled(FlexBox)<Pick<PickleProps, 'origin'>>(
+  ({ origin }) => ({
+    ...(origin === 'left' && {
+      borderLeftWidth: 0,
+      borderRadius: '0 1000px 1000px 0',
+    }),
     ...(origin === 'right' && {
-      borderRadius: '1000px 0 0 1000px',
-      borderLeftWidth: theme.border.borderWidth[3],
       borderRightWidth: 0,
+      borderRadius: '1000px 0 0 1000px',
     }),
   })
 );
-
-const PickleBody = styled(FlexBox)`
-  border-width: ${({ theme }) => `${theme.border.borderWidth[3]} 0`};
-`;
 
 const Pickle: React.FC<PickleProps> = ({
   color,
@@ -47,18 +30,17 @@ const Pickle: React.FC<PickleProps> = ({
   children,
   origin = 'left',
 }) => (
-  <PickleWrapper className={className} origin={origin}>
-    {origin === 'right' && <PickleCap color={color} origin={origin} />}
-    <PickleBody
-      alignItems="center"
-      backgroundColor={color}
-      borderColor={color || 'text'}
-      borderStyle="solid"
-    >
-      {children}
-    </PickleBody>
-    {origin === 'left' && <PickleCap color={color} origin={origin} />}
-  </PickleWrapper>
+  <PickleBody
+    alignItems="center"
+    backgroundColor={color}
+    borderColor={color || 'text'}
+    borderStyle="solid"
+    borderWidth={3}
+    className={className}
+    origin={origin}
+  >
+    {children}
+  </PickleBody>
 );
 
 export default Pickle;
