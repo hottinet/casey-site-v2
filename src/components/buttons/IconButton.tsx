@@ -26,7 +26,6 @@ const wobble = keyframes`
 const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
   transform-origin: center center;
   transition: transform 0.2s linear;
-  border-radius: 50%;
   height: 100%;
   width: 100%;
 `;
@@ -62,7 +61,7 @@ const IconButton: React.FC<IconButtonProps> = ({
 }) => (
   <StyledButton className={className} variant={variant} onClick={onClick}>
     <AnimationWrapper center>
-      <Animator center variant={variant}>
+      <Animator borderRadius="50%" center variant={variant}>
         {children}
       </Animator>
     </AnimationWrapper>

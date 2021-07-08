@@ -5,16 +5,12 @@ import TextButton from '../buttons/TextButton';
 import Link from '../Link';
 import Title from '../typography/Title';
 
-const NavWrapper = styled(FlexBox)`
-  padding: ${({ theme }) => theme.spacing[48]};
-`;
-
 const CaseyLink = styled(Link)`
   text-decoration: none;
 `;
 
 const NavBar: React.FC = () => (
-  <NavWrapper justifyContent="space-between">
+  <FlexBox justifyContent="space-between" p={48}>
     <CaseyLink href="/" internal noHover>
       <Title bold>Casey Bradford</Title>
     </CaseyLink>
@@ -26,7 +22,7 @@ const NavBar: React.FC = () => (
         <TextButton label="About Me" onClick={undefined} />
       </Link>
     </FlexBox>
-  </NavWrapper>
+  </FlexBox>
 );
 
 export default NavBar;

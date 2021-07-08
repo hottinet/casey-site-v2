@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 import { Theme } from '~/constants/theme';
 
-import { AlignItems, JustifyContent } from './types';
+import Box from './Box';
+import { AlignItems, BoxProps, JustifyContent } from './types';
 
-type GridBoxProps = {
-  children: React.ReactNode | React.ReactNode[];
+type GridBoxProps = BoxProps & {
   center?: boolean;
   justifyContent?: JustifyContent;
   alignItems?: AlignItems;
@@ -15,7 +15,7 @@ type GridBoxProps = {
   columnGap?: keyof Theme['spacing'];
 };
 
-const GridContainer = styled.div<Omit<GridBoxProps, 'children'>>(
+const Grid = styled(Box)<GridBoxProps>(
   { display: 'grid' },
   ({ center, justifyContent, alignItems, inline, columns = 2, columnGap }) => ({
     justifyContent,
@@ -34,7 +34,7 @@ const GridContainer = styled.div<Omit<GridBoxProps, 'children'>>(
 
 const GridBox: React.FC<GridBoxProps> = ({ children, ...rest }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
-  <GridContainer {...rest}>{children}</GridContainer>
+  <Grid {...rest}>{children}</Grid>
 );
 
 export default GridBox;

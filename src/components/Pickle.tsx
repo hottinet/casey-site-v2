@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+
 import { Theme } from '~/constants/theme';
+
 import FlexBox from './box/FlexBox';
 
 type PickleProps = {
@@ -35,13 +37,8 @@ const PickleCap = styled.div<PicklePieceProps>(
   })
 );
 
-const PickleBody = styled(FlexBox)<PicklePieceProps>`
-  background-color: ${({ color, theme }) =>
-    color ? theme.colors[color] : 'transparent'};
+const PickleBody = styled(FlexBox)`
   border-width: ${({ theme }) => `${theme.border.borderWidth[3]} 0`};
-  border-style: solid;
-  border-color: ${({ theme, color }) =>
-    color ? theme.colors[color] : theme.colors.text};
 `;
 
 const Pickle: React.FC<PickleProps> = ({
@@ -52,7 +49,12 @@ const Pickle: React.FC<PickleProps> = ({
 }) => (
   <PickleWrapper className={className} origin={origin}>
     {origin === 'right' && <PickleCap color={color} origin={origin} />}
-    <PickleBody alignItems="center" color={color} origin={origin}>
+    <PickleBody
+      alignItems="center"
+      backgroundColor={color}
+      borderColor={color || 'text'}
+      borderStyle="solid"
+    >
       {children}
     </PickleBody>
     {origin === 'left' && <PickleCap color={color} origin={origin} />}

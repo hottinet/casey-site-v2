@@ -1,3 +1,38 @@
+import React from 'react';
+import { Spacing, Color, BorderWidth } from '~/typings/theme';
+
+export type BoxProps = {
+  className?: string;
+  children: React.ReactNode | React.Node[];
+  p?: Spacing;
+  px?: Spacing;
+  py?: Spacing;
+  m?: Spacing;
+  mx?: Spacing;
+  my?: Spacing;
+  pt?: Spacing;
+  pr?: Spacing;
+  pb?: Spacing;
+  pl?: Spacing;
+  mt?: Spacing;
+  mr?: Spacing;
+  mb?: Spacing;
+  ml?: Spacing;
+  display?:
+    | 'inline'
+    | 'block'
+    | 'flex'
+    | 'grid'
+    | 'inline-block'
+    | 'inline-flex'
+    | 'inline-grid';
+  backgroundColor?: Color;
+  borderRadius?: 2 | 4 | 1000 | '25%' | '50%';
+  borderColor?: Color;
+  borderStyle?: 'solid' | 'none' | 'hidden';
+  borderWidth?: BorderWidth;
+};
+
 export type JustifyContent =
   | 'flex-start'
   | 'flex-end'

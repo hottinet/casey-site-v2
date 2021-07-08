@@ -1,13 +1,10 @@
 import styled from '@emotion/styled';
 
+import Box from '../box/Box';
 import FlexBox from '../box/FlexBox';
 import Divider from '../Divider';
 import Link from '../Link';
 import Heading from '../typography/Heading';
-
-const FooterWrapper = styled.div`
-  padding: ${({ theme }) => theme.spacing[48]};
-`;
 
 const FooterDivider = styled(Divider)`
   margin-bottom: ${({ theme }) => theme.spacing[24]};
@@ -25,7 +22,7 @@ const CaseyLink = styled(Link)`
 `;
 
 const Footer: React.FC = () => (
-  <FooterWrapper>
+  <Box p={48}>
     <FooterDivider />
     <FlexBox alignItems="center" justifyContent="space-between">
       <CaseyLink href="/" internal noHover>
@@ -43,7 +40,7 @@ const Footer: React.FC = () => (
         </FooterLink>
       </FlexBox>
     </FlexBox>
-  </FooterWrapper>
+  </Box>
 );
 
 export default Footer;

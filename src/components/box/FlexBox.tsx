@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
-import { AlignItems, JustifyContent } from './types';
+import Box from './Box';
+import { AlignItems, BoxProps, JustifyContent } from './types';
 
-type FlexBoxProps = {
+type FlexBoxProps = BoxProps & {
   center?: boolean;
   column?: boolean;
   wrap?: boolean;
@@ -14,10 +15,9 @@ type FlexBoxProps = {
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   flexGrow?: number;
   flexShrink?: number;
-  children: React.ReactNode | React.ReactNode[];
 };
 
-const Flex = styled.div<Omit<FlexBoxProps, 'children'>>(
+const Flex = styled(Box)<FlexBoxProps>(
   { display: 'flex' },
   ({
     center,
