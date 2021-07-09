@@ -26,12 +26,14 @@ const Box = styled.div<BoxProps>(
     display = 'block',
     theme,
   }) => ({
-    padding: `${theme.spacing[pt || py || p]} ${theme.spacing[pr || px || p]} ${
-      theme.spacing[pb || py || p]
-    } ${theme.spacing[pl || px || p]}`,
-    margin: `${theme.spacing[mt || my || m]} ${theme.spacing[mr || mx || m]} ${
-      theme.spacing[mb || my || m]
-    } ${theme.spacing[ml || mx || m]}`,
+    paddingTop: theme.spacing[pt || py || p],
+    paddingRight: theme.spacing[pr || px || p],
+    paddingBottom: theme.spacing[pb || py || p],
+    paddingLeft: theme.spacing[pl || px || p],
+    marginTop: theme.spacing[mt || my || m],
+    marginRight: theme.spacing[mr || mx || m],
+    marginBottom: theme.spacing[mb || my || m],
+    marginLeft: theme.spacing[ml || mx || m],
     borderColor: borderColor && theme.colors[borderColor],
     borderWidth: borderWidth && theme.border.borderWidth[borderWidth],
     backgroundColor: backgroundColor

@@ -8,6 +8,7 @@ import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import Pickle from '~/components/Pickle';
 import Title from '~/components/typography/Title';
+import { CORE_COMPONENT_LIBRARY_ROUTE } from '~/constants/routing';
 import { Color } from '~/typings/theme';
 
 const CoreLink = styled(Link)`
@@ -82,7 +83,7 @@ const Home: React.FC = () => (
     <HomePickle
       imageAlt="Donkey kong"
       imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
-      linkTo="/"
+      linkTo={CORE_COMPONENT_LIBRARY_ROUTE}
       pickleColor="green"
       title="Core Component Library"
     />

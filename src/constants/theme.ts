@@ -30,6 +30,8 @@ const theme = {
     40: '2.5rem',
     48: '3rem',
     64: '4rem',
+    80: '5rem',
+    128: '8rem',
   },
   border: {
     borderWidth: {
