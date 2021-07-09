@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import Box from '~/components/box/Box';
+import ContentBox from '~/components/box/ContentFlex';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
@@ -11,10 +12,6 @@ import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Title from '~/components/typography/Title';
-
-const ContentBox = styled(FlexBox)<{ leftOnly?: boolean }>`
-  margin: ${({ leftOnly }) => `0 ${leftOnly ? 0 : '13%'} 0 13%`};
-`;
 
 const DetailPickle = styled(Pickle)`
   margin: ${({ theme }) => `${theme.spacing[64]} 0`};
