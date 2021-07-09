@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import Box from '~/components/box/Box';
-import ContentBox from '~/components/box/ContentFlex';
+import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
@@ -20,8 +20,8 @@ const DetailPickle = styled(Pickle)`
   width: 87%;
 `;
 
-const PickleStack = styled(StackedText)`
-  margin-right: 7%;
+const PickleGrid = styled(ContentBox)`
+  grid-column-gap: 7%;
 `;
 
 const CoreComponentLibrary: React.FC = () => (
@@ -31,16 +31,16 @@ const CoreComponentLibrary: React.FC = () => (
       <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
+      <PickleGrid grid>
+        <StackedText
           bottomText="Make it easier to move quickly in Figma and keep designs up to date across the team."
           topText="Goal"
         />
-        <PickleStack
+        <StackedText
           bottomText="Create, manage and document the component library"
           topText="My Role"
         />
-      </ContentBox>
+      </PickleGrid>
     </DetailPickle>
     <ContentBox column>
       <Title bold>Staying up to date</Title>

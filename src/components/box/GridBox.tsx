@@ -5,7 +5,7 @@ import { Theme } from '~/constants/theme';
 import Box from './Box';
 import { AlignItems, BoxProps, JustifyContent } from './types';
 
-type GridBoxProps = BoxProps & {
+export type GridBoxProps = BoxProps & {
   center?: boolean;
   justifyContent?: JustifyContent;
   alignItems?: AlignItems;

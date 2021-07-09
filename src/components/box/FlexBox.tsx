@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Box from './Box';
 import { AlignItems, BoxProps, JustifyContent } from './types';
 
-type FlexBoxProps = BoxProps & {
+export type FlexBoxProps = BoxProps & {
   center?: boolean;
   column?: boolean;
   wrap?: boolean;
