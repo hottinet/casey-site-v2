@@ -85,18 +85,18 @@ const Home: React.FC = () => (
       imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
       linkTo={CORE_COMPONENT_LIBRARY_ROUTE}
       pickleColor="green"
-      title="Core Component Library"
+      title="Rediscovering the Core Customer"
     />
     <HomePickle
       imageAlt="Donkey kong"
       imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
       linkTo="/"
       pickleColor="red"
-      title="Rediscovering the Core Customer"
+      title="Building Core's Component Library"
     />
     <HomePickle
       imageAlt="Donkey kong"
-      imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
+      imageSrc="/VideoUpload/VideoCover.png"
       linkTo="/"
       pickleColor="blue"
       title="Improving Video Upload Flow"

@@ -41,13 +41,13 @@ const theme = {
   },
   fontSize: {
     subBody: '1rem',
-    body: '1.125rem',
-    heading: '1.75rem',
-    title: '3.125rem',
+    body: '1rem',
+    heading: '1.5rem',
+    title: '2.25rem',
   },
   fontFamily: "'Raleway', sans-serif",
   lineHeight: {
-    body: 1.25,
+    body: 1.5,
     regular: 1,
   },
   fontWeight: {
