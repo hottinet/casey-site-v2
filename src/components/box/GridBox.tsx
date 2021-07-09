@@ -10,7 +10,7 @@ type GridBoxProps = BoxProps & {
   justifyContent?: JustifyContent;
   alignItems?: AlignItems;
   inline?: boolean;
-  columns?: 2 | 3 | 4;
+  columns?: 1 | 2 | 3 | 4;
   className?: string;
   columnGap?: keyof Theme['spacing'];
 };

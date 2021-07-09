@@ -1,15 +1,7 @@
 import styled from '@emotion/styled';
 
-import { Theme } from '~/constants/theme';
-
-import FlexBox from './box/FlexBox';
-
-type PickleProps = {
-  children: React.ReactNode | React.ReactNode[];
-  className?: string;
-  color?: keyof Theme['colors'];
-  origin?: 'right' | 'left';
-};
+import FlexBox from '../box/FlexBox';
+import { PickleProps } from './types';
 
 const PickleBody = styled(FlexBox)<Pick<PickleProps, 'origin'>>(
   ({ origin }) => ({

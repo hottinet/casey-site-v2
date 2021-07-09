@@ -6,7 +6,7 @@ import ArrowButton from '~/components/buttons/ArrowButton';
 import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
-import Pickle from '~/components/Pickle';
+import Pickle from '~/components/pickles/Pickle';
 import Title from '~/components/typography/Title';
 import { CORE_COMPONENT_LIBRARY_ROUTE } from '~/constants/routing';
 import { Color } from '~/typings/theme';
