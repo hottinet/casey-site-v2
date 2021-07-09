@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 import Box from '~/components/box/Box';
 import FlexBox from '~/components/box/FlexBox';
+import GridBox from '~/components/box/GridBox';
 import ArrowButton from '~/components/buttons/ArrowButton';
 import Image from '~/components/Image';
 import Link from '~/components/Link';
@@ -35,11 +36,15 @@ const PickleTitle = styled(Title)`
 `;
 
 const ImageBox = styled(FlexBox)`
-  height: 37rem;
+  height: 30rem;
 `;
 
 const TitleBox = styled(FlexBox)`
   margin-right: 14%;
+`;
+
+const PickleContentWrapper = styled(GridBox)`
+  width: 100%;
 `;
 
 const HomePickle: React.FC<HomePickleProps> = ({
@@ -50,13 +55,8 @@ const HomePickle: React.FC<HomePickleProps> = ({
   pickleColor,
 }) => (
   <SizedPickle color={pickleColor}>
-    <FlexBox
-      alignItems="center"
-      flex={1}
-      justifyContent="space-between"
-      ml={48}
-    >
-      <ImageBox center flex={1}>
+    <PickleContentWrapper alignItems="center" ml={48}>
+      <ImageBox center>
         <Image alt={imageAlt} src={imageSrc} />
       </ImageBox>
       <TitleBox column ml={48}>
@@ -65,7 +65,7 @@ const HomePickle: React.FC<HomePickleProps> = ({
           <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
         </Link>
       </TitleBox>
-    </FlexBox>
+    </PickleContentWrapper>
   </SizedPickle>
 );
 

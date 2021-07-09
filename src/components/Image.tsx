@@ -9,6 +9,8 @@ type ImageProps = {
 
 const StyledImage = styled.img<Pick<ImageProps, 'fitParent'>>`
   width: ${({ fitParent }) => fitParent && '100%'};
+  max-height: 100%;
+  max-width: 100%;
 `;
 
 const Image: React.FC<ImageProps> = ({ src, alt, fitParent, className }) => (
