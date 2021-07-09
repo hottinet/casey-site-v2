@@ -90,7 +90,7 @@ const CoreComponentLibrary: React.FC = () => (
       </GridBox>
       <Divider />
     </ContentBox>
-    <FlexBox flex={1} justifyContent="flex-end" mt={128}>
+    <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />
     </FlexBox>
   </Layout>
