@@ -10,7 +10,7 @@ const CaseyLink = styled(Link)`
 `;
 
 const NavBar: React.FC = () => (
-  <FlexBox justifyContent="space-between" p={12} pb={80}>
+  <FlexBox justifyContent="space-between" p={24} pb={80}>
     <CaseyLink href="/" internal noHover>
       <Title bold>Cb</Title>
     </CaseyLink>

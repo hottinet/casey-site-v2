@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import Button from './Button';
+
 import Body from '../typography/Body';
+import Button from './Button';
 import { ButtonProps } from './types';
 
 type TextButtonProps = Omit<ButtonProps, 'children'> & {
@@ -50,7 +51,7 @@ const StyledButton = styled(Button)`
 const StyledText = styled(Body)<Pick<TextButtonProps, 'variant'>>`
   color: ${({ theme, variant }) =>
     variant !== 'primary' && theme.colors.textSecondary};
-  font-size: ${({ theme }) => theme.fontSize.subBody};
+  font-size: 0.8rem;
 `;
 
 const TextButton: React.FC<TextButtonProps> = ({

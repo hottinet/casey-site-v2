@@ -85,8 +85,8 @@ const Home: React.FC = () => (
       </CoreLink>
     </Box>
     <HomePickle
-      imageAlt="Donkey kong"
-      imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
+      imageAlt="several app screens"
+      imageSrc="/CustomerDiscovery/customers-2.png"
       linkTo={CUSTOMER_DISCOVERY_ROUTE}
       pickleColor="green"
       title="Rediscovering the Core Customer"

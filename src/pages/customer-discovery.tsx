@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import Box from '~/components/box/Box';
-import ContentBox from '~/components/box/ContentFlex';
+import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';

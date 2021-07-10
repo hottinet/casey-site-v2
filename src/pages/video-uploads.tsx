@@ -3,8 +3,6 @@ import styled from '@emotion/styled';
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
-import GridBox from '~/components/box/GridBox';
-import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
@@ -12,6 +10,7 @@ import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Title from '~/components/typography/Title';
+import Video from '~/components/Video';
 
 const DetailPickle = styled(Pickle)`
   margin: ${({ theme }) => `${theme.spacing[64]} 0`};
@@ -26,6 +25,7 @@ const PickleStack = styled(StackedText)`
 const CoreComponentLibrary: React.FC = () => (
   <Layout title="Video Upload">
     <ContentBox column>
+      <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
       {/* <Title bold>Improving video upload flow for Core Instructors</Title> */}
       <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
