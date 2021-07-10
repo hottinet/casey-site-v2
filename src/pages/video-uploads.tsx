@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
+import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
@@ -53,7 +54,7 @@ const CoreComponentLibrary: React.FC = () => (
           placeholder for the video. In Cores original upload flow, there was no
           visual cue that Core had the file after the initial load.
         </Body>
-        <Image alt="examples" fitParent src="/VideoUpload/videoexample.png" />
+        <Image alt="examples" fitParent src="/VideoUpload/videoexamples.png" />
       </Box>
       <Title bold>Creating a clear system for upload statuses</Title>
       <Box mt={40}>
@@ -66,6 +67,15 @@ const CoreComponentLibrary: React.FC = () => (
         </Body>
         <Image alt="table view" fitParent src="/VideoUpload/uploadstatus.png" />
       </Box>
+      <GridBox>
+        <Body>
+          Many of our instructors are constantly multitasking to support their
+          businesses and will start uploads and then walk away to do something
+          else. To let instructors know when their sessions are ready, we send
+          emails once they are ready for playback.
+        </Body>
+        <Image alt="email screenshot" src="/VideoUpload/videoemail.png" />
+      </GridBox>
       <Title bold>Adapting designs for local, Dropbox and URL Uploads</Title>
       <Box mt={40}>
         <Body>xyz</Body>

@@ -29,7 +29,11 @@ const CoreComponentLibrary: React.FC = () => (
   <Layout title="Component Library">
     <ContentBox column>
       <Title bold>Core Component Library</Title>
-      <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
+      <Image
+        alt="session card components"
+        fitParent
+        src="/ComponentLibrary/componentscover.png"
+      />
     </ContentBox>
     <DetailPickle>
       <PickleGrid grid widthRatio={1.13}>

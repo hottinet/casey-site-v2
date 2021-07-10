@@ -86,14 +86,14 @@ const Home: React.FC = () => (
     </Box>
     <HomePickle
       imageAlt="several app screens"
-      imageSrc="/CustomerDiscovery/customers-2.png"
+      imageSrc="/CustomerDiscovery/testcustomers.gif"
       linkTo={CUSTOMER_DISCOVERY_ROUTE}
       pickleColor="green"
       title="Rediscovering the Core Customer"
     />
     <HomePickle
       imageAlt="Donkey kong"
-      imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
+      imageSrc="/ComponentLibrary/sessions.png"
       linkTo={CORE_COMPONENT_LIBRARY_ROUTE}
       pickleColor="red"
       title="Building Core's Component Library"
