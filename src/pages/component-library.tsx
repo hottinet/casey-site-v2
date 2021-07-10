@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 
-import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
-import GridBox from '~/components/box/GridBox';
-import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
@@ -22,6 +19,10 @@ const DetailPickle = styled(Pickle)`
 
 const PickleGrid = styled(ContentBox)`
   grid-column-gap: 7%;
+`;
+
+const DetailStack = styled(StackedText)`
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
 `;
 
 const CoreComponentLibrary: React.FC = () => (
@@ -43,25 +44,23 @@ const CoreComponentLibrary: React.FC = () => (
       </PickleGrid>
     </DetailPickle>
     <ContentBox column>
-      <Title bold>Staying up to date</Title>
-      <Box mt={40}>
-        <Body>
-          In a rapidly growing start-up, our files were becoming outdated
-          quickly without the use of components. As new pages were added to the
-          navigation constantly changed. By componentizing pieces like this it
-          was much easier to keep all our files up to date.
-        </Body>
-      </Box>
-      <Title bold>Moving Quickly</Title>
-      <Box mt={40}>
-        <Body>
-          With a few people acting as designers on our team, it was important
-          that each of us wasnt starting from scratch each time we needed to
-          design something new. Instead of scouring files for the right piece to
-          copy and paste over, we would be able to pull in basic elements like
-          navigation, buttons, etc from the library.
-        </Body>
-      </Box>
+      <DetailStack
+        bottomText="In a rapidly growing start-up, our files were becoming outdated
+        quickly without the use of components. As new pages were added to the
+        navigation constantly changed. By componentizing pieces like this it
+        was much easier to keep all our files up to date."
+        title
+        topText="Staying up to date"
+      />
+      <DetailStack
+        bottomText="With a few people acting as designers on our team, it was important
+        that each of us wasnt starting from scratch each time we needed to
+        design something new. Instead of scouring files for the right piece to
+        copy and paste over, we would be able to pull in basic elements like
+        navigation, buttons, etc from the library."
+        title
+        topText="Moving Quickly"
+      />
       <Title bold>Organization</Title>
       <Heading>Theming, Light and Dark Modes</Heading>
       <Heading>Icon Library</Heading>
