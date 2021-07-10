@@ -31,7 +31,7 @@ const CoreComponentLibrary: React.FC = () => (
       <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
     <DetailPickle>
-      <PickleGrid grid>
+      <PickleGrid grid widthRatio={1.13}>
         <StackedText
           bottomText="Make it easier to move quickly in Figma and keep designs up to date across the team."
           topText="Goal"

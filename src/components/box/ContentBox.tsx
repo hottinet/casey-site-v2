@@ -7,6 +7,7 @@ import GridBox, { GridBoxProps } from './GridBox';
 type ContentBoxProps = {
   leftOnly?: boolean;
   grid?: boolean;
+  widthRatio?: number;
 } & (FlexBoxProps | GridBoxProps);
 
 const Wrapper: React.FC<ContentBoxProps> = ({ grid, children, ...rest }) =>
@@ -16,8 +17,11 @@ const Wrapper: React.FC<ContentBoxProps> = ({ grid, children, ...rest }) =>
     <FlexBox {...rest}>{children}</FlexBox>
   );
 
-const StyledBox = styled(Wrapper)<{ leftOnly?: boolean }>`
-  margin: ${({ leftOnly }) => `0 ${leftOnly ? 0 : '13%'} 0 13%`};
+const StyledBox = styled(Wrapper)<
+  Pick<ContentBoxProps, 'leftOnly' | 'widthRatio'>
+>`
+  margin: ${({ leftOnly, widthRatio = 1 }) =>
+    `0 ${leftOnly ? 0 : `${13 * widthRatio}%`} 0 ${13 * widthRatio}%`};
 `;
 
 const ContentBox: React.FC<ContentBoxProps> = ({ children, ...rest }) => (
