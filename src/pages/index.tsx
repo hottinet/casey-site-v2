@@ -86,7 +86,7 @@ const Home: React.FC = () => (
     </Box>
     <HomePickle
       imageAlt="several app screens"
-      imageSrc="/CustomerDiscovery/testcustomers.gif"
+      imageSrc="/CustomerDiscovery/Customers.gif"
       linkTo={CUSTOMER_DISCOVERY_ROUTE}
       pickleColor="green"
       title="Rediscovering the Core Customer"

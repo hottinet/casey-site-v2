@@ -28,12 +28,11 @@ const CoreComponentLibrary: React.FC = () => (
   <Layout title="Customer Discovery">
     <ContentBox column>
       <Title bold>Rediscovering the Core Customer</Title>
-      <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
     <DetailPickle>
       <ContentBox leftOnly>
         <PickleStack
-          bottomText="Identify what features we need to build to support a smaller time instructor and differentiate from our competitors."
+          bottomText="Identify what features we need to build to support an instructor without a solid subscription business and differentiate from our competitors."
           topText="Goal"
         />
         <PickleStack

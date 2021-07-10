@@ -13,6 +13,7 @@ const BodyText = styled.p<Pick<BodyProps, 'bold'>>`
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
   font-family: ${({ theme }) => theme.fontFamily};
   line-height: ${({ theme }) => theme.lineHeight.body};
+  margin-bottom: ${({ theme }) => theme.spacing[48]};
 `;
 
 const Body: React.FC<BodyProps> = ({ children, className, bold }) => (

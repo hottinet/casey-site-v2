@@ -10,6 +10,7 @@ const Text = styled.h2<Omit<TitleProps, 'children'>>`
   display: inline;
   font-family: ${({ theme }) => theme.fontFamily};
   font-size: ${({ theme }) => theme.fontSize.title};
+  margin-bottom: ${({ theme }) => theme.spacing[24]};
   font-weight: ${({ theme, bold }) =>
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
 `;

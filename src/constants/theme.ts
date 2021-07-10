@@ -42,7 +42,7 @@ const theme = {
   fontSize: {
     subBody: '1rem',
     body: '1rem',
-    heading: '1.5rem',
+    heading: '1.25rem',
     title: '2.25rem',
   },
   fontFamily: "'Raleway', sans-serif",
