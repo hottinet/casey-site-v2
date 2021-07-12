@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
@@ -27,7 +26,7 @@ const CoreComponentLibrary: React.FC = () => (
   <Layout title="Video Upload">
     <ContentBox column>
       <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
-      {/* <Title bold>Improving video upload flow for Core Instructors</Title> */}
+      <Title bold>Improving video upload flow for Core Instructors</Title>
       <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
     <DetailPickle>
@@ -46,28 +45,24 @@ const CoreComponentLibrary: React.FC = () => (
       <Title bold>
         Showing a visual representation of the file is important
       </Title>
-      <Box mt={40}>
-        <Body>
-          To start, I did some research on how best in class video platforms
-          like YouTube and Vimeo handle uploads. One thing that stood out to me
-          was that even if its just a preview, they show you a visual
-          placeholder for the video. In Cores original upload flow, there was no
-          visual cue that Core had the file after the initial load.
-        </Body>
-        <Image alt="examples" fitParent src="/VideoUpload/videoexamples.png" />
-      </Box>
+      <Body>
+        To start, I did some research on how best in class video platforms like
+        YouTube and Vimeo handle uploads. One thing that stood out to me was
+        that even if its just a preview, they show you a visual placeholder for
+        the video. In Cores original upload flow, there was no visual cue that
+        Core had the file after the initial load.
+      </Body>
+      <Image alt="examples" fitParent src="/VideoUpload/videoexamples.png" />
       <Title bold>Creating a clear system for upload statuses</Title>
-      <Box mt={40}>
-        <Body>
-          It was difficult for us to assess the problems we were hearing about
-          over email because we did not have clear error states or upload
-          statuses. In Cores original flow, instructors often thought videos
-          were published when they were really still being processed by our
-          server because we did not have different states for those
-        </Body>
-        <Image alt="table view" fitParent src="/VideoUpload/uploadstatus.png" />
-      </Box>
-      <GridBox>
+      <Body>
+        It was difficult for us to assess the problems we were hearing about
+        over email because we did not have clear error states or upload
+        statuses. In Cores original flow, instructors often thought videos were
+        published when they were really still being processed by our server
+        because we did not have different states for those
+      </Body>
+      <Image alt="table view" fitParent src="/VideoUpload/uploadstatus.png" />
+      <GridBox center>
         <Body>
           Many of our instructors are constantly multitasking to support their
           businesses and will start uploads and then walk away to do something
@@ -77,17 +72,11 @@ const CoreComponentLibrary: React.FC = () => (
         <Image alt="email screenshot" src="/VideoUpload/videoemail.png" />
       </GridBox>
       <Title bold>Adapting designs for local, Dropbox and URL Uploads</Title>
-      <Box mt={40}>
-        <Body>xyz</Body>
-      </Box>
+      <Body>xyz</Body>
       <Title bold>Cut from scope</Title>
-      <Box mt={40}>
-        <Body>xyz</Body>
-      </Box>
+      <Body>xyz</Body>
       <Title bold>Final Product</Title>
-      <Box mt={40}>
-        <Body>xyz</Body>
-      </Box>
+      <Body>xyz</Body>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />

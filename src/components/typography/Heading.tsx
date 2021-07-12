@@ -7,7 +7,6 @@ type HeadingProps = {
 };
 
 const Text = styled.h3<Omit<HeadingProps, 'children'>>`
-  display: inline;
   font-family: ${({ theme }) => theme.fontFamily};
   font-size: ${({ theme }) => theme.fontSize.heading};
   margin-bottom: ${({ theme }) => theme.spacing[16]};

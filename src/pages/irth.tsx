@@ -64,7 +64,7 @@ const CoreComponentLibrary: React.FC = () => (
       />
     </ContentBox>
     <ContentBox column>
-      <GridBox>
+      <GridBox center>
         <StackedText
           bottomText="Irth is built for and by it’s community and we want to emphasize that you are not alone when going through the review process. To add a personal touch to the experience, we created “notes from the founder/team” to show up on first login and as soon as you finish writing a review. These screens give the founder an opportunity to speak directly to her audience."
           topText="Adding a human touch"
