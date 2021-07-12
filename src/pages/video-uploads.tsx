@@ -11,7 +11,7 @@ import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Title from '~/components/typography/Title';
-import Video from '~/components/Video';
+import Video from '~/components/videos/Video';
 
 const DetailPickle = styled(Pickle)`
   margin: ${({ theme }) => `${theme.spacing[64]} 0`};
