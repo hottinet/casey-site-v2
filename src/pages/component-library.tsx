@@ -4,22 +4,12 @@ import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
-
-const PickleGrid = styled(ContentBox)`
-  grid-column-gap: 7%;
-`;
 
 const DetailStack = styled(StackedText)`
   margin-bottom: ${({ theme }) => theme.spacing[80]};
@@ -36,16 +26,14 @@ const CoreComponentLibrary: React.FC = () => (
       />
     </ContentBox>
     <DetailPickle>
-      <PickleGrid grid widthRatio={1.13}>
-        <StackedText
-          bottomText="Make it easier to move quickly in Figma and keep designs up to date across the team."
-          topText="Goal"
-        />
-        <StackedText
-          bottomText="Create, manage and document the component library"
-          topText="My Role"
-        />
-      </PickleGrid>
+      <StackedText
+        bottomText="Make it easier to move quickly in Figma and keep designs up to date across the team."
+        topText="Goal"
+      />
+      <StackedText
+        bottomText="Create, manage and document the component library"
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <DetailStack
