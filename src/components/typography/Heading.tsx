@@ -4,20 +4,26 @@ type HeadingProps = {
   children: string;
   bold?: boolean;
   className?: string;
+  padded?: boolean;
 };
 
-const Text = styled.h3<Omit<HeadingProps, 'children'>>`
+export const HeadingText = styled.h3<Omit<HeadingProps, 'children'>>`
   font-family: ${({ theme }) => theme.fontFamily};
   font-size: ${({ theme }) => theme.fontSize.heading};
-  margin-bottom: ${({ theme }) => theme.spacing[16]};
+  margin-bottom: ${({ theme, padded }) => (padded ? theme.spacing[16] : 0)};
   font-weight: ${({ theme, bold }) =>
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
 `;
 
-const Heading: React.FC<HeadingProps> = ({ bold, className, children }) => (
-  <Text bold={bold} className={className}>
+const Heading: React.FC<HeadingProps> = ({
+  bold,
+  className,
+  children,
+  padded = true,
+}) => (
+  <HeadingText bold={bold} className={className} padded={padded}>
     {children}
-  </Text>
+  </HeadingText>
 );
 
 export default Heading;

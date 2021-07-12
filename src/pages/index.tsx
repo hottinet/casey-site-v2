@@ -8,7 +8,7 @@ import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import Pickle from '~/components/pickles/Pickle';
-import Heading from '~/components/typography/Heading';
+import { HeadingText } from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import {
   CORE_COMPONENT_LIBRARY_ROUTE,
@@ -21,6 +21,8 @@ import { Color } from '~/typings/theme';
 const CoreLink = styled(Link)`
   margin-left: ${({ theme }) => theme.spacing[8]};
 `;
+
+const LinkText = HeadingText.withComponent('span');
 
 const SizedPickle = styled(Pickle)`
   width: 94%;
@@ -87,9 +89,13 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
   href,
   text,
 }) => (
-  <Link href={href} internal>
-    <Heading bold>{text}</Heading>
-  </Link>
+  <span>
+    <Link href={href} internal>
+      <LinkText bold padded={false}>
+        {text}
+      </LinkText>
+    </Link>
+  </span>
 );
 // END - SUBCOMPONENTS - END
 
