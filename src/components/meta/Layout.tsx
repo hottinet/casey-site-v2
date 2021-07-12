@@ -4,12 +4,11 @@ import NavBar from './NavBar';
 
 type LayoutProps = {
   children?: React.ReactNode;
-  title: string;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children, title }) => (
+const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
-    <Head title={title} />
+    <Head title="Casey Bradford" />
     <NavBar />
     {children}
     <Footer />

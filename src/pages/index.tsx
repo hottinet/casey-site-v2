@@ -94,7 +94,7 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 // END - SUBCOMPONENTS - END
 
 const Home: React.FC = () => (
-  <Layout title="Casey Bradford">
+  <Layout>
     <Box mx={48}>
       <Box>
         <Title>Product Designer balancing personality and utility.</Title>

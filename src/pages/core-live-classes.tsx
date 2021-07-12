@@ -24,7 +24,7 @@ const PickleStack = styled(StackedText)`
 `;
 
 const CoreComponentLibrary: React.FC = () => (
-  <Layout title="Live Classes">
+  <Layout>
     <ContentBox column>
       <Title bold>Designing a live class experience for fitness</Title>
       <Heading>Video</Heading>
