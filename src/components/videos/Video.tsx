@@ -6,6 +6,7 @@ type VideoProps = {
   }[];
   autoPlay?: boolean;
   muted?: boolean;
+  loop?: boolean;
   className?: string;
 };
 
@@ -13,7 +14,8 @@ const Video: React.FC<VideoProps> = ({
   controls = false,
   sources,
   autoPlay = true,
-  muted,
+  muted = true,
+  loop = true,
   className,
 }) => (
   // eslint-disable-next-line jsx-a11y/media-has-caption
@@ -21,6 +23,7 @@ const Video: React.FC<VideoProps> = ({
     autoPlay={autoPlay}
     className={className}
     controls={controls}
+    loop={loop}
     muted={muted}
   >
     {sources.map(({ src, type = 'video/mp4' }) => (

@@ -67,8 +67,7 @@ const CoreComponentLibrary: React.FC = () => (
         spot in Central Park or any park.
       </Body>
       <ExternalVideo
-        aspectRatio="16:9"
-        src="https://vimeo.com/574090584"
+        src="https://player.vimeo.com/video/574090584"
         title="Google Maps Selector"
       />
       <Title bold>Creating flexible pricing options</Title>
