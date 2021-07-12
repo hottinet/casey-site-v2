@@ -18,7 +18,7 @@ type TopTextProps = Pick<StackedTextProps, 'title'> & {
 };
 
 const BottomText = styled(Body)`
-  margin-top: ${({ theme }) => theme.spacing[24]};
+  margin: ${({ theme }) => `${theme.spacing[24]} 0`};
 `;
 
 const TopText: React.FC<TopTextProps> = ({ title, children }) =>

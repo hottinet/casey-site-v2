@@ -8,6 +8,7 @@ import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import Pickle from '~/components/pickles/Pickle';
+import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import {
   CORE_COMPONENT_LIBRARY_ROUTE,
@@ -16,17 +17,10 @@ import {
 } from '~/constants/routing';
 import { Color } from '~/typings/theme';
 
+// START - STYLED COMPONENTS - START
 const CoreLink = styled(Link)`
   margin-left: ${({ theme }) => theme.spacing[8]};
 `;
-
-type HomePickleProps = {
-  imageSrc: string;
-  title: string;
-  linkTo: string;
-  pickleColor: Color;
-  imageAlt: string;
-};
 
 const SizedPickle = styled(Pickle)`
   width: 94%;
@@ -51,6 +45,17 @@ const PickleContentWrapper = styled(GridBox)`
   width: 100%;
 `;
 
+// END - STYLED COMPONENTS - END
+
+// START - SUBCOMPONENTS - START
+type HomePickleProps = {
+  imageSrc: string;
+  title: string;
+  linkTo: string;
+  pickleColor: Color;
+  imageAlt: string;
+};
+
 const HomePickle: React.FC<HomePickleProps> = ({
   imageSrc,
   imageAlt,
@@ -72,6 +77,21 @@ const HomePickle: React.FC<HomePickleProps> = ({
     </PickleContentWrapper>
   </SizedPickle>
 );
+
+type SecondaryProjectLinkProps = {
+  href: string;
+  text: string;
+};
+
+const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
+  href,
+  text,
+}) => (
+  <Link href={href} internal>
+    <Heading bold>{text}</Heading>
+  </Link>
+);
+// END - SUBCOMPONENTS - END
 
 const Home: React.FC = () => (
   <Layout title="Casey Bradford">
@@ -112,6 +132,24 @@ const Home: React.FC = () => (
       pickleColor="yellow"
       title="Events on Core"
     />
+    <GridBox columnGap={48} mt={128} mx={48}>
+      <SecondaryProjectLink
+        href="/some-new-page"
+        text="Designing for voice input in a mental health app"
+      />
+      <SecondaryProjectLink
+        href="/some-new-page"
+        text="Designing for voice input in a mental health app"
+      />
+      <SecondaryProjectLink
+        href="/some-new-page"
+        text="Designing for voice input in a mental health app"
+      />
+      <SecondaryProjectLink
+        href="/some-new-page"
+        text="Designing for voice input in a mental health app"
+      />
+    </GridBox>
   </Layout>
 );
 
