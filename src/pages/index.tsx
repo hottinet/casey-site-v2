@@ -101,12 +101,10 @@ const Home: React.FC = () => (
       <Box>
         <Title>Product Designer balancing personality and utility.</Title>
       </Box>
-      <FlexBox alignItems="center">
-        <Title padded={false}>
-          Most recently at AlleyCorp’s&thinsp;
-          <Link href="https://core.fitness/">Core</Link>
-        </Title>
-      </FlexBox>
+      <Title>
+        Most recently at AlleyCorp’s&thinsp;
+        <Link href="https://core.fitness/">Core</Link>
+      </Title>
     </Box>
     <HomePickle
       imageAlt="several app screens"
