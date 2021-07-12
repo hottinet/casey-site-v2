@@ -70,6 +70,7 @@
     "react/no-typos": "error",
     "react/self-closing-comp": "warn",
     "react/no-access-state-in-setstate": "error",
+    "react/jsx-one-expression-per-line": "off",
 
     // Typescript
     "@typescript-eslint/explicit-module-boundary-types": "off"

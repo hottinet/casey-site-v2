@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 type TitleProps = {
-  children: string;
+  children: string | (string | React.ReactElement)[];
   bold?: boolean;
   className?: string;
   padded?: boolean;

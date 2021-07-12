@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { Theme } from '~/constants/theme';
+import { Spacing } from '~/typings/theme';
 
 import Box from './Box';
 import { AlignItems, BoxProps, JustifyContent } from './types';
@@ -12,15 +12,25 @@ export type GridBoxProps = BoxProps & {
   inline?: boolean;
   columns?: 1 | 2 | 3 | 4;
   className?: string;
-  columnGap?: keyof Theme['spacing'];
+  columnGap?: Spacing;
+  rowGap?: Spacing;
 };
 
 const Grid = styled(Box)<GridBoxProps>(
   { display: 'grid' },
-  ({ center, justifyContent, alignItems, inline, columns = 2, columnGap }) => ({
+  ({
+    center,
+    justifyContent,
+    alignItems,
+    inline,
+    columns = 2,
+    columnGap,
+    rowGap,
+  }) => ({
     justifyContent,
     alignItems,
     columnGap,
+    rowGap,
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
     ...(center && {
       justifyContent: 'center',

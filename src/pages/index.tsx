@@ -18,10 +18,6 @@ import {
 import { Color } from '~/typings/theme';
 
 // START - STYLED COMPONENTS - START
-const CoreLink = styled(Link)`
-  margin-left: ${({ theme }) => theme.spacing[8]};
-`;
-
 const LinkText = HeadingText.withComponent('span');
 
 const SizedPickle = styled(Pickle)`
@@ -105,10 +101,12 @@ const Home: React.FC = () => (
       <Box>
         <Title>Product Designer balancing personality and utility.</Title>
       </Box>
-      <Title>Most recently at AlleyCorp’s</Title>
-      <CoreLink href="https://core.fitness/">
-        <Title>Core</Title>
-      </CoreLink>
+      <FlexBox alignItems="center">
+        <Title padded={false}>
+          Most recently at AlleyCorp’s&thinsp;
+          <Link href="https://core.fitness/">Core</Link>
+        </Title>
+      </FlexBox>
     </Box>
     <HomePickle
       imageAlt="several app screens"
@@ -138,7 +136,7 @@ const Home: React.FC = () => (
       pickleColor="yellow"
       title="Events on Core"
     />
-    <GridBox columnGap={48} mt={128} mx={48}>
+    <GridBox columnGap={48} mt={128} mx={48} rowGap={16}>
       <SecondaryProjectLink href="/some-new-page" text="Programs on Core" />
       <SecondaryProjectLink
         href="/some-new-page"
