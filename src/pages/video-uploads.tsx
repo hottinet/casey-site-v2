@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
@@ -9,6 +10,7 @@ import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
+import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import Video from '~/components/videos/Video';
 
@@ -22,10 +24,14 @@ const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
+const BorderedImage = styled(Image)`
+  border-top: 3px solid black;
+`;
+
 const CoreComponentLibrary: React.FC = () => (
   <Layout title="Video Upload">
     <ContentBox column>
-      <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
+      {/* <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} /> */}
       <Title bold>Improving video upload flow for Core Instructors</Title>
       <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
@@ -52,7 +58,19 @@ const CoreComponentLibrary: React.FC = () => (
         the video. In Cores original upload flow, there was no visual cue that
         Core had the file after the initial load.
       </Body>
-      <Image alt="examples" fitParent src="/VideoUpload/videoexamples.png" />
+      <GridBox columnGap={24}>
+        <Box>
+          <Heading>Examples</Heading>
+          <BorderedImage
+            alt="Youtube and Vimeo examples"
+            src="/VideoUpload/examples.png"
+          />
+        </Box>
+        <Box>
+          <Heading>Previous UI</Heading>
+          <BorderedImage alt="Video UI" src="/VideoUpload/previous.png" />
+        </Box>
+      </GridBox>
       <Title bold>Creating a clear system for upload statuses</Title>
       <Body>
         It was difficult for us to assess the problems we were hearing about
@@ -72,11 +90,30 @@ const CoreComponentLibrary: React.FC = () => (
         <Image alt="email screenshot" src="/VideoUpload/videoemail.png" />
       </GridBox>
       <Title bold>Adapting designs for local, Dropbox and URL Uploads</Title>
-      <Body>xyz</Body>
-      <Title bold>Cut from scope</Title>
-      <Body>xyz</Body>
-      <Title bold>Final Product</Title>
-      <Body>xyz</Body>
+      <Body>
+        For each type of file upload there were different considerations. For
+        Dropbox and URL uploads, we could not know the progress of the upload
+        like we could for a local upload so the states became Downloading From
+        Source and Ready for playback. For URL uploads we also had to show
+        additional errors after validating the links that users were entering.
+      </Body>
+      <GridBox>
+        <Image alt="oops not a video link" src="/VideoUpload/url-1.png" />
+        <Image alt="Downloading" src="/VideoUpload/url-2.png" />
+      </GridBox>
+      <Title bold>Video Uploads in Context</Title>
+      <Body>
+        We got great feedback from instructors after launching this new
+        experience. The biggest ask following these updates was for the ability
+        to bulk upload which we would build in the future
+      </Body>
+      <Title bold>Key Learnings</Title>
+      <Heading bold>Working with the Backend</Heading>
+      <Body>xtz</Body>
+      <Heading bold>Working with the Backend</Heading>
+      <Body>xtz</Body>
+      <Title bold>Other upload improvements</Title>
+      <Heading>Schedule to publish</Heading>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />

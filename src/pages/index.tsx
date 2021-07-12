@@ -133,18 +133,12 @@ const Home: React.FC = () => (
       title="Events on Core"
     />
     <GridBox columnGap={48} mt={128} mx={48}>
+      <SecondaryProjectLink href="/some-new-page" text="Programs on Core" />
       <SecondaryProjectLink
         href="/some-new-page"
-        text="Designing for voice input in a mental health app"
+        text="UI Design for Irth non-profit"
       />
-      <SecondaryProjectLink
-        href="/some-new-page"
-        text="Designing for voice input in a mental health app"
-      />
-      <SecondaryProjectLink
-        href="/some-new-page"
-        text="Designing for voice input in a mental health app"
-      />
+      <SecondaryProjectLink href="/some-new-page" text="Graphic Design Work" />
       <SecondaryProjectLink
         href="/some-new-page"
         text="Designing for voice input in a mental health app"
