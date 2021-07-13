@@ -141,10 +141,7 @@ const Home: React.FC = () => (
         text="UI Design for Irth non-profit"
       />
       <SecondaryProjectLink href="/some-new-page" text="Graphic Design Work" />
-      <SecondaryProjectLink
-        href="/some-new-page"
-        text="Designing for voice input in a mental health app"
-      />
+      <SecondaryProjectLink href="/some-new-page" text="Sessions on Core" />
     </GridBox>
   </Layout>
 );

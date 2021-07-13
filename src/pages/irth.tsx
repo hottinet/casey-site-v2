@@ -23,7 +23,7 @@ const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
-const CoreComponentLibrary: React.FC = () => (
+const Irth: React.FC = () => (
   <Layout title="Irth">
     <ContentBox column>
       <GridBox>
@@ -116,4 +116,4 @@ const CoreComponentLibrary: React.FC = () => (
   </Layout>
 );
 
-export default CoreComponentLibrary;
+export default Irth;

@@ -23,7 +23,7 @@ const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
-const CoreComponentLibrary: React.FC = () => (
+const CoreLiveClasses: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold>Designing a live class experience for fitness</Title>
@@ -100,4 +100,4 @@ const CoreComponentLibrary: React.FC = () => (
   </Layout>
 );
 
-export default CoreComponentLibrary;
+export default CoreLiveClasses;

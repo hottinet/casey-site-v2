@@ -24,7 +24,7 @@ const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
-const CoreComponentLibrary: React.FC = () => (
+const CustomerDiscovery: React.FC = () => (
   <Layout title="Customer Discovery">
     <ContentBox column>
       <Title bold>Rediscovering the Core Customer</Title>
@@ -53,4 +53,4 @@ const CoreComponentLibrary: React.FC = () => (
   </Layout>
 );
 
-export default CoreComponentLibrary;
+export default CustomerDiscovery;

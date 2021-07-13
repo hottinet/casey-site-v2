@@ -28,7 +28,7 @@ const BorderedImage = styled(Image)`
   border-top: 3px solid black;
 `;
 
-const CoreComponentLibrary: React.FC = () => (
+const VideoUploads: React.FC = () => (
   <Layout title="Video Upload">
     <ContentBox column>
       {/* <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} /> */}
@@ -121,4 +121,4 @@ const CoreComponentLibrary: React.FC = () => (
   </Layout>
 );
 
-export default CoreComponentLibrary;
+export default VideoUploads;
