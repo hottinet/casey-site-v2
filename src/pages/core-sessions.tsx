@@ -13,6 +13,7 @@ import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
+import ExternalVideo from '~/components/videos/ExternalVideo';
 import Video from '~/components/videos/Video';
 
 const DetailPickle = styled(Pickle)`
@@ -27,6 +28,10 @@ const PickleStack = styled(StackedText)`
 
 const BodyOverBody = styled(Body)`
   margin-bottom: 24px;
+`;
+
+const PaddedExternalVideo = styled(ExternalVideo)`
+  margin-bottom: 80px;
 `;
 
 const CoreSessions: React.FC = () => (
@@ -48,7 +53,10 @@ const CoreSessions: React.FC = () => (
     </DetailPickle>
     <ContentBox column>
       <Title bold>Building the CMS</Title>
-      <Heading>Video</Heading>
+      <PaddedExternalVideo
+        src="https://player.vimeo.com/video/575074814"
+        title="Process of creating video content on Core"
+      />
       <Heading bold>Improving the video upload flow</Heading>
       <BodyOverBody>
         Core was receiving an influx of support emails from instructors who had
@@ -76,8 +84,10 @@ const CoreSessions: React.FC = () => (
       </GridBox>
       <Divider />
       <Title bold>Designing the student experience</Title>
-      <Heading>Video</Heading>
-      <Heading bold>Browsing Experience</Heading>
+      <PaddedExternalVideo
+        src="https://player.vimeo.com/video/575076591"
+        title="Process of consuming video content on Core"
+      />
       <Heading bold>Feedback</Heading>
       <Heading bold>Downloading videos via iOS</Heading>
       <Body>
@@ -85,7 +95,7 @@ const CoreSessions: React.FC = () => (
         important. This allowed them to workout in locations without a good wifi
         connection.
       </Body>
-      <GridBox center>
+      <GridBox center columns={3}>
         <Image alt="Download States" src="/Sessions/Downloads_1.png" />
         <Image alt="Downloaded Session" src="/Sessions/Downloads_2.png" />
         <Image alt="All Downloads" src="/Sessions/Downloads_3.png" />
