@@ -23,11 +23,18 @@ const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
+const PaddedExternalVideo = styled(ExternalVideo)`
+  margin-bottom: 80px;
+`;
+
 const CoreLiveClasses: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold>Designing a live class experience for fitness</Title>
-      <Heading>Video</Heading>
+      <ExternalVideo
+        src="https://player.vimeo.com/video/574465157"
+        title="Process of creating and signing up for live class on Core"
+      />
     </ContentBox>
     <DetailPickle>
       <ContentBox leftOnly>
@@ -36,7 +43,7 @@ const CoreLiveClasses: React.FC = () => (
           topText="The Goal"
         />
         <PickleStack
-          bottomText="I was the primary product designer working with both the content and payment workstreams on the live classes feature."
+          bottomText="I was the primary product designer working with both the content and payment workstreams on the live classes feature. I designed across the instructor portal and student experience for both iOS and Web"
           topText="My Role"
         />
       </ContentBox>
@@ -66,11 +73,11 @@ const CoreLiveClasses: React.FC = () => (
         for the case where instructors wanted to guide student to a specific
         spot in Central Park or any park.
       </Body>
-      <ExternalVideo
+      <PaddedExternalVideo
         src="https://player.vimeo.com/video/574090584"
         title="Google Maps Selector"
       />
-      <Title bold>Creating flexible pricing options</Title>
+      <Title bold>Builidng toward flexible pricing options</Title>
       <GridBox center>
         <Body>
           In interviewing instructors who host Live Classes one of the biggest
