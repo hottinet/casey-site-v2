@@ -95,9 +95,15 @@ const CoreComponentLibrary: React.FC = () => (
         alt="Icons, names and uses"
         src="/ComponentLibrary/iconDocumentation.png"
       />
-      <Divider />
       <Title bold>Moving Quickly</Title>
       <Title bold>Key Learnings</Title>
+      <Heading bold>Building the components the right way is worth it</Heading>
+      <Body>
+        In a fast-paced environment, it is easy to race to a finished design
+        without doing the leg work of organizing the files well. The more
+        projects I worked on at Core, the more helpful I found it to have teh
+        basic components mapped out and built with flexibilty in mind.
+      </Body>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />

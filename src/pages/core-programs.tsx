@@ -28,11 +28,18 @@ const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 80px;
 `;
 
+const BodyOverBody = styled(Body)`
+  margin-bottom: 24px;
+`;
+
 const CorePrograms: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title bold>Programs on Core</Title>
-      <Title> Image! </Title>
+      <Title bold>Launching fitness programs on Core</Title>
+      <Image
+        alt="Program page on desktop and mobile"
+        src="/Programs/programscover.png"
+      />
       <Heading bold>The Problem</Heading>
       <Body>
         Fitness students are looking for ways to be held accountable and see
@@ -126,12 +133,12 @@ const CorePrograms: React.FC = () => (
         <Image alt="Rest Day vs Regular Day" src="/Programs/RestDay.png" />
       </GridBox>
       <Heading bold>Iterating post-launch</Heading>
-      <Body>
+      <BodyOverBody>
         Programs offer students a more holistic and guided fitness experience.
         Many instructors wanted to attach additional resources to their program
         such as nutrition plans. As a fast follow to our initial launch, we
         added the ability for instructors to add both links and attachments.
-      </Body>
+      </BodyOverBody>
       <Body>
         After interviewing multiple instructors, we learned that most of them
         treat programs as a separate offering from their subscription business,
@@ -160,7 +167,22 @@ const CorePrograms: React.FC = () => (
         />
       </GridBox>
       <Title bold>Key Learnings</Title>
-      <Body>Flexibility vs Usability</Body>
+      <Heading bold>Flexibility vs Usability</Heading>
+      <BodyOverBody>
+        In building Core, we were constantly assessing the trade off between
+        giving instructors freedom to personalize versus having a more
+        straightrforward user experience. In our first iteration of Programs, we
+        did not make users stick to a calendar based on weeks. In testing this
+        with users, most were confused by the vague naming and I think this is a
+        case where more structure would have been helpful.
+      </BodyOverBody>
+      <Heading bold>Desiging across platforms</Heading>
+      <Body>
+        In an effort to get this project out the door quickly, we focused a lot
+        on iOs and mobile web first. Down the line we ran into some issues on
+        desktop that we had overlooked which was a good reminder to keep all the
+        devices we are serving in mind.
+      </Body>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />

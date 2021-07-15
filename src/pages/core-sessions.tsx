@@ -37,7 +37,9 @@ const PaddedExternalVideo = styled(ExternalVideo)`
 const CoreSessions: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title bold>Video content creation</Title>
+      <Title bold>
+        Making it easier to create and consume video content on Core
+      </Title>
     </ContentBox>
     <DetailPickle>
       <ContentBox leftOnly>
@@ -57,14 +59,18 @@ const CoreSessions: React.FC = () => (
         src="https://player.vimeo.com/video/575074814"
         title="Process of creating video content on Core"
       />
-      <Heading bold>Improving the video upload flow</Heading>
-      <BodyOverBody>
-        Core was receiving an influx of support emails from instructors who had
-        questions about their video uploads. There was no clear feedback for
-        users about the status of their uploads and no clear errors when
-        something went wrong.
-      </BodyOverBody>
-      <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
+      <GridBox center>
+        <Box>
+          <Heading bold>Improving the video upload flow</Heading>
+          <BodyOverBody>
+            Core was receiving an influx of support emails from instructors who
+            had questions about their video uploads. There was no clear feedback
+            for users about the status of their uploads and no clear errors when
+            something went wrong.
+          </BodyOverBody>
+        </Box>
+        <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
+      </GridBox>
       <BodyOverBody>
         It was difficult for us to assess the problems we were hearing about
         over email because we did not have clear error states or upload
@@ -88,7 +94,26 @@ const CoreSessions: React.FC = () => (
         src="https://player.vimeo.com/video/575076591"
         title="Process of consuming video content on Core"
       />
-      <Heading bold>Feedback</Heading>
+      <Heading bold>
+        Creating a feedback loop between instructors and students
+      </Heading>
+      <Body>
+        Two of the big topics that came out of our user interviews were
+        Community and Accountability. As a very first step towards including
+        these themes in our product, we decided to build out a way for
+        intructors to provide a custom message upon completion of a session and
+        for student to be able to rate and leave comments on the sessions as
+        well. This opened the feedback loop and allowed instructors to learn
+        more about their business.
+      </Body>
+      <GridBox>
+        <Box>
+          <Video sources={[{ src: '/Sessions/RatingReview2.mp4' }]} />
+        </Box>
+        <Box>
+          <Image alt="placeholder" src="/Sessions/ReviewInstructor.png" />
+        </Box>
+      </GridBox>
       <Heading bold>Downloading videos via iOS</Heading>
       <Body>
         For students on the go, the ability to download video sessions was very
@@ -100,6 +125,21 @@ const CoreSessions: React.FC = () => (
         <Image alt="Downloaded Session" src="/Sessions/Downloads_2.png" />
         <Image alt="All Downloads" src="/Sessions/Downloads_3.png" />
       </GridBox>
+      <Title bold>Key Learnings</Title>
+      <Heading bold>Designing with real data</Heading>
+      <BodyOverBody>
+        Gathering a variety of real session titles, descriptions, tags, etc was
+        extremely helpful in developing flexible components that could work for
+        most use cases. I found that in testing, it was much more helpful to
+        have as real of data as possible.
+      </BodyOverBody>
+      <Heading bold>Collaborating with the backend developers</Heading>
+      <Body>
+        While working on improving the video upload process, I collaborated
+        closely with the backend engineers to understand exactly how our video
+        upload process worked and how we could serve the most helpful error and
+        uploas states.
+      </Body>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />

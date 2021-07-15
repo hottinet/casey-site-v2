@@ -27,13 +27,17 @@ const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 80px;
 `;
 
+const BodyOverBody = styled(Body)`
+  margin-bottom: 24px;
+`;
+
 const CoreLiveClasses: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold>Designing a live class experience for fitness</Title>
-      <ExternalVideo
-        src="https://player.vimeo.com/video/574465157"
-        title="Process of creating and signing up for live class on Core"
+      <Image
+        alt="Multiple views of live class feature."
+        src="/LiveClasses/LiveClassCover.png"
       />
     </ContentBox>
     <DetailPickle>
@@ -43,19 +47,24 @@ const CoreLiveClasses: React.FC = () => (
           topText="The Goal"
         />
         <PickleStack
-          bottomText="I was the primary product designer working with both the content and payment workstreams on the live classes feature. I designed across the instructor portal and student experience for both iOS and Web"
+          bottomText="I was the primary product designer working with both the content and payment workstreams on the live classes feature. I designed across the instructor portal and student experience for both iOS and Web."
           topText="My Role"
         />
       </ContentBox>
     </DetailPickle>
     <ContentBox column>
+      <Title bold>The feature in use</Title>
+      <PaddedExternalVideo
+        src="https://player.vimeo.com/video/574465157"
+        title="Process of creating and signing up for live class on Core"
+      />
       <Title bold>Building a Zoom integration for instructors</Title>
       <GridBox center>
         <Body>
           We originally launched live classes with just an input for any live
           stream URL. However, for instructors hosting lots of events, it can be
           cumbersome to have to leave Core, go make a Zoom link, come back and
-          paste that link intpo the form. With our Zoom integration, after
+          paste that link into the form. With our Zoom integration, after
           instructors log in to their Zoom account, we can make the meetings for
           them. We just need them to input a Title and Date first.
         </Body>
@@ -100,6 +109,22 @@ const CoreLiveClasses: React.FC = () => (
       </Body>
       <Image alt="Class Booking Screens" src="/LiveClasses/confirmremind.png" />
       <Title bold>Key Learnings</Title>
+      <Heading bold>Product Integrations </Heading>
+      <BodyOverBody>
+        This project was one of my first times working with Zoom, Google Maps
+        and add-to-calednar functionality both on iOS and Web. It was a great
+        experience to learn how we could leverage existing tools that users are
+        familiar with to improve our product.
+      </BodyOverBody>
+      <Heading bold>Getting in the mindset of the user</Heading>
+      <BodyOverBody>
+        In building this feature, I learned a lot from user interviews. Research
+        helped me understand the complexity of most instructors&apos; offerings
+        and how they leverage live classes as a top of funnel mechanism to gain
+        new students.
+      </BodyOverBody>
+      <Heading bold>Working in the App Store</Heading>
+      <Body>xyz</Body>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
       <NextProjectPickle nextProjectPath="/" />
