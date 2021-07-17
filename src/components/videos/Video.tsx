@@ -1,3 +1,5 @@
+import styled from '@emotion/styled';
+
 type VideoProps = {
   controls?: boolean;
   sources: {
@@ -10,6 +12,11 @@ type VideoProps = {
   className?: string;
 };
 
+const FitVideo = styled.video`
+  max-height: 100%;
+  max-width: 100%;
+`;
+
 const Video: React.FC<VideoProps> = ({
   controls = false,
   sources,
@@ -19,7 +26,7 @@ const Video: React.FC<VideoProps> = ({
   className,
 }) => (
   // eslint-disable-next-line jsx-a11y/media-has-caption
-  <video
+  <FitVideo
     autoPlay={autoPlay}
     className={className}
     controls={controls}
@@ -30,7 +37,7 @@ const Video: React.FC<VideoProps> = ({
       <source key={src} src={src} type={type} />
     ))}
     Your browser does not support the video tag.
-  </video>
+  </FitVideo>
 );
 
 export default Video;

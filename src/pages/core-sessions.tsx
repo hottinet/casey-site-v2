@@ -7,20 +7,14 @@ import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 import Video from '~/components/videos/Video';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -42,16 +36,14 @@ const CoreSessions: React.FC = () => (
       </Title>
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
-          bottomText="Improve the process for uploading and organizing video content"
-          topText="The Goal"
-        />
-        <PickleStack
-          bottomText="As the product designer dedicated to the Content workstream. I worked with developers to improve the process for creating on Core."
-          topText="My Role"
-        />
-      </ContentBox>
+      <PickleStack
+        bottomText="Improve the process for uploading and organizing video content"
+        topText="The Goal"
+      />
+      <PickleStack
+        bottomText="As the product designer dedicated to the Content workstream. I worked with developers to improve the process for creating on Core."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Title bold>Building the CMS</Title>
@@ -79,7 +71,7 @@ const CoreSessions: React.FC = () => (
         because we did not have clear statuses.
       </BodyOverBody>
       <Image alt="table view" fitParent src="/Sessions/uploadstatus.png" />
-      <GridBox center>
+      <GridBox center mb={48}>
         <Body>
           Many of our instructors are constantly multitasking to support their
           businesses and will start uploads and then walk away to do something
@@ -106,13 +98,9 @@ const CoreSessions: React.FC = () => (
         well. This opened the feedback loop and allowed instructors to learn
         more about their business.
       </Body>
-      <GridBox>
-        <Box>
-          <Video sources={[{ src: '/Sessions/RatingReview2.mp4' }]} />
-        </Box>
-        <Box>
-          <Image alt="placeholder" src="/Sessions/ReviewInstructor.png" />
-        </Box>
+      <GridBox columnGap={24} mb={48}>
+        <Video sources={[{ src: '/Sessions/RatingReview2.mp4' }]} />
+        <Image alt="placeholder" src="/Sessions/ReviewInstructor.png" />
       </GridBox>
       <Heading bold>Downloading videos via iOS</Heading>
       <Body>
@@ -120,7 +108,7 @@ const CoreSessions: React.FC = () => (
         important. This allowed them to workout in locations without a good wifi
         connection.
       </Body>
-      <GridBox center columns={3}>
+      <GridBox center columns={3} mb={48}>
         <Image alt="Download States" src="/Sessions/Downloads_1.png" />
         <Image alt="Downloaded Session" src="/Sessions/Downloads_2.png" />
         <Image alt="All Downloads" src="/Sessions/Downloads_3.png" />

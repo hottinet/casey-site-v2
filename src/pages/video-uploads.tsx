@@ -6,19 +6,13 @@ import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 // import Video from '~/components/videos/Video';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -36,16 +30,14 @@ const VideoUploads: React.FC = () => (
       <Image alt="upload UI" src="/VideoUpload/videoupload.png" />
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
-          bottomText="Core was receiving an influx of support emails from instructors who had questions about their video uploads. There was no clear feedback for users about the status of their uploads and no clear errors when something went wrong."
-          topText="The Problem"
-        />
-        <PickleStack
-          bottomText="Design a solution that makes users feel more confident uploading videos. Create flows for the upload of local files, Dropbox files, or upload by URL. Work with backend and frontend engineers to understand tech implications."
-          topText="My Role"
-        />
-      </ContentBox>
+      <PickleStack
+        bottomText="Core was receiving an influx of support emails from instructors who had questions about their video uploads. There was no clear feedback for users about the status of their uploads and no clear errors when something went wrong."
+        topText="The Problem"
+      />
+      <PickleStack
+        bottomText="Design a solution that makes users feel more confident uploading videos. Create flows for the upload of local files, Dropbox files, or upload by URL. Work with backend and frontend engineers to understand tech implications."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Title bold>

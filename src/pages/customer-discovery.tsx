@@ -7,18 +7,12 @@ import FlexBox from '~/components/box/FlexBox';
 // import Divider from '~/components/Divider';
 // import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 // import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -30,16 +24,14 @@ const CustomerDiscovery: React.FC = () => (
       <Title bold>Rediscovering the Core Customer</Title>
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
-          bottomText="Identify what features we need to build to support an instructor without a solid subscription business and differentiate from our competitors."
-          topText="Goal"
-        />
-        <PickleStack
-          bottomText="Reach out to and conduct interviews with potential users. Identify common pain points and possible solutions."
-          topText="My Role"
-        />
-      </ContentBox>
+      <PickleStack
+        bottomText="Identify what features we need to build to support an instructor without a solid subscription business and differentiate from our competitors."
+        topText="Goal"
+      />
+      <PickleStack
+        bottomText="Reach out to and conduct interviews with potential users. Identify common pain points and possible solutions."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Title bold>Sddddddd</Title>

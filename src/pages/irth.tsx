@@ -6,18 +6,12 @@ import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -32,16 +26,14 @@ const Irth: React.FC = () => (
       </GridBox>
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
-          bottomText="Irth is an app for brown and black women to review doctors and hospitals involved in their birthing experiences"
-          topText="What is Irth?"
-        />
-        <PickleStack
-          bottomText="I was brought on to this project to make a few key design changes necessary to take the app to its first round of beta testing."
-          topText="My Role"
-        />
-      </ContentBox>
+      <PickleStack
+        bottomText="Irth is an app for brown and black women to review doctors and hospitals involved in their birthing experiences"
+        topText="What is Irth?"
+      />
+      <PickleStack
+        bottomText="I was brought on to this project to make a few key design changes necessary to take the app to its first round of beta testing."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Heading>Goal #1</Heading>

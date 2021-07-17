@@ -6,19 +6,13 @@ import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -86,16 +80,14 @@ const CorePrograms: React.FC = () => (
       </GridBox>
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
-          bottomText="Create a streamlined way for instructors to create day by day, week by week programs for students to follow along with"
-          topText="The Goal"
-        />
-        <PickleStack
-          bottomText="My role ws to design both the instructor portal experience as well as the student experience across iOS and web. I worked with a team of developers to test and refine the feature, and executed user interviews throughout the process."
-          topText="My Role"
-        />
-      </ContentBox>
+      <PickleStack
+        bottomText="Create a streamlined way for instructors to create day by day, week by week programs for students to follow along with"
+        topText="The Goal"
+      />
+      <PickleStack
+        bottomText="My role ws to design both the instructor portal experience as well as the student experience across iOS and web. I worked with a team of developers to test and refine the feature, and executed user interviews throughout the process."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Title bold>Instructor Portal: Building the Program</Title>

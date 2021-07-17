@@ -5,19 +5,13 @@ import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
+import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
-import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
-
-const DetailPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
-`;
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -41,16 +35,14 @@ const CoreLiveClasses: React.FC = () => (
       />
     </ContentBox>
     <DetailPickle>
-      <ContentBox leftOnly>
-        <PickleStack
-          bottomText="Create a way for fitness instructors on Core to host live classes for their students."
-          topText="The Goal"
-        />
-        <PickleStack
-          bottomText="I was the primary product designer working with both the content and payment workstreams on the live classes feature. I designed across the instructor portal and student experience for both iOS and Web."
-          topText="My Role"
-        />
-      </ContentBox>
+      <PickleStack
+        bottomText="Create a way for fitness instructors on Core to host live classes for their students."
+        topText="The Goal"
+      />
+      <PickleStack
+        bottomText="I was the primary product designer working with both the content and payment workstreams on the live classes feature. I designed across the instructor portal and student experience for both iOS and Web."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Title bold>The feature in use</Title>
