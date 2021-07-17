@@ -1,10 +1,21 @@
+const breakpointValues = {
+  xxs: 479,
+  xs: 480,
+  sm: 768,
+  md: 1024,
+  lg: 1200,
+  xl: 1440,
+};
+
 const theme = {
+  breakpointValues,
   breakpoints: {
-    xs: '@media only screen and (min-width: 480px)',
-    sm: '@media only screen and (min-width: 768px)',
-    md: '@media only screen and (min-width: 1024px)',
-    lg: '@media only screen and (min-width: 1200px)',
-    xl: '@media only screen and (min-width: 1440px)',
+    xxs: `@media only screen and (max-width: ${breakpointValues.xxs}px)`,
+    xs: `@media only screen and (min-width: ${breakpointValues.xs}px)`,
+    sm: `@media only screen and (min-width: ${breakpointValues.sm}px)`,
+    md: `@media only screen and (min-width: ${breakpointValues.md}px)`,
+    lg: `@media only screen and (min-width: ${breakpointValues.lg}px)`,
+    xl: `@media only screen and (min-width: ${breakpointValues.xl}px)`,
   },
   colors: {
     background: '#F8EDE0',

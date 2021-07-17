@@ -19,10 +19,15 @@ const Wrapper: React.FC<ContentBoxProps> = ({ grid, children, ...rest }) =>
 
 const StyledBox = styled(Wrapper)<
   Pick<ContentBoxProps, 'leftOnly' | 'widthRatio'>
->`
-  margin: ${({ leftOnly, widthRatio = 1 }) =>
-    `0 ${leftOnly ? 0 : `${13 * widthRatio}%`} 0 ${13 * widthRatio}%`};
-`;
+>(({ leftOnly, widthRatio = 1, theme }) => ({
+  margin: `0 ${5 * widthRatio}% 0 ${5 * widthRatio}%`,
+  ...(leftOnly && {
+    marginRight: 0,
+  }),
+  [theme.breakpoints.md]: {
+    margin: `0 ${13 * widthRatio}% 0 ${13 * widthRatio}%`,
+  },
+}));
 
 const ContentBox: React.FC<ContentBoxProps> = ({ children, ...rest }) => (
   <StyledBox {...rest}>{children}</StyledBox>

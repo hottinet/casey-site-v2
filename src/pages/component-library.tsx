@@ -92,6 +92,7 @@ const CoreComponentLibrary: React.FC = () => (
       />
       <Image
         alt="Icons, names and uses"
+        mb={48}
         src="/ComponentLibrary/iconDocumentation.png"
       />
       <Title bold>Moving Quickly</Title>

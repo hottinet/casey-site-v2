@@ -13,7 +13,10 @@ type DetailPickleProps = {
 const StyledPickle = styled(Pickle)`
   margin: ${({ theme }) => `${theme.spacing[64]} 0`};
   padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 87%;
+  width: 95%;
+  ${({ theme }) => theme.breakpoints.md} {
+    width: 87%;
+  }
 `;
 
 const PickleGrid = styled(ContentBox)`

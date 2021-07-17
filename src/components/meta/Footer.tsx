@@ -30,13 +30,13 @@ const Footer: React.FC = () => (
       </CaseyLink>
       <FlexBox>
         <FooterLink href="mailto:caseyebradford@gmail.com">
-          <Heading>Email</Heading>
+          <Heading mb={0}>Email</Heading>
         </FooterLink>
         <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
-          <Heading>LinkedIn</Heading>
+          <Heading mb={0}>LinkedIn</Heading>
         </FooterLink>
         <FooterLink href="https://troychryssos.com/">
-          <Heading>Resume</Heading>
+          <Heading mb={0}>Resume</Heading>
         </FooterLink>
       </FlexBox>
     </FlexBox>
