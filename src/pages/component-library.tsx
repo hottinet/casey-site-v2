@@ -4,7 +4,6 @@ import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
-import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
@@ -15,9 +14,9 @@ import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import Video from '~/components/videos/Video';
 
-const DetailStack = styled(StackedText)`
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
-`;
+// const DetailStack = styled(StackedText)`
+//   margin-bottom: ${({ theme }) => theme.spacing[80]};
+// `;
 
 const BorderedVideo = styled(Video)`
   border: 2px solid black;
@@ -26,7 +25,7 @@ const BorderedVideo = styled(Video)`
 `;
 
 const CoreComponentLibrary: React.FC = () => (
-  <Layout title="Component Library">
+  <Layout>
     <ContentBox column>
       <Title bold>Core Component Library</Title>
       <Image
