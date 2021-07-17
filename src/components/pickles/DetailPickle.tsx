@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
+
+import { BreakpointsContext } from '~/contexts/breakpointsContext';
 
 import ContentBox from '../box/ContentBox';
 import { GridBoxProps } from '../box/GridBox';
@@ -27,12 +30,20 @@ const DetailPickle: React.FC<DetailPickleProps> = ({
   columns,
   children,
   className,
-}) => (
-  <StyledPickle className={className}>
-    <PickleGrid center columns={columns} grid widthRatio={1.13}>
-      {children}
-    </PickleGrid>
-  </StyledPickle>
-);
+}) => {
+  const breakpoints = useContext(BreakpointsContext);
+  return (
+    <StyledPickle className={className}>
+      <PickleGrid
+        center
+        columns={columns}
+        grid
+        widthRatio={breakpoints.includes('md') ? 1.13 : 1.05}
+      >
+        {children}
+      </PickleGrid>
+    </StyledPickle>
+  );
+};
 
 export default DetailPickle;
