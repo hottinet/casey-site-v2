@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-type BodyProps = {
+import { MarginProps } from '../box/types';
+
+type BodyProps = Pick<MarginProps, 'mb'> & {
   className?: string;
   children: string;
   bold?: boolean;
@@ -13,16 +15,11 @@ const BodyText = styled.p<Omit<BodyProps, 'children'>>`
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
   font-family: ${({ theme }) => theme.fontFamily};
   line-height: ${({ theme }) => theme.lineHeight.body};
-  margin-bottom: ${({ theme, padded }) => (padded ? theme.spacing[48] : 0)};
+  margin-bottom: ${({ theme, mb = 48 }) => `${theme.spacing[mb]}`};
 `;
 
-const Body: React.FC<BodyProps> = ({
-  children,
-  className,
-  bold,
-  padded = true,
-}) => (
-  <BodyText bold={bold} className={className} padded={padded}>
+const Body: React.FC<BodyProps> = ({ children, className, bold, mb }) => (
+  <BodyText bold={bold} className={className} mb={mb}>
     {children}
   </BodyText>
 );

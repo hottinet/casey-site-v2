@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 
 import ContentBox from '../box/ContentBox';
+import { GridBoxProps } from '../box/GridBox';
 import Pickle from './Pickle';
 
 type DetailPickleProps = {
-  columns?: 1 | 2;
+  columns?: GridBoxProps['columns'];
   children: React.ReactNode | React.ReactNode[];
   className?: string;
 };

@@ -1,7 +1,14 @@
 import React from 'react';
 import { Spacing, Color, BorderWidth } from '~/typings/theme';
 
-export type BoxProps = {
+export type MarginProps = {
+  mt?: Spacing;
+  mr?: Spacing;
+  mb?: Spacing;
+  ml?: Spacing;
+};
+
+export type BoxProps = MarginProps & {
   className?: string;
   children: React.ReactNode | React.Node[];
   p?: Spacing;
@@ -14,10 +21,6 @@ export type BoxProps = {
   pr?: Spacing;
   pb?: Spacing;
   pl?: Spacing;
-  mt?: Spacing;
-  mr?: Spacing;
-  mb?: Spacing;
-  ml?: Spacing;
   display?:
     | 'inline'
     | 'block'
