@@ -12,7 +12,7 @@ import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
-import Video from '~/components/videos/Video';
+// import Video from '~/components/videos/Video';
 
 const DetailPickle = styled(Pickle)`
   margin: ${({ theme }) => `${theme.spacing[64]} 0`};
@@ -29,7 +29,7 @@ const BorderedImage = styled(Image)`
 `;
 
 const VideoUploads: React.FC = () => (
-  <Layout title="Video Upload">
+  <Layout>
     <ContentBox column>
       {/* <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} /> */}
       <Title bold>Improving video upload flow for Core Instructors</Title>

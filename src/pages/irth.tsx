@@ -24,7 +24,7 @@ const PickleStack = styled(StackedText)`
 `;
 
 const Irth: React.FC = () => (
-  <Layout title="Irth">
+  <Layout>
     <ContentBox column>
       <GridBox>
         <Title bold>Title for Irth Project</Title>

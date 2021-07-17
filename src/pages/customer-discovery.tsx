@@ -3,15 +3,15 @@ import styled from '@emotion/styled';
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
-import GridBox from '~/components/box/GridBox';
-import Divider from '~/components/Divider';
-import Image from '~/components/Image';
+// import GridBox from '~/components/box/GridBox';
+// import Divider from '~/components/Divider';
+// import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import Pickle from '~/components/pickles/Pickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
-import Heading from '~/components/typography/Heading';
+// import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 
 const DetailPickle = styled(Pickle)`
@@ -25,7 +25,7 @@ const PickleStack = styled(StackedText)`
 `;
 
 const CustomerDiscovery: React.FC = () => (
-  <Layout title="Customer Discovery">
+  <Layout>
     <ContentBox column>
       <Title bold>Rediscovering the Core Customer</Title>
     </ContentBox>
