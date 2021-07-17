@@ -8,11 +8,12 @@
   "globals": {
     "React": true
   },
-  "plugins": ["react", "@emotion", "@typescript-eslint", "simple-import-sort"],
+  "plugins": ["@emotion", "@typescript-eslint", "simple-import-sort"],
   "extends": [
     "eslint:recommended",
     "airbnb",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "next"
   ],
   "root": true,
 

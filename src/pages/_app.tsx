@@ -1,5 +1,6 @@
-import type { AppProps /* , AppContext */ } from 'next/app';
 import { css, Global, ThemeProvider } from '@emotion/react';
+import type { AppProps /* , AppContext */ } from 'next/app';
+
 import theme from '~/constants/theme';
 
 const marPadZero = css`
