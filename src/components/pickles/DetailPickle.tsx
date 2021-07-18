@@ -35,7 +35,6 @@ const DetailPickle: React.FC<DetailPickleProps> = ({
   return (
     <StyledPickle className={className}>
       <PickleGrid
-        center
         columns={columns}
         grid
         widthRatio={breakpoints.includes('md') ? 1.13 : 1.05}

@@ -54,13 +54,13 @@ const CoreComponentLibrary: React.FC = () => (
         to be added to the library.
       </Body>
       <Heading bold>Manging two style guides</Heading>
-      <Body>
+      <Body mb={80}>
         As a B2B2C business we were designing for both our instructor portal and
         also the student-facing experience for each project. Since there was
         some overlap in the two, I created two pages in our library - one for
         Instructor components and one for Student components.
       </Body>
-      <GridBox columnGap={24}>
+      <GridBox columnGap={24} mb={80} rowGap={24}>
         <Image
           alt="Screenshots of the instructor portal"
           src="/ComponentLibrary/portal.png"
@@ -84,7 +84,11 @@ const CoreComponentLibrary: React.FC = () => (
         </Box>
         <Image alt="theme colors" src="/ComponentLibrary/ThemeControls.png" />
       </GridBox>
-      <Image alt="Same screen in 4 themes" src="/ComponentLibrary/Themes.png" />
+      <Image
+        alt="Same screen in 4 themes"
+        mb={80}
+        src="/ComponentLibrary/Themes.png"
+      />
       <Heading bold>Creating flexible components and documentation</Heading>
       <Body>In order to move quickly</Body>
       <BorderedVideo
@@ -92,7 +96,7 @@ const CoreComponentLibrary: React.FC = () => (
       />
       <Image
         alt="Icons, names and uses"
-        mb={48}
+        mb={80}
         src="/ComponentLibrary/iconDocumentation.png"
       />
       <Title bold>Moving Quickly</Title>

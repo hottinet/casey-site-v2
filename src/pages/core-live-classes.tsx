@@ -60,7 +60,11 @@ const CoreLiveClasses: React.FC = () => (
           instructors log in to their Zoom account, we can make the meetings for
           them. We just need them to input a Title and Date first.
         </Body>
-        <Image alt="Create a zoom meeting" src="/LiveClasses/Zoom.png" />
+        <Image
+          alt="Create a zoom meeting"
+          mb={80}
+          src="/LiveClasses/Zoom.png"
+        />
       </GridBox>
       <Title bold>
         Using Google Maps to set locations for in-person classes
@@ -90,7 +94,7 @@ const CoreLiveClasses: React.FC = () => (
           included in their subscription or not and to set a specific non-member
           price for each event.
         </Body>
-        <Image alt="Pricing Controls" src="/LiveClasses/Pricing.png" />
+        <Image alt="Pricing Controls" mb={80} src="/LiveClasses/Pricing.png" />
       </GridBox>
       <Title bold>Creating accountability for students</Title>
       <Body>
@@ -99,7 +103,11 @@ const CoreLiveClasses: React.FC = () => (
         confirmation and reminder emails for classes and an add-to-calendar
         functionality.
       </Body>
-      <Image alt="Class Booking Screens" src="/LiveClasses/confirmremind.png" />
+      <Image
+        alt="Class Booking Screens"
+        mb={80}
+        src="/LiveClasses/confirmremind.png"
+      />
       <Title bold>Key Learnings</Title>
       <Heading bold>Product Integrations </Heading>
       <BodyOverBody>

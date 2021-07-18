@@ -32,6 +32,7 @@ const CorePrograms: React.FC = () => (
       <Title bold>Launching fitness programs on Core</Title>
       <Image
         alt="Program page on desktop and mobile"
+        mb={80}
         src="/Programs/programscover.png"
       />
       <Heading bold>The Problem</Heading>
@@ -44,7 +45,7 @@ const CorePrograms: React.FC = () => (
         schedule or stringing togther multiple tools to create a digital
         experience.
       </Body>
-      <GridBox center>
+      <GridBox center mb={80}>
         <Box>
           <Heading>Example 1: Sculpt Society</Heading>
           <Body>
@@ -122,7 +123,11 @@ const CorePrograms: React.FC = () => (
             to mark off.
           </Body>
         </Box>
-        <Image alt="Rest Day vs Regular Day" src="/Programs/RestDay.png" />
+        <Image
+          alt="Rest Day vs Regular Day"
+          mb={80}
+          src="/Programs/RestDay.png"
+        />
       </GridBox>
       <Heading bold>Iterating post-launch</Heading>
       <BodyOverBody>
@@ -143,7 +148,7 @@ const CorePrograms: React.FC = () => (
         src="https://player.vimeo.com/video/574497383"
         title="Student experience following a program on web"
       />
-      <GridBox center>
+      <GridBox center mb={80}>
         <Box>
           <Heading bold>
             Ecouraging students to move through the program

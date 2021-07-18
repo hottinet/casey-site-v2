@@ -28,6 +28,10 @@ const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 80px;
 `;
 
+const PaddedVideo = styled(Video)`
+  margin-bottom: 80px;
+`;
+
 const CoreSessions: React.FC = () => (
   <Layout>
     <ContentBox column>
@@ -61,16 +65,21 @@ const CoreSessions: React.FC = () => (
             something went wrong.
           </BodyOverBody>
         </Box>
-        <Video sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
+        <PaddedVideo sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
       </GridBox>
-      <BodyOverBody>
+      <Body>
         It was difficult for us to assess the problems we were hearing about
         over email because we did not have clear error states or upload
         statuses. In Core&apos;s original flow, instructors often thought videos
         were published when they were really still being processed by our server
         because we did not have clear statuses.
-      </BodyOverBody>
-      <Image alt="table view" fitParent src="/Sessions/uploadstatus.png" />
+      </Body>
+      <Image
+        alt="table view"
+        fitParent
+        mb={80}
+        src="/Sessions/uploadstatus.png"
+      />
       <GridBox center mb={48}>
         <Body>
           Many of our instructors are constantly multitasking to support their
@@ -89,7 +98,7 @@ const CoreSessions: React.FC = () => (
       <Heading bold>
         Creating a feedback loop between instructors and students
       </Heading>
-      <Body>
+      <Body mb={80}>
         Two of the big topics that came out of our user interviews were
         Community and Accountability. As a very first step towards including
         these themes in our product, we decided to build out a way for
@@ -98,7 +107,7 @@ const CoreSessions: React.FC = () => (
         well. This opened the feedback loop and allowed instructors to learn
         more about their business.
       </Body>
-      <GridBox columnGap={24} mb={48}>
+      <GridBox columnGap={24} mb={80} rowGap={24}>
         <Video sources={[{ src: '/Sessions/RatingReview2.mp4' }]} />
         <Image alt="placeholder" src="/Sessions/ReviewInstructor.png" />
       </GridBox>
@@ -108,7 +117,7 @@ const CoreSessions: React.FC = () => (
         important. This allowed them to workout in locations without a good wifi
         connection.
       </Body>
-      <GridBox center columns={3} mb={48}>
+      <GridBox center columns={3} mb={80}>
         <Image alt="Download States" src="/Sessions/Downloads_1.png" />
         <Image alt="Downloaded Session" src="/Sessions/Downloads_2.png" />
         <Image alt="All Downloads" src="/Sessions/Downloads_3.png" />
