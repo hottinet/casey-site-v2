@@ -46,6 +46,10 @@ const PickleContentWrapper = styled(GridBox)`
   width: 100%;
 `;
 
+const MobileAboutWrapper = styled(Box)`
+  margin-left: -0.6rem;
+`;
+
 // END - STYLED COMPONENTS - END
 
 // START - SUBCOMPONENTS - START
@@ -90,9 +94,7 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 }) => (
   <span>
     <Link href={href} internal>
-      <LinkText bold padded={false}>
-        {text}
-      </LinkText>
+      <LinkText bold>{text}</LinkText>
     </Link>
   </span>
 );
@@ -111,7 +113,9 @@ const Home: React.FC = () => {
           <Link href="https://core.fitness/">Core</Link>
         </Title>
         {!breakpoints.includes('sm') && (
-          <TextButton label="About Me" onClick={undefined} />
+          <MobileAboutWrapper>
+            <TextButton label="About Me" onClick={undefined} />
+          </MobileAboutWrapper>
         )}
       </Box>
       <HomePickle
