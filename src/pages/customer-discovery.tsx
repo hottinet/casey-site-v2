@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
-// import GridBox from '~/components/box/GridBox';
+import GridBox from '~/components/box/GridBox';
 // import Divider from '~/components/Divider';
-// import Image from '~/components/Image';
+import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
 import NextProjectPickle from '~/components/pickles/NextProjectPickle';
@@ -17,6 +17,39 @@ import Title from '~/components/typography/Title';
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
+`;
+
+const BlueBox = styled(Box)`
+  background-color: ${({ theme }) => theme.colors.blue};
+  padding: ${({ theme }) => theme.spacing[48]};
+  border-radius: 50px;
+  color: white;
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
+`;
+
+const GreenBox = styled(Box)`
+  background-color: ${({ theme }) => theme.colors.green};
+  padding: ${({ theme }) => theme.spacing[48]};
+  border-radius: 50px;
+  color: white;
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
+`;
+
+const RedBox = styled(Box)`
+  background-color: ${({ theme }) => theme.colors.red};
+  padding: ${({ theme }) => theme.spacing[48]};
+  border-radius: 50px;
+  color: white;
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
+`;
+
+const OutlineBox = styled(Box)`
+  border-style: solid;
+  border-width: 5px;
+  border-color: ${({ theme }) => theme.colors.blue};
+  border-radius: 100px;
+  padding: 48px 80px;
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
 `;
 
 const CustomerDiscovery: React.FC = () => (
@@ -44,7 +77,31 @@ const CustomerDiscovery: React.FC = () => (
         from this group, we found it difficult to migrate them from their
         existing platforms for a few reasons.
       </Body>
-      <Body>Migrating Students, Migrating Videos, lack of features</Body>
+      <GridBox columnGap={24}>
+        <Box>
+          <Heading bold>Migrating Students</Heading>
+          <Body>
+            It&apos;s hard to get students to move off of platforms that they
+            are familiar with and might have purchased long-term subscriptions
+            on.
+          </Body>
+        </Box>
+        <Box>
+          <Heading bold>Migrating Videos</Heading>
+          <Body>
+            Although Core offered unlimited video storage and white-glove
+            migration for a fee, Migrating all of their existing content was
+            still an obstacle for instructors.
+          </Body>
+        </Box>
+        <Box>
+          <Heading bold>Feature Set</Heading>
+          <Body>
+            As a very new company, Core was lacking some basic features that
+            competitors offered.
+          </Body>
+        </Box>
+      </GridBox>
       <Title bold>Our Hypothesis</Title>
       <Body>
         As we experienced sticking points with our current clients, we turned
@@ -52,17 +109,63 @@ const CustomerDiscovery: React.FC = () => (
         was that these budding instructors might be easier to migrate onto our
         platform as we worked towards feature parody with our competitors.
       </Body>
-      <Body>
-        Our goal was to interview 20 less established intructors and identify
-        their main pain points and their interest in Core.
-      </Body>
-      <Heading bold>The Process</Heading>
-      <Heading>
-        Outreach, Interview, Identify Common Pain Points, Identify solutions, in
-        parallel competitive research
-      </Heading>
+      <OutlineBox>
+        <Heading bold>
+          Our goal was to interview 20+ less established intructors to identify
+          their main pain points and how Core could solve them.
+        </Heading>
+        <Heading>Our Process</Heading>
+      </OutlineBox>
       <Title bold>Competitive Landscape</Title>
       <Title bold>Key Takeaways</Title>
+      <BlueBox>
+        <Heading bold>Marketing</Heading>
+        <Image alt="test" mb={80} src="/CustomerDiscovery/Marketing.png" />
+        <GridBox columnGap={24}>
+          <Box>
+            <Body mb={16}>Pain Point</Body>
+            <Title bold>Instructors need help attracting new students</Title>
+          </Box>
+          <Box>
+            <Body mb={16}>What we build</Body>
+            <Heading bold>Explore</Heading>
+          </Box>
+        </GridBox>
+      </BlueBox>
+      <GreenBox>
+        <Heading bold>Flexibility</Heading>
+        <Image alt="test" mb={80} src="/CustomerDiscovery/Flexibility.png" />
+        <GridBox columnGap={24}>
+          <Box>
+            <Body mb={16}>Pain Point</Body>
+            <Title bold>
+              Instructors are constantly experimenting with their offerings to
+              engage students
+            </Title>
+          </Box>
+          <Box>
+            <Body mb={16}>What we build</Body>
+            <Heading bold>Explore</Heading>
+          </Box>
+        </GridBox>
+      </GreenBox>
+      <RedBox>
+        <Heading bold>Accountability</Heading>
+        <Image alt="test" mb={80} src="/CustomerDiscovery/Accountability.png" />
+        <GridBox columnGap={24}>
+          <Box>
+            <Body mb={16}>Pain Point</Body>
+            <Title bold>
+              Instructors are constantly experimenting with their offerings to
+              engage students
+            </Title>
+          </Box>
+          <Box>
+            <Body mb={16}>What we build</Body>
+            <Heading bold>Explore</Heading>
+          </Box>
+        </GridBox>
+      </RedBox>
       <Title bold>Key Learnings</Title>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
