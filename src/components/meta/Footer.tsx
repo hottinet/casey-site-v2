@@ -47,7 +47,7 @@ const LinkWrapper = styled(FlexBox)`
 const Footer: React.FC = () => (
   <Box p={48}>
     <FooterDivider />
-    <FooterWrapper alignItems="center" justifyContent="space-between">
+    <FooterWrapper justifyContent="space-between">
       <CaseyLink href="/" internal noHover>
         <Heading bold mb={0}>
           Casey Bradford
