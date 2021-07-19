@@ -11,9 +11,14 @@ const FooterDivider = styled(Divider)`
 `;
 
 const FooterLink = styled(Link)`
-  margin-right: ${({ theme }) => theme.spacing[24]};
   :last-child {
     margin-right: 0;
+  }
+  margin-top: ${({ theme }) => theme.spacing[12]};
+  width: min-content;
+  ${({ theme }) => theme.breakpoints.sm} {
+    margin-top: 0;
+    margin-right: ${({ theme }) => theme.spacing[24]};
   }
 `;
 
@@ -21,14 +26,34 @@ const CaseyLink = styled(Link)`
   text-decoration: none;
 `;
 
+const FooterWrapper = styled(FlexBox)`
+  flex-direction: column;
+  align-items: flex-start;
+  ${({ theme }) => theme.breakpoints.sm} {
+    flex-direction: row;
+    align-items: center;
+  }
+`;
+
+const LinkWrapper = styled(FlexBox)`
+  flex-direction: column;
+  margin-left: -0.25rem;
+  ${({ theme }) => theme.breakpoints.sm} {
+    margin-left: 0;
+    flex-direction: row;
+  }
+`;
+
 const Footer: React.FC = () => (
   <Box p={48}>
     <FooterDivider />
-    <FlexBox alignItems="center" justifyContent="space-between">
+    <FooterWrapper justifyContent="space-between">
       <CaseyLink href="/" internal noHover>
-        <Heading bold>Casey Bradford</Heading>
+        <Heading bold mb={0}>
+          Casey Bradford
+        </Heading>
       </CaseyLink>
-      <FlexBox>
+      <LinkWrapper>
         <FooterLink href="mailto:caseyebradford@gmail.com">
           <Heading mb={0}>Email</Heading>
         </FooterLink>
@@ -38,8 +63,8 @@ const Footer: React.FC = () => (
         <FooterLink href="https://troychryssos.com/">
           <Heading mb={0}>Resume</Heading>
         </FooterLink>
-      </FlexBox>
-    </FlexBox>
+      </LinkWrapper>
+    </FooterWrapper>
   </Box>
 );
 
