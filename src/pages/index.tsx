@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
 
 import Box from '~/components/box/Box';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import ArrowButton from '~/components/buttons/ArrowButton';
+import TextButton from '~/components/buttons/TextButton';
 import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
@@ -15,6 +17,7 @@ import {
   CUSTOMER_DISCOVERY_ROUTE,
   VIDEO_UPLOAD_ROUTE,
 } from '~/constants/routing';
+import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
 
 // START - STYLED COMPONENTS - START
@@ -95,55 +98,64 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 );
 // END - SUBCOMPONENTS - END
 
-const Home: React.FC = () => (
-  <Layout>
-    <Box mx={48}>
-      <Box>
-        <Title>Product Designer balancing personality and utility.</Title>
+const Home: React.FC = () => {
+  const breakpoints = useContext(BreakpointsContext);
+  return (
+    <Layout>
+      <Box mx={48}>
+        <Box>
+          <Title>Product Designer balancing personality and utility.</Title>
+        </Box>
+        <Title>
+          Most recently at AlleyCorp’s&thinsp;
+          <Link href="https://core.fitness/">Core</Link>
+        </Title>
+        {!breakpoints.includes('sm') && (
+          <TextButton label="About Me" onClick={undefined} />
+        )}
       </Box>
-      <Title>
-        Most recently at AlleyCorp’s&thinsp;
-        <Link href="https://core.fitness/">Core</Link>
-      </Title>
-    </Box>
-    <HomePickle
-      imageAlt="several app screens"
-      imageSrc="/CustomerDiscovery/Customers.gif"
-      linkTo={CUSTOMER_DISCOVERY_ROUTE}
-      pickleColor="green"
-      title="Rediscovering the Core Customer"
-    />
-    <HomePickle
-      imageAlt="Donkey kong"
-      imageSrc="/ComponentLibrary/sessions.png"
-      linkTo={CORE_COMPONENT_LIBRARY_ROUTE}
-      pickleColor="red"
-      title="Building Core's Component Library"
-    />
-    <HomePickle
-      imageAlt="Video Upload UI"
-      imageSrc="/VideoUpload/VideoCover.png"
-      linkTo={VIDEO_UPLOAD_ROUTE}
-      pickleColor="blue"
-      title="Improving Video Upload Flow"
-    />
-    <HomePickle
-      imageAlt="Donkey kong"
-      imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
-      linkTo="/"
-      pickleColor="yellow"
-      title="Events on Core"
-    />
-    <GridBox columnGap={48} mt={128} mx={48} rowGap={16}>
-      <SecondaryProjectLink href="/some-new-page" text="Programs on Core" />
-      <SecondaryProjectLink
-        href="/some-new-page"
-        text="UI Design for Irth non-profit"
+      <HomePickle
+        imageAlt="several app screens"
+        imageSrc="/CustomerDiscovery/Customers.gif"
+        linkTo={CUSTOMER_DISCOVERY_ROUTE}
+        pickleColor="green"
+        title="Rediscovering the Core Customer"
       />
-      <SecondaryProjectLink href="/some-new-page" text="Graphic Design Work" />
-      <SecondaryProjectLink href="/some-new-page" text="Sessions on Core" />
-    </GridBox>
-  </Layout>
-);
+      <HomePickle
+        imageAlt="Donkey kong"
+        imageSrc="/ComponentLibrary/sessions.png"
+        linkTo={CORE_COMPONENT_LIBRARY_ROUTE}
+        pickleColor="red"
+        title="Building Core's Component Library"
+      />
+      <HomePickle
+        imageAlt="Video Upload UI"
+        imageSrc="/VideoUpload/VideoCover.png"
+        linkTo={VIDEO_UPLOAD_ROUTE}
+        pickleColor="blue"
+        title="Improving Video Upload Flow"
+      />
+      <HomePickle
+        imageAlt="Donkey kong"
+        imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
+        linkTo="/"
+        pickleColor="yellow"
+        title="Events on Core"
+      />
+      <GridBox columnGap={48} mt={128} mx={48} rowGap={16}>
+        <SecondaryProjectLink href="/some-new-page" text="Programs on Core" />
+        <SecondaryProjectLink
+          href="/some-new-page"
+          text="UI Design for Irth non-profit"
+        />
+        <SecondaryProjectLink
+          href="/some-new-page"
+          text="Graphic Design Work"
+        />
+        <SecondaryProjectLink href="/some-new-page" text="Sessions on Core" />
+      </GridBox>
+    </Layout>
+  );
+};
 
 export default Home;
