@@ -4,7 +4,7 @@ import { MarginProps } from '../box/types';
 
 type BodyProps = Pick<MarginProps, 'mb'> & {
   className?: string;
-  children: string;
+  children: string | (string | React.ReactElement)[];
   bold?: boolean;
   padded?: boolean;
 };
