@@ -51,7 +51,13 @@ const BoldSpan = styled.span`
 const CustomerDiscovery: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title bold>Rediscovering the Core Customer</Title>
+      <Title bold mb={48}>
+        Rediscovering the Core Customer
+      </Title>
+      <Image
+        alt="multiple screenshots of instructor pages"
+        src="/CustomerDiscovery/customerhero.png"
+      />
     </ContentBox>
     <DetailPickle>
       <PickleStack
