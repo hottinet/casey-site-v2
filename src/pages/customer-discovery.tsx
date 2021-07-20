@@ -65,7 +65,7 @@ const CustomerDiscovery: React.FC = () => (
         topText="The Goal"
       />
       <PickleStack
-        bottomText="Reach out to and conduct interviews with potential users. Identify common pain points and possible solutions to present to investors."
+        bottomText="Reach out to and conduct interviews with potential users. Identify common pain points and possible solutions to present to the board."
         topText="My Role"
       />
     </DetailPickle>
@@ -105,7 +105,7 @@ const CustomerDiscovery: React.FC = () => (
         </Box>
       </GridBox>
       <Title bold>Our Hypothesis</Title>
-      <Body>
+      <Body mb={24}>
         As we experienced sticking points with our current clients, we turned
         our sights down stream to less established instructors.{' '}
         <BoldSpan>
@@ -117,8 +117,30 @@ const CustomerDiscovery: React.FC = () => (
         Our goal was to interview 20+ less established intructors to identify
         their main pain points and how Core could solve them.
       </Body>
-      <Heading>Our Process</Heading>
-      <Title bold>Competitive Landscape</Title>
+      <Heading bold>Our Process</Heading>
+      <Image
+        alt="Outreach, Interview, Pain Points, Solutions, Product Roadmap"
+        mb={80}
+        src="/CustomerDiscovery/process.png"
+      />
+      <GridBox center>
+        <Box>
+          <Title bold>Competitive Landscape</Title>
+          <Body>
+            While our platform was too early for instructors with existing
+            subscription businesses, it was also not yet flexible enough for
+            aspiring instructors who couldn&apos;t yet justify a subscription
+            business. These creators needed to lean on one-time purchases to
+            provide a pathway to subscription membership. Show Monetization
+            Path.
+          </Body>
+        </Box>
+        <Image
+          alt="Showing a fitness creators funnel to subcription"
+          src="/CustomerDiscovery/monetization.png"
+        />
+      </GridBox>
+      <Body> Show chart w Talent Hack and UScreen and Sutra</Body>
       <Title bold>Key Takeaways</Title>
       <BlueBox>
         <Heading bold>Marketing</Heading>
@@ -211,8 +233,7 @@ const CustomerDiscovery: React.FC = () => (
       <Body mb={24}>
         <BoldSpan>Instructors want to have an app</BoldSpan> to increase
         accesibility for students but do not have the resources to create one on
-        their own. This makes our iOS offering an important piece to keep in
-        play.
+        their own. This makes our iOS offering an important differeniator.
       </Body>
       <Body>
         <BoldSpan>Producing high quality video content is hard.</BoldSpan> The
@@ -220,6 +241,7 @@ const CustomerDiscovery: React.FC = () => (
         ways that we can provide to communicate workouts outside of video can
         also be helpful.
       </Body>
+      <Body> Show product Roadmap</Body>
       <Title bold>Key Learnings</Title>
     </ContentBox>
     <FlexBox justifyContent="flex-end" mt={128}>
