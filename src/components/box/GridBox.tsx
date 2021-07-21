@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { Spacing } from '~/typings/theme';
 
 import Box from './Box';
-import { AlignItems, BoxProps, JustifyContent } from './types';
+import { AlignItems, BoxProps } from './types';
 
 export type GridBoxProps = BoxProps & {
   center?: boolean;
-  justifyItems?: JustifyContent;
+  justifyItems?: 'normal' | 'start' | 'end' | 'center';
   alignItems?: AlignItems;
   inline?: boolean;
   columns?: 1 | 2 | 3 | 4;
@@ -28,10 +28,10 @@ const Grid = styled(Box)<GridBoxProps>(
     rowGap,
     theme,
   }) => ({
+    justifyItems,
     alignItems,
     columnGap,
     rowGap,
-    justifyItems: 'center',
     gridTemplateColumns: '1fr',
     ...(center && {
       justifyItems: 'center',
@@ -42,7 +42,6 @@ const Grid = styled(Box)<GridBoxProps>(
     }),
     [theme.breakpoints.md]: {
       gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      justifyItems,
     },
   })
 );
