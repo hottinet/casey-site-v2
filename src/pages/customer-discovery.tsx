@@ -309,6 +309,13 @@ const CustomerDiscovery: React.FC = () => {
           src="/CustomerDiscovery/competitors_2.png"
         />
         <Title bold>Translating our findings into a product roadmap</Title>
+        <Body>
+          While we had some catching up to do in terms of payment flexibility
+          and the polish on our live classes feature, we also identified some
+          areas that we thought could help us stand out to customers. Our
+          immediate roadmap was focused on catching up but we also set our
+          sights on ideating larger pushes around Marketing and Accountability.
+        </Body>
         <Title bold>Key Learnings</Title>
       </ContentBox>
       <FlexBox justifyContent="flex-end" mt={128}>
