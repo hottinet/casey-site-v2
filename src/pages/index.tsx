@@ -106,7 +106,9 @@ const Home: React.FC = () => {
     <Layout>
       <Box mx={48}>
         <Box>
-          <Title>Product Designer balancing personality and utility.</Title>
+          <Title mb={8}>
+            Product Designer balancing personality and utility.
+          </Title>
         </Box>
         <Title>
           Most recently at AlleyCorp’s&thinsp;

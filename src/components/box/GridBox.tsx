@@ -7,7 +7,7 @@ import { AlignItems, BoxProps, JustifyContent } from './types';
 
 export type GridBoxProps = BoxProps & {
   center?: boolean;
-  justifyContent?: JustifyContent;
+  justifyItems?: JustifyContent;
   alignItems?: AlignItems;
   inline?: boolean;
   columns?: 1 | 2 | 3 | 4;
@@ -20,7 +20,7 @@ const Grid = styled(Box)<GridBoxProps>(
   { display: 'grid' },
   ({
     center,
-    justifyContent,
+    justifyItems,
     alignItems,
     inline,
     columns = 2,
@@ -28,13 +28,13 @@ const Grid = styled(Box)<GridBoxProps>(
     rowGap,
     theme,
   }) => ({
-    justifyContent,
     alignItems,
     columnGap,
     rowGap,
+    justifyItems: 'center',
     gridTemplateColumns: '1fr',
     ...(center && {
-      justifyContent: 'center',
+      justifyItems: 'center',
       alignItems: 'center',
     }),
     ...(inline && {
@@ -42,6 +42,7 @@ const Grid = styled(Box)<GridBoxProps>(
     }),
     [theme.breakpoints.md]: {
       gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      justifyItems,
     },
   })
 );
