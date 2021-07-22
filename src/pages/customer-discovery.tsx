@@ -3,14 +3,12 @@ import { useContext } from 'react';
 
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
-import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 // import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
-import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
@@ -344,9 +342,6 @@ const CustomerDiscovery: React.FC = () => {
           navigating start up world.{' '}
         </Body>
       </ContentBox>
-      <FlexBox justifyContent="flex-end" mt={128}>
-        <NextProjectPickle nextProjectPath="/" />
-      </FlexBox>
     </Layout>
   );
 };

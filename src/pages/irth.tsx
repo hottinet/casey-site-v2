@@ -1,13 +1,11 @@
 import styled from '@emotion/styled';
 
 import ContentBox from '~/components/box/ContentBox';
-import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
-import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
@@ -102,9 +100,6 @@ const Irth: React.FC = () => (
         that go into each build from a design perspective.
       </Body>
     </ContentBox>
-    <FlexBox justifyContent="flex-end" mt={128}>
-      <NextProjectPickle nextProjectPath="/" />
-    </FlexBox>
   </Layout>
 );
 

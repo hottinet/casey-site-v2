@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { ChangeEventHandler, useContext, useState } from 'react';
 
-import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import Heading from '~/components/typography/Heading';
 import { AuthContext } from '~/contexts/authContext';
 
@@ -50,9 +49,6 @@ const AuthOverlay: React.FC = () => {
           onChange={onChange}
         />
         <TextButton label="Submit" type="submit" onClick={onSubmit} />
-      </FlexBox>
-      <FlexBox justifyContent="flex-end" mt={128}>
-        <NextProjectPickle nextProjectPath="/" />
       </FlexBox>
     </Box>
   );

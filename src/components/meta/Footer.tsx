@@ -4,6 +4,7 @@ import Box from '../box/Box';
 import FlexBox from '../box/FlexBox';
 import Divider from '../Divider';
 import Link from '../Link';
+import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
 
 const FooterDivider = styled(Divider)`
@@ -44,28 +45,39 @@ const LinkWrapper = styled(FlexBox)`
   }
 `;
 
-const Footer: React.FC = () => (
-  <Box p={48}>
-    <FooterDivider />
-    <FooterWrapper justifyContent="space-between">
-      <CaseyLink href="/" internal noHover>
-        <Heading bold mb={0}>
-          Casey Bradford
-        </Heading>
-      </CaseyLink>
-      <LinkWrapper>
-        <FooterLink href="mailto:caseyebradford@gmail.com">
-          <Heading mb={0}>Email</Heading>
-        </FooterLink>
-        <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
-          <Heading mb={0}>LinkedIn</Heading>
-        </FooterLink>
-        <FooterLink href="https://troychryssos.com/">
-          <Heading mb={0}>Resume</Heading>
-        </FooterLink>
-      </LinkWrapper>
-    </FooterWrapper>
-  </Box>
+type FooterProps = {
+  nextPath?: string;
+};
+
+const Footer: React.FC<FooterProps> = ({ nextPath }) => (
+  <>
+    {nextPath && (
+      <FlexBox justifyContent="flex-end" mt={128}>
+        <NextProjectPickle nextProjectPath={nextPath} />
+      </FlexBox>
+    )}
+    <Box p={48}>
+      <FooterDivider />
+      <FooterWrapper justifyContent="space-between">
+        <CaseyLink href="/" internal noHover>
+          <Heading bold mb={0}>
+            Casey Bradford
+          </Heading>
+        </CaseyLink>
+        <LinkWrapper>
+          <FooterLink href="mailto:caseyebradford@gmail.com">
+            <Heading mb={0}>Email</Heading>
+          </FooterLink>
+          <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
+            <Heading mb={0}>LinkedIn</Heading>
+          </FooterLink>
+          <FooterLink href="https://troychryssos.com/">
+            <Heading mb={0}>Resume</Heading>
+          </FooterLink>
+        </LinkWrapper>
+      </FooterWrapper>
+    </Box>
+  </>
 );
 
 export default Footer;

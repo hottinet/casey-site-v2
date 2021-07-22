@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 
 import ContentBox from '~/components/box/ContentBox';
-import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
-import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
@@ -126,9 +124,6 @@ const CoreLiveClasses: React.FC = () => (
       <Heading bold>Working in the App Store</Heading>
       <Body>xyz</Body>
     </ContentBox>
-    <FlexBox justifyContent="flex-end" mt={128}>
-      <NextProjectPickle nextProjectPath="/" />
-    </FlexBox>
   </Layout>
 );
 
