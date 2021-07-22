@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { ChangeEventHandler, useContext, useState } from 'react';
 
+import Heading from '~/components/typography/Heading';
 import { AuthContext } from '~/contexts/authContext';
 
 import FlexBox from '../box/FlexBox';
@@ -37,7 +38,8 @@ const AuthOverlay: React.FC = () => {
   };
 
   return (
-    <FlexBox center column>
+    <FlexBox center column mb={80}>
+      <Heading>A password is required to view this page</Heading>
       <Input
         isWrong={isWrong}
         type="password"

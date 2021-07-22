@@ -67,7 +67,7 @@ const CustomerDiscovery: React.FC = () => {
       </ContentBox>
       <DetailPickle>
         <PickleStack
-          bottomText="Identify the painpoints of a Tier 3 intructor and solutions we can provide."
+          bottomText="Identify the painpoints of an aspiring intructor and solutions we can provide in the context of the competitive landscape."
           topText="The Goal"
         />
         <PickleStack
@@ -88,7 +88,7 @@ const CustomerDiscovery: React.FC = () => {
           amount of interest from this group, we found it difficult to migrate
           them from their existing platforms for a few reasons.
         </Body>
-        <GridBox columnGap={24}>
+        <GridBox center mb={80}>
           <Box>
             <Heading bold>Migrating Students</Heading>
             <Body>
@@ -96,24 +96,23 @@ const CustomerDiscovery: React.FC = () => {
               are familiar with and might have purchased long-term subscriptions
               on.
             </Body>
-          </Box>
-          <Box>
             <Heading bold>Migrating Videos</Heading>
             <Body>
               Although Core offered unlimited video storage and white-glove
               migration for a fee, migrating all of their existing content was
               still an obstacle for instructors.
             </Body>
-          </Box>
-          <Box>
             <Heading bold>Feature Set</Heading>
             <Body>
               As a very new company, Core was lacking some basic features that
               competitors offered.
             </Body>
           </Box>
+          <Image
+            alt="iPhone screenshot of workout class on Core"
+            src="/CustomerDiscovery/KateSession.png"
+          />
         </GridBox>
-        <Body>Image of phone</Body>
         <Title bold>How do we adapt our business?</Title>
         <Body mb={24}>
           As we experienced sticking points with our current clients, we turned
@@ -316,7 +315,34 @@ const CustomerDiscovery: React.FC = () => {
           immediate roadmap was focused on catching up but we also set our
           sights on ideating larger pushes around Marketing and Accountability.
         </Body>
+        <Image
+          alt="Product Roadmap"
+          mb={80}
+          src="/CustomerDiscovery/roadmap.png"
+        />
         <Title bold>Key Learnings</Title>
+        <Heading bold>
+          Understanding your target audience and the market
+        </Heading>
+        <Body mb={24}>
+          Doing interviews with potential customers was extremely helpful in
+          understanding what needed to be built in order for them to adopt the
+          platform. While it was eye-opening to do this exercise mid-pivot, it
+          would have been great to start with a more fleshed out idea of our
+          initial customer. Throughout my time at Core, using similar products
+          often was a great way to get an idea of what our customer&apos;s other
+          options were - and the high points and low points of those products.
+        </Body>
+        <Heading bold>Working at a startup</Heading>
+        <Body>
+          With an internal team of 6, Core was the smallest and newest company I
+          have worked at full-time. I took on many projects outside of product
+          design including advertising, marketing, social media and working
+          closely with the AlleyCorp team to navigate our business. Although we
+          couldn&apos;t gain traction quickly enough to continue building Core,
+          I learned a lot about working closely with a product team and
+          navigating start up world.{' '}
+        </Body>
       </ContentBox>
       <FlexBox justifyContent="flex-end" mt={128}>
         <NextProjectPickle nextProjectPath="/" />
