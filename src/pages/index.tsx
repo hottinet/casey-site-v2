@@ -10,12 +10,15 @@ import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import Pickle from '~/components/pickles/Pickle';
-import { HeadingText } from '~/components/typography/Heading';
+import Heading, { HeadingText } from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import {
   CORE_COMPONENT_LIBRARY_ROUTE,
+  CORE_LIVE_CLASSES,
+  CORE_PROGRAMS,
+  CORE_SESSIONS,
   CUSTOMER_DISCOVERY_ROUTE,
-  VIDEO_UPLOAD_ROUTE,
+  IRTH_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -121,44 +124,51 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
+        imageAlt="Donkey kong"
+        imageSrc="/LiveClasses/LiveClassCover.png"
+        linkTo={CORE_LIVE_CLASSES}
+        pickleColor="green"
+        title="Designing a live class experience for fitness"
+      />
+      <HomePickle
+        imageAlt="Video Upload UI"
+        imageSrc="/Programs/programscover.png"
+        linkTo={CORE_PROGRAMS}
+        pickleColor="red"
+        title="Building fitness programs on Core"
+      />
+      <HomePickle
         imageAlt="several app screens"
         imageSrc="/CustomerDiscovery/Customers.gif"
         linkTo={CUSTOMER_DISCOVERY_ROUTE}
-        pickleColor="green"
+        pickleColor="blue"
         title="Rediscovering the Core Customer"
       />
       <HomePickle
         imageAlt="Donkey kong"
-        imageSrc="/ComponentLibrary/sessions.png"
-        linkTo={CORE_COMPONENT_LIBRARY_ROUTE}
-        pickleColor="red"
-        title="Building Core's Component Library"
-      />
-      <HomePickle
-        imageAlt="Video Upload UI"
-        imageSrc="/VideoUpload/VideoCover.png"
-        linkTo={VIDEO_UPLOAD_ROUTE}
-        pickleColor="blue"
-        title="Improving Video Upload Flow"
-      />
-      <HomePickle
-        imageAlt="Donkey kong"
-        imageSrc="https://upload.wikimedia.org/wikipedia/en/7/75/Donkey_Kong_Country_Returns_Mine_Cart.png"
-        linkTo="/"
+        imageSrc="VideoUpload/VideoCover.png"
+        linkTo={CORE_SESSIONS}
         pickleColor="yellow"
-        title="Events on Core"
+        title="Improving content creation and consumption"
       />
+      <Heading>Other Projects</Heading>
       <GridBox columnGap={48} mt={128} mx={48} rowGap={16}>
-        <SecondaryProjectLink href="/some-new-page" text="Programs on Core" />
         <SecondaryProjectLink
-          href="/some-new-page"
-          text="UI Design for Irth non-profit"
+          href={CORE_COMPONENT_LIBRARY_ROUTE}
+          text="Core: Building the Component Library"
+        />
+        <SecondaryProjectLink
+          href={IRTH_ROUTE}
+          text="Irth: Bringing warmth to a sensitive subject through UI Design"
         />
         <SecondaryProjectLink
           href="/some-new-page"
-          text="Graphic Design Work"
+          text="A sampling of graphic design work"
         />
-        <SecondaryProjectLink href="/some-new-page" text="Sessions on Core" />
+        <SecondaryProjectLink
+          href="/some-new-page"
+          text="Enkasa: Launching a tool for homebuyers"
+        />
       </GridBox>
     </Layout>
   );

@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
 import { ChangeEventHandler, useContext, useState } from 'react';
 
+import NextProjectPickle from '~/components/pickles/NextProjectPickle';
 import Heading from '~/components/typography/Heading';
 import { AuthContext } from '~/contexts/authContext';
 
+import Box from '../box/Box';
 import FlexBox from '../box/FlexBox';
 import TextButton from '../buttons/TextButton';
 
@@ -38,16 +40,21 @@ const AuthOverlay: React.FC = () => {
   };
 
   return (
-    <FlexBox center column mb={80}>
-      <Heading>A password is required to view this page</Heading>
-      <Input
-        isWrong={isWrong}
-        type="password"
-        value={password}
-        onChange={onChange}
-      />
-      <TextButton label="Submit" type="submit" onClick={onSubmit} />
-    </FlexBox>
+    <Box>
+      <FlexBox center column mb={80}>
+        <Heading>A password is required to view this page</Heading>
+        <Input
+          isWrong={isWrong}
+          type="password"
+          value={password}
+          onChange={onChange}
+        />
+        <TextButton label="Submit" type="submit" onClick={onSubmit} />
+      </FlexBox>
+      <FlexBox justifyContent="flex-end" mt={128}>
+        <NextProjectPickle nextProjectPath="/" />
+      </FlexBox>
+    </Box>
   );
 };
 export default AuthOverlay;
