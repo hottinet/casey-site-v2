@@ -6,3 +6,5 @@ export const CORE_PROGRAMS = '/core-programs';
 export const CORE_SESSIONS = '/core-sessions';
 export const IRTH_ROUTE = '/irth';
 export const HOME_ROUTE = '/';
+
+export const RESTRICTED_ROUTES = [CUSTOMER_DISCOVERY_ROUTE];

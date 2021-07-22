@@ -3,4 +3,5 @@ export type ButtonProps = {
   onClick: (() => void) | undefined;
   className?: string;
   variant?: 'primary' | 'secondary';
+  type?: 'submit' | 'button';
 };

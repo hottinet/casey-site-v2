@@ -60,10 +60,12 @@ const TextButton: React.FC<TextButtonProps> = ({
   variant = 'primary',
   className,
   buttonClassName,
+  type,
 }) => (
   <AnimationWrapper className={className}>
     <StyledButton
       className={buttonClassName}
+      type={type}
       variant={variant}
       onClick={onClick}
     >

@@ -4,14 +4,20 @@ import FlexBox from '../box/FlexBox';
 import { PickleProps } from './types';
 
 const PickleBody = styled(FlexBox)<Pick<PickleProps, 'origin'>>(
-  ({ origin }) => ({
+  ({ origin, theme }) => ({
     ...(origin === 'left' && {
       borderLeftWidth: 0,
-      borderRadius: '0 1000px 1000px 0',
+      borderRadius: '0 50px 50px 0',
+      [theme.breakpoints.sm]: {
+        borderRadius: '0 1000px 1000px 0',
+      },
     }),
     ...(origin === 'right' && {
       borderRightWidth: 0,
-      borderRadius: '1000px 0 0 1000px',
+      borderRadius: '50px 0 0 50px',
+      [theme.breakpoints.sm]: {
+        borderRadius: '1000px 0 0 1000px',
+      },
     }),
   })
 );
