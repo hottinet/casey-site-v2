@@ -17,7 +17,7 @@ const Path = styled.path<{ color: Color }>`
   fill: ${({ color, theme }) => theme.colors[color]};
 `;
 
-const Open: React.FC<Props> = ({
+const Arrow: React.FC<Props> = ({
   className,
   color = 'textSecondary',
   title,
@@ -44,4 +44,4 @@ const Open: React.FC<Props> = ({
   </Icon>
 );
 
-export default Open;
+export default Arrow;
