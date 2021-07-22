@@ -59,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({ nextPath }) => (
     <Box p={48}>
       <FooterDivider />
       <FooterWrapper justifyContent="space-between">
-        <CaseyLink href="/" internal noHover>
+        <CaseyLink href="/" internal noHoverStyles>
           <Heading bold mb={0}>
             Casey Bradford
           </Heading>

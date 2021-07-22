@@ -88,9 +88,9 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
       <BreakpointsContext.Provider value={windowBreakpoints}>
         <HoverImageContext.Provider value={hoverImageRef}>
           <Global styles={globalStyles} />
+          <HoverTarget ref={hoverImageRef} />
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           <Component {...pageProps} />
-          <HoverTarget ref={hoverImageRef} />
         </HoverImageContext.Provider>
       </BreakpointsContext.Provider>
     </ThemeProvider>

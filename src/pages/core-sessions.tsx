@@ -72,12 +72,7 @@ const CoreSessions: React.FC = () => (
         were published when they were really still being processed by our server
         because we did not have clear statuses.
       </Body>
-      <Image
-        alt="table view"
-        fitParent
-        mb={80}
-        src="/Sessions/uploadstatus.png"
-      />
+      <Image alt="table view" mb={80} src="/Sessions/uploadstatus.png" />
       <GridBox center mb={48}>
         <Body>
           Many of our instructors are constantly multitasking to support their

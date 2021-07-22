@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
+import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
 import { MouseEventHandler, useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { HoverImageContext } from '~/contexts/hoverImageContext';
+
+import Image from './Image';
 
 type LinkProps = {
   internal?: boolean;
@@ -34,12 +36,53 @@ const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>`
   }
 `;
 
-const HoverImage: React.FC<
-  Pick<HoverImageLinkProps, 'hoverImgAlt' | 'hoverImgSrc'> & {
-    portalTarget: HTMLDivElement;
-  }
-> = ({ hoverImgAlt, hoverImgSrc, portalTarget }) =>
-  createPortal(<Image alt={hoverImgAlt} src={hoverImgSrc} />, portalTarget);
+type HoverImageProps = Pick<
+  HoverImageLinkProps,
+  'hoverImgAlt' | 'hoverImgSrc'
+> & {
+  portalTarget: HTMLDivElement;
+};
+
+const PortalImage = styled(Image)<{ coords: [number, number] }>`
+  position: absolute;
+  top: ${({ coords }) => `${coords[1]}px`};
+  left: ${({ coords }) => `${coords[0]}px`};
+  width: 300px;
+  height: 300px;
+`;
+
+const HoverImage: React.FC<HoverImageProps> = ({
+  hoverImgAlt,
+  hoverImgSrc,
+  portalTarget,
+}) => {
+  const [mouseCoords, setMouseCoords] = useState<[number, number]>([0, 0]);
+  useEffect(() => {
+    const setCoords = throttle(
+      (e: MouseEvent) =>
+        setMouseCoords([
+          // The added number here needs to be great enough that an average user
+          // won't scroll that distance in the # of seconds the function is throttled
+          //
+          // If they do, they'll overlap the calculated position of the image, thus
+          // stopping their "hover" on the link, and removing the hover image
+          e.clientX + 50,
+
+          // the subtracted number here should be 1/2 of the PortalImage height
+          // to center the image vertically
+          document.documentElement.scrollTop + e.clientY - 150,
+        ]),
+      15
+    );
+    window.addEventListener('mousemove', setCoords);
+    return () => window.removeEventListener('mousemove', setCoords);
+  }, []);
+
+  return createPortal(
+    <PortalImage alt={hoverImgAlt} coords={mouseCoords} src={hoverImgSrc} />,
+    portalTarget
+  );
+};
 
 const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
   const {
@@ -57,12 +100,16 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const onEnter: MouseEventHandler<HTMLAnchorElement> = (e) => {
-    setIsHovered(true);
+    if (hoverImgSrc) {
+      setIsHovered(true);
+    }
     onMouseEnter?.(e);
   };
 
   const onLeave: MouseEventHandler<HTMLAnchorElement> = (e) => {
-    setIsHovered(false);
+    if (hoverImgSrc) {
+      setIsHovered(false);
+    }
     onMouseLeave?.(e);
   };
 
@@ -82,7 +129,7 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
           {children}
         </StyledLink>
       </NextLink>
-      {isHovered && hoverImgSrc && hoverImageContainer?.current && (
+      {hoverImageContainer?.current && hoverImgSrc && isHovered && (
         <HoverImage
           hoverImgAlt={hoverImgAlt}
           hoverImgSrc={hoverImgSrc}

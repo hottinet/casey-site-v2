@@ -78,7 +78,7 @@ const HomePickle: React.FC<HomePickleProps> = ({
       </ImageBox>
       <TitleBox column ml={48}>
         <PickleTitle bold>{title}</PickleTitle>
-        <Link href={linkTo} internal noHover>
+        <Link href={linkTo} internal noHoverStyles>
           <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
         </Link>
       </TitleBox>
@@ -89,14 +89,18 @@ const HomePickle: React.FC<HomePickleProps> = ({
 type SecondaryProjectLinkProps = {
   href: string;
   text: string;
+  imgSrc: string;
+  imgAlt: string;
 };
 
 const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
   href,
   text,
+  imgSrc,
+  imgAlt,
 }) => (
   <span>
-    <Link href={href} internal>
+    <Link hoverImgAlt={imgAlt} hoverImgSrc={imgSrc} href={href} internal>
       <LinkText bold>{text}</LinkText>
     </Link>
   </span>
@@ -146,7 +150,7 @@ const Home: React.FC = () => {
       />
       <HomePickle
         imageAlt="Donkey kong"
-        imageSrc="VideoUpload/VideoCover.png"
+        imageSrc="/VideoUpload/VideoCover.png"
         linkTo={CORE_SESSIONS}
         pickleColor="yellow"
         title="Improving content creation and consumption"
@@ -155,18 +159,26 @@ const Home: React.FC = () => {
       <GridBox columnGap={48} mt={128} mx={48} rowGap={16}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
+          imgAlt="Some hover image"
+          imgSrc="/ComponentLibrary/studentfacing.png"
           text="Core: Building the Component Library"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
+          imgAlt="Some hover image"
+          imgSrc="/ComponentLibrary/studentfacing.png"
           text="Irth: Bringing warmth to a sensitive subject through UI Design"
         />
         <SecondaryProjectLink
           href="/some-new-page"
+          imgAlt="Some hover image"
+          imgSrc="/ComponentLibrary/studentfacing.png"
           text="A sampling of graphic design work"
         />
         <SecondaryProjectLink
           href="/some-new-page"
+          imgAlt="Some hover image"
+          imgSrc="/ComponentLibrary/studentfacing.png"
           text="Enkasa: Launching a tool for homebuyers"
         />
       </GridBox>

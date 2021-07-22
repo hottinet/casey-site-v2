@@ -16,15 +16,15 @@ const NavBar: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
   return (
     <FlexBox justifyContent="space-between" p={24} pb={80}>
-      <CaseyLink href="/" internal noHover>
+      <CaseyLink href="/" internal noHoverStyles>
         <Title bold>Cb</Title>
       </CaseyLink>
       {breakpoints.includes('sm') && (
         <FlexBox>
-          <Link href="/" internal noHover>
+          <Link href="/" internal noHoverStyles>
             <TextButton label="Home" onClick={undefined} />
           </Link>
-          <Link href="/about" internal noHover>
+          <Link href="/about" internal noHoverStyles>
             <TextButton label="About Me" onClick={undefined} />
           </Link>
         </FlexBox>

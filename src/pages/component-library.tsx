@@ -24,7 +24,6 @@ const CoreComponentLibrary: React.FC = () => (
       <Title bold>Core Component Library</Title>
       <Image
         alt="session card components"
-        fitParent
         src="/ComponentLibrary/componentscover.png"
       />
     </ContentBox>
