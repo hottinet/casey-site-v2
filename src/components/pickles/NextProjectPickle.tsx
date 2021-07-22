@@ -49,7 +49,7 @@ const NextProjectPickle: React.FC<NextProjectPickleProps> = ({
   className,
 }) => (
   <LinkPickle className={className} color={color} origin="right">
-    <PickleLink href={nextProjectPath} internal noHover>
+    <PickleLink href={nextProjectPath} internal noHoverStyles>
       <Heading bold mb={0}>
         Next Project
       </Heading>

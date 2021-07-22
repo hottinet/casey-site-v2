@@ -1,9 +1,11 @@
 import { css, Global, ThemeProvider } from '@emotion/react';
+import styled from '@emotion/styled';
 import type { AppProps /* , AppContext */ } from 'next/app';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import theme from '~/constants/theme';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
+import { HoverImageContext } from '~/contexts/hoverImageContext';
 import { BreakpointSize } from '~/typings/theme';
 
 const marPadZero = css`
@@ -50,7 +52,14 @@ const globalStyles = css`
   }
 `;
 
+const HoverTarget = styled.div`
+  position: relative;
+  z-index: 999;
+`;
+
 const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const hoverImageRef = useRef<HTMLDivElement>(null);
+
   const [windowBreakpoints, setWindowBreakpoints] = useState<BreakpointSize[]>([
     'xxs',
   ]);
@@ -77,9 +86,12 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <BreakpointsContext.Provider value={windowBreakpoints}>
-        <Global styles={globalStyles} />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
+        <HoverImageContext.Provider value={hoverImageRef}>
+          <Global styles={globalStyles} />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+          <HoverTarget ref={hoverImageRef} />
+        </HoverImageContext.Provider>
       </BreakpointsContext.Provider>
     </ThemeProvider>
   );
