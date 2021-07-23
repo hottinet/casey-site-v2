@@ -8,7 +8,7 @@ type HeadingProps = Pick<MarginProps, 'mb'> & {
   className?: string;
 };
 
-export const HeadingText = styled.h3<Omit<HeadingProps, 'children'>>`
+const HeadingText = styled.h3<Omit<HeadingProps, 'children'>>`
   font-family: ${({ theme }) => theme.fontFamily};
   font-size: ${({ theme }) => theme.fontSize.heading};
   margin-bottom: ${({ theme, mb = 16 }) => theme.spacing[mb]};

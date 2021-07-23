@@ -10,7 +10,7 @@ import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import Pickle from '~/components/pickles/Pickle';
-import Heading, { HeadingText } from '~/components/typography/Heading';
+import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import {
   CORE_COMPONENT_LIBRARY_ROUTE,
@@ -24,7 +24,11 @@ import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
 
 // START - STYLED COMPONENTS - START
-const LinkText = HeadingText.withComponent('span');
+const LinkText = styled.span`
+  font-size: ${({ theme }) => theme.fontSize.title};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  font-family: ${({ theme }) => theme.fontFamily};
+`;
 
 const SizedPickle = styled(Pickle)`
   width: 94%;
@@ -101,7 +105,7 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 }) => (
   <span>
     <Link hoverImgAlt={imgAlt} hoverImgSrc={imgSrc} href={href} internal>
-      <LinkText bold>{text}</LinkText>
+      <LinkText>{text}</LinkText>
     </Link>
   </span>
 );
