@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import NextImage from 'next/image';
 
 import { MarginProps } from './box/types';
 
@@ -7,12 +6,13 @@ type ImageProps = MarginProps & {
   src: string;
   alt: string;
   className?: string;
+  fitParent?: boolean;
 };
 
-const ImageContainer = styled.div<MarginProps>`
-  position: relative;
-  width: 100%;
-  height: 100%;
+const StyledImage = styled.img<ImageProps>`
+  width: ${({ fitParent }) => fitParent && '100%'};
+  max-height: 100%;
+  max-width: 100%;
   margin-top: ${({ mt = 0, theme }) => theme.spacing[mt]};
   margin-bottom: ${({ mb = 0, theme }) => theme.spacing[mb]};
   margin-right: ${({ mr = 0, theme }) => theme.spacing[mr]};
@@ -22,22 +22,19 @@ const ImageContainer = styled.div<MarginProps>`
 const Image: React.FC<ImageProps> = ({
   src,
   alt,
+  fitParent,
   className,
   ...styleProps
 }) => (
-  <ImageContainer
+  <StyledImage
+    alt={alt}
     className={className}
+    fitParent={fitParent}
+    loading="lazy"
+    src={src}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...styleProps}
-  >
-    <NextImage
-      alt={alt}
-      layout="fill"
-      loading="lazy"
-      objectFit="contain"
-      src={src}
-    />
-  </ImageContainer>
+  />
 );
 
 export default Image;

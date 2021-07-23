@@ -48,7 +48,7 @@ const PortalImage = styled(Image)<{ coords: [number, number] }>`
   top: ${({ coords }) => `${coords[1]}px`};
   left: ${({ coords }) => `${coords[0]}px`};
   width: 300px;
-  height: 300px;
+  max-height: none;
 `;
 
 const HoverImage: React.FC<HoverImageProps> = ({
@@ -79,7 +79,12 @@ const HoverImage: React.FC<HoverImageProps> = ({
   }, []);
 
   return createPortal(
-    <PortalImage alt={hoverImgAlt} coords={mouseCoords} src={hoverImgSrc} />,
+    <PortalImage
+      alt={hoverImgAlt}
+      coords={mouseCoords}
+      fitParent
+      src={hoverImgSrc}
+    />,
     portalTarget
   );
 };
