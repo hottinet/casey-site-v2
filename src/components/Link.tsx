@@ -45,8 +45,9 @@ type HoverImageProps = Pick<
 
 const PortalImage = styled(Image)<{ coords: [number, number] }>`
   position: absolute;
-  top: ${({ coords }) => `${coords[1]}px`};
-  left: ${({ coords }) => `${coords[0]}px`};
+  top: 0;
+  left: 0;
+  transform: ${({ coords }) => `translate(${coords[0]}px, ${coords[1]}px)`};
   width: 300px;
   max-height: none;
 `;
