@@ -169,18 +169,6 @@ const Home: React.FC = () => {
           imgSrc="/ComponentLibrary/studentfacing.png"
           text="Irth: Bringing warmth to a sensitive subject through UI Design"
         />
-        <SecondaryProjectLink
-          href="/some-new-page"
-          imgAlt="Some hover image"
-          imgSrc="/ComponentLibrary/studentfacing.png"
-          text="A sampling of graphic design work"
-        />
-        <SecondaryProjectLink
-          href="/some-new-page"
-          imgAlt="Some hover image"
-          imgSrc="/ComponentLibrary/studentfacing.png"
-          text="Enkasa: Launching a tool for homebuyers"
-        />
       </GridBox>
     </Layout>
   );

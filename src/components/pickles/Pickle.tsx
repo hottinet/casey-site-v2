@@ -7,8 +7,11 @@ const PickleBody = styled(FlexBox)<Pick<PickleProps, 'origin'>>(
   ({ origin, theme }) => ({
     ...(origin === 'left' && {
       borderLeftWidth: 0,
-      borderRadius: '0 50px 50px 0',
+      borderRadius: '0 100px 100px 0',
       [theme.breakpoints.sm]: {
+        borderRadius: '0 250px 250px 0',
+      },
+      [theme.breakpoints.md]: {
         borderRadius: '0 1000px 1000px 0',
       },
     }),
