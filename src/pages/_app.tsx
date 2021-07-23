@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import type { AppProps /* , AppContext */ } from 'next/app';
 import { useEffect, useRef, useState } from 'react';
 
+import FlexBox from '~/components/box/FlexBox';
 import theme from '~/constants/theme';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { HoverImageContext } from '~/contexts/hoverImageContext';
@@ -52,6 +53,11 @@ const globalStyles = css`
   }
 `;
 
+const GlobalWrapper = styled(FlexBox)`
+  width: 100%;
+  overflow: hidden;
+`;
+
 const HoverTarget = styled.div`
   position: relative;
   z-index: 999;
@@ -88,9 +94,11 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
       <BreakpointsContext.Provider value={windowBreakpoints}>
         <HoverImageContext.Provider value={hoverImageRef}>
           <Global styles={globalStyles} />
-          <HoverTarget ref={hoverImageRef} />
-          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Component {...pageProps} />
+          <GlobalWrapper column>
+            <HoverTarget ref={hoverImageRef} />
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            <Component {...pageProps} />
+          </GlobalWrapper>
         </HoverImageContext.Provider>
       </BreakpointsContext.Provider>
     </ThemeProvider>
