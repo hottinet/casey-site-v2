@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
-import { ChangeEventHandler, useContext, useState } from 'react';
+import {
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  useContext,
+  useState,
+} from 'react';
 
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
@@ -70,6 +75,13 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ setIsWrong }) => {
     }
     setPassword('');
   };
+
+  const onEnter: KeyboardEventHandler<HTMLInputElement> = (e) => {
+    if (e.key === 'Enter') {
+      onSubmit();
+    }
+  };
+
   return (
     <>
       <Input
@@ -78,6 +90,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ setIsWrong }) => {
         type="password"
         value={password}
         onChange={onChange}
+        onKeyUp={onEnter}
       />
       <PwIconButton type="submit" variant="secondary" onClick={onSubmit}>
         <ButtonBody bold mb={0}>
