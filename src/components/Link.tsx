@@ -13,8 +13,8 @@ type LinkProps = {
   href: string;
   children: React.ReactNode;
   className?: string;
-  onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
-  onMouseLeave?: MouseEventHandler<HTMLAnchorElement>;
+  onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
+  onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
   noHoverStyles?: boolean;
 };
 
@@ -50,6 +50,7 @@ const PortalImage = styled(Image)<{ coords: [number, number] }>`
   transform: ${({ coords }) => `translate(${coords[0]}px, ${coords[1]}px)`};
   width: 300px;
   max-height: none;
+  display: ${({ coords }) => (coords[0] && coords[1] ? 'block' : 'none')};
 `;
 
 const HoverImage: React.FC<HoverImageProps> = ({
@@ -76,7 +77,10 @@ const HoverImage: React.FC<HoverImageProps> = ({
       15
     );
     window.addEventListener('mousemove', setCoords);
-    return () => window.removeEventListener('mousemove', setCoords);
+    return () => {
+      setCoords.cancel();
+      window.removeEventListener('mousemove', setCoords);
+    };
   }, []);
 
   return createPortal(
@@ -105,14 +109,14 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
   const hoverImageContainer = useContext(HoverImageContext);
   const [isHovered, setIsHovered] = useState(false);
 
-  const onEnter: MouseEventHandler<HTMLAnchorElement> = (e) => {
+  const onEnter: MouseEventHandler<HTMLSpanElement> = (e) => {
     if (hoverImgSrc) {
       setIsHovered(true);
     }
     onMouseEnter?.(e);
   };
 
-  const onLeave: MouseEventHandler<HTMLAnchorElement> = (e) => {
+  const onLeave: MouseEventHandler<HTMLSpanElement> = (e) => {
     if (hoverImgSrc) {
       setIsHovered(false);
     }
@@ -129,10 +133,14 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
           noHoverStyles={noHoverStyles}
           rel="noopener noreferrer"
           target={internal ? '_self' : '_blank'}
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
         >
-          {children}
+          {/*
+            Hack to allow mouseEvents inside nextjs links
+            See https://github.com/vercel/next.js/issues/1490
+          */}
+          <span onMouseEnter={onEnter} onMouseLeave={onLeave}>
+            {children}
+          </span>
         </StyledLink>
       </NextLink>
       {hoverImageContainer?.current && hoverImgSrc && isHovered && (
