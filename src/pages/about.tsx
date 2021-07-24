@@ -9,11 +9,18 @@ import Title from '~/components/typography/Title';
 const AboutMe: React.FC = () => (
   <Layout>
     <Box mb={80} mx={48}>
+      <Title>Click anywhere to learn about me.</Title>
       <Title mb={8}>
         Download my&thinsp;
         <Link href="https://core.fitness/">resume</Link>
         &thinsp;or find me on&thinsp;
-        <Link href="https://core.fitness/">LinkedIn.</Link>
+        <Link
+          hoverImgAlt="hover"
+          hoverImgSrc="/About/Linkedinhover.png"
+          href="https://core.fitness/"
+        >
+          LinkedIn.
+        </Link>
       </Title>
     </Box>
     <Box mx={48}>

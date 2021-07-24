@@ -102,7 +102,7 @@ const CoreSessions: React.FC = () => (
       </Body>
       <GridBox columnGap={24} mb={80} rowGap={24}>
         <Video sources={[{ src: '/Sessions/RatingReview2.mp4' }]} />
-        <Image alt="placeholder" src="/Sessions/ReviewInstructor.png" />
+        <Image alt="placeholder" src="/Sessions/ReviewInsturctor.png" />
       </GridBox>
       <Heading bold>Downloading videos via iOS</Heading>
       <Body>

@@ -42,15 +42,33 @@ const PickleTitle = styled(Title)`
 `;
 
 const ImageBox = styled(FlexBox)`
-  height: 30rem;
+  height: 20rem;
+  margin-left: 48px;
+  margin-right: 48px;
+  margin-bottom: 0px;
+  ${({ theme }) => theme.breakpoints.md} {
+    height: 30rem;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 `;
 
 const TitleBox = styled(FlexBox)`
   margin-right: 14%;
+  margin-left: 48px;
+  margin-bottom: 48px;
+  ${({ theme }) => theme.breakpoints.md} {
+    margin-left: 48px;
+    margin-bottom: 0px;
+  }
 `;
 
 const PickleContentWrapper = styled(GridBox)`
   width: 100%;
+  margin-left: 8px;
+  ${({ theme }) => theme.breakpoints.sm} {
+    margin-left: 48px;
+  }
 `;
 
 const MobileAboutWrapper = styled(Box)`
@@ -76,11 +94,11 @@ const HomePickle: React.FC<HomePickleProps> = ({
   pickleColor,
 }) => (
   <SizedPickle color={pickleColor}>
-    <PickleContentWrapper alignItems="center" ml={48}>
+    <PickleContentWrapper alignItems="center">
       <ImageBox center>
         <Image alt={imageAlt} src={imageSrc} />
       </ImageBox>
-      <TitleBox column ml={48}>
+      <TitleBox column>
         <PickleTitle bold>{title}</PickleTitle>
         <Link href={linkTo} internal noHoverStyles>
           <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
@@ -127,20 +145,22 @@ const Home: React.FC = () => {
         </Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
-            <TextButton label="About Me" onClick={undefined} />
+            <Link href="/about" internal noHoverStyles>
+              <TextButton label="About Me" onClick={undefined} />
+            </Link>
           </MobileAboutWrapper>
         )}
       </Box>
       <HomePickle
-        imageAlt="Donkey kong"
-        imageSrc="/LiveClasses/LiveClassCover.png"
+        imageAlt="iOS and Web Mockups"
+        imageSrc="/LiveClasses/LiveClassHero.png"
         linkTo={CORE_LIVE_CLASSES}
         pickleColor="green"
         title="Designing a live class experience for fitness"
       />
       <HomePickle
-        imageAlt="Video Upload UI"
-        imageSrc="/Programs/programscover.png"
+        imageAlt="CMS and customer facing screens"
+        imageSrc="/Programs/ProgramHero.png"
         linkTo={CORE_PROGRAMS}
         pickleColor="red"
         title="Building fitness programs on Core"
