@@ -6,7 +6,6 @@ type BodyProps = Pick<MarginProps, 'mb'> & {
   className?: string;
   children: string | (string | React.ReactElement)[];
   bold?: boolean;
-  padded?: boolean;
 };
 
 const BodyText = styled.p<Omit<BodyProps, 'children'>>`
