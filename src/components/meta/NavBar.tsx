@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import { useContext } from 'react';
 
+import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 
 import FlexBox from '../box/FlexBox';
@@ -14,6 +16,7 @@ const CaseyLink = styled(Link)`
 
 const NavBar: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
+  const { pathname } = useRouter();
   return (
     <FlexBox justifyContent="space-between" p={24} pb={80}>
       <CaseyLink href="/" internal noHoverStyles>
@@ -22,10 +25,18 @@ const NavBar: React.FC = () => {
       {breakpoints.includes('sm') && (
         <FlexBox>
           <Link href="/" internal noHoverStyles>
-            <TextButton label="Home" onClick={undefined} />
+            <TextButton
+              forceHover={pathname === HOME_ROUTE}
+              label="Home"
+              onClick={undefined}
+            />
           </Link>
           <Link href="/about" internal noHoverStyles>
-            <TextButton label="About Me" onClick={undefined} />
+            <TextButton
+              forceHover={pathname === ABOUT_ROUTE}
+              label="About Me"
+              onClick={undefined}
+            />
           </Link>
         </FlexBox>
       )}

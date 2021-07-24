@@ -7,6 +7,7 @@ import { ButtonProps } from './types';
 type TextButtonProps = Omit<ButtonProps, 'children'> & {
   label: string;
   buttonClassName?: string;
+  forceHover?: boolean;
 };
 
 const AnimationWrapper = styled.div`
@@ -16,7 +17,7 @@ const AnimationWrapper = styled.div`
   margin: ${({ theme }) => theme.spacing[4]};
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<Pick<TextButtonProps, 'forceHover'>>`
   height: ${({ theme }) => theme.spacing[48]};
   padding: ${({ theme }) => theme.spacing[12]};
   min-width: 9.875rem;
@@ -38,7 +39,8 @@ const StyledButton = styled(Button)`
       }`};
     border-radius: 60px;
     transform-origin: center center;
-    transform: scale(0.91, 0.75);
+    transform: ${({ forceHover }) =>
+      forceHover ? 'scale(1)' : 'scale(0.91, 0.75)'};
     transition: transform 0.2s linear;
   }
   &:hover {
@@ -61,10 +63,12 @@ const TextButton: React.FC<TextButtonProps> = ({
   className,
   buttonClassName,
   type,
+  forceHover,
 }) => (
   <AnimationWrapper className={className}>
     <StyledButton
       className={buttonClassName}
+      forceHover={forceHover}
       type={type}
       variant={variant}
       onClick={onClick}
