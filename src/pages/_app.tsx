@@ -56,6 +56,9 @@ const globalStyles = css`
 const GlobalWrapper = styled(FlexBox)`
   width: 100%;
   overflow: hidden;
+  ${theme.breakpoints.sm} {
+    cursor: url('/Misc/cursor.png'), auto;
+  }
 `;
 
 const HoverTarget = styled.div`
