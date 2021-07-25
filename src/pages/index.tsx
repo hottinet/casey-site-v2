@@ -192,8 +192,8 @@ const Home: React.FC = () => {
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
-          imgAlt="Some hover image"
-          imgSrc="/ComponentLibrary/studentfacing.png"
+          imgAlt="Irth app screens"
+          imgSrc="/Irth/Irthhover.png"
           text="UI Refresh for Irth"
         />
       </GridBox>

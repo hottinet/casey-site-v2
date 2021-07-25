@@ -12,10 +12,16 @@ const AboutMe: React.FC = () => (
       <Title>Click anywhere to learn about me.</Title>
       <Title mb={8}>
         Download my&thinsp;
-        <Link href="https://core.fitness/">resume</Link>
+        <Link
+          hoverImgAlt="resume"
+          hoverImgSrc="/About/Resumehover.png"
+          href="https://core.fitness/"
+        >
+          resume
+        </Link>
         &thinsp;or find me on&thinsp;
         <Link
-          hoverImgAlt="hover"
+          hoverImgAlt="linkedin profile"
           hoverImgSrc="/About/Linkedinhover.png"
           href="https://core.fitness/"
         >
