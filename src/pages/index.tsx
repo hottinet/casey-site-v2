@@ -26,7 +26,6 @@ import { Color } from '~/typings/theme';
 // START - STYLED COMPONENTS - START
 const LinkText = styled.span`
   font-size: ${({ theme }) => theme.fontSize.title};
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-family: ${({ theme }) => theme.fontFamily};
 `;
 
@@ -46,10 +45,12 @@ const ImageBox = styled(FlexBox)`
   margin-left: 48px;
   margin-right: 48px;
   margin-bottom: 0px;
+  margin-top: 48px;
   ${({ theme }) => theme.breakpoints.md} {
     height: 30rem;
     margin-left: 0px;
     margin-right: 0px;
+    margin-top: 0px;
   }
 `;
 
@@ -179,19 +180,21 @@ const Home: React.FC = () => {
         pickleColor="yellow"
         title="Improving content creation and consumption"
       />
-      <Heading>Other Projects</Heading>
-      <GridBox columnGap={48} mt={128} mx={48} rowGap={16}>
+      <Box mb={24} mt={128} mx={48}>
+        <Heading bold>Other Projects</Heading>
+      </Box>
+      <GridBox columnGap={48} mx={48} rowGap={48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="Some hover image"
           imgSrc="/ComponentLibrary/studentfacing.png"
-          text="Core: Building the Component Library"
+          text="Building the Core Component Library"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
           imgAlt="Some hover image"
           imgSrc="/ComponentLibrary/studentfacing.png"
-          text="Irth: Bringing warmth to a sensitive subject through UI Design"
+          text="UI Refresh for Irth"
         />
       </GridBox>
     </Layout>
