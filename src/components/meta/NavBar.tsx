@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 
+import Image from '~/components/Image';
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 
@@ -12,6 +13,8 @@ import Title from '../typography/Title';
 
 const CaseyLink = styled(Link)`
   text-decoration: none;
+  width: 80px;
+  margin-top: 8px;
 `;
 
 const NavBar: React.FC = () => {
@@ -20,7 +23,7 @@ const NavBar: React.FC = () => {
   return (
     <FlexBox justifyContent="space-between" p={24} pb={80}>
       <CaseyLink href="/" internal noHoverStyles>
-        <Title bold>Cb</Title>
+        <Image alt="CB" src="/Misc/CB.svg" />
       </CaseyLink>
       {breakpoints.includes('sm') && (
         <FlexBox>

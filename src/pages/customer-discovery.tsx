@@ -121,8 +121,8 @@ const CustomerDiscovery: React.FC = () => {
             migrate onto our platform as we worked towards feature parody with
             our competitors.
           </BoldSpan>
-          Our goal was to interview 20+ less established intructors to identify
-          their main pain points and how Core could solve them.
+          &nbsp;Our goal was to interview 20+ less established intructors to
+          identify their main pain points and how Core could solve them.
         </Body>
         <Heading bold>Our Process</Heading>
         <Image

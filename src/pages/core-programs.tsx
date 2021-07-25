@@ -84,7 +84,7 @@ const CorePrograms: React.FC = () => (
         topText="The Goal"
       />
       <PickleStack
-        bottomText="My role ws to design both the instructor portal experience as well as the student experience across iOS and web. I worked with a team of developers to test and refine the feature, and executed user interviews throughout the process."
+        bottomText="My role was to design both the instructor portal experience as well as the student experience across iOS and web. I worked with a team of developers to test and refine the feature, and executed user interviews throughout the process."
         topText="My Role"
       />
     </DetailPickle>
