@@ -14,7 +14,7 @@ const AboutMe: React.FC = () => (
         Download my&thinsp;
         <Link
           hoverImgAlt="resume"
-          hoverImgSrc="/About/Resumehover.png"
+          hoverImgSrc="/About/resumehover.png"
           href="https://core.fitness/"
         >
           resume
@@ -22,7 +22,7 @@ const AboutMe: React.FC = () => (
         &thinsp;or find me on&thinsp;
         <Link
           hoverImgAlt="linkedin profile"
-          hoverImgSrc="/About/Linkedinhover.png"
+          hoverImgSrc="/About/linkedinhover.png"
           href="https://core.fitness/"
         >
           LinkedIn.

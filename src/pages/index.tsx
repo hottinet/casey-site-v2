@@ -174,7 +174,7 @@ const Home: React.FC = () => {
         title="Rediscovering the Core Customer"
       />
       <HomePickle
-        imageAlt="Donkey kong"
+        imageAlt="Video Upload states"
         imageSrc="/VideoUpload/VideoCover.png"
         linkTo={CORE_SESSIONS}
         pickleColor="yellow"
@@ -186,14 +186,14 @@ const Home: React.FC = () => {
       <GridBox columnGap={48} mx={48} rowGap={48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
-          imgAlt="Some hover image"
-          imgSrc="/ComponentLibrary/studentfacing.png"
+          imgAlt="component w toggle controls"
+          imgSrc="/ComponentLibrary/componenthover.png"
           text="Building the Core Component Library"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
           imgAlt="Irth app screens"
-          imgSrc="/Irth/Irthhover.png"
+          imgSrc="/Irth/irthhover.png"
           text="UI Refresh for Irth"
         />
       </GridBox>
