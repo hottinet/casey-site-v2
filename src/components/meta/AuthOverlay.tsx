@@ -16,9 +16,9 @@ import Pickle from '../pickles/Pickle';
 
 const Input = styled.input`
   background-color: transparent;
-  height: ${({ theme }) => theme.spacing[80]};
+  height: ${({ theme }) => theme.spacing[48]};
   min-width: ${({ theme }) => theme.spacing[128]};
-  font-size: 100px;
+  font-size: 48px;
   padding: ${({ theme }) => theme.spacing[8]};
   outline: none;
   border: none;
@@ -28,6 +28,10 @@ const Input = styled.input`
   ::placeholder {
     color: white;
     opacity: 50%;
+  }
+  ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 100px;
+    height: ${({ theme }) => theme.spacing[80]};
   }
 `;
 
