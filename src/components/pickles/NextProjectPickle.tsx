@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import { HOME_ROUTE } from '~/constants/routing';
 import { Color } from '~/typings/theme';
 
 import Arrow from '../icons/Arrow';
@@ -51,7 +52,7 @@ const NextProjectPickle: React.FC<NextProjectPickleProps> = ({
   <LinkPickle className={className} color={color} origin="right">
     <PickleLink href={nextProjectPath} internal noHoverStyles>
       <Heading bold mb={0}>
-        Next Project
+        {nextProjectPath === HOME_ROUTE ? 'Back to Home' : 'Next Project'}
       </Heading>
       <ArrowIcon title="Next project arrow" titleId="next-project-arrow" />
     </PickleLink>
