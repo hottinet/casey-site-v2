@@ -68,11 +68,9 @@ const HoverImage: React.FC<HoverImageProps> = ({
           //
           // If they do, they'll overlap the calculated position of the image, thus
           // stopping their "hover" on the link, and removing the hover image
-          e.clientX + 50,
+          e.clientX + 48,
 
-          // the subtracted number here should be 1/2 of the PortalImage height
-          // to center the image vertically
-          document.documentElement.scrollTop + e.clientY - 150,
+          document.documentElement.scrollTop + e.clientY,
         ]),
       15
     );
