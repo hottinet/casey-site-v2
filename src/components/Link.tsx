@@ -1,12 +1,9 @@
 import styled from '@emotion/styled';
 import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
-import { MouseEventHandler, useContext, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { MouseEventHandler, useEffect, useState } from 'react';
 
-import { HoverImageContext } from '~/contexts/hoverImageContext';
-
-import Image from './Image';
+import PortalImage from './PortalImage';
 
 type LinkProps = {
   internal?: boolean;
@@ -40,29 +37,20 @@ const OnMouseSpan = styled.span`
   display: inline-flex;
 `;
 
-type HoverImageProps = Pick<
-  HoverImageLinkProps,
-  'hoverImgAlt' | 'hoverImgSrc'
-> & {
-  portalTarget: HTMLDivElement;
-};
-
-const PortalImage = styled(Image)<{ coords: [number, number] }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: ${({ coords }) => `translate(${coords[0]}px, ${coords[1]}px)`};
-  width: 300px;
-  max-height: none;
-  display: ${({ coords }) => (coords[0] && coords[1] ? 'block' : 'none')};
-`;
-
-const HoverImage: React.FC<HoverImageProps> = ({
-  hoverImgAlt,
-  hoverImgSrc,
-  portalTarget,
-}) => {
+const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
+  const {
+    internal,
+    href,
+    children,
+    className,
+    onMouseEnter,
+    onMouseLeave,
+    noHoverStyles,
+  } = props;
+  const { hoverImgSrc, hoverImgAlt } = props as HoverImageLinkProps;
+  const [isHovered, setIsHovered] = useState(false);
   const [mouseCoords, setMouseCoords] = useState<[number, number]>([0, 0]);
+
   useEffect(() => {
     const setCoords = throttle(
       (e: MouseEvent) =>
@@ -78,38 +66,14 @@ const HoverImage: React.FC<HoverImageProps> = ({
         ]),
       15
     );
-    window.addEventListener('mousemove', setCoords);
+    if (hoverImgSrc) {
+      window.addEventListener('mousemove', setCoords);
+    }
     return () => {
       setCoords.cancel();
       window.removeEventListener('mousemove', setCoords);
     };
-  }, []);
-
-  return createPortal(
-    <PortalImage
-      alt={hoverImgAlt}
-      coords={mouseCoords}
-      fitParent
-      src={hoverImgSrc}
-    />,
-    portalTarget
-  );
-};
-
-const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
-  const {
-    internal,
-    href,
-    children,
-    className,
-    onMouseEnter,
-    onMouseLeave,
-    noHoverStyles,
-  } = props;
-  const { hoverImgSrc, hoverImgAlt } = props as HoverImageLinkProps;
-
-  const hoverImageContainer = useContext(HoverImageContext);
-  const [isHovered, setIsHovered] = useState(false);
+  }, [hoverImgSrc]);
 
   const onEnter: MouseEventHandler<HTMLSpanElement> = (e) => {
     if (hoverImgSrc) {
@@ -145,11 +109,11 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
           </OnMouseSpan>
         </StyledLink>
       </NextLink>
-      {hoverImageContainer?.current && hoverImgSrc && isHovered && (
-        <HoverImage
-          hoverImgAlt={hoverImgAlt}
-          hoverImgSrc={hoverImgSrc}
-          portalTarget={hoverImageContainer.current}
+      {hoverImgSrc && isHovered && (
+        <PortalImage
+          coords={mouseCoords}
+          imgAlt={hoverImgAlt}
+          imgSrc={hoverImgSrc}
         />
       )}
     </>
