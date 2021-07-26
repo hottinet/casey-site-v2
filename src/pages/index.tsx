@@ -93,21 +93,26 @@ const HomePickle: React.FC<HomePickleProps> = ({
   title,
   linkTo,
   pickleColor,
-}) => (
-  <SizedPickle color={pickleColor}>
-    <PickleContentWrapper alignItems="center">
-      <ImageBox center>
-        <Image alt={imageAlt} src={imageSrc} />
-      </ImageBox>
-      <TitleBox column>
-        <PickleTitle bold>{title}</PickleTitle>
-        <Link href={linkTo} internal noHoverStyles>
-          <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
-        </Link>
-      </TitleBox>
-    </PickleContentWrapper>
-  </SizedPickle>
-);
+}) => {
+  const breakpoints = useContext(BreakpointsContext);
+  return (
+    <SizedPickle color={pickleColor}>
+      <PickleContentWrapper alignItems="center">
+        {breakpoints.includes('sm') && (
+          <ImageBox center>
+            <Image alt={imageAlt} src={imageSrc} />
+          </ImageBox>
+        )}
+        <TitleBox column>
+          <PickleTitle bold>{title}</PickleTitle>
+          <Link href={linkTo} internal noHoverStyles>
+            <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
+          </Link>
+        </TitleBox>
+      </PickleContentWrapper>
+    </SizedPickle>
+  );
+};
 
 type SecondaryProjectLinkProps = {
   href: string;
