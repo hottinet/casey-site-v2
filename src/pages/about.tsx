@@ -1,21 +1,29 @@
 import random from 'lodash.random';
-import { useEffect, useRef, useState } from 'react';
+import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 
 import Box from '~/components/box/Box';
 import GridBox from '~/components/box/GridBox';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
+import PortalImage from '~/components/PortalImage';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 
-const stickerSrcs = [
-  '/LiveClasses/LiveClassCover.png',
-  '/LiveClasses/Pricing.png',
+const stickerData = [
+  {
+    src: '/LiveClasses/LiveClassCover.png',
+    alt: 'Random sticker',
+  },
+  {
+    src: '/LiveClasses/Pricing.png',
+    alt: 'Random sticker',
+  },
 ];
 
 type StickerObj = {
   src: string;
+  alt: string;
   coords: [number, number];
 };
 
@@ -25,20 +33,19 @@ const AboutMe: React.FC = () => {
   const stickerRef = useRef<StickerObj[]>(emptyStickers);
   const [stickers, setStickers] = useState<StickerObj[]>(emptyStickers);
 
-  useEffect(() => {
-    const onTouch = (e: TouchEvent) => {
-      const { clientX, clientY } = e.touches[0];
-      setStickers([
-        ...stickerRef.current,
-        {
-          src: stickerSrcs[random(0, stickerSrcs.length - 1)],
-          coords: [clientX, clientY],
-        },
-      ]);
-    };
-    window.addEventListener('touchend', onTouch);
-    return () => window.removeEventListener('touchend', onTouch);
-  }, []);
+  const onClick: MouseEventHandler = (e) => {
+    const { src, alt } = stickerData[random(0, stickerData.length - 1)];
+    setStickers([
+      ...stickerRef.current,
+      {
+        src,
+        alt,
+        // Adjust these minus values to change where the sticker drops
+        // in relation to the cursor
+        coords: [e.clientX - 150, e.clientY - 75],
+      },
+    ]);
+  };
 
   useEffect(() => {
     stickerRef.current = stickers;
@@ -47,57 +54,68 @@ const AboutMe: React.FC = () => {
   return (
     <>
       <Layout>
-        <Box mb={80} mx={48}>
-          <Title>Click anywhere to learn about me.</Title>
-          <Title mb={8}>
-            Download my&thinsp;
-            <Link
-              hoverImgAlt="resume"
-              hoverImgSrc="/About/resumehover.png"
-              href="https://core.fitness/"
-            >
-              resume
-            </Link>
-            &thinsp;or find me on&thinsp;
-            <Link
-              hoverImgAlt="linkedin profile"
-              hoverImgSrc="/About/linkedinhover.png"
-              href="https://core.fitness/"
-            >
-              LinkedIn.
-            </Link>
-          </Title>
-        </Box>
-        <Box mx={48}>
-          <Title bold>Experience</Title>
-          <GridBox>
-            <Box>
-              <Heading bold mb={8}>
-                Product Designer
-              </Heading>
-              <Heading>Core &#40;An AlleyCorp Company&#41;</Heading>
-              <Body>Feb 2021 - July 2021</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Product Designer
-              </Heading>
-              <Heading mb={8}>Freelance</Heading>
-              <Heading>
-                Irth, Enkasa Homes, Ellipsis Health, Something Else
-              </Heading>
-              <Body>May 2020 - Feb 2021</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Design Manager
-              </Heading>
-              <Heading>Flatiron School &#40;A WeWork Company&#41;</Heading>
-              <Body>Jan 2018 - April 2020</Body>
-            </Box>
-          </GridBox>
-        </Box>
+        <div onMouseUp={onClick}>
+          <Box mb={80} mx={48}>
+            <Title>Click anywhere to learn about me.</Title>
+            <Title mb={8}>
+              Download my&thinsp;
+              <Link
+                hoverImgAlt="resume"
+                hoverImgSrc="/About/resumehover.png"
+                href="https://core.fitness/"
+              >
+                resume
+              </Link>
+              &thinsp;or find me on&thinsp;
+              <Link
+                hoverImgAlt="linkedin profile"
+                hoverImgSrc="/About/linkedinhover.png"
+                href="https://core.fitness/"
+              >
+                LinkedIn.
+              </Link>
+            </Title>
+          </Box>
+          <Box mx={48}>
+            <Title bold>Experience</Title>
+            <GridBox>
+              <Box>
+                <Heading bold mb={8}>
+                  Product Designer
+                </Heading>
+                <Heading>Core &#40;An AlleyCorp Company&#41;</Heading>
+                <Body>Feb 2021 - July 2021</Body>
+              </Box>
+              <Box>
+                <Heading bold mb={8}>
+                  Product Designer
+                </Heading>
+                <Heading mb={8}>Freelance</Heading>
+                <Heading>
+                  Irth, Enkasa Homes, Ellipsis Health, Something Else
+                </Heading>
+                <Body>May 2020 - Feb 2021</Body>
+              </Box>
+              <Box>
+                <Heading bold mb={8}>
+                  Design Manager
+                </Heading>
+                <Heading>Flatiron School &#40;A WeWork Company&#41;</Heading>
+                <Body>Jan 2018 - April 2020</Body>
+              </Box>
+            </GridBox>
+          </Box>
+        </div>
       </Layout>
+      {stickers.map((s, i) => (
+        <PortalImage
+          coords={s.coords}
+          imgAlt={s.alt}
+          imgSrc={s.src}
+          // eslint-disable-next-line react/no-array-index-key
+          key={`${s.src}-${s.coords[0]}-${s.coords[1]}-${i}`}
+        />
+      ))}
     </>
   );
 };
