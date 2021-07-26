@@ -36,6 +36,10 @@ const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>`
   }
 `;
 
+const OnMouseSpan = styled.span`
+  display: inline-flex;
+`;
+
 type HoverImageProps = Pick<
   HoverImageLinkProps,
   'hoverImgAlt' | 'hoverImgSrc'
@@ -136,9 +140,9 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
             Hack to allow mouseEvents inside nextjs links
             See https://github.com/vercel/next.js/issues/1490
           */}
-          <span onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          <OnMouseSpan onMouseEnter={onEnter} onMouseLeave={onLeave}>
             {children}
-          </span>
+          </OnMouseSpan>
         </StyledLink>
       </NextLink>
       {hoverImageContainer?.current && hoverImgSrc && isHovered && (
