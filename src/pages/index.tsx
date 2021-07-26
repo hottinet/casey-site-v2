@@ -34,6 +34,10 @@ const SizedPickle = styled(Pickle)`
   margin-top: ${({ theme }) => theme.spacing[48]};
 `;
 
+const PickleLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const PickleTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.textSecondary};
   margin-bottom: ${({ theme }) => theme.spacing[16]};
@@ -95,17 +99,17 @@ const HomePickle: React.FC<HomePickleProps> = ({
   pickleColor,
 }) => (
   <SizedPickle color={pickleColor}>
-    <PickleContentWrapper alignItems="center">
-      <ImageBox center>
-        <Image alt={imageAlt} src={imageSrc} />
-      </ImageBox>
-      <TitleBox column>
-        <PickleTitle bold>{title}</PickleTitle>
-        <Link href={linkTo} internal noHoverStyles>
+    <PickleLink href={linkTo} internal noHoverStyles>
+      <PickleContentWrapper alignItems="center">
+        <ImageBox center>
+          <Image alt={imageAlt} src={imageSrc} />
+        </ImageBox>
+        <TitleBox column>
+          <PickleTitle bold>{title}</PickleTitle>
           <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
-        </Link>
-      </TitleBox>
-    </PickleContentWrapper>
+        </TitleBox>
+      </PickleContentWrapper>
+    </PickleLink>
   </SizedPickle>
 );
 
