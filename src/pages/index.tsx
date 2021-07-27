@@ -112,12 +112,7 @@ const HomePickle: React.FC<HomePickleProps> = ({
           )}
           <TitleBox column>
             <PickleTitle bold>{title}</PickleTitle>
-            <Link href={linkTo} internal noHoverStyles>
-              <ArrowButton
-                title={`Navigate to ${linkTo}`}
-                onClick={undefined}
-              />
-            </Link>
+            <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
           </TitleBox>
         </PickleContentWrapper>
       </PickleLink>
