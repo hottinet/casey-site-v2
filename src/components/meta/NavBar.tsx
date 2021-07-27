@@ -19,7 +19,7 @@ const CaseyLink = styled(Link)`
   height: min-content;
 `;
 
-const cbColors: Color[] = ['blue', 'red', 'green', 'text'];
+const cbColors: Color[] = ['blue', 'red', 'green', 'text', 'yellow'];
 
 const CBLink = () => {
   const [color, setColor] = useState<Color>('text');
