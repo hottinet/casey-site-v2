@@ -25,7 +25,7 @@ const CBLink = () => {
   const [color, setColor] = useState<Color>('text');
   const nextColors = cbColors.filter((c) => c !== color);
 
-  const onEnter = () => setColor(nextColors[random(0, cbColors.length - 1)]);
+  const onEnter = () => setColor(nextColors[random(0, nextColors.length - 1)]);
 
   return (
     <CaseyLink href="/" internal noHoverStyles onMouseEnter={onEnter}>
