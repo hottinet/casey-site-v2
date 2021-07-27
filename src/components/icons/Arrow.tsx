@@ -1,28 +1,13 @@
 import styled from '@emotion/styled';
 
-import { Theme } from '~/constants/theme';
-
 import Icon from './Icon';
+import { IconProps } from './types';
 
-type Color = keyof Theme['colors'];
-
-interface Props {
-  className?: string;
-  color?: Color;
-  title: string;
-  titleId: string;
-}
-
-const Path = styled.path<{ color: Color }>`
-  fill: ${({ color, theme }) => theme.colors[color]};
+const Path = styled.path<Pick<IconProps, 'color'>>`
+  fill: ${({ color = 'textSecondary', theme }) => theme.colors[color]};
 `;
 
-const Arrow: React.FC<Props> = ({
-  className,
-  color = 'textSecondary',
-  title,
-  titleId,
-}) => (
+const Arrow: React.FC<IconProps> = ({ className, color, title, titleId }) => (
   <Icon
     className={className}
     title={title}

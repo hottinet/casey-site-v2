@@ -1,19 +1,13 @@
 import styled from '@emotion/styled';
 
-interface Props {
-  className?: string;
-  viewBox?: string;
-  title: string;
-  titleId: string;
-  children: React.ReactNode;
-}
+import { BaseIconProps } from './types';
 
 const Svg = styled.svg`
   height: 100%;
   width: 100%;
 `;
 
-const Icon: React.FC<Props> = ({
+const Icon: React.FC<BaseIconProps> = ({
   viewBox = '0 0 24 24',
   title,
   titleId,
