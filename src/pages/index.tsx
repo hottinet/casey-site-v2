@@ -19,6 +19,7 @@ import {
   CORE_SESSIONS,
   CUSTOMER_DISCOVERY_ROUTE,
   IRTH_ROUTE,
+  LADDERS_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -208,10 +209,10 @@ const Home: React.FC = () => {
           text="UI Refresh for Irth"
         />
         <SecondaryProjectLink
-          href={CORE_COMPONENT_LIBRARY_ROUTE}
+          href={LADDERS_ROUTE}
           imgAlt="Irth app screens"
           imgSrc="/Irth/irthhover.png"
-          text="End to end app design for a gaming leaderboard"
+          text="Design for a gaming leaderboard"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}

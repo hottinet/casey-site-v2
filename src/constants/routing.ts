@@ -5,6 +5,7 @@ export const CORE_LIVE_CLASSES = '/core-live-classes';
 export const CORE_PROGRAMS = '/core-programs';
 export const CORE_SESSIONS = '/core-sessions';
 export const IRTH_ROUTE = '/irth';
+export const LADDERS_ROUTE = '/ladders';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
 
