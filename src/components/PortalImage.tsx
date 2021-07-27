@@ -17,7 +17,7 @@ const StyledImage = styled(Image)<Pick<PortalImageProps, 'coords'>>`
   top: 0;
   left: 0;
   transform: ${({ coords }) => `translate(${coords[0]}px, ${coords[1]}px)`};
-  width: 300px;
+  width: 250px;
   max-height: none;
   display: ${({ coords }) => (coords[0] && coords[1] ? 'block' : 'none')};
 `;

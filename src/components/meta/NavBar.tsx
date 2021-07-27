@@ -17,13 +17,20 @@ const CaseyLink = styled(Link)`
   margin-top: 8px;
 `;
 
+const LogoImage = styled(Image)`
+  fill: black;
+  &:hover {
+    fill: red;
+  }
+`;
+
 const NavBar: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
   const { pathname } = useRouter();
   return (
     <FlexBox justifyContent="space-between" p={24} pb={80}>
       <CaseyLink href="/" internal noHoverStyles>
-        <Image alt="CB" src="/Misc/CB.svg" />
+        <LogoImage alt="CB" src="/Misc/CB.svg" />
       </CaseyLink>
       {breakpoints.includes('sm') && (
         <FlexBox>

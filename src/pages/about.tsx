@@ -12,12 +12,20 @@ import Title from '~/components/typography/Title';
 
 const stickerData = [
   {
-    src: '/LiveClasses/LiveClassCover.png',
-    alt: 'Random sticker',
+    src: '/About/CA.png',
+    alt: 'California State Magnet',
   },
   {
-    src: '/LiveClasses/Pricing.png',
-    alt: 'Random sticker',
+    src: '/About/campari.png',
+    alt: 'bottle of campari',
+  },
+  {
+    src: '/About/animalcrossing.png',
+    alt: 'animal crossing character',
+  },
+  {
+    src: '/About/shoes_sticker.png',
+    alt: 'mis-matched shoes',
   },
 ];
 

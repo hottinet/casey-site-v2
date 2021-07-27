@@ -71,8 +71,10 @@ const TitleBox = styled(FlexBox)`
 const PickleContentWrapper = styled(GridBox)`
   width: 100%;
   margin-left: 8px;
+  margin-top: 80px;
   ${({ theme }) => theme.breakpoints.sm} {
     margin-left: 48px;
+    margin-top: 0px;
   }
 `;
 
