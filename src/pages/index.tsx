@@ -71,8 +71,10 @@ const TitleBox = styled(FlexBox)`
 const PickleContentWrapper = styled(GridBox)`
   width: 100%;
   margin-left: 8px;
+  margin-top: 80px;
   ${({ theme }) => theme.breakpoints.sm} {
     margin-left: 48px;
+    margin-top: 0px;
   }
 `;
 
@@ -97,21 +99,31 @@ const HomePickle: React.FC<HomePickleProps> = ({
   title,
   linkTo,
   pickleColor,
-}) => (
-  <SizedPickle color={pickleColor}>
-    <PickleLink href={linkTo} internal noHoverStyles>
-      <PickleContentWrapper alignItems="center">
-        <ImageBox center>
-          <Image alt={imageAlt} src={imageSrc} />
-        </ImageBox>
-        <TitleBox column>
-          <PickleTitle bold>{title}</PickleTitle>
-          <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
-        </TitleBox>
-      </PickleContentWrapper>
-    </PickleLink>
-  </SizedPickle>
-);
+}) => {
+  const breakpoints = useContext(BreakpointsContext);
+  return (
+    <SizedPickle color={pickleColor}>
+      <PickleLink href={linkTo} internal noHoverStyles>
+        <PickleContentWrapper alignItems="center">
+          {breakpoints.includes('sm') && (
+            <ImageBox center>
+              <Image alt={imageAlt} src={imageSrc} />
+            </ImageBox>
+          )}
+          <TitleBox column>
+            <PickleTitle bold>{title}</PickleTitle>
+            <Link href={linkTo} internal noHoverStyles>
+              <ArrowButton
+                title={`Navigate to ${linkTo}`}
+                onClick={undefined}
+              />
+            </Link>
+          </TitleBox>
+        </PickleContentWrapper>
+      </PickleLink>
+    </SizedPickle>
+  );
+};
 
 type SecondaryProjectLinkProps = {
   href: string;
@@ -199,6 +211,24 @@ const Home: React.FC = () => {
           imgAlt="Irth app screens"
           imgSrc="/Irth/irthhover.png"
           text="UI Refresh for Irth"
+        />
+        <SecondaryProjectLink
+          href={CORE_COMPONENT_LIBRARY_ROUTE}
+          imgAlt="Irth app screens"
+          imgSrc="/Irth/irthhover.png"
+          text="End to end app design for a gaming leaderboard"
+        />
+        <SecondaryProjectLink
+          href={IRTH_ROUTE}
+          imgAlt="Irth app screens"
+          imgSrc="/Irth/irthhover.png"
+          text="New feature for a podcast discovery platform"
+        />
+        <SecondaryProjectLink
+          href={IRTH_ROUTE}
+          imgAlt="Irth app screens"
+          imgSrc="/Irth/irthhover.png"
+          text="Sampling of graphic design work"
         />
       </GridBox>
     </Layout>
