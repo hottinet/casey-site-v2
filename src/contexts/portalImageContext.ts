@@ -1,4 +1,4 @@
 import React, { createContext } from 'react';
 
-export const HoverImageContext =
+export const PortalImageContext =
   createContext<React.RefObject<HTMLDivElement> | null>(null);

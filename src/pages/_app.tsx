@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import FlexBox from '~/components/box/FlexBox';
 import theme from '~/constants/theme';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
-import { HoverImageContext } from '~/contexts/hoverImageContext';
+import { PortalImageContext } from '~/contexts/portalImageContext';
 import { BreakpointSize } from '~/typings/theme';
 
 const marPadZero = css`
@@ -67,7 +67,7 @@ const HoverTarget = styled.div`
 `;
 
 const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
-  const hoverImageRef = useRef<HTMLDivElement>(null);
+  const portalImageRef = useRef<HTMLDivElement>(null);
 
   const [windowBreakpoints, setWindowBreakpoints] = useState<BreakpointSize[]>([
     'xxs',
@@ -95,14 +95,14 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <BreakpointsContext.Provider value={windowBreakpoints}>
-        <HoverImageContext.Provider value={hoverImageRef}>
+        <PortalImageContext.Provider value={portalImageRef}>
           <Global styles={globalStyles} />
           <GlobalWrapper column>
-            <HoverTarget ref={hoverImageRef} />
+            <HoverTarget ref={portalImageRef} />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
           </GlobalWrapper>
-        </HoverImageContext.Provider>
+        </PortalImageContext.Provider>
       </BreakpointsContext.Provider>
     </ThemeProvider>
   );

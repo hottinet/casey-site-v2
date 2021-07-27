@@ -1,12 +1,9 @@
 import styled from '@emotion/styled';
 import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
-import { MouseEventHandler, useContext, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { MouseEventHandler, useEffect, useState } from 'react';
 
-import { HoverImageContext } from '~/contexts/hoverImageContext';
-
-import Image from './Image';
+import PortalImage from './PortalImage';
 
 type LinkProps = {
   internal?: boolean;
@@ -36,29 +33,21 @@ const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>`
   }
 `;
 
-type HoverImageProps = Pick<
-  HoverImageLinkProps,
-  'hoverImgAlt' | 'hoverImgSrc'
-> & {
-  portalTarget: HTMLDivElement;
-};
-
-const PortalImage = styled(Image)<{ coords: [number, number] }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: ${({ coords }) => `translate(${coords[0]}px, ${coords[1]}px)`};
-  width: 300px;
-  max-height: none;
-  display: ${({ coords }) => (coords[0] && coords[1] ? 'block' : 'none')};
+const OnMouseSpan = styled.span`
+  display: inline-flex;
 `;
 
-const HoverImage: React.FC<HoverImageProps> = ({
+type PortalImageWrapperProps = Pick<
+  HoverImageLinkProps,
+  'hoverImgAlt' | 'hoverImgSrc'
+>;
+
+const PortalImageWrapper: React.FC<PortalImageWrapperProps> = ({
   hoverImgAlt,
   hoverImgSrc,
-  portalTarget,
 }) => {
   const [mouseCoords, setMouseCoords] = useState<[number, number]>([0, 0]);
+
   useEffect(() => {
     const setCoords = throttle(
       (e: MouseEvent) =>
@@ -68,29 +57,26 @@ const HoverImage: React.FC<HoverImageProps> = ({
           //
           // If they do, they'll overlap the calculated position of the image, thus
           // stopping their "hover" on the link, and removing the hover image
-          e.clientX + 50,
+          e.clientX + 48,
 
-          // the subtracted number here should be 1/2 of the PortalImage height
-          // to center the image vertically
-          document.documentElement.scrollTop + e.clientY - 150,
+          document.documentElement.scrollTop + e.clientY,
         ]),
       15
     );
-    window.addEventListener('mousemove', setCoords);
+    if (hoverImgSrc) {
+      window.addEventListener('mousemove', setCoords);
+    }
     return () => {
       setCoords.cancel();
       window.removeEventListener('mousemove', setCoords);
     };
-  }, []);
-
-  return createPortal(
+  }, [hoverImgSrc]);
+  return (
     <PortalImage
-      alt={hoverImgAlt}
       coords={mouseCoords}
-      fitParent
-      src={hoverImgSrc}
-    />,
-    portalTarget
+      imgAlt={hoverImgAlt}
+      imgSrc={hoverImgSrc}
+    />
   );
 };
 
@@ -105,8 +91,6 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
     noHoverStyles,
   } = props;
   const { hoverImgSrc, hoverImgAlt } = props as HoverImageLinkProps;
-
-  const hoverImageContainer = useContext(HoverImageContext);
   const [isHovered, setIsHovered] = useState(false);
 
   const onEnter: MouseEventHandler<HTMLSpanElement> = (e) => {
@@ -138,16 +122,15 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
             Hack to allow mouseEvents inside nextjs links
             See https://github.com/vercel/next.js/issues/1490
           */}
-          <span onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          <OnMouseSpan onMouseEnter={onEnter} onMouseLeave={onLeave}>
             {children}
-          </span>
+          </OnMouseSpan>
         </StyledLink>
       </NextLink>
-      {hoverImageContainer?.current && hoverImgSrc && isHovered && (
-        <HoverImage
+      {hoverImgSrc && isHovered && (
+        <PortalImageWrapper
           hoverImgAlt={hoverImgAlt}
           hoverImgSrc={hoverImgSrc}
-          portalTarget={hoverImageContainer.current}
         />
       )}
     </>
