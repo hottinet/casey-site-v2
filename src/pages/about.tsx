@@ -36,6 +36,7 @@ type StickerObj = {
 };
 
 const emptyStickers: StickerObj[] = [];
+const stickerHeight = 150;
 
 const AboutMe: React.FC = () => {
   const stickerRef = useRef<StickerObj[]>(emptyStickers);
@@ -52,8 +53,8 @@ const AboutMe: React.FC = () => {
           // Adjust these minus values to change where the sticker drops
           // in relation to the cursor
           coords: [
-            e.clientX - 150,
-            e.clientY + document.documentElement.scrollTop - 75,
+            e.clientX - 60,
+            e.clientY + document.documentElement.scrollTop - stickerHeight / 2,
           ],
         },
       ]);
@@ -128,6 +129,7 @@ const AboutMe: React.FC = () => {
           imgSrc={s.src}
           // eslint-disable-next-line react/no-array-index-key
           key={`${s.src}-${s.coords[0]}-${s.coords[1]}-${i}`}
+          maxDimension={{ dimension: 'height', size: stickerHeight }}
         />
       ))}
     </>
