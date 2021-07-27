@@ -7,6 +7,7 @@ type ImageProps = MarginProps & {
   alt: string;
   className?: string;
   fitParent?: boolean;
+  loading?: 'lazy' | 'eager';
 };
 
 const StyledImage = styled.img<ImageProps>`
@@ -24,13 +25,14 @@ const Image: React.FC<ImageProps> = ({
   alt,
   fitParent,
   className,
+  loading = 'lazy',
   ...styleProps
 }) => (
   <StyledImage
     alt={alt}
     className={className}
     fitParent={fitParent}
-    loading="lazy"
+    loading={loading}
     src={src}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...styleProps}

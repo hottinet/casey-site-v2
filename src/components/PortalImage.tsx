@@ -9,17 +9,18 @@ import Image from './Image';
 type PortalImageProps = {
   imgSrc: string;
   imgAlt: string;
-  coords: [number, number];
+  coords: [number, number] | undefined;
 };
 
 const StyledImage = styled(Image)<Pick<PortalImageProps, 'coords'>>`
   position: absolute;
   top: 0;
   left: 0;
-  transform: ${({ coords }) => `translate(${coords[0]}px, ${coords[1]}px)`};
+  transform: ${({ coords = [0, 0] }) =>
+    `translate(${coords[0]}px, ${coords[1]}px)`};
   width: 300px;
   max-height: none;
-  display: ${({ coords }) => (coords[0] && coords[1] ? 'block' : 'none')};
+  display: ${({ coords }) => (coords ? 'block' : 'none')};
 `;
 
 const PortalImage: React.FC<PortalImageProps> = ({
@@ -28,12 +29,18 @@ const PortalImage: React.FC<PortalImageProps> = ({
   coords,
 }) => {
   const portalTargetRef = useContext(PortalImageContext);
-
   return (
     <>
       {portalTargetRef?.current &&
+        coords &&
         createPortal(
-          <StyledImage alt={imgAlt} coords={coords} fitParent src={imgSrc} />,
+          <StyledImage
+            alt={imgAlt}
+            coords={coords}
+            fitParent
+            loading="eager"
+            src={imgSrc}
+          />,
           portalTargetRef.current
         )}
     </>

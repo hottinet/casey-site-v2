@@ -46,7 +46,7 @@ const PortalImageWrapper: React.FC<PortalImageWrapperProps> = ({
   hoverImgAlt,
   hoverImgSrc,
 }) => {
-  const [mouseCoords, setMouseCoords] = useState<[number, number]>([0, 0]);
+  const [mouseCoords, setMouseCoords] = useState<[number, number]>();
 
   useEffect(() => {
     const setCoords = throttle(
