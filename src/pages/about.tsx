@@ -92,7 +92,7 @@ const AboutMe: React.FC = () => {
             </Link>
           </Title>
         </Box>
-        <Box mx={48}>
+        <Box mb={48} mx={48}>
           <Title bold>Experience</Title>
           <GridBox>
             <Box>
@@ -104,9 +104,8 @@ const AboutMe: React.FC = () => {
             </Box>
             <Box>
               <Heading bold mb={8}>
-                Product Designer
+                Freelance Product Designer
               </Heading>
-              <Heading mb={8}>Freelance</Heading>
               <Heading>
                 Irth, Enkasa Homes, Ellipsis Health, Something Else
               </Heading>
@@ -120,6 +119,19 @@ const AboutMe: React.FC = () => {
               <Body>Jan 2018 - April 2020</Body>
             </Box>
           </GridBox>
+        </Box>
+        <Box mx={48}>
+          <Title mb={48}>
+            &quot;I was really impressed with her skills in delivering highly
+            buildable designs. She made sure to incorporate feedback from
+            engineers early and often, empowering the team to have valuable
+            conversations around design changes. Would love to work with her
+            again!&quot;
+          </Title>
+          <Heading bold mb={8}>
+            Jill Cohen
+          </Heading>
+          <Heading>Head of Mobile Engineering at Core</Heading>
         </Box>
       </Layout>
       {stickers.map((s, i) => (
