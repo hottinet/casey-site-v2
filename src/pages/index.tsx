@@ -20,6 +20,7 @@ import {
   CUSTOMER_DISCOVERY_ROUTE,
   IRTH_ROUTE,
   LADDERS_ROUTE,
+  LISTENJAY_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -210,14 +211,14 @@ const Home: React.FC = () => {
         />
         <SecondaryProjectLink
           href={LADDERS_ROUTE}
-          imgAlt="Irth app screens"
-          imgSrc="/Irth/irthhover.png"
+          imgAlt="Gaming Rankings"
+          imgSrc="/Ladders/laddershover.png"
           text="Design for a gaming leaderboard"
         />
         <SecondaryProjectLink
-          href={IRTH_ROUTE}
-          imgAlt="Irth app screens"
-          imgSrc="/Irth/irthhover.png"
+          href={LISTENJAY_ROUTE}
+          imgAlt="Quote UI"
+          imgSrc="/ListenJay/listenjayhover.png"
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
