@@ -220,12 +220,6 @@ const Home: React.FC = () => {
           imgSrc="/Irth/irthhover.png"
           text="New feature for a podcast discovery platform"
         />
-        <SecondaryProjectLink
-          href={IRTH_ROUTE}
-          imgAlt="Irth app screens"
-          imgSrc="/Irth/irthhover.png"
-          text="Sampling of graphic design work"
-        />
       </GridBox>
     </Layout>
   );

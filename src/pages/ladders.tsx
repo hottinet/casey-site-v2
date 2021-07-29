@@ -17,6 +17,25 @@ const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
+const PaddedExternalVideo = styled(ExternalVideo)`
+  margin-bottom: 80px;
+`;
+
+const PersonaBox = styled(Box)`
+  background-color: ${({ theme }) => theme.colors.yellow};
+  padding: ${({ theme }) => theme.spacing[48]};
+  border-radius: 50px;
+  color: white;
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
+`;
+
+const QuoteBox = styled(Box)`
+  border: 5px solid ${({ theme }) => theme.colors.green};
+  border-radius: 500px;
+  margin-bottom: 48px;
+  padding: 48px;
+`;
+
 const Ladders: React.FC = () => (
   <Layout>
     <ContentBox column>
@@ -30,14 +49,17 @@ const Ladders: React.FC = () => (
     </ContentBox>
     <DetailPickle>
       <PickleStack
-        bottomText="This is the first draft that the developers working on this project orginally built on their own. It only worked for one group of friends and one game. This prototype was the jumping off point for a more robust project."
+        bottomText="This was a personal project that I worked on with one back-end and one front-end developer. They drafted a first version with limited functionality that was a jumping off point for the more robust project."
         topText="The Project"
       />
-      <PickleStack bottomText="xyz" topText="My Role" />
+      <PickleStack
+        bottomText="I owned design for this project including the visual identity and user experience."
+        topText="My Role"
+      />
     </DetailPickle>
     <ContentBox column>
       <Title bold>Defining the problem</Title>
-      <GridBox center columnGap={48}>
+      <GridBox center columnGap={48} mb={80} rowGap={48}>
         <Image alt="score keeping on paper" src="/Ladders/scorekeep.png" />
         <Box>
           <Heading bold>What are players using to keep score now?</Heading>
@@ -51,7 +73,7 @@ const Ladders: React.FC = () => (
         </Box>
       </GridBox>
       <Title bold>Define, Research, Define Again</Title>
-      <GridBox center columnGap={48}>
+      <GridBox center columnGap={48} mb={48}>
         <Box>
           <Heading bold>Building a product roadmap</Heading>
           <Body>
@@ -61,7 +83,7 @@ const Ladders: React.FC = () => (
             to keep track of tasks.
           </Body>
         </Box>
-        <Image alt="score keeping on paper" src="/Ladders/elo-roadmap.png" />
+        <Image alt="whiteboard planning" src="/Ladders/elo-roadmap.png" />
       </GridBox>
       <Heading bold>Putting the user at the center</Heading>
       <Body>
@@ -71,7 +93,56 @@ const Ladders: React.FC = () => (
         handful of people who play games with freinds regularly and used their
         statements to create the following persona.
       </Body>
-      <Title>Add persona</Title>
+      <PersonaBox>
+        <Body bold mb={0}>
+          Persona
+        </Body>
+        <Title bold>The Avid Gamer</Title>
+        <GridBox columnGap={48} rowGap={24}>
+          <Box>
+            <Heading bold>Goals</Heading>
+            <ul>
+              <li>
+                <Body mb={0}>
+                  Improve skills at playing certain games and gauge that
+                  improvement
+                </Body>
+              </li>
+              <li>
+                <Body mb={0}>Have some competitive fun</Body>
+              </li>
+            </ul>
+          </Box>
+          <Box>
+            <Heading bold>Frustrations</Heading>
+            <ul>
+              <li>
+                <Body mb={0}>Entering info quickly and easily</Body>
+              </li>
+              <li>
+                <Body mb={0}>Mobile experience</Body>
+              </li>
+              <li>
+                <Body mb={0}>Seeing change in data over time</Body>
+              </li>
+            </ul>
+          </Box>
+          <Box>
+            <Heading bold>Motivations</Heading>
+            <ul>
+              <li>
+                <Body mb={0}>Winning</Body>
+              </li>
+              <li>
+                <Body mb={0}>Improving Skills</Body>
+              </li>
+              <li>
+                <Body mb={0}>Prizes and bets</Body>
+              </li>
+            </ul>
+          </Box>
+        </GridBox>
+      </PersonaBox>
       <Divider />
       <Title bold>Building with a user-centered approach</Title>
       <Body>
@@ -80,9 +151,11 @@ const Ladders: React.FC = () => (
         user-centered lens, we decided to focus on the flows that were bringing
         value to the user before getting into the nitty gritty details.
       </Body>
-      <Title>
-        “No one ever says, Oh, I can&apos;t wait to set up this new tool”
-      </Title>
+      <QuoteBox>
+        <Title mb={0}>
+          “No one ever says, Oh, I can&apos;t wait to set up this new tool”
+        </Title>
+      </QuoteBox>
       <Heading bold>Sketching out our idea</Heading>
       <Body>
         The developers I was working with had a rough draft of something working
@@ -90,8 +163,8 @@ const Ladders: React.FC = () => (
         drew out the following screens as a gut check before working through
         wireframes.
       </Body>
-      <Image alt="Sketch of app on paper" src="/Ladders/elo_wire.png" />
-      <GridBox center columnGap={48}>
+      <Image alt="Sketch of app on paper" mb={80} src="/Ladders/elo_wire.png" />
+      <GridBox center columnGap={48} mb={80}>
         <Box>
           <Heading bold>Iterating on wireframes</Heading>
           <Body>
@@ -111,14 +184,18 @@ const Ladders: React.FC = () => (
         populate the form to create a game instead of blocking pathways that a
         user would want to take.
       </Body>
-      <Image alt="secondary wireframe" src="/Ladders/elo-wires-flow.png" />
+      <Image
+        alt="secondary wireframe"
+        mb={80}
+        src="/Ladders/elo-wires-flow.png"
+      />
       <Heading bold>Building functional prototypes</Heading>
       <Body>
         Creating working forms in a prototype was a fun challenge with this
         project that involved a complex prototype full of overlays and hover
         states.
       </Body>
-      <Image alt="prototype view" src="/Ladders/complexWire.png" />
+      <Image alt="prototype view" mb={48} src="/Ladders/complexWire.png" />
       <Divider />
       <Title bold>Creating a visual design system</Title>
       <Heading bold>Exploring visual directions</Heading>
@@ -132,6 +209,7 @@ const Ladders: React.FC = () => (
       </Body>
       <Image
         alt="three different visual directions"
+        mb={80}
         src="/Ladders/elo-directions.png"
       />
       <Heading bold>Creating a logo</Heading>
@@ -139,8 +217,12 @@ const Ladders: React.FC = () => (
         We developed a list of many names for for the platform and once we
         landed on Ladders we created multiple logo options below.
       </Body>
-      <Image alt="alternate logo options" src="/Ladders/elo-alt-logos.png" />
-      <GridBox>
+      <Image
+        alt="alternate logo options"
+        mb={24}
+        src="/Ladders/elo-alt-logos.png"
+      />
+      <GridBox columnGap={24} mb={80}>
         <Image alt="logo on black" src="/Ladders/elo-logo-01.png" />
         <Image alt="logo on yellow" src="/Ladders/elo-logo-02.png" />
       </GridBox>
@@ -151,7 +233,7 @@ const Ladders: React.FC = () => (
         so that when it came time to add the branding it would be very quick and
         easy to change something once and have it reflected everywhere.
       </Body>
-      <Image alt="UI Kit" src="/Ladders/UIKit_2.png" />
+      <Image alt="UI Kit" mb={80} src="/Ladders/UIKit_2.png" />
       <Title bold>Final UI Designs</Title>
       <Body>
         These are some of the main screens designed in order to test our main
@@ -174,17 +256,17 @@ const Ladders: React.FC = () => (
         src="https://player.vimeo.com/video/448968438"
         title="placeholder"
       />
-      <ExternalVideo
+      <PaddedExternalVideo
         src="https://player.vimeo.com/video/448970796"
         title="placeholder"
       />
       <Heading bold>Executing tests</Heading>
-      <Body>
+      <Body mb={48}>
         I had each participant complete the tasks for both new and returning
         users. I observed them complete the tasks over Zoom using teh above
         prototypes. 100% of the users completed both tasks with no problems
       </Body>
-      <GridBox center columnGap={48}>
+      <GridBox center columnGap={48} mb={48}>
         <Box>
           <Heading bold>Offering multiple paths to completion</Heading>
           <Body>
@@ -217,7 +299,7 @@ const Ladders: React.FC = () => (
         to think about the flows that were most necessary and valuable to the
         user.
       </Body>
-      <GridBox center columnGap={48}>
+      <GridBox center columnGap={48} mb={48}>
         <Box>
           <Heading bold>Coding Skills</Heading>
           <Body>
