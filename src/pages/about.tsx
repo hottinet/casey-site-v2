@@ -72,7 +72,7 @@ const AboutMe: React.FC = () => {
     <>
       <Layout>
         <Box mb={80} mx={48}>
-          <Title>Click anywhere to learn about me.</Title>
+          <Title mb={8}>Click anywhere to learn about me.</Title>
           <Title mb={8}>
             Download my&thinsp;
             <Link
@@ -121,6 +121,7 @@ const AboutMe: React.FC = () => {
           </GridBox>
         </Box>
         <Box mx={48}>
+          <Heading bold>What my colleagues are saying</Heading>
           <Title mb={48}>
             &quot;I was really impressed with her skills in delivering highly
             buildable designs. She made sure to incorporate feedback from

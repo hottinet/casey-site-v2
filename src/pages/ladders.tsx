@@ -254,11 +254,11 @@ const Ladders: React.FC = () => (
       </Body>
       <ExternalVideo
         src="https://player.vimeo.com/video/448968438"
-        title="placeholder"
+        title="New User Flow"
       />
       <PaddedExternalVideo
         src="https://player.vimeo.com/video/448970796"
-        title="placeholder"
+        title="Returning User Flow"
       />
       <Heading bold>Executing tests</Heading>
       <Body mb={48}>
