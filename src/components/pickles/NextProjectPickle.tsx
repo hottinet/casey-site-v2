@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 import { HOME_ROUTE } from '~/constants/routing';
-import { Color } from '~/typings/theme';
 
 import Arrow from '../icons/Arrow';
 import Link from '../Link';
@@ -10,7 +9,6 @@ import Pickle from './Pickle';
 
 type NextProjectPickleProps = {
   nextProjectPath: string;
-  color?: Color;
   className?: string;
 };
 
@@ -46,14 +44,13 @@ const PickleLink = styled(Link)`
 
 const NextProjectPickle: React.FC<NextProjectPickleProps> = ({
   nextProjectPath,
-  color = 'blue',
   className,
 }) => {
   const isBackToHome = nextProjectPath === HOME_ROUTE;
   return (
     <LinkPickle
       className={className}
-      color={isBackToHome ? 'red' : color}
+      color={isBackToHome ? 'red' : 'blue'}
       origin="right"
     >
       <PickleLink href={nextProjectPath} internal noHoverStyles>
