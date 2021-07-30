@@ -48,15 +48,22 @@ const NextProjectPickle: React.FC<NextProjectPickleProps> = ({
   nextProjectPath,
   color = 'blue',
   className,
-}) => (
-  <LinkPickle className={className} color={color} origin="right">
-    <PickleLink href={nextProjectPath} internal noHoverStyles>
-      <Heading bold mb={0}>
-        {nextProjectPath === HOME_ROUTE ? 'Back to Home' : 'Next Project'}
-      </Heading>
-      <ArrowIcon title="Next project arrow" titleId="next-project-arrow" />
-    </PickleLink>
-  </LinkPickle>
-);
+}) => {
+  const isBackToHome = nextProjectPath === HOME_ROUTE;
+  return (
+    <LinkPickle
+      className={className}
+      color={isBackToHome ? 'red' : color}
+      origin="right"
+    >
+      <PickleLink href={nextProjectPath} internal noHoverStyles>
+        <Heading bold mb={0}>
+          {isBackToHome ? 'Back to Home' : 'Next Project'}
+        </Heading>
+        <ArrowIcon title="Next project arrow" titleId="next-project-arrow" />
+      </PickleLink>
+    </LinkPickle>
+  );
+};
 
 export default NextProjectPickle;
