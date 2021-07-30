@@ -8,7 +8,7 @@ import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
 
 const FooterDivider = styled(Divider)`
-  margin-bottom: ${({ theme }) => theme.spacing[24]};
+  margin-bottom: ${({ theme }) => theme.spacing[8]};
 `;
 
 const FooterLink = styled(Link)`

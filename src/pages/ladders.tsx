@@ -58,6 +58,7 @@ const Ladders: React.FC = () => (
       />
     </DetailPickle>
     <ContentBox column>
+      <Divider label="Discover" />
       <Title bold>Defining the problem</Title>
       <GridBox center columnGap={48} mb={80} rowGap={48}>
         <Image alt="score keeping on paper" src="/Ladders/scorekeep.png" />
@@ -143,7 +144,7 @@ const Ladders: React.FC = () => (
           </Box>
         </GridBox>
       </PersonaBox>
-      <Divider />
+      <Divider label="Define" />
       <Title bold>Building with a user-centered approach</Title>
       <Body>
         In our original roadmap we focused on including things like account
@@ -196,7 +197,7 @@ const Ladders: React.FC = () => (
         states.
       </Body>
       <Image alt="prototype view" mb={48} src="/Ladders/complexWire.png" />
-      <Divider />
+      <Divider label="Design" />
       <Title bold>Creating a visual design system</Title>
       <Heading bold>Exploring visual directions</Heading>
       <Body>
@@ -245,7 +246,7 @@ const Ladders: React.FC = () => (
       </Body>
       <Image alt="two screens" src="/Ladders/sideBySide-01.png" />
       <Image alt="two screens" src="/Ladders/sideBySide-02.png" />
-      <Divider />
+      <Divider label="Deploy" />
       <Title bold>Testing for validation and usability</Title>
       <Heading bold>Building functional prototypes</Heading>
       <Body>
@@ -289,7 +290,7 @@ const Ladders: React.FC = () => (
         this setting so I ultimately decided to remove it or build it in to
         advanced settings later.
       </Body>
-      <Divider />
+      <Divider label="Learn" />
       <Title bold>What did I learn from this project?</Title>
       <Heading bold>User-centered approach to a roadmap</Heading>
       <Body>

@@ -51,6 +51,7 @@ const ListenJay: React.FC = () => (
           title="Animation turning a quote into a graphic"
         />
       </GridBox>
+      <Divider label="Discover" />
       <Title bold>Understanding the podcaster&apos;s needs</Title>
       <Heading bold>Conducting user interviews</Heading>
       <Body>
@@ -139,7 +140,7 @@ const ListenJay: React.FC = () => (
           </ul>
         </Box>
       </PersonaGridBox>
-      <Divider />
+      <Divider label="Define" />
       <Title bold>Building the feature</Title>
       <Heading bold>Creating a user flow</Heading>
       <Body>
@@ -186,7 +187,7 @@ const ListenJay: React.FC = () => (
         mb={48}
         src="/ListenJay/wireframe-01.png"
       />
-      <Divider />
+      <Divider label="Design" />
       <Title bold>Visual Designs</Title>
       <Body mb={48}>
         I updated the branding for ListenJay as part of another project for them
@@ -212,7 +213,7 @@ const ListenJay: React.FC = () => (
         mb={48}
         src="/ListenJay/Hifi_Design.png"
       />
-      <Divider />
+      <Divider label="Test" />
       <Title bold>Validation and Testing</Title>
       <Body>
         I tested this prototype with a handful of partcicpants to gague the
@@ -234,7 +235,7 @@ const ListenJay: React.FC = () => (
         src="https://player.vimeo.com/video/444317718"
         title="Going through the protptype"
       />
-      <Divider />
+      <Divider label="Learnings" />
       <Title bold>What I learned from this project</Title>
       <Heading bold>Finding participants can be a challenge</Heading>
       <Body>

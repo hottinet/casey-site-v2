@@ -27,6 +27,10 @@ const stickerData = [
     src: '/About/shoes_sticker.png',
     alt: 'mis-matched shoes',
   },
+  {
+    src: '/About/bread_sticker.png',
+    alt: 'bread',
+  },
 ];
 
 type StickerObj = {
