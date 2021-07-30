@@ -121,8 +121,6 @@ const CoreLiveClasses: React.FC = () => (
         and how they leverage live classes as a top of funnel mechanism to gain
         new students.
       </BodyOverBody>
-      <Heading bold>Working in the App Store</Heading>
-      <Body>xyz</Body>
     </ContentBox>
   </Layout>
 );

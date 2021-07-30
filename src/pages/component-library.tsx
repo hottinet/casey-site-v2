@@ -83,7 +83,6 @@ const CoreComponentLibrary: React.FC = () => (
         src="/ComponentLibrary/Themes.png"
       />
       <Heading bold>Creating flexible components and documentation</Heading>
-      <Body>In order to move quickly</Body>
       <BorderedVideo
         sources={[{ src: '/ComponentLibrary/IconComponent.mp4' }]}
       />
@@ -92,7 +91,6 @@ const CoreComponentLibrary: React.FC = () => (
         mb={80}
         src="/ComponentLibrary/iconDocumentation.png"
       />
-      <Title bold>Moving Quickly</Title>
       <Title bold>Key Learnings</Title>
       <Heading bold>Building the components the right way is worth it</Heading>
       <Body>

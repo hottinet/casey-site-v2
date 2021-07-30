@@ -6,16 +6,10 @@ import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
-import DetailPickle from '~/components/pickles/DetailPickle';
-import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
-
-const PickleStack = styled(StackedText)`
-  margin-right: 7%;
-`;
 
 const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 48px;
@@ -25,30 +19,38 @@ const HeaderExternalVideo = styled(ExternalVideo)`
   border: 3px solid black;
 `;
 
+const PersonaGridBox = styled(GridBox)`
+  background-color: ${({ theme }) => theme.colors.blue};
+  padding: ${({ theme }) => theme.spacing[48]};
+  border-radius: 50px;
+  color: white;
+  margin-bottom: ${({ theme }) => theme.spacing[80]};
+`;
+
+const PhoneImage = styled(Image)`
+  width: 70%;
+`;
+
 const ListenJay: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <GridBox center mb={48}>
-        <Title bold>ListenJay helps people discover new podcasts</Title>
+      <GridBox center columnGap={48} mb={48}>
+        <Box>
+          <Title bold>ListenJay helps people discover new podcasts</Title>
+          <Body>
+            ListenJay lets users share a link to a specific quote from any
+            podcast. They have gotten a lot of engagement from sharing these
+            quotes on their own social channels. Now they want to create a tool
+            that will allow podcasters to take quotes straight from their
+            transcript and turn them into sharable graphics.
+          </Body>
+        </Box>
         <HeaderExternalVideo
           aspectRatio="1:1"
           src="https://player.vimeo.com/video/444995903"
           title="Animation turning a quote into a graphic"
         />
       </GridBox>
-      <Body>
-        ListenJay lets users share a link to a specific quote from any podcast.
-        They have gotten a lot of engagement from sharing these quotes on their
-        own social channels. Now they want to create a tool that will allow
-        podcasters to take quotes straight from their transcript and turn them
-        into sharable graphics.
-      </Body>
-    </ContentBox>
-    <DetailPickle>
-      <PickleStack bottomText="xyz" topText="The Project" />
-      <PickleStack bottomText="xyz" topText="My Role" />
-    </DetailPickle>
-    <ContentBox column>
       <Title bold>Understanding the podcaster&apos;s needs</Title>
       <Heading bold>Conducting user interviews</Heading>
       <Body>
@@ -57,8 +59,31 @@ const ListenJay: React.FC = () => (
         my immediate network has a podcast I did a lot of cold outreach to
         podcast hosts and online podcasting communities to recruit participants.
       </Body>
-      <GridBox>
-        <Title>phone graphic</Title>
+      <GridBox center mb={48}>
+        <PhoneImage alt="phone" src="ListenJay/userinterviews-01.png" />
+        <Box>
+          <Body mb={24}>Key Takeaways</Body>
+          <ul>
+            <li>
+              <Heading>
+                Transcribing is useful to people who want to share quotes and
+                have increased accessibility but it can be costly
+              </Heading>
+            </li>
+            <li>
+              <Heading>
+                Many podcasters depend on their own social channels and
+                distribution platforms to promote their shows
+              </Heading>
+            </li>
+            <li>
+              <Heading>
+                Podcasters are wearing many hats so tools need to be easy to
+                learn
+              </Heading>
+            </li>
+          </ul>
+        </Box>
       </GridBox>
       <Heading bold>Defining the persona for this feature</Heading>
       <Body>
@@ -69,7 +94,51 @@ const ListenJay: React.FC = () => (
         their tools aimed at the podcast hosts and producers themselves. This
         persona is based on the key takeaways from my user interviews above.
       </Body>
-      <Title>Persona</Title>
+      <PersonaGridBox center columnGap={48}>
+        <Box>
+          <Body bold mb={8}>
+            Persona
+          </Body>
+          <Title bold mb={8}>
+            The Independent Podcaster
+          </Title>
+          <Body mb={24}>Male | 30 yrs old | New York</Body>
+        </Box>
+
+        <Box>
+          <Heading bold>Goals</Heading>
+          <ul>
+            <li>
+              <Body mb={0}>Stand out among the crowd of podcasts</Body>
+            </li>
+            <li>
+              <Body mb={0}>Get his show off the groundn</Body>
+            </li>
+          </ul>
+          <Heading bold>Frustrations</Heading>
+          <ul>
+            <li>
+              <Body mb={0}>
+                Experiencing a harsh learning curve on new tools
+              </Body>
+            </li>
+            <li>
+              <Body mb={0}>
+                Reaching audiences outside of his existing network
+              </Body>
+            </li>
+          </ul>
+          <Heading bold>Motivations</Heading>
+          <ul>
+            <li>
+              <Body mb={0}># of listeners</Body>
+            </li>
+            <li>
+              <Body mb={0}>Low cost</Body>
+            </li>
+          </ul>
+        </Box>
+      </PersonaGridBox>
       <Divider />
       <Title bold>Building the feature</Title>
       <Heading bold>Creating a user flow</Heading>
