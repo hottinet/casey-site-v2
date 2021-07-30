@@ -1,11 +1,34 @@
 import styled from '@emotion/styled';
 
-const Divider = styled.div`
+import FlexBox from './box/FlexBox';
+import Body from './typography/Body';
+
+type DividerProps = {
+  label?: string;
+};
+
+const Segment = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.border.borderWidth[3]};
   background-color: ${({ theme }) => theme.colors.text};
-  margin-top: ${({ theme }) => theme.spacing[48]};
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
 `;
+
+const Label = styled(Body)`
+  padding: 0 ${({ theme }) => theme.spacing[16]};
+`;
+
+const Divider: React.FC<DividerProps> = ({ label }) => (
+  <FlexBox center mb={80} mt={48}>
+    {label && (
+      <>
+        <Segment />
+        <Label bold mb={0}>
+          {label}
+        </Label>
+      </>
+    )}
+    <Segment />
+  </FlexBox>
+);
 
 export default Divider;
