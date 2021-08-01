@@ -18,16 +18,15 @@ const PickleStack = styled(StackedText)`
 const Irth: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <GridBox>
-        <Title bold>Title for Irth Project</Title>
+      <GridBox center>
+        <Title bold>
+          Irth is an app for brown and black women to review doctors and
+          hospitals involved in their birthing experiences
+        </Title>
         <Image alt="screens in phone" src="/Irth/IrthHero.gif" />
       </GridBox>
     </ContentBox>
-    <DetailPickle>
-      <PickleStack
-        bottomText="Irth is an app for brown and black women to review doctors and hospitals involved in their birthing experiences"
-        topText="What is Irth?"
-      />
+    <DetailPickle columns={1}>
       <PickleStack
         bottomText="I was brought on to this project to make a few key design changes necessary to take the app to its first round of beta testing."
         topText="My Role"

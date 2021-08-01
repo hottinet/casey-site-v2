@@ -31,6 +31,10 @@ const stickerData = [
     src: '/About/bread_sticker.png',
     alt: 'bread',
   },
+  {
+    src: '/About/terraceHouse_sticker.png',
+    alt: 'Terrace House',
+  },
 ];
 
 type StickerObj = {

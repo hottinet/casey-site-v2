@@ -5,6 +5,7 @@ import Body from './typography/Body';
 
 type DividerProps = {
   label?: string;
+  className?: string;
 };
 
 const Segment = styled.div`
@@ -17,8 +18,8 @@ const Label = styled(Body)`
   padding: 0 ${({ theme }) => theme.spacing[16]};
 `;
 
-const Divider: React.FC<DividerProps> = ({ label }) => (
-  <FlexBox center mb={80} mt={48}>
+const Divider: React.FC<DividerProps> = ({ label, className }) => (
+  <FlexBox center className={className} mb={80} mt={48}>
     {label && (
       <>
         <Segment />
