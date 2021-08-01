@@ -17,10 +17,6 @@ type TopTextProps = Pick<StackedTextProps, 'title'> & {
   children: string;
 };
 
-const BottomText = styled(Body)`
-  margin: ${({ theme }) => `${theme.spacing[24]} 0`};
-`;
-
 const TopText: React.FC<TopTextProps> = ({ title, children }) =>
   title ? <Title bold>{children}</Title> : <Heading bold>{children}</Heading>;
 
@@ -32,7 +28,7 @@ const StackedText: React.FC<StackedTextProps> = ({
 }) => (
   <FlexBox className={className} column>
     <TopText title={title}>{topText}</TopText>
-    <BottomText>{bottomText}</BottomText>
+    <Body mb={0}>{bottomText}</Body>
   </FlexBox>
 );
 

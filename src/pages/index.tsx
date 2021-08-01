@@ -48,10 +48,10 @@ const PickleTitle = styled(Title)`
 
 const ImageBox = styled(FlexBox)`
   height: 20rem;
-  margin-left: 48px;
-  margin-right: 48px;
+  margin-left: ${({ theme }) => theme.spacing[48]};
+  margin-right: ${({ theme }) => theme.spacing[48]};
   margin-bottom: 0px;
-  margin-top: 48px;
+  margin-top: ${({ theme }) => theme.spacing[48]};
   ${({ theme }) => theme.breakpoints.md} {
     height: 30rem;
     margin-left: 0px;
@@ -62,20 +62,19 @@ const ImageBox = styled(FlexBox)`
 
 const TitleBox = styled(FlexBox)`
   margin-right: 14%;
-  margin-left: 48px;
-  margin-bottom: 48px;
+  margin-left: ${({ theme }) => theme.spacing[24]};
+  margin-bottom: ${({ theme }) => theme.spacing[48]};
   ${({ theme }) => theme.breakpoints.md} {
-    margin-left: 48px;
     margin-bottom: 0px;
+    margin-left: ${({ theme }) => theme.spacing[48]};
   }
 `;
 
 const PickleContentWrapper = styled(GridBox)`
   width: 100%;
-  margin-left: 8px;
   margin-top: 80px;
   ${({ theme }) => theme.breakpoints.sm} {
-    margin-left: 48px;
+    margin-left: ${({ theme }) => theme.spacing[24]};
     margin-top: 0px;
   }
 `;
@@ -145,9 +144,10 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 
 const Home: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
+  const xSpace = !breakpoints.includes('md') ? 24 : 48;
   return (
     <Layout>
-      <Box mx={48}>
+      <Box mx={xSpace}>
         <Box>
           <Title mb={8}>
             Product Designer balancing personality and utility.
@@ -193,10 +193,10 @@ const Home: React.FC = () => {
         pickleColor="yellow"
         title="Improving content creation and consumption"
       />
-      <Box mb={24} mt={128} mx={48}>
+      <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
-      <GridBox columnGap={48} mx={48} rowGap={48}>
+      <GridBox columnGap={48} mx={xSpace} rowGap={48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="component w toggle controls"

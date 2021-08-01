@@ -24,6 +24,7 @@ const StyledPickle = styled(Pickle)`
 
 const PickleGrid = styled(ContentBox)`
   grid-column-gap: 7%;
+  grid-row-gap: ${({ theme }) => theme.spacing[24]};
 `;
 
 const DetailPickle: React.FC<DetailPickleProps> = ({

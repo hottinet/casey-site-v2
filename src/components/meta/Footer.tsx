@@ -1,11 +1,17 @@
 import styled from '@emotion/styled';
 
-import Box from '../box/Box';
 import FlexBox from '../box/FlexBox';
 import Divider from '../Divider';
 import Link from '../Link';
 import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
+
+const OuterFooterWrapper = styled.div`
+  padding: ${({ theme }) => `${theme.spacing[48]} ${theme.spacing[24]}`};
+  ${({ theme }) => theme.breakpoints.md} {
+    padding: ${({ theme }) => theme.spacing[48]};
+  }
+`;
 
 const FooterDivider = styled(Divider)`
   margin-bottom: ${({ theme }) => theme.spacing[8]};
@@ -56,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({ nextPath }) => (
         <NextProjectPickle nextProjectPath={nextPath} />
       </FlexBox>
     )}
-    <Box p={48}>
+    <OuterFooterWrapper>
       <FooterDivider />
       <FooterWrapper justifyContent="space-between">
         <CaseyLink href="/" internal noHoverStyles>
@@ -76,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({ nextPath }) => (
           </FooterLink>
         </LinkWrapper>
       </FooterWrapper>
-    </Box>
+    </OuterFooterWrapper>
   </>
 );
 
