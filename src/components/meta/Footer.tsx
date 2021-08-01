@@ -71,7 +71,7 @@ const Footer: React.FC<FooterProps> = ({ nextPath }) => (
           <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
             <Heading mb={0}>LinkedIn</Heading>
           </FooterLink>
-          <FooterLink href="https://troychryssos.com/">
+          <FooterLink href="/Casey_Resume_082021.pdf">
             <Heading mb={0}>Resume</Heading>
           </FooterLink>
         </LinkWrapper>

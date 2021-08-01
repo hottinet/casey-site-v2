@@ -86,7 +86,7 @@ const AboutMe: React.FC = () => {
             <Link
               hoverImgAlt="resume"
               hoverImgSrc="/About/resumehover.png"
-              href="https://core.fitness/"
+              href="/Casey_Resume_082021.pdf"
             >
               resume
             </Link>
