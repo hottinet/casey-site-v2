@@ -4,6 +4,12 @@ import styled from '@emotion/styled';
 import FlexBox, { FlexBoxProps } from './FlexBox';
 import GridBox, { GridBoxProps } from './GridBox';
 
+const extractRemVal = (remString: string) => {
+  const captureRemRegex = /\d+.?\d+/;
+  const match = remString.match(captureRemRegex)?.[0] || '0';
+  return parseFloat(match);
+};
+
 type ContentBoxProps = {
   leftOnly?: boolean;
   grid?: boolean;
@@ -20,7 +26,9 @@ const Wrapper: React.FC<ContentBoxProps> = ({ grid, children, ...rest }) =>
 const StyledBox = styled(Wrapper)<
   Pick<ContentBoxProps, 'leftOnly' | 'widthRatio'>
 >(({ leftOnly, widthRatio = 1, theme }) => ({
-  margin: `0 ${5 * widthRatio}% 0 ${5 * widthRatio}%`,
+  margin: `0 ${extractRemVal(theme.spacing[24]) * widthRatio}rem 0 ${
+    extractRemVal(theme.spacing[24]) * widthRatio
+  }rem`,
   ...(leftOnly && {
     marginRight: 0,
   }),
