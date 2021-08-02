@@ -39,8 +39,10 @@ const SizedPickle = styled(Pickle)`
   width: 94%;
   margin-top: ${({ theme }) => theme.spacing[24]};
   border-radius: 0 1000px 1000px 0;
+  height: 20rem;
   ${({ theme }) => theme.breakpoints.sm} {
     margin-top: ${({ theme }) => theme.spacing[48]};
+    height: unset;
   }
 `;
 
@@ -52,7 +54,10 @@ const PickleTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.textSecondary};
   margin-bottom: ${({ theme }) => theme.spacing[16]};
   ${({ theme }) => theme.breakpoints.sm} {
-    width: 24.5rem;
+    max-width: 24.5rem;
+  }
+  ${({ theme }) => theme.breakpoints.md} {
+    max-width: unset;
   }
 `;
 
@@ -61,10 +66,10 @@ const ImageBox = styled(FlexBox)`
   margin: ${({ theme }) => `${theme.spacing[24]} 0`};
   justify-content: flex-start;
   ${({ theme }) => theme.breakpoints.md} {
-    justify-content: center;
-    height: 30rem;
+    height: unset;
     margin-left: 0px;
     margin-top: 0px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -72,7 +77,7 @@ const TitleBox = styled(FlexBox)`
   margin-right: 14%;
   ${({ theme }) => theme.breakpoints.md} {
     margin-bottom: 0px;
-    margin-left: ${({ theme }) => theme.spacing[48]};
+    margin-right: 0;
   }
 `;
 
@@ -81,9 +86,13 @@ const PickleContentWrapper = styled(ContentBox)`
   margin-top: ${({ theme }) => theme.spacing[48]};
   margin-bottom: ${({ theme }) => theme.spacing[48]};
   width: 100%;
+  grid-template-columns: auto 1fr;
   ${({ theme }) => theme.breakpoints.sm} {
-    grid-template-columns: auto 1fr;
     column-gap: ${({ theme }) => theme.spacing[24]};
+  }
+  ${({ theme }) => theme.breakpoints.md} {
+    margin: ${({ theme }) => theme.spacing[48]};
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
