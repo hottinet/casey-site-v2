@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 
 import Box from '~/components/box/Box';
+import ContentBox from '~/components/box/ContentBox';
 import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import ArrowButton from '~/components/buttons/ArrowButton';
@@ -57,34 +58,32 @@ const PickleTitle = styled(Title)`
 
 const ImageBox = styled(FlexBox)`
   height: 20rem;
-  margin-left: ${({ theme }) => theme.spacing[48]};
-  margin-right: ${({ theme }) => theme.spacing[48]};
-  margin-bottom: 0px;
-  margin-top: ${({ theme }) => theme.spacing[48]};
+  margin: ${({ theme }) => `${theme.spacing[24]} 0`};
+  justify-content: flex-start;
   ${({ theme }) => theme.breakpoints.md} {
+    justify-content: center;
     height: 30rem;
     margin-left: 0px;
-    margin-right: 0px;
     margin-top: 0px;
   }
 `;
 
 const TitleBox = styled(FlexBox)`
   margin-right: 14%;
-  margin-left: ${({ theme }) => theme.spacing[24]};
-  margin-bottom: ${({ theme }) => theme.spacing[48]};
   ${({ theme }) => theme.breakpoints.md} {
     margin-bottom: 0px;
     margin-left: ${({ theme }) => theme.spacing[48]};
   }
 `;
 
-const PickleContentWrapper = styled(GridBox)`
+const PickleContentWrapper = styled(ContentBox)`
+  display: grid;
+  margin-top: ${({ theme }) => theme.spacing[48]};
+  margin-bottom: ${({ theme }) => theme.spacing[48]};
   width: 100%;
-  margin-top: 80px;
   ${({ theme }) => theme.breakpoints.sm} {
-    margin-left: ${({ theme }) => theme.spacing[24]};
-    margin-top: 0px;
+    grid-template-columns: auto 1fr;
+    column-gap: ${({ theme }) => theme.spacing[24]};
   }
 `;
 
@@ -116,7 +115,7 @@ const HomePickle: React.FC<HomePickleProps> = ({
       <PickleLink href={linkTo} internal noHoverStyles>
         <PickleContentWrapper alignItems="center">
           {breakpoints.includes('sm') && (
-            <ImageBox center>
+            <ImageBox alignItems="center">
               <Image alt={imageAlt} src={imageSrc} />
             </ImageBox>
           )}
@@ -153,7 +152,9 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 
 const Home: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
-  const xSpace = !breakpoints.includes('md') ? 24 : 48;
+  const lessThanMd = !breakpoints.includes('md');
+  const isXss = !breakpoints.includes('xs');
+  const xSpace = lessThanMd ? 24 : 48;
 
   return (
     <Layout>
@@ -177,14 +178,22 @@ const Home: React.FC = () => {
       </Box>
       <HomePickle
         imageAlt="iOS and Web Mockups"
-        imageSrc="/LiveClasses/LiveClassHero.png"
+        imageSrc={
+          lessThanMd
+            ? '/LiveClasses/home-small-LC.png'
+            : '/LiveClasses/LiveClassHero.png'
+        }
         linkTo={CORE_LIVE_CLASSES}
         pickleColor="green"
         title="Designing a live class experience for fitness"
       />
       <HomePickle
         imageAlt="CMS and customer facing screens"
-        imageSrc="/Programs/ProgramHero.png"
+        imageSrc={
+          lessThanMd
+            ? '/Programs/home-small-programs.png'
+            : '/Programs/ProgramHero.png'
+        }
         linkTo={CORE_PROGRAMS}
         pickleColor="red"
         title="Building fitness programs on Core"
@@ -198,7 +207,11 @@ const Home: React.FC = () => {
       />
       <HomePickle
         imageAlt="Video Upload states"
-        imageSrc="/VideoUpload/VideoCover.png"
+        imageSrc={
+          lessThanMd
+            ? '/Sessions/home-small-sessions.png'
+            : '/Sessions/VideoCover.png'
+        }
         linkTo={CORE_SESSIONS}
         pickleColor="yellow"
         title="Improving content creation and consumption"
@@ -206,11 +219,7 @@ const Home: React.FC = () => {
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
-      <GridBox
-        columnGap={48}
-        mx={xSpace}
-        rowGap={!breakpoints.includes('xs') ? 24 : 48}
-      >
+      <GridBox columnGap={48} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="component w toggle controls"
