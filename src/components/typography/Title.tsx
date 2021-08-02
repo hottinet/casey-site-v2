@@ -10,10 +10,13 @@ type TitleProps = Pick<MarginProps, 'mb'> & {
 
 const Text = styled.h2<Omit<TitleProps, 'children'>>`
   font-family: ${({ theme }) => theme.fontFamily};
-  font-size: ${({ theme }) => theme.fontSize.title};
   margin-bottom: ${({ theme, mb = 24 }) => theme.spacing[mb]};
   font-weight: ${({ theme, bold }) =>
     bold ? theme.fontWeight.bold : theme.fontWeight.regular};
+  font-size: ${({ theme }) => theme.fontSize.mobileTitle};
+  ${({ theme }) => theme.breakpoints.xs} {
+    font-size: ${({ theme }) => theme.fontSize.title};
+  }
 `;
 
 const Title: React.FC<TitleProps> = ({ bold, className, children, mb }) => (

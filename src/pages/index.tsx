@@ -27,13 +27,20 @@ import { Color } from '~/typings/theme';
 
 // START - STYLED COMPONENTS - START
 const LinkText = styled.span`
-  font-size: ${({ theme }) => theme.fontSize.title};
+  font-size: ${({ theme }) => theme.fontSize.mobileTitle};
   font-family: ${({ theme }) => theme.fontFamily};
+  ${({ theme }) => theme.breakpoints.xs} {
+    font-size: ${({ theme }) => theme.fontSize.title};
+  }
 `;
 
 const SizedPickle = styled(Pickle)`
   width: 94%;
-  margin-top: ${({ theme }) => theme.spacing[48]};
+  margin-top: ${({ theme }) => theme.spacing[24]};
+  border-radius: 0 1000px 1000px 0;
+  ${({ theme }) => theme.breakpoints.sm} {
+    margin-top: ${({ theme }) => theme.spacing[48]};
+  }
 `;
 
 const PickleLink = styled(Link)`
@@ -43,7 +50,9 @@ const PickleLink = styled(Link)`
 const PickleTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.textSecondary};
   margin-bottom: ${({ theme }) => theme.spacing[16]};
-  width: 24.5rem;
+  ${({ theme }) => theme.breakpoints.sm} {
+    width: 24.5rem;
+  }
 `;
 
 const ImageBox = styled(FlexBox)`
@@ -145,6 +154,7 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
 const Home: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
   const xSpace = !breakpoints.includes('md') ? 24 : 48;
+
   return (
     <Layout>
       <Box mx={xSpace}>
@@ -196,7 +206,11 @@ const Home: React.FC = () => {
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
-      <GridBox columnGap={48} mx={xSpace} rowGap={48}>
+      <GridBox
+        columnGap={48}
+        mx={xSpace}
+        rowGap={!breakpoints.includes('xs') ? 24 : 48}
+      >
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="component w toggle controls"

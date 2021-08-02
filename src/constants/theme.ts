@@ -55,6 +55,7 @@ const theme = {
     body: '1rem',
     heading: '1.25rem',
     title: '2.25rem',
+    mobileTitle: '1.75rem',
   },
   fontFamily: "'Raleway', sans-serif",
   lineHeight: {

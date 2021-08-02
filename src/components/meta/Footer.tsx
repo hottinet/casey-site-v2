@@ -58,7 +58,7 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = ({ nextPath }) => (
   <>
     {nextPath && (
-      <FlexBox justifyContent="flex-end" mt={128}>
+      <FlexBox justifyContent="flex-end" mt={64}>
         <NextProjectPickle nextProjectPath={nextPath} />
       </FlexBox>
     )}
