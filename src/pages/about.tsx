@@ -2,6 +2,7 @@ import random from 'lodash.random';
 import { useEffect, useRef, useState } from 'react';
 
 import Box from '~/components/box/Box';
+import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
@@ -79,69 +80,71 @@ const AboutMe: React.FC = () => {
   return (
     <>
       <Layout>
-        <Box mb={80} mx={48}>
-          <Title mb={8}>Click anywhere to learn about me.</Title>
-          <Title mb={8}>
-            Download my&thinsp;
-            <Link
-              hoverImgAlt="resume"
-              hoverImgSrc="/About/resumehover.png"
-              href="/Casey_Resume_082021.pdf"
-            >
-              resume
-            </Link>
-            &thinsp;or find me on&thinsp;
-            <Link
-              hoverImgAlt="linkedin profile"
-              hoverImgSrc="/About/linkedinhover.png"
-              href="https://core.fitness/"
-            >
-              LinkedIn.
-            </Link>
-          </Title>
-        </Box>
-        <Box mb={48} mx={48}>
-          <Title bold>Experience</Title>
-          <GridBox>
-            <Box>
-              <Heading bold mb={8}>
-                Product Designer
-              </Heading>
-              <Heading>Core &#40;An AlleyCorp Company&#41;</Heading>
-              <Body>Feb 2021 - July 2021</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Freelance Product Designer
-              </Heading>
-              <Heading>
-                Irth, Enkasa Homes, Ellipsis Health, Something Else
-              </Heading>
-              <Body>May 2020 - Feb 2021</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Design Manager
-              </Heading>
-              <Heading>Flatiron School &#40;A WeWork Company&#41;</Heading>
-              <Body>Jan 2018 - April 2020</Body>
-            </Box>
-          </GridBox>
-        </Box>
-        <Box mx={48}>
-          <Heading bold>What my colleagues are saying</Heading>
-          <Title mb={48}>
-            &quot;I was really impressed with her skills in delivering highly
-            buildable designs. She made sure to incorporate feedback from
-            engineers early and often, empowering the team to have valuable
-            conversations around design changes. Would love to work with her
-            again!&quot;
-          </Title>
-          <Heading bold mb={8}>
-            Jill Cohen
-          </Heading>
-          <Heading>Head of Mobile Engineering at Core</Heading>
-        </Box>
+        <ContentBox column>
+          <Box mb={80}>
+            <Title mb={8}>Click anywhere to learn about me.</Title>
+            <Title mb={8}>
+              Download my&thinsp;
+              <Link
+                hoverImgAlt="resume"
+                hoverImgSrc="/About/resumehover.png"
+                href="/Casey_Resume_082021.pdf"
+              >
+                resume
+              </Link>
+              &thinsp;or find me on&thinsp;
+              <Link
+                hoverImgAlt="linkedin profile"
+                hoverImgSrc="/About/linkedinhover.png"
+                href="https://core.fitness/"
+              >
+                LinkedIn.
+              </Link>
+            </Title>
+          </Box>
+          <Box mb={48}>
+            <Title bold>Experience</Title>
+            <GridBox>
+              <Box>
+                <Heading bold mb={8}>
+                  Product Designer
+                </Heading>
+                <Heading>Core &#40;An AlleyCorp Company&#41;</Heading>
+                <Body>Feb 2021 - July 2021</Body>
+              </Box>
+              <Box>
+                <Heading bold mb={8}>
+                  Freelance Product Designer
+                </Heading>
+                <Heading>
+                  Irth, Enkasa Homes, Ellipsis Health, Something Else
+                </Heading>
+                <Body>May 2020 - Feb 2021</Body>
+              </Box>
+              <Box>
+                <Heading bold mb={8}>
+                  Design Manager
+                </Heading>
+                <Heading>Flatiron School &#40;A WeWork Company&#41;</Heading>
+                <Body>Jan 2018 - April 2020</Body>
+              </Box>
+            </GridBox>
+          </Box>
+          <Box>
+            <Heading bold>What my colleagues are saying</Heading>
+            <Title mb={48}>
+              &quot;I was really impressed with her skills in delivering highly
+              buildable designs. She made sure to incorporate feedback from
+              engineers early and often, empowering the team to have valuable
+              conversations around design changes. Would love to work with her
+              again!&quot;
+            </Title>
+            <Heading bold mb={8}>
+              Jill Cohen
+            </Heading>
+            <Heading>Head of Mobile Engineering at Core</Heading>
+          </Box>
+        </ContentBox>
       </Layout>
       {stickers.map((s, i) => (
         <PortalImage
