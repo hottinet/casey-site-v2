@@ -209,7 +209,11 @@ const Home: React.FC = () => {
       />
       <HomePickle
         imageAlt="several app screens"
-        imageSrc="/CustomerDiscovery/Customers.gif"
+        imageSrc={
+          lessThanMd
+            ? '/CustomerDiscovery/HomeCustomerSmall.gif'
+            : '/CustomerDiscovery/Customers.gif'
+        }
         linkTo={CUSTOMER_DISCOVERY_ROUTE}
         pickleColor="blue"
         title="Rediscovering the Core Customer"
