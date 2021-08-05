@@ -30,28 +30,27 @@ const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
   width: 100%;
 `;
 
-const StyledButton = styled(Button)`
-  border-radius: 50%;
-  padding: 0;
-  margin: 0;
-  height: 4.125rem;
-  width: 4.125rem;
-  border-color: ${({ theme, variant }) =>
-    variant === 'primary' ? theme.colors.text : theme.colors.textSecondary};
-  border-style: solid;
-  border-width: ${({ theme }) => theme.border.borderWidth[3]};
-  &:hover {
-    border-width: ${({ theme }) => theme.border.borderWidth[1]};
-    animation: ${wobble} 0.5s forwards;
-    ${Animator} {
-      transform: scale(0.81);
-      border: ${({ theme, variant }) =>
-        `solid ${theme.border.borderWidth[3]} ${
-          variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-        }`};
-    }
-  }
-`;
+const StyledButton = styled(Button)(({ theme, variant }) => ({
+  borderRadius: '50%',
+  padding: 0,
+  margin: 0,
+  height: theme.spacing[64],
+  width: theme.spacing[64],
+  borderColor:
+    variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
+  borderStyle: 'solid',
+  borderWidth: theme.border.borderWidth[3],
+  '&:hover': {
+    borderWidth: theme.border.borderWidth[1],
+    animation: `${wobble} 0.5s forwards`,
+    [`${Animator}`]: {
+      transform: 'scale(0.81)',
+      border: `${theme.border.borderWidth[3]} solid ${
+        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
+      }`,
+    },
+  },
+}));
 
 const IconButton: React.FC<IconButtonProps> = ({
   children,
