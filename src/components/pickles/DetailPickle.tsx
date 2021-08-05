@@ -13,14 +13,14 @@ type DetailPickleProps = {
   className?: string;
 };
 
-const StyledPickle = styled(Pickle)`
-  margin: ${({ theme }) => `${theme.spacing[64]} 0`};
-  padding: ${({ theme }) => `${theme.spacing[40]} 0`};
-  width: 95%;
-  ${({ theme }) => theme.breakpoints.md} {
-    width: 87%;
-  }
-`;
+const StyledPickle = styled(Pickle)(({ theme }) => ({
+  margin: `${theme.spacing[64]} 0`,
+  padding: `${theme.spacing[40]} 0`,
+  width: '95%',
+  [theme.breakpoints.md]: {
+    width: '87%',
+  },
+}));
 
 const PickleGrid = styled(ContentBox)`
   grid-column-gap: 7%;
