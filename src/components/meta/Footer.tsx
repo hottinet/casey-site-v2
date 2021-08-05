@@ -6,28 +6,28 @@ import Link from '../Link';
 import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
 
-const OuterFooterWrapper = styled.div`
-  padding: ${({ theme }) => `${theme.spacing[48]} ${theme.spacing[24]}`};
-  ${({ theme }) => theme.breakpoints.md} {
-    padding: ${({ theme }) => theme.spacing[48]};
-  }
-`;
+const OuterFooterWrapper = styled.div(({ theme }) => ({
+  padding: `${theme.spacing[48]} ${theme.spacing[24]}`,
+  [theme.breakpoints.md]: {
+    padding: theme.spacing[48],
+  },
+}));
 
 const FooterDivider = styled(Divider)`
   margin-bottom: ${({ theme }) => theme.spacing[8]};
 `;
 
-const FooterLink = styled(Link)`
-  :last-child {
-    margin-right: 0;
-  }
-  margin-top: ${({ theme }) => theme.spacing[12]};
-  width: min-content;
-  ${({ theme }) => theme.breakpoints.sm} {
-    margin-top: 0;
-    margin-right: ${({ theme }) => theme.spacing[24]};
-  }
-`;
+const FooterLink = styled(Link)(({ theme }) => ({
+  ':last-child': {
+    marginRight: 0,
+  },
+  marginTop: theme.spacing[12],
+  width: 'min-content',
+  [theme.breakpoints.sm]: {
+    marginTop: 0,
+    marginRight: theme.spacing[24],
+  },
+}));
 
 const CaseyLink = styled(Link)`
   text-decoration: none;
