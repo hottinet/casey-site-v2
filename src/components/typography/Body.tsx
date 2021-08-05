@@ -8,14 +8,15 @@ type BodyProps = Pick<MarginProps, 'mb'> & {
   bold?: boolean;
 };
 
-const BodyText = styled.p<Omit<BodyProps, 'children'>>`
-  font-size: ${({ theme }) => theme.fontSize.body};
-  font-weight: ${({ theme, bold }) =>
-    bold ? theme.fontWeight.bold : theme.fontWeight.regular};
-  font-family: ${({ theme }) => theme.fontFamily};
-  line-height: ${({ theme }) => theme.lineHeight.body};
-  margin-bottom: ${({ theme, mb = 48 }) => `${theme.spacing[mb]}`};
-`;
+const BodyText = styled.p<Omit<BodyProps, 'children'>>(
+  ({ theme, bold, mb = 48 }) => ({
+    fontSize: theme.fontSize.body,
+    fontWeight: bold ? theme.fontWeight.bold : theme.fontWeight.regular,
+    fontFamily: theme.fontFamily,
+    lineHeight: theme.lineHeight.body,
+    marginBottom: theme.spacing[mb],
+  })
+);
 
 const Body: React.FC<BodyProps> = ({ children, className, bold, mb }) => (
   <BodyText bold={bold} className={className} mb={mb}>
