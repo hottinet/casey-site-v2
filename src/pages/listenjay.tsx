@@ -12,20 +12,19 @@ import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 
 const PaddedExternalVideo = styled(ExternalVideo)`
-  margin-bottom: 48px;
+  margin-bottom: ${({ theme }) => theme.spacing[48]};
 `;
 
 const HeaderExternalVideo = styled(ExternalVideo)`
-  border: 3px solid black;
+  border: ${({ theme }) =>
+    `${theme.border.borderWidth[3]} solid ${theme.colors.black}`};
 `;
 
-const PersonaGridBox = styled(GridBox)`
-  background-color: ${({ theme }) => theme.colors.blue};
-  padding: ${({ theme }) => theme.spacing[48]};
-  border-radius: 50px;
-  color: white;
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
-`;
+const PersonaGridBox = styled(GridBox)(({ theme }) => ({
+  backgroundColor: theme.colors.blue,
+  borderRadius: 50,
+  color: theme.colors.textSecondary,
+}));
 
 const PhoneImage = styled(Image)`
   width: 70%;
@@ -95,7 +94,7 @@ const ListenJay: React.FC = () => (
         their tools aimed at the podcast hosts and producers themselves. This
         persona is based on the key takeaways from my user interviews above.
       </Body>
-      <PersonaGridBox center columnGap={48}>
+      <PersonaGridBox center columnGap={48} mb={80} p={48}>
         <Box>
           <Body bold mb={8}>
             Persona
