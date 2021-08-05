@@ -26,40 +26,39 @@ import {
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
 
-// START - STYLED COMPONENTS - START
-const LinkText = styled.span`
-  font-size: ${({ theme }) => theme.fontSize.mobileTitle};
-  font-family: ${({ theme }) => theme.fontFamily};
-  ${({ theme }) => theme.breakpoints.xs} {
-    font-size: ${({ theme }) => theme.fontSize.title};
-  }
-`;
+const LinkText = styled.span(({ theme }) => ({
+  fontSize: theme.fontSize.mobileTitle,
+  fontFamily: theme.fontFamily,
+  [theme.breakpoints.xs]: {
+    fontSize: theme.fontSize.title,
+  },
+}));
 
-const SizedPickle = styled(Pickle)`
-  width: 94%;
-  margin-top: ${({ theme }) => theme.spacing[24]};
-  border-radius: 0 1000px 1000px 0;
-  height: 20rem;
-  ${({ theme }) => theme.breakpoints.sm} {
-    margin-top: ${({ theme }) => theme.spacing[48]};
-    height: unset;
-  }
-`;
+const SizedPickle = styled(Pickle)(({ theme }) => ({
+  width: '94%',
+  marginTop: theme.spacing[24],
+  borderRadius: '0 1000px 1000px 0',
+  height: '20rem',
+  [theme.breakpoints.sm]: {
+    marginTop: theme.spacing[48],
+    height: 'unset',
+  },
+}));
 
 const PickleLink = styled(Link)`
   text-decoration: none;
 `;
 
-const PickleTitle = styled(Title)`
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: ${({ theme }) => theme.spacing[16]};
-  ${({ theme }) => theme.breakpoints.sm} {
-    max-width: 24.5rem;
-  }
-  ${({ theme }) => theme.breakpoints.md} {
-    max-width: unset;
-  }
-`;
+const PickleTitle = styled(Title)(({ theme }) => ({
+  color: theme.colors.textSecondary,
+  marginBottom: theme.spacing[16],
+  [theme.breakpoints.sm]: {
+    maxWidth: '24.5rem',
+  },
+  [theme.breakpoints.md]: {
+    maxWidth: 'unset',
+  },
+}));
 
 const ImageBox = styled(FlexBox)`
   height: 20rem;
@@ -81,20 +80,20 @@ const TitleBox = styled(FlexBox)`
   }
 `;
 
-const PickleContentWrapper = styled(ContentBox)`
-  display: grid;
-  margin-top: ${({ theme }) => theme.spacing[48]};
-  margin-bottom: ${({ theme }) => theme.spacing[48]};
-  width: 100%;
-  grid-template-columns: auto 1fr;
-  ${({ theme }) => theme.breakpoints.sm} {
-    column-gap: ${({ theme }) => theme.spacing[24]};
-  }
-  ${({ theme }) => theme.breakpoints.md} {
-    margin: ${({ theme }) => theme.spacing[48]};
-    grid-template-columns: 1fr 1fr;
-  }
-`;
+const PickleContentWrapper = styled(ContentBox)(({ theme }) => ({
+  display: 'grid',
+  marginTop: theme.spacing[48],
+  marginBottom: theme.spacing[48],
+  width: '100%',
+  gridTemplateColumns: 'auto 1fr',
+  [theme.breakpoints.sm]: {
+    columnGap: theme.spacing[24],
+  },
+  [theme.breakpoints.md]: {
+    margin: theme.spacing[48],
+    gridTemplateColumns: '1fr 1fr',
+  },
+}));
 
 const MobileAboutWrapper = styled(Box)`
   margin-left: -0.6rem;
