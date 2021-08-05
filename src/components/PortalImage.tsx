@@ -56,7 +56,6 @@ const PortalImage: React.FC<PortalImageProps> = ({
           <StyledImage
             alt={imgAlt}
             coords={coords}
-            fitParent
             loading="eager"
             maxDimension={maxDimension}
             src={imgSrc}

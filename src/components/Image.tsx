@@ -6,24 +6,23 @@ type ImageProps = MarginProps & {
   src: string;
   alt: string;
   className?: string;
-  fitParent?: boolean;
   loading?: 'lazy' | 'eager';
 };
 
-const StyledImage = styled.img<ImageProps>`
-  width: ${({ fitParent }) => fitParent && '100%'};
-  max-height: 100%;
-  max-width: 100%;
-  margin-top: ${({ mt = 0, theme }) => theme.spacing[mt]};
-  margin-bottom: ${({ mb = 0, theme }) => theme.spacing[mb]};
-  margin-right: ${({ mr = 0, theme }) => theme.spacing[mr]};
-  margin-left: ${({ ml = 0, theme }) => theme.spacing[ml]};
-`;
+const StyledImage = styled.img<ImageProps>(
+  ({ theme, mt = 0, mb = 0, mr = 0, ml = 0 }) => ({
+    maxHeight: '100%',
+    maxWidth: '100%',
+    marginTop: theme.spacing[mt],
+    marginRight: theme.spacing[mr],
+    marginLeft: theme.spacing[ml],
+    marginBottom: theme.spacing[mb],
+  })
+);
 
 const Image: React.FC<ImageProps> = ({
   src,
   alt,
-  fitParent,
   className,
   loading = 'lazy',
   ...styleProps
@@ -31,7 +30,6 @@ const Image: React.FC<ImageProps> = ({
   <StyledImage
     alt={alt}
     className={className}
-    fitParent={fitParent}
     loading={loading}
     src={src}
     // eslint-disable-next-line react/jsx-props-no-spreading
