@@ -8,13 +8,14 @@ type HeadingProps = Pick<MarginProps, 'mb'> & {
   className?: string;
 };
 
-const HeadingText = styled.h3<Omit<HeadingProps, 'children'>>`
-  font-family: ${({ theme }) => theme.fontFamily};
-  font-size: ${({ theme }) => theme.fontSize.heading};
-  margin-bottom: ${({ theme, mb = 16 }) => theme.spacing[mb]};
-  font-weight: ${({ theme, bold }) =>
-    bold ? theme.fontWeight.bold : theme.fontWeight.regular};
-`;
+const HeadingText = styled.h3<Omit<HeadingProps, 'children'>>(
+  ({ theme, bold, mb = 16 }) => ({
+    fontSize: theme.fontSize.heading,
+    fontWeight: bold ? theme.fontWeight.bold : theme.fontWeight.regular,
+    fontFamily: theme.fontFamily,
+    marginBottom: theme.spacing[mb],
+  })
+);
 
 const Heading: React.FC<HeadingProps> = ({ bold, className, children, mb }) => (
   <HeadingText bold={bold} className={className} mb={mb}>

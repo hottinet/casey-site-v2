@@ -8,16 +8,17 @@ type TitleProps = Pick<MarginProps, 'mb'> & {
   className?: string;
 };
 
-const Text = styled.h2<Omit<TitleProps, 'children'>>`
-  font-family: ${({ theme }) => theme.fontFamily};
-  margin-bottom: ${({ theme, mb = 24 }) => theme.spacing[mb]};
-  font-weight: ${({ theme, bold }) =>
-    bold ? theme.fontWeight.bold : theme.fontWeight.regular};
-  font-size: ${({ theme }) => theme.fontSize.mobileTitle};
-  ${({ theme }) => theme.breakpoints.xs} {
-    font-size: ${({ theme }) => theme.fontSize.title};
-  }
-`;
+const Text = styled.h2<Omit<TitleProps, 'children'>>(
+  ({ theme, bold, mb = 24 }) => ({
+    fontSize: theme.fontSize.mobileTitle,
+    fontWeight: bold ? theme.fontWeight.bold : theme.fontWeight.regular,
+    fontFamily: theme.fontFamily,
+    marginBottom: theme.spacing[mb],
+    [theme.breakpoints.xs]: {
+      fontSize: theme.fontSize.title,
+    },
+  })
+);
 
 const Title: React.FC<TitleProps> = ({ bold, className, children, mb }) => (
   <Text bold={bold} className={className} mb={mb}>
