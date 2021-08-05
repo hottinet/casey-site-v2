@@ -1,10 +1,10 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useContext } from 'react';
 
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
-// import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
@@ -15,34 +15,34 @@ import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import Video from '~/components/videos/Video';
 import { CORE_PROGRAMS } from '~/constants/routing';
+import { Theme } from '~/constants/theme';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
 `;
 
+const createColorBoxStyles = (theme: Theme) =>
+  css({
+    padding: theme.spacing[48],
+    borderRadius: 50,
+    color: theme.colors.white,
+    marginBottom: theme.spacing[80],
+  });
+
 const BlueBox = styled(Box)`
   background-color: ${({ theme }) => theme.colors.blue};
-  padding: ${({ theme }) => theme.spacing[48]};
-  border-radius: 50px;
-  color: white;
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
+  ${({ theme }) => createColorBoxStyles(theme)}
 `;
 
 const GreenBox = styled(Box)`
   background-color: ${({ theme }) => theme.colors.green};
-  padding: ${({ theme }) => theme.spacing[48]};
-  border-radius: 50px;
-  color: white;
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
+  ${({ theme }) => createColorBoxStyles(theme)}
 `;
 
 const RedBox = styled(Box)`
   background-color: ${({ theme }) => theme.colors.red};
-  padding: ${({ theme }) => theme.spacing[48]};
-  border-radius: 50px;
-  color: white;
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
+  ${({ theme }) => createColorBoxStyles(theme)}
 `;
 
 const BoldSpan = styled.span`
@@ -50,7 +50,7 @@ const BoldSpan = styled.span`
 `;
 
 const WhiteLink = styled(Link)`
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const CustomerDiscovery: React.FC = () => {
