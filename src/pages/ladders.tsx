@@ -21,20 +21,20 @@ const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 80px;
 `;
 
-const PersonaBox = styled(Box)`
-  background-color: ${({ theme }) => theme.colors.yellow};
-  padding: ${({ theme }) => theme.spacing[48]};
-  border-radius: 50px;
-  color: white;
-  margin-bottom: ${({ theme }) => theme.spacing[80]};
-`;
+const PersonaBox = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.colors.yellow,
+  padding: theme.spacing[48],
+  borderRadius: 8,
+  color: theme.colors.white,
+  marginBottom: theme.spacing[80],
+}));
 
-const QuoteBox = styled(Box)`
-  border: 5px solid ${({ theme }) => theme.colors.green};
-  border-radius: 500px;
-  margin-bottom: 48px;
-  padding: 48px;
-`;
+const QuoteBox = styled(Box)(({ theme }) => ({
+  border: `5px solid ${theme.colors.green}`,
+  borderRadius: 500,
+  marginBottom: theme.spacing[48],
+  padding: theme.spacing[48],
+}));
 
 const Ladders: React.FC = () => (
   <Layout>
