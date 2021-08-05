@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import FlexBox from '../box/FlexBox';
 import Divider from '../Divider';
-import Link from '../Link';
+import Link, { LinkProps } from '../Link';
 import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
 
@@ -17,7 +17,7 @@ const FooterDivider = styled(Divider)`
   margin-bottom: ${({ theme }) => theme.spacing[8]};
 `;
 
-const FooterLink = styled(Link)(({ theme }) => ({
+const FooterLink = styled(Link)<LinkProps>(({ theme }) => ({
   ':last-child': {
     marginRight: 0,
   },

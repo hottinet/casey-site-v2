@@ -1,5 +1,3 @@
-import styled from '@emotion/styled';
-
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';

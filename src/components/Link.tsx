@@ -5,7 +5,7 @@ import { MouseEventHandler, useEffect, useState } from 'react';
 
 import PortalImage from './PortalImage';
 
-type LinkProps = {
+export type LinkProps = {
   internal?: boolean;
   href: string;
   children: React.ReactNode;
