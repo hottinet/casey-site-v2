@@ -42,6 +42,7 @@ const theme = {
     48: '3rem',
     64: '4rem',
     80: '5rem',
+    100: '6.25rem',
     128: '8rem',
   },
   border: {

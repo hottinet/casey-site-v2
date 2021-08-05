@@ -14,33 +14,33 @@ import Box from '../box/Box';
 import IconButton from '../buttons/IconButton';
 import Pickle from '../pickles/Pickle';
 
-const Input = styled.input`
-  background-color: transparent;
-  height: ${({ theme }) => theme.spacing[48]};
-  min-width: ${({ theme }) => theme.spacing[128]};
-  font-size: 48px;
-  padding: ${({ theme }) => theme.spacing[8]};
-  outline: none;
-  border: none;
-  border-bottom: 2px solid white;
-  color: white;
-  width: 100%;
-  ::placeholder {
-    color: white;
-    opacity: 50%;
-  }
-  ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 100px;
-    height: ${({ theme }) => theme.spacing[80]};
-  }
-`;
+const Input = styled.input(({ theme }) => ({
+  backgroundColor: 'transparent',
+  height: theme.spacing[48],
+  minWidth: theme.spacing[128],
+  fontSize: '3rem',
+  padding: theme.spacing[8],
+  outline: 'none',
+  border: 'none',
+  borderBottom: `2px solid ${theme.colors.textSecondary}`,
+  color: theme.colors.textSecondary,
+  width: '100%',
+  '::placeholder': {
+    color: theme.colors.textSecondary,
+    opacity: '50%',
+  },
+  [theme.breakpoints.sm]: {
+    fontSize: '6.25rem',
+    height: theme.spacing[80],
+  },
+}));
 
-const PwIconButton = styled(IconButton)`
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  margin-left: ${({ theme }) => theme.spacing[24]};
-`;
+const PwIconButton = styled(IconButton)(({ theme }) => ({
+  width: theme.spacing[100],
+  height: theme.spacing[100],
+  flexShrink: 0,
+  marginLeft: theme.spacing[24],
+}));
 
 const PwHeading = styled(Heading)`
   margin-left: ${({ theme }) => theme.spacing[24]};
