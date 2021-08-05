@@ -20,18 +20,17 @@ type HoverImageLinkProps = LinkProps & {
   hoverImgAlt: string;
 };
 
-const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>`
-  color: ${({ theme }) => theme.colors.text};
-  display: inline-block;
-  padding: ${({ theme, noHoverStyles }) => !noHoverStyles && theme.spacing[4]};
-  :hover,
-  :active {
-    background-color: ${({ theme, noHoverStyles }) =>
-      !noHoverStyles && theme.colors.yellow};
-    color: ${({ theme, noHoverStyles }) =>
-      !noHoverStyles && theme.colors.textSecondary};
-  }
-`;
+const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>(
+  ({ theme, noHoverStyles }) => ({
+    color: theme.colors.text,
+    display: 'inline-block',
+    padding: noHoverStyles ? 0 : theme.spacing[4],
+    ':hover, :active': {
+      backgroundColor: noHoverStyles ? 'transparent' : theme.colors.yellow,
+      color: noHoverStyles ? 'inherit' : theme.colors.textSecondary,
+    },
+  })
+);
 
 const OnMouseSpan = styled.span`
   display: inline-flex;
