@@ -26,11 +26,11 @@ const LinkPickle = styled(Pickle)`
   }
 `;
 
-const ArrowIcon = styled(Arrow)`
-  height: ${({ theme }) => theme.spacing[24]};
-  width: ${({ theme }) => theme.spacing[24]};
-  margin-left: ${({ theme }) => theme.spacing[16]};
-`;
+const ArrowIcon = styled(Arrow)(({ theme }) => ({
+  height: theme.spacing[24],
+  width: theme.spacing[24],
+  marginLeft: theme.spacing[16],
+}));
 
 const PickleLink = styled(Link)`
   text-decoration: none;
