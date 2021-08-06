@@ -111,6 +111,11 @@ const CorePrograms: React.FC = () => (
         user testing we found that we were giving users too much freedom and not
         clear enough guidance on how to structure Programs.
       </Body>
+      <Image
+        alt="showing change in UI"
+        mb={48}
+        src="/Programs/SegmentToWeek.png"
+      />
       <GridBox center>
         <Box>
           <Heading bold>Keeping it fitness specific</Heading>
@@ -134,6 +139,11 @@ const CorePrograms: React.FC = () => (
         such as nutrition plans. As a fast follow to our initial launch, we
         added the ability for instructors to add both links and attachments.
       </BodyOverBody>
+      <Image
+        alt="Link and attchment components"
+        mb={48}
+        src="/Programs/LinkAttach.png"
+      />
       <Body>
         After interviewing multiple instructors, we learned that most of them
         treat programs as a separate offering from their subscription business,
@@ -141,6 +151,11 @@ const CorePrograms: React.FC = () => (
         subscribers. Our next iteration of programs would iclude the ability to
         have a one-off price.
       </Body>
+      <Image
+        alt="Instructor pricing input and student checkout link"
+        mb={48}
+        src="/Programs/OneOffPricing.png"
+      />
       <Title bold>Student Experience: Following the Program</Title>
       <PaddedExternalVideo
         src="https://player.vimeo.com/video/574497383"

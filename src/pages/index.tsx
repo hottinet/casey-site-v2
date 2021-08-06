@@ -211,7 +211,7 @@ const Home: React.FC = () => {
         imageSrc={
           lessThanMd
             ? '/CustomerDiscovery/HomeCustomerSmall.gif'
-            : '/CustomerDiscovery/Customers.gif'
+            : '/CustomerDiscovery/CustomerHomePickleImage.gif'
         }
         linkTo={CUSTOMER_DISCOVERY_ROUTE}
         pickleColor="blue"

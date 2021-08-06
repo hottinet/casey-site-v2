@@ -104,7 +104,7 @@ const AboutMe: React.FC = () => {
             <Link
               hoverImgAlt="linkedin profile"
               hoverImgSrc="/About/linkedinhover.png"
-              href="https://core.fitness/"
+              href="https://linkedin.com/in/caseyebradford/"
             >
               LinkedIn.
             </Link>
