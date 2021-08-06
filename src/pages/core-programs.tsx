@@ -25,6 +25,12 @@ const BodyOverBody = styled(Body)`
   margin-bottom: 24px;
 `;
 
+const RestGridBox = styled(GridBox)`
+  ${({ theme }) => theme.breakpoints.sm} {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
 const CorePrograms: React.FC = () => (
   <Layout>
     <ContentBox column>
@@ -124,13 +130,14 @@ const CorePrograms: React.FC = () => (
         the ability to mark days in the cycle as Rest Days for students to mark
         off.
       </Body>
-      <GridBox center columnGap={24} mb={48}>
+      <RestGridBox center columnGap={24} mb={48} rowGap={24}>
         <Image
           alt="instructor view of rest day"
+          fitParent
           src="/Programs/restdayinstructor.png"
         />
         <Video sources={[{ src: '/Programs/restedstudent.mp4' }]} />
-      </GridBox>
+      </RestGridBox>
       <Heading bold>Iterating post-launch</Heading>
       <BodyOverBody>
         Programs offer students a more holistic and guided fitness experience.

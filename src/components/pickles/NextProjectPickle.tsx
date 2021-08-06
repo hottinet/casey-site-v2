@@ -40,6 +40,9 @@ const PickleLink = styled(Link)`
   display: flex;
   align-items: center;
   padding-left: ${({ theme }) => theme.spacing[64]};
+  :hover {
+    color: ${({ theme }) => theme.colors.textSecondary};
+  }
 `;
 
 const NextProjectPickle: React.FC<NextProjectPickleProps> = ({
