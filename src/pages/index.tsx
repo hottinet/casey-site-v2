@@ -90,7 +90,7 @@ const PickleContentWrapper = styled(ContentBox)(({ theme }) => ({
     columnGap: theme.spacing[24],
   },
   [theme.breakpoints.md]: {
-    margin: theme.spacing[48],
+    margin: `${theme.spacing[80]} ${theme.spacing[48]}`,
     gridTemplateColumns: '1fr 1fr',
   },
 }));
