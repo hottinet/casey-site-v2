@@ -11,6 +11,7 @@ import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
+import Video from '~/components/videos/Video';
 
 const PickleStack = styled(StackedText)`
   margin-right: 7%;
@@ -116,21 +117,19 @@ const CorePrograms: React.FC = () => (
         mb={48}
         src="/Programs/SegmentToWeek.png"
       />
-      <GridBox center>
-        <Box>
-          <Heading bold>Keeping it fitness specific</Heading>
-          <Body>
-            Letting your body recover is an important part of long term fitness
-            programs. One of the more fitness-specific elements of Core programs
-            is the ability to mark days in the cycle as Rest Days for students
-            to mark off.
-          </Body>
-        </Box>
+      <Heading bold>Keeping it fitness specific</Heading>
+      <Body>
+        Letting your body recover is an important part of long term fitness
+        programs. One of the more fitness-specific elements of Core programs is
+        the ability to mark days in the cycle as Rest Days for students to mark
+        off.
+      </Body>
+      <GridBox center columnGap={24} mb={48}>
         <Image
-          alt="Rest Day vs Regular Day"
-          mb={80}
-          src="/Programs/RestDay.png"
+          alt="instructor view of rest day"
+          src="/Programs/restdayinstructor.png"
         />
+        <Video sources={[{ src: '/Programs/restedstudent.mp4' }]} />
       </GridBox>
       <Heading bold>Iterating post-launch</Heading>
       <BodyOverBody>
