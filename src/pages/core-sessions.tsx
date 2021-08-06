@@ -26,10 +26,6 @@ const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 80px;
 `;
 
-const PaddedVideo = styled(Video)`
-  margin-bottom: 80px;
-`;
-
 const CoreSessions: React.FC = () => (
   <Layout>
     <ContentBox column>
@@ -53,7 +49,7 @@ const CoreSessions: React.FC = () => (
         src="https://player.vimeo.com/video/575074814"
         title="Process of creating video content on Core"
       />
-      <GridBox center>
+      <GridBox center mb={48}>
         <Box>
           <Heading bold>Improving the video upload flow</Heading>
           <BodyOverBody>
@@ -63,7 +59,7 @@ const CoreSessions: React.FC = () => (
             something went wrong.
           </BodyOverBody>
         </Box>
-        <PaddedVideo sources={[{ src: '/VideoUpload/videouploadcover.mp4' }]} />
+        <Video sources={[{ src: '/Sessions/videouploadcover.mp4' }]} />
       </GridBox>
       <Body>
         It was difficult for us to assess the problems we were hearing about
@@ -72,7 +68,7 @@ const CoreSessions: React.FC = () => (
         were published when they were really still being processed by our server
         because we did not have clear statuses.
       </Body>
-      <Image alt="table view" mb={80} src="/Sessions/uploadstatus.png" />
+      <Image alt="table view" mb={48} src="/Sessions/uploadstatus.png" />
       <GridBox center mb={48}>
         <Body>
           Many of our instructors are constantly multitasking to support their
