@@ -38,7 +38,7 @@ const StyledButton = styled(Button)<Pick<TextButtonProps, 'forceHover'>>(
       }`,
       borderRadius: 60,
       transformOrigin: 'center center',
-      transform: forceHover ? 'scale(1)' : 'scale(0.91, 0.75)',
+      transform: forceHover ? 'scale(1)' : 'scale(0.895, 0.75)',
       transition: 'transform 0.2s linear',
     },
     '&:hover': {
