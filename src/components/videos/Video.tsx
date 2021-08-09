@@ -32,6 +32,7 @@ const Video: React.FC<VideoProps> = ({
     controls={controls}
     loop={loop}
     muted={muted}
+    playsInline
   >
     {sources.map(({ src, type = 'video/mp4' }) => (
       <source key={src} src={src} type={type} />
