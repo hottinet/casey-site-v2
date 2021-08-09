@@ -241,7 +241,7 @@ const Home: React.FC = () => {
         <SecondaryProjectLink
           href={IRTH_ROUTE}
           imgAlt="Irth app screens"
-          imgSrc="/Irth/irthhover.png"
+          imgSrc="/Irth/IrthHover.png"
           text="UI Refresh for Irth"
         />
         <SecondaryProjectLink

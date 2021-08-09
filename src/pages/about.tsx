@@ -103,7 +103,7 @@ const AboutMe: React.FC = () => {
             &thinsp;or find me on&thinsp;
             <Link
               hoverImgAlt="linkedin profile"
-              hoverImgSrc="/About/linkedinhover.png"
+              hoverImgSrc="/About/Linkedinhover.png"
               href="https://linkedin.com/in/caseyebradford/"
             >
               LinkedIn.
