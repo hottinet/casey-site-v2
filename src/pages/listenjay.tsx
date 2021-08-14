@@ -60,7 +60,7 @@ const ListenJay: React.FC = () => (
         podcast hosts and online podcasting communities to recruit participants.
       </Body>
       <GridBox center mb={48}>
-        <PhoneImage alt="phone" src="ListenJay/userinterviews-01.png" />
+        <PhoneImage alt="phone" src="ListenJay/userInterviews-01.png" />
         <Box>
           <Body mb={24}>Key Takeaways</Body>
           <ul>
