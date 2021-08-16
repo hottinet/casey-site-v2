@@ -14,8 +14,14 @@ import Video from '~/components/videos/Video';
 const GraphicDesign: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title>Sampling of graphic design work</Title>
-      <Body>I started my career in graphic design roles</Body>
+      <Title bold>Sampling of graphic design work</Title>
+      <Body>
+        I am currently pursuing Product Design roles, but I think that visual
+        design skills are just as important in making a product shine. I started
+        my career in graphic design and art direction roles and below is a
+        sampling of some of my more recent advertising and marketing design
+        work.
+      </Body>
       <Divider label="Great&nbsp;Jones" />
       <Heading bold>Paid Facebook Ads</Heading>
       <GridBox columnGap={24} mb={80}>
@@ -27,11 +33,11 @@ const GraphicDesign: React.FC = () => (
       <Heading bold>Instagram Filters</Heading>
       <Body>
         These instagram filters were not released by the brand but drafts that I
-        put together.
+        put together for them. Built in SparkAR.
       </Body>
-      <GridBox>
-        <Image alt="Designed Email" mb={80} src="Graphic/GJ_IGFilter_1.gif" />
-        <Image alt="Designed Email" mb={80} src="Graphic/GJ_IGFilter_2.gif" />
+      <GridBox columnGap={24} mb={80}>
+        <Video sources={[{ src: '/Graphic/egg-filter.mp4' }]} />
+        <Video sources={[{ src: '/Graphic/dish-filter.mp4' }]} />
       </GridBox>
       <Divider label="Flatiron&nbsp;School" />
       <Heading bold>Photography</Heading>
@@ -60,12 +66,29 @@ const GraphicDesign: React.FC = () => (
       <Image alt="Campaign assets" mb={80} src="Graphic/WTT.png" />
       <Heading bold>Out-Of-Home Advertising</Heading>
       <Body>
-        A big part of our regional marketing spend went to out of home buys in
-        various markets. In London we had the most success with out of home
-        advertising and, with our first campaign, saw a 60% increase in organic
-        traffic to the site.
+        A big part of our regional marketing spend went to out-of-home buys in
+        various markets. In London we had the most success and with our first
+        campaign, saw a 60% increase in organic traffic to the site.
       </Body>
       <Image alt="Out of Home Ad" mb={80} src="Graphic/LinkNYC.png" />
+      <Divider label="Core&nbsp;Fitness" />
+      <Heading bold>App Store Assets</Heading>
+      <Image
+        alt="Apple App Store Screens"
+        mb={80}
+        src="Graphic/core-app-store.png"
+      />
+      <Heading bold>Sales Deck Slides</Heading>
+      <GridBox columnGap={24} mb={80} rowGap={24}>
+        <Image alt="Ad for park class map" src="Graphic/core-deck-1.png" />
+        <Image alt="Ad for park class map" src="Graphic/core-deck-2.png" />
+      </GridBox>
+      <Heading bold>Paid Advertising</Heading>
+      <GridBox columnGap={24} mb={24} rowGap={24}>
+        <Image alt="Ad for park class map" src="Graphic/core-ad-1.png" />
+        <Image alt="Ad for park class map" src="Graphic/core-ad-2.png" />
+      </GridBox>
+      <Image alt="Magazine Ad" mb={80} src="Graphic/club-solutions.png" />
     </ContentBox>
   </Layout>
 );
