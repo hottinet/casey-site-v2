@@ -1,6 +1,3 @@
-import styled from '@emotion/styled';
-
-import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
 import Divider from '~/components/Divider';
