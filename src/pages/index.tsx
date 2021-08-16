@@ -99,6 +99,42 @@ const MobileAboutWrapper = styled(Box)`
   margin-left: -0.6rem;
 `;
 
+const BannerBox = styled(FlexBox)`
+  background-color: #2b2b2b;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  border-radius: ${({ theme }) => theme.spacing[20]};
+  padding: ${({ theme }) => theme.spacing[24]};
+  width: 100%;
+`;
+
+const BannerSticker = styled(Image)`
+  display: none;
+  position: absolute;
+  max-height: 12.5rem;
+  ${({ theme }) => theme.breakpoints.sm} {
+    display: block;
+  }
+`;
+
+const BannerTextBox = styled(Box)`
+  ${({ theme }) => theme.breakpoints.sm} {
+    padding-left: 11.25rem;
+  }
+`;
+
+const BannerLink = styled(Link)`
+  width: 100%;
+  text-decoration: none;
+  ${({ theme }) => theme.breakpoints.xs} {
+    margin-top: ${({ theme }) => theme.spacing[64]};
+  }
+`;
+
+const BannerButton = styled(ArrowButton)`
+  flex-shrink: 0;
+  margin-left: ${({ theme }) => theme.spacing[8]};
+`;
+
 // END - STYLED COMPONENTS - END
 
 // START - SUBCOMPONENTS - START
@@ -231,7 +267,7 @@ const Home: React.FC = () => {
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
-      <GridBox columnGap={48} mx={xSpace} rowGap={isXss ? 24 : 48}>
+      <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="component w toggle controls"
@@ -257,6 +293,30 @@ const Home: React.FC = () => {
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
+      <BannerLink href="/graphic-design" internal noHoverStyles>
+        <BannerBox
+          alignItems="center"
+          justifyContent="space-between"
+          mx={xSpace}
+        >
+          <BannerSticker
+            alt="'Change things' sticker"
+            src="/Graphic/banner-sticker.png"
+          />
+          <BannerTextBox>
+            {!isXss && (
+              <Heading mb={12}>Looking for someone who can do both?</Heading>
+            )}
+            <Title bold mb={0}>
+              Graphic Design Sample
+            </Title>
+          </BannerTextBox>
+          <BannerButton
+            title="Navigate to Graphic Design portfolio"
+            onClick={undefined}
+          />
+        </BannerBox>
+      </BannerLink>
     </Layout>
   );
 };
