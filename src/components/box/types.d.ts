@@ -34,6 +34,8 @@ export type BoxProps = MarginProps & {
   borderColor?: Color;
   borderStyle?: 'solid' | 'none' | 'hidden';
   borderWidth?: BorderWidth;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 };
 
 export type JustifyContent =

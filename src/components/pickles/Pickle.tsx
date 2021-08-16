@@ -1,7 +1,17 @@
 import styled from '@emotion/styled';
 
+import { Color } from '~/typings/theme';
+
 import FlexBox from '../box/FlexBox';
-import { PickleProps } from './types';
+
+type PickleProps = {
+  children: React.ReactNode | React.ReactNode[];
+  className?: string;
+  color?: Color;
+  origin?: 'right' | 'left';
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+};
 
 const PickleBody = styled(FlexBox)<Pick<PickleProps, 'origin'>>(
   ({ origin, theme }) => ({
@@ -30,6 +40,8 @@ const Pickle: React.FC<PickleProps> = ({
   className,
   children,
   origin = 'left',
+  onMouseEnter,
+  onMouseLeave,
 }) => (
   <PickleBody
     alignItems="center"
@@ -39,6 +51,8 @@ const Pickle: React.FC<PickleProps> = ({
     borderWidth={3}
     className={className}
     origin={origin}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
   >
     {children}
   </PickleBody>
