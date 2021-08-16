@@ -80,6 +80,13 @@ const TitleBox = styled(FlexBox)`
   }
 `;
 
+const BannerBox = styled(FlexBox)`
+  background-color: #2b2b2b;
+  color: white;
+  border-radius: 20px;
+  padding: 24px;
+`;
+
 const PickleContentWrapper = styled(ContentBox)(({ theme }) => ({
   display: 'grid',
   marginTop: theme.spacing[48],
@@ -231,7 +238,7 @@ const Home: React.FC = () => {
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
-      <GridBox columnGap={48} mx={xSpace} rowGap={isXss ? 24 : 48}>
+      <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="component w toggle controls"
@@ -257,6 +264,13 @@ const Home: React.FC = () => {
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
+      <BannerBox mx={xSpace}>
+        <Box>
+          <Heading mb={12}>Looking for someone who can do both?</Heading>
+          <Title bold>Graphic Design Sample</Title>
+        </Box>
+        <ArrowButton title="Navigate to" onClick={undefined} />
+      </BannerBox>
     </Layout>
   );
 };
