@@ -18,8 +18,9 @@ const ArrowButton: React.FC<ArrowButton> = ({
   onClick,
   title,
   variant = 'secondary',
+  className,
 }) => (
-  <IconButton variant={variant} onClick={onClick}>
+  <IconButton className={className} variant={variant} onClick={onClick}>
     <ArrowIcon title={`Navigate to ${title}`} titleId={`${title}Id`} />
   </IconButton>
 );

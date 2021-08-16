@@ -34,6 +34,7 @@ const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>(
 
 const OnMouseSpan = styled.span`
   display: inline-flex;
+  width: 100%;
 `;
 
 type PortalImageWrapperProps = Pick<
