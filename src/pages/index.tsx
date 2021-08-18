@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
@@ -24,8 +24,9 @@ import {
   LISTENJAY_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
-import { Color } from '~/typings/theme';
+import { Color, Spacing } from '~/typings/theme';
 
+// START - MISC STYLES - START
 const LinkText = styled.span(({ theme }) => ({
   fontSize: theme.fontSize.mobileTitle,
   fontFamily: theme.fontFamily,
@@ -34,6 +35,12 @@ const LinkText = styled.span(({ theme }) => ({
   },
 }));
 
+const MobileAboutWrapper = styled(Box)`
+  margin-left: -0.6rem;
+`;
+// END - MISC STYLES - END
+
+// START - PICKLE STYLES - START
 const SizedPickle = styled(Pickle)(({ theme }) => ({
   width: '94%',
   marginTop: theme.spacing[24],
@@ -94,12 +101,45 @@ const PickleContentWrapper = styled(ContentBox)(({ theme }) => ({
     gridTemplateColumns: '1fr 1fr',
   },
 }));
+// END - PICKLE STYLES - END
 
-const MobileAboutWrapper = styled(Box)`
-  margin-left: -0.6rem;
+// START - BANNER STYLES - START
+const BannerBox = styled(FlexBox)`
+  background-color: #2b2b2b;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  border-radius: ${({ theme }) => theme.spacing[20]};
+  padding: ${({ theme }) => theme.spacing[24]};
+  width: 100%;
 `;
 
-// END - STYLED COMPONENTS - END
+const BannerSticker = styled(Image)`
+  display: none;
+  position: absolute;
+  max-height: 12.5rem;
+  ${({ theme }) => theme.breakpoints.sm} {
+    display: block;
+  }
+`;
+
+const BannerTextBox = styled(Box)`
+  ${({ theme }) => theme.breakpoints.sm} {
+    padding-left: 11.25rem;
+  }
+`;
+
+const BannerLink = styled(Link)`
+  width: 100%;
+  text-decoration: none;
+  ${({ theme }) => theme.breakpoints.xs} {
+    margin-top: ${({ theme }) => theme.spacing[64]};
+  }
+`;
+
+const BannerButton = styled(ArrowButton)`
+  flex-shrink: 0;
+  margin-left: ${({ theme }) => theme.spacing[8]};
+`;
+// END - BANNER STYLES - END
 
 // START - SUBCOMPONENTS - START
 type HomePickleProps = {
@@ -117,9 +157,14 @@ const HomePickle: React.FC<HomePickleProps> = ({
   linkTo,
   pickleColor,
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const breakpoints = useContext(BreakpointsContext);
   return (
-    <SizedPickle color={pickleColor}>
+    <SizedPickle
+      color={pickleColor}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <PickleLink href={linkTo} internal noHoverStyles>
         <PickleContentWrapper alignItems="center">
           {breakpoints.includes('sm') && (
@@ -129,7 +174,11 @@ const HomePickle: React.FC<HomePickleProps> = ({
           )}
           <TitleBox column>
             <PickleTitle bold>{title}</PickleTitle>
-            <ArrowButton title={`Navigate to ${linkTo}`} onClick={undefined} />
+            <ArrowButton
+              forceHover={isHovered}
+              title={`Navigate to ${linkTo}`}
+              onClick={undefined}
+            />
           </TitleBox>
         </PickleContentWrapper>
       </PickleLink>
@@ -156,6 +205,44 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
     </Link>
   </span>
 );
+
+type BannerProps = {
+  xSpace: Spacing;
+  isXss: boolean;
+};
+
+const GraphicDesignBanner: React.FC<BannerProps> = ({ xSpace, isXss }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <BannerLink
+      href="/graphic-design"
+      internal
+      noHoverStyles
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <BannerBox alignItems="center" justifyContent="space-between" mx={xSpace}>
+        <BannerSticker
+          alt="'Change things' sticker"
+          src="/Graphic/banner-sticker.png"
+        />
+        <BannerTextBox>
+          {!isXss && (
+            <Heading mb={12}>Looking for someone who can do both?</Heading>
+          )}
+          <Title bold mb={0}>
+            Graphic Design Sample
+          </Title>
+        </BannerTextBox>
+        <BannerButton
+          forceHover={isHovered}
+          title="Navigate to Graphic Design portfolio"
+          onClick={undefined}
+        />
+      </BannerBox>
+    </BannerLink>
+  );
+};
 // END - SUBCOMPONENTS - END
 
 const Home: React.FC = () => {
@@ -231,7 +318,7 @@ const Home: React.FC = () => {
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
-      <GridBox columnGap={48} mx={xSpace} rowGap={isXss ? 24 : 48}>
+      <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
           href={CORE_COMPONENT_LIBRARY_ROUTE}
           imgAlt="component w toggle controls"
@@ -257,6 +344,7 @@ const Home: React.FC = () => {
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
+      <GraphicDesignBanner isXss={isXss} xSpace={xSpace} />
     </Layout>
   );
 };

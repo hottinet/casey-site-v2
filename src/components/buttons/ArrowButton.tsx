@@ -7,6 +7,7 @@ import { ButtonProps } from './types';
 type ArrowButton = Pick<ButtonProps, 'onClick' | 'variant'> & {
   className?: string;
   title: string;
+  forceHover?: boolean;
 };
 
 const ArrowIcon = styled(Arrow)`
@@ -18,8 +19,15 @@ const ArrowButton: React.FC<ArrowButton> = ({
   onClick,
   title,
   variant = 'secondary',
+  className,
+  forceHover,
 }) => (
-  <IconButton variant={variant} onClick={onClick}>
+  <IconButton
+    className={className}
+    forceHover={forceHover}
+    variant={variant}
+    onClick={onClick}
+  >
     <ArrowIcon title={`Navigate to ${title}`} titleId={`${title}Id`} />
   </IconButton>
 );

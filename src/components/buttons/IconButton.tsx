@@ -7,6 +7,7 @@ import { ButtonProps } from './types';
 
 type IconButtonProps = Omit<ButtonProps, 'childre'> & {
   children: React.ReactNode;
+  forceHover?: boolean;
 };
 
 const AnimationWrapper = styled(FlexBox)`
@@ -30,35 +31,47 @@ const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
   width: 100%;
 `;
 
-const StyledButton = styled(Button)(({ theme, variant }) => ({
-  borderRadius: '50%',
-  padding: 0,
-  margin: 0,
-  height: theme.spacing[64],
-  width: theme.spacing[64],
-  borderColor:
-    variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
-  borderStyle: 'solid',
-  borderWidth: theme.border.borderWidth[3],
-  '&:hover': {
-    borderWidth: theme.border.borderWidth[1],
-    animation: `${wobble} 0.5s forwards`,
-    [`${Animator}`]: {
-      transform: 'scale(0.81)',
-      border: `${theme.border.borderWidth[3]} solid ${
-        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-      }`,
-    },
-  },
-}));
+const StyledButton = styled(Button)<IconButtonProps>(
+  ({ theme, variant, forceHover }) => {
+    const hoverStyles = {
+      borderWidth: theme.border.borderWidth[1],
+      animation: `${wobble} 0.5s forwards`,
+      [`${Animator}`]: {
+        transform: 'scale(0.81)',
+        border: `${theme.border.borderWidth[3]} solid ${
+          variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
+        }`,
+      },
+    };
+    return {
+      borderRadius: '50%',
+      padding: 0,
+      margin: 0,
+      height: theme.spacing[64],
+      width: theme.spacing[64],
+      borderColor:
+        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
+      borderStyle: 'solid',
+      borderWidth: theme.border.borderWidth[3],
+      '&:hover': hoverStyles,
+      ...(forceHover && hoverStyles),
+    };
+  }
+);
 
 const IconButton: React.FC<IconButtonProps> = ({
   children,
   onClick,
   className,
   variant = 'primary',
+  forceHover,
 }) => (
-  <StyledButton className={className} variant={variant} onClick={onClick}>
+  <StyledButton
+    className={className}
+    forceHover={forceHover}
+    variant={variant}
+    onClick={onClick}
+  >
     <AnimationWrapper center>
       <Animator borderRadius="50%" center variant={variant}>
         {children}

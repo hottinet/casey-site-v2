@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
+
+import { checkIsIOS } from '~/utils/checkIsIOS';
 
 import Body from '../typography/Body';
 import Button from './Button';
@@ -17,15 +20,20 @@ const AnimationWrapper = styled.div`
   margin: ${({ theme }) => theme.spacing[4]};
 `;
 
-const StyledButton = styled(Button)<Pick<TextButtonProps, 'forceHover'>>(
-  ({ theme, variant, forceHover }) => ({
-    height: theme.spacing[48],
-    padding: theme.spacing[12],
-    minWidth: '9.875rem',
-    borderRadius: 500,
-    border: `solid 3px ${
-      variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-    }`,
+const StyledButton = styled(Button)<
+  Pick<TextButtonProps, 'forceHover'> & { isIOS: boolean }
+>(({ theme, variant, forceHover, isIOS }) => ({
+  height: theme.spacing[48],
+  padding: theme.spacing[12],
+  minWidth: '9.875rem',
+  borderRadius: 500,
+  border: `solid 3px ${
+    variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
+  }`,
+  // IOS appears to have issues with percentage scales
+  // which makes the buttons look broken. Disabling the hover effect
+  // on IOS devices
+  ...(!isIOS && {
     '::before': {
       content: '" "',
       position: 'absolute',
@@ -38,7 +46,7 @@ const StyledButton = styled(Button)<Pick<TextButtonProps, 'forceHover'>>(
       }`,
       borderRadius: 60,
       transformOrigin: 'center center',
-      transform: forceHover ? 'scale(1)' : 'scale(0.91, 0.75)',
+      transform: forceHover ? 'scale(1)' : 'scale(0.895, 0.75)',
       transition: 'transform 0.2s linear',
     },
     '&:hover': {
@@ -46,8 +54,8 @@ const StyledButton = styled(Button)<Pick<TextButtonProps, 'forceHover'>>(
         transform: 'scale(1)',
       },
     },
-  })
-);
+  }),
+}));
 
 const StyledText = styled(Body)<Pick<TextButtonProps, 'variant'>>`
   color: ${({ theme, variant }) =>
@@ -63,20 +71,31 @@ const TextButton: React.FC<TextButtonProps> = ({
   buttonClassName,
   type,
   forceHover,
-}) => (
-  <AnimationWrapper className={className}>
-    <StyledButton
-      className={buttonClassName}
-      forceHover={forceHover}
-      type={type}
-      variant={variant}
-      onClick={onClick}
-    >
-      <StyledText bold variant={variant}>
-        {label}
-      </StyledText>
-    </StyledButton>
-  </AnimationWrapper>
-);
+}) => {
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    // Navigator (used in checkIsIOS) doesn't exist until the browser is ready
+    // so we wait to mount the component before we check IOS status
+    setIsIOS(checkIsIOS());
+  }, []);
+
+  return (
+    <AnimationWrapper className={className}>
+      <StyledButton
+        className={buttonClassName}
+        forceHover={forceHover}
+        isIOS={isIOS}
+        type={type}
+        variant={variant}
+        onClick={onClick}
+      >
+        <StyledText bold variant={variant}>
+          {label}
+        </StyledText>
+      </StyledButton>
+    </AnimationWrapper>
+  );
+};
 
 export default TextButton;
