@@ -21,7 +21,7 @@ const GraphicDesign: React.FC = () => (
       </Body>
       <Divider label="Great&nbsp;Jones" />
       <Heading bold>Paid Facebook Ads</Heading>
-      <GridBox columnGap={24} mb={80}>
+      <GridBox columnGap={24} mb={80} rowGap={24}>
         <Video sources={[{ src: '/Graphic/GJAd1.mp4' }]} />
         <Video sources={[{ src: '/Graphic/GJAd2.mp4' }]} />
       </GridBox>
@@ -32,7 +32,7 @@ const GraphicDesign: React.FC = () => (
         These instagram filters were not released by the brand but drafts that I
         put together for them. Built in SparkAR.
       </Body>
-      <GridBox columnGap={24} mb={80}>
+      <GridBox columnGap={24} mb={80} rowGap={24}>
         <Video sources={[{ src: '/Graphic/egg-filter.mp4' }]} />
         <Video sources={[{ src: '/Graphic/dish-filter.mp4' }]} />
       </GridBox>
@@ -67,7 +67,7 @@ const GraphicDesign: React.FC = () => (
         various markets. In London we had the most success and with our first
         campaign, saw a 60% increase in organic traffic to the site.
       </Body>
-      <Image alt="Out of Home Ad" mb={80} src="Graphic/LinkNYC.png" />
+      <Image alt="Out of Home Ad" mb={80} src="Graphic/LinkNyc.png" />
       <Divider label="Core&nbsp;Fitness" />
       <Heading bold>App Store Assets</Heading>
       <Image
