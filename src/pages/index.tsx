@@ -259,10 +259,7 @@ const Home: React.FC = () => {
             Product Designer balancing personality and utility.
           </Title>
         </Box>
-        <Title>
-          Most recently at AlleyCorp’s&thinsp;
-          <Link href="https://core.fitness/">Core</Link>
-        </Title>
+        <Title>Currently at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
