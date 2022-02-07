@@ -11,7 +11,7 @@ export const GRAPHICDESIGN_ROUTE = '/graphic-design';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
 
-export const RESTRICTED_ROUTES = [CUSTOMER_DISCOVERY_ROUTE];
+export const RESTRICTED_ROUTES = [];
 
 export const NEXT_ROUTE_MAP: Record<string, string> = {
   [CORE_LIVE_CLASSES]: CORE_PROGRAMS,
