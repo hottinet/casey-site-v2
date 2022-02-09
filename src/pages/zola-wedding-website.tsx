@@ -35,23 +35,23 @@ const ZolaWeddingWebsite: React.FC = () => (
       <Title bold>The Project Plan</Title>
       <Body>
         Zola has been helping couples create wedding websites for many years and
-        one of our customer asks has been for more customization of the existing
-        website designs. For our first pass at improving the flexibility of the
-        templates, we chose 10 of the most popular website templates and
+        one of our most frequent requests from couples has been for more
+        customization of the existing website designs. For our first pass at
+        improving these tools, we chose 10 of the most popular designs and
         re-built them in a way that allowed for their header fonts, body fonts
         and background colors to be edited by the user. The product design for
         this feature, was done first by the web team, and my role was to
         translate the experience to native.
       </Body>
       <PaddedExternalVideo
-        src="https://vimeo.com/674649619"
+        src="https://player.vimeo.com/video/674649619"
         title="video of customization tools on web"
       />
       <Title bold>The Customization Flow</Title>
       <GridBox center mb={80}>
         <Box>
-          <Heading bold>Creating a Drawer UI</Heading>
-          <Body>
+          <Heading bold>Creating the customization drawer UI</Heading>
+          <Body mb={20}>
             On web we have the benefit of being able to have the customization
             controls and preview side by side. To create a seamless as possible
             experience on native, we decided to use an action sheet that could
@@ -72,31 +72,36 @@ const ZolaWeddingWebsite: React.FC = () => (
       <GridBox center mb={80}>
         <Box>
           <Heading bold>Clarifying the Website Preview</Heading>
-          <Body>
+          <Body mb={20}>
             As mentioned above, the way we show the website preview is a little
             different on native than it is on web. The web team was rendering an
             image of each website page, while on native, we were loading the
             actual website in an iFrame.
           </Body>
-          <Body>
+          <Body mb={20}>
             Using an iFrame meant that the website was fully functional and
             interactive in the native preview. To make this more obvious for
             users who utilize both experiences, we added a dismissable banner
             prompting couples to interact.
           </Body>
           <Body>
-            Originally we wanted to make the desktop andmobile previews viusally
-            distinct by adding a browser top bar or placing the preview inside
-            of a phone shape, but the iFrame implementation also meant that we
-            could not scale the site without showing a warped representation.
+            Originally we wanted to make the desktop and mobile previews
+            viusally distinct by adding a browser top bar or placing the preview
+            inside of a phone shape, but the iFrame implementation also meant
+            that we could not scale the site without showing a warped
+            representation.
           </Body>
         </Box>
-        <Heading>Image goes here</Heading>
+        <Image
+          alt="Website Preview"
+          mb={80}
+          src="/ZolaWebsite/zola-web-preview.png"
+        />
       </GridBox>
       <GridBox center mb={80}>
         <Box>
           <Heading bold>Understanding the iOS Color Picker</Heading>
-          <Body>
+          <Body mb={20}>
             To allow couples to input custom colors that match their wedding
             vision, we wanted to utilize the iOS color picker. The native color
             picker can only be used on iOS 14 and above. Since less than 5% of
@@ -112,13 +117,23 @@ const ZolaWeddingWebsite: React.FC = () => (
             used those recommended colors in this experience as well.
           </Body>
         </Box>
-        <Heading>Image goes here</Heading>
+        <Image
+          alt="Screenshots of the color picker tool"
+          mb={80}
+          src="/ZolaWebsite/zola-web-color-picker.png"
+        />
       </GridBox>
       <Title bold>Increasing discoverability for customizable designs</Title>
-      <Heading bold>Filter and Tags</Heading>
-      <Body>FILL IN</Body>
-      <Heading bold>Manage Website Dashboard Entrypoint</Heading>
-      <Body>FILL IN</Body>
+      <Body>
+        To educate users about these new and extra customizable templates, we
+        added tags and filtering to the listings page. We also added new
+        entrypoints from the manage website dashboard page.
+      </Body>
+      <Image
+        alt="Screenshots of the color picker tool"
+        mb={80}
+        src="/ZolaWebsite/zola-web-plp.png"
+      />
       <Title bold>User Test</Title>
       <Title bold>Launch and Learn</Title>
     </ContentBox>

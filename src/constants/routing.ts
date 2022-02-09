@@ -11,6 +11,7 @@ export const GRAPHICDESIGN_ROUTE = '/graphic-design';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
 export const ZOLA_WEBSITE_ROUTE = '/zola-wedding-website';
+export const ZOLA_FILTER_ROUTE = '/zola-filters';
 
 export const RESTRICTED_ROUTES = [];
 
