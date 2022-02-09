@@ -134,7 +134,27 @@ const ZolaWeddingWebsite: React.FC = () => (
         mb={80}
         src="/ZolaWebsite/zola-web-plp.png"
       />
-      <Title bold>User Test</Title>
+      <GridBox center>
+        <Box>
+          <Title bold>User Test</Title>
+          <Body mb={20}>
+            Because this feature was built on web first, we leaned on that team
+            to test a lot of the wording and messaging around customization.
+            Once we solidified that copy however, we did run an unmoderated user
+            test on native where we asked users to change the background colors
+            and fonts on their website and also navigate to the customization
+            options from the main website dashboard.{' '}
+          </Body>
+          <Body>
+            We found that 10/10 of our users were able to complete the tasks and
+            rated them a 1/5 for difficulty.
+          </Body>
+        </Box>
+        <Image
+          alt="Screenshots of user testing website"
+          src="/ZolaWebsite/zola-web-usertesting.png"
+        />
+      </GridBox>
       <Title bold>Launch and Learn</Title>
     </ContentBox>
   </Layout>
