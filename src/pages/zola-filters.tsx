@@ -38,7 +38,7 @@ const ZolaFilters: React.FC = () => (
       />
     </DetailPickle>
     <ContentBox column>
-      <GridBox center>
+      <GridBox center columnGap={16}>
         <Box>
           <Title bold>Auditing our existing filters</Title>
           <Heading bold>Looking inward</Heading>
