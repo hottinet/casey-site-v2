@@ -1,13 +1,26 @@
+import styled from '@emotion/styled';
+
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
+import FlexBox from '~/components/box/FlexBox';
 import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
+import { ImageClicker } from '~/components/ImageClicker';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
+
+const CarouselBackground = styled(FlexBox)`
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.black};
+`;
+
+const CarouselImage = styled(Image)`
+  max-width: 500px;
+`;
 
 const ZolaFilters: React.FC = () => (
   <Layout>
@@ -64,7 +77,42 @@ const ZolaFilters: React.FC = () => (
             </li>
           </ul>
         </Box>
-        <Heading>clicker goes here</Heading>
+        <CarouselBackground center flex={1}>
+          <ImageClicker>
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-1.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-2.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-3.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-4.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-5.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-6.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-7.png"
+            />
+            <CarouselImage
+              alt="Examples of filters in other apps"
+              src="/ZolaFilters/filter-carousel-8.png"
+            />
+          </ImageClicker>
+        </CarouselBackground>
       </GridBox>
       <Heading bold>Looking outward</Heading>
       <Body mb={0}>

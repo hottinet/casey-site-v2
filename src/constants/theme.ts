@@ -52,7 +52,7 @@ const theme = {
     },
   },
   fontSize: {
-    subBody: '1rem',
+    subBody: '0.75rem',
     body: '1rem',
     heading: '1.25rem',
     title: '2.25rem',
