@@ -12,6 +12,7 @@ export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
 export const ZOLA_WEBSITE_ROUTE = '/zola-wedding-website';
 export const ZOLA_FILTER_ROUTE = '/zola-filters';
+export const ZOLA_PAPER_ROUTE = '/zola-paper';
 
 export const RESTRICTED_ROUTES = [];
 

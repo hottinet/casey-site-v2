@@ -38,14 +38,14 @@ const ZolaFilters: React.FC = () => (
       />
     </DetailPickle>
     <ContentBox column>
-      <GridBox center columnGap={16}>
+      <Title bold>Auditing our existing filters</Title>
+      <GridBox center columnGap={24} mb={40}>
         <Box>
-          <Title bold>Auditing our existing filters</Title>
           <Heading bold>Looking inward</Heading>
           <Body mb={20}>
             The first task was to audit all of the different places that we used
-            filters in the app. As you can see to the right, or below on mobile,
-            there were quite a few.
+            filters in the app. As you can see to the right there were quite a
+            few.
           </Body>
           <Body mb={20}>
             When we reviewed this audit as a design team, our key takeaways
@@ -133,49 +133,7 @@ const ZolaFilters: React.FC = () => (
         />
       </GridBox>
       <Title bold>Start Sketching</Title>
-      <Heading bold>The Browsing UI</Heading>
-      <Body mb={20}>
-        One of my main goals was to create clear documentation around when to
-        use which variant of the filter UI.
-      </Body>
-      <Heading>Primary Choice: Always default to</Heading>
-      <Body mb={20}>
-        In most cases we wanted to use the UI that stuck to the bottom of the
-        browse page. This UI was very thumb-friendly and sleek looking. Two
-        changes we made to this component were,
-      </Body>
-      <ul>
-        <li>
-          <Body mb={8}>
-            Ensuring we always use the word &quot;Filter&quot; and not
-            &quot;Refine&quot; which showed up many places in the app but
-            didn&apos;t quite match our brand voice.
-          </Body>
-        </li>
-        <li>
-          <Body mb={20}>
-            Combining the &quot;Filter&quot; and &quot;Sort&quot; actions into
-            one action sheet for easy access.
-          </Body>
-        </li>
-      </ul>
-      <Heading>Secondary Choice: In cases with a primary CTA</Heading>
-      <Body>
-        There are two places in the app where we can not put the filter UI at
-        the bottom of the screen because there is a primary CTA. For example, in
-        the flow to order a paper sample, we want users to be able to filter
-        down to find the invite that suites their needs, but we want to keep the
-        CTA for the next step as is.
-      </Body>
-      <Heading>Secondary Choice: In cases with simple filters</Heading>
-      <Body>
-        Lastly, a few places in the app used a &quot;Chip&quot; filter style. We
-        want to use this style when there is only 1 category of filters and less
-        than 5 options in that category. This makes the filters easily visible
-        and accessible. If the category has more than 5 options, it causes too
-        much vertical scrolling and if there is more than 1 category it is
-        confusing to understand which filters have been selected.
-      </Body>
+
       <Heading bold>The Filter Action Sheet</Heading>
       <Body>
         The action sheet was the place with the most room for improvement but
@@ -201,9 +159,10 @@ const ZolaFilters: React.FC = () => (
       <Title bold>Pull in Key Stakeholders</Title>
       <Heading bold>Understanding the tech limitations</Heading>
       <Body mb={20}>
-        Once I had some ideas in Figma, I talked to the head of native tech to
-        understand any limitations or edge cases we might have to consider. As
-        well as gather any intel on design choices that preceeded me.
+        SHORTEN Once I had some ideas in Figma, I talked to the head of native
+        tech to understand any limitations or edge cases we might have to
+        consider. As well as gather any intel on design choices that preceeded
+        me.
       </Body>
       <Body mb={20}>
         One problem that we faced was that our filters are implemented to
@@ -235,6 +194,67 @@ const ZolaFilters: React.FC = () => (
         back seat.
       </Body>
       <Title bold>Separating out Small Wins</Title>
+      <Heading bold>Documenting the Browsing UI</Heading>
+      <Body mb={20}>
+        One of my main goals was to create clear documentation around when to
+        use which variant of the filter UI.
+      </Body>
+      <GridBox>
+        <Box>
+          <Heading>Primary Filter UI</Heading>
+          <Body mb={20}>
+            In most cases we wanted to use the UI that stuck to the bottom of
+            the browse page. This UI was very thumb-friendly and sleek looking.
+            Two changes we made to this component were:
+          </Body>
+          <ul>
+            <li>
+              <Body mb={8}>
+                Ensuring we always use the word &quot;Filter&quot; and not
+                &quot;Refine&quot; which showed up many places in the app but
+                didn&apos;t quite match our brand voice.
+              </Body>
+            </li>
+            <li>
+              <Body mb={20}>
+                Combining the &quot;Filter&quot; and &quot;Sort&quot; actions
+                into one action sheet for easy access.
+              </Body>
+            </li>
+          </ul>
+        </Box>
+        <Heading>Animation of Before and After</Heading>
+      </GridBox>
+      <GridBox>
+        <Box>
+          <Heading>
+            Secondary UI: For browsing experiences with a primary action
+          </Heading>
+          <Body>
+            There are two places in the app where we can not put the filter UI
+            at the bottom of the screen because there is a primary CTA. For
+            example, in the flow to order a paper sample, we want users to be
+            able to filter down to find the invite that suites their needs, but
+            we want to keep the CTA for the next step as is.
+          </Body>
+        </Box>
+        <Heading>Image of primary cta filters</Heading>
+      </GridBox>
+      <GridBox>
+        <Box>
+          <Heading>Secondary UI: A case for super simple filters</Heading>
+          <Body>
+            Lastly, a few places in the app used a &quot;Chip&quot; filter
+            style. We want to use this style when there is only 1 category of
+            filters and less than 5 options in that category. This makes the
+            filters easily visible and accessible. If the category has more than
+            5 options, it causes too much vertical scrolling and if there is
+            more than 1 category it is confusing to understand which filters
+            have been selected.
+          </Body>
+        </Box>
+        <Heading>Video of guest list</Heading>
+      </GridBox>
     </ContentBox>
   </Layout>
 );

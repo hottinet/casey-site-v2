@@ -27,7 +27,7 @@ const ZolaWeddingWebsite: React.FC = () => (
         topText="The Goal"
       />
       <StackedText
-        bottomText="My role in this project was to assess and understand designs built for desktop web and translate them to our native app experience. I also worked with tech to understand any implementation issues."
+        bottomText="Assess and understand designs built for desktop web and translate them to our native app experience. I also worked with tech to understand any implementation issues."
         topText="My Role"
       />
     </DetailPickle>
@@ -39,9 +39,8 @@ const ZolaWeddingWebsite: React.FC = () => (
         customization of the existing website designs. For our first pass at
         improving these tools, we chose 10 of the most popular designs and
         re-built them in a way that allowed for their header fonts, body fonts
-        and background colors to be edited by the user. The product design for
-        this feature, was done first by the web team, and my role was to
-        translate the experience to native.
+        and background colors to be edited by the user. Below is an example of
+        how this comes to life in the desktop web experience.
       </Body>
       <PaddedExternalVideo
         src="https://player.vimeo.com/video/674649619"
@@ -52,7 +51,7 @@ const ZolaWeddingWebsite: React.FC = () => (
         <Box>
           <Heading bold>Creating the customization drawer UI</Heading>
           <Body mb={20}>
-            On web we have the benefit of being able to have the customization
+            On web, we have the benefit of being able to have the customization
             controls and preview side by side. To create a seamless as possible
             experience on native, we decided to use an action sheet that could
             be swiped up and down from the bottom of the preview screen. This
@@ -136,7 +135,7 @@ const ZolaWeddingWebsite: React.FC = () => (
       />
       <GridBox center>
         <Box>
-          <Title bold>User Test</Title>
+          <Title bold>User Testing</Title>
           <Body mb={20}>
             Because this feature was built on web first, we leaned on that team
             to test a lot of the wording and messaging around customization.
@@ -156,6 +155,36 @@ const ZolaWeddingWebsite: React.FC = () => (
         />
       </GridBox>
       <Title bold>Launch and Learn</Title>
+      <Body mb={20}>
+        After launching the feature, we addressed a few fast follows like adding
+        a reset button, smoothing some interactions and a few small UI
+        adjustments.
+      </Body>
+
+      <Heading bold mb={0}>
+        Initial Analysis
+      </Heading>
+      <ul>
+        <li>
+          <Body mb={20}>
+            We found that 46% of new website sign ups chose to start with
+            customizable designs.
+          </Body>
+        </li>
+        <li>
+          <Body mb={20}>
+            Users who chose customizable website designs had an increased depth
+            of usage. They were more likely to take additional steps like adding
+            a photo or event, which makes them more likely to publish.
+          </Body>
+        </li>
+        <li>
+          <Body mb={20}>
+            The native experience launched a few weeks after web and with its
+            launch we found that we doubled the usage of customization tools.
+          </Body>
+        </li>
+      </ul>
     </ContentBox>
   </Layout>
 );
