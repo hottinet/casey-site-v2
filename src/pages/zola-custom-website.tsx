@@ -16,7 +16,7 @@ const PaddedExternalVideo = styled(ExternalVideo)`
   margin-bottom: 80px;
 `;
 
-const ZolaWeddingWebsite: React.FC = () => (
+const ZolaCustomWebsite: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold>Wedding Website Customization Tools</Title>
@@ -189,4 +189,4 @@ const ZolaWeddingWebsite: React.FC = () => (
   </Layout>
 );
 
-export default ZolaWeddingWebsite;
+export default ZolaCustomWebsite;

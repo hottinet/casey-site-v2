@@ -15,14 +15,15 @@ const ZolaPaper: React.FC = () => (
       <Title bold>
         Increasing Conversion on Zola Invites and Save the Dates
       </Title>
+      <Body>background?</Body>
     </ContentBox>
     <DetailPickle>
       <StackedText
-        bottomText="Increase conversion on the order of samples and the purchasing of ßinvites and save the dates in the Zola app."
+        bottomText="Increase conversion on the order of samples and the purchasing of paper products like invites and save the dates in the Zola app."
         topText="The Goal"
       />
       <StackedText
-        bottomText="Revisit several parts of the paper experience to increase conversion on ordering samples and paper purchases"
+        bottomText="Revisit several parts of the paper experience and help to identify low lift ways that we can increase conversion on ordering samples and paper purchases"
         topText="My Role"
       />
     </DetailPickle>
@@ -44,7 +45,7 @@ const ZolaPaper: React.FC = () => (
       </Body>
       <GridBox center>
         <Box>
-          <Heading>
+          <Heading bold>
             Order a <s>Proof</s> Sample
           </Heading>
           <Body>
@@ -62,11 +63,11 @@ const ZolaPaper: React.FC = () => (
       </GridBox>
       <GridBox center>
         <Box>
-          <Heading>Personalizing our promos</Heading>
+          <Heading bold>Personalizing our promos</Heading>
           <Body>
             There are many places in the Zola experience for couples to upload
             photos including their wedding website, registry and other wedding
-            communications. Because Zola stores the main photos, we are able to
+            communications. Because we have these photos stored, we are able to
             show couples previews of paper products including photos they have
             uploaded instead of stock photography. Being able to envision
             themselves in the product makes couples more excited to order
@@ -78,10 +79,13 @@ const ZolaPaper: React.FC = () => (
           src="/ZolaPaper/zola-paper-photo-promo.png"
         />
       </GridBox>
-
-      <Heading>Reinforce FREE messaging / More Entrypoints</Heading>
+      <Heading bold>Highlight Samples More</Heading>
       <Body>
-        Drafts page coupon code and free message on plp, push notification
+        Overall, we added more entry points to the samples flow to make it
+        easier for couples to access. Some places included Your Drafts page,
+        where couples view paper products they have started customizing, the
+        paper product listing pages, where couples browse options, and also in
+        our push notifications.
       </Body>
       <Title bold>Improving Conversion in the Samples Flow</Title>
       <Body>
@@ -139,16 +143,27 @@ const ZolaPaper: React.FC = () => (
       </Body>
       <Heading bold> video of customization </Heading>
       <Title bold>Speeding up Paper Checkout</Title>
-      <Body>
+      <Body mb={20}>
         One of the big differences between the web and native experiences was
         that on web, we took users from the Review step straight to Checkout,
-        skipping the Cart.
+        skipping the Cart. Since the Review page acts similarly to a cart, we
+        wanted to mimic this behavior on native.
       </Body>
-      <Body>
+      <Image
+        alt="Three screens with the second, cart step, grayed out."
+        mb={80}
+        src="/ZolaPaper/zola-paper-cart.png"
+      />
+      <Body mb={20}>
         In the web experience there is also much more real estate on the screen
         to add messaging about coupon codes and free shipping in the review
         step.
       </Body>
+      <Image
+        alt="Differences between old and new review screens"
+        mb={80}
+        src="/ZolaPaper/zola-paper-review-page.png"
+      />
       <Title bold>Results!</Title>
       <Body>
         Our goal was to increase annualized revenue by 170K and we found that
