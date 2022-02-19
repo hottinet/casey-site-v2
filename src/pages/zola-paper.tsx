@@ -1,3 +1,5 @@
+import styled from '@emotion/styled';
+
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
@@ -8,6 +10,7 @@ import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
+import ExternalVideo from '~/components/videos/ExternalVideo';
 
 const ZolaPaper: React.FC = () => (
   <Layout>
@@ -15,29 +18,28 @@ const ZolaPaper: React.FC = () => (
       <Title bold>
         Increasing Conversion on Zola Invites and Save the Dates
       </Title>
-      <Body>background?</Body>
     </ContentBox>
     <DetailPickle>
       <StackedText
-        bottomText="Increase conversion on the order of samples and the purchasing of paper products like invites and save the dates in the Zola app."
+        bottomText="We found that the Zola native apps were accounting for 35% of traffic to paper products but only 15% of sales. Our goal was to increase conversion at different steps of the funnel by executing only extra-small and small sized projects."
         topText="The Goal"
       />
       <StackedText
-        bottomText="Revisit several parts of the paper experience and help to identify low lift ways that we can increase conversion on ordering samples and paper purchases"
+        bottomText="Revisit several parts of the paper experience and help to identify low lift ways that we can increase conversion on sample orders and paper purchases."
         topText="My Role"
       />
     </DetailPickle>
     <ContentBox column>
       <Title bold>Increasing traffic to the samples flow</Title>
       <Body mb={20}>
-        In the Zola app, couples can order a group of free samples or a free
-        proof of their paper order. We know that couples who order one or the
-        other convert to placing paper orders at a high rate. However, there is
-        not a clear distinction between how we expect couples to use the two
-        options.{' '}
+        In the Zola app, couples can try out their products before purchasing by
+        ordering a selection of free samples or a free proof of their paper
+        order. We know that couples who order one or the other convert to
+        placing paper orders at a high rate. However, there is not a clear
+        distinction between how we expect couples to use the two options.
       </Body>
       <Body mb={20}>
-        Our hypothesis is that the if we prioritize adding entry points to
+        Our hypothesis was that the if we prioritize adding entry points to
         samples over proofs, especially for couples early in their paper
         journey, we can increase conversion because the samples flow is simpler
         and quicker to complete and also the word &quot;Sample&quot; is a little
@@ -49,7 +51,7 @@ const ZolaPaper: React.FC = () => (
             Order a <s>Proof</s> Sample
           </Heading>
           <Body>
-            On PDPs for paper where samples were available, we changed our
+            On Product Detail Pages where samples were available, we changed our
             secondary CTA from &quot;Order a Proof&quot; to &quot;Order a
             Sample&quot;. We thought that this language was more straightforward
             to the user and that driving couples into our samples flow would be
@@ -82,10 +84,10 @@ const ZolaPaper: React.FC = () => (
       <Heading bold>Highlight Samples More</Heading>
       <Body>
         Overall, we added more entry points to the samples flow to make it
-        easier for couples to access. Some places included Your Drafts page,
-        where couples view paper products they have started customizing, the
-        paper product listing pages, where couples browse options, and also in
-        our push notifications.
+        easier for couples to access. Some places included the Your Drafts page,
+        where couples view paper products they have previously started
+        customizing, the paper product listing pages, where couples browse
+        options, and also in our push notifications.
       </Body>
       <Title bold>Improving Conversion in the Samples Flow</Title>
       <Body>
@@ -97,7 +99,7 @@ const ZolaPaper: React.FC = () => (
         in this process. However, large changes to the functionality would not
         be in scope.
       </Body>
-      <GridBox>
+      <GridBox center columnGap={40} mb={80}>
         <Box>
           <Heading bold>Browsing with intent</Heading>
           <ul>
@@ -122,7 +124,11 @@ const ZolaPaper: React.FC = () => (
             </li>
           </ul>
         </Box>
-        <Heading>Video of browse flow</Heading>
+        <ExternalVideo
+          aspectRatio="1:1"
+          src="https://player.vimeo.com/video/679368547"
+          title="Screen recording of filtering UI"
+        />
       </GridBox>
       <Heading bold>
         Introducing Universal Photos in the Customization Flow
@@ -141,7 +147,11 @@ const ZolaPaper: React.FC = () => (
         couples the trouble of fumbling through their photo library for the
         perfect pic when we might already have access to their number one.
       </Body>
-      <Heading bold> video of customization </Heading>
+      <ExternalVideo
+        aspectRatio="1:1"
+        src="https://player.vimeo.com/video/679368586"
+        title="xyz"
+      />
       <Title bold>Speeding up Paper Checkout</Title>
       <Body mb={20}>
         One of the big differences between the web and native experiences was
