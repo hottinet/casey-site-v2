@@ -20,6 +20,10 @@ const ZolaCustomWebsite: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold>Wedding Website Customization Tools</Title>
+      <Image
+        alt="Website Preview"
+        src="/ZolaCustomWeb/zola-custom-hero-2.png"
+      />
     </ContentBox>
     <DetailPickle>
       <StackedText
@@ -94,7 +98,7 @@ const ZolaCustomWebsite: React.FC = () => (
         <Image
           alt="Website Preview"
           mb={80}
-          src="/ZolaWebsite/zola-web-preview.png"
+          src="/ZolaCustomWeb/zola-web-preview.png"
         />
       </GridBox>
       <GridBox center mb={80}>
@@ -119,7 +123,7 @@ const ZolaCustomWebsite: React.FC = () => (
         <Image
           alt="Screenshots of the color picker tool"
           mb={80}
-          src="/ZolaWebsite/zola-web-color-picker.png"
+          src="/ZolaCustomWeb/zola-web-color-picker.png"
         />
       </GridBox>
       <Title bold>Increasing discoverability for customizable designs</Title>
@@ -131,7 +135,7 @@ const ZolaCustomWebsite: React.FC = () => (
       <Image
         alt="Screenshots of the color picker tool"
         mb={80}
-        src="/ZolaWebsite/zola-web-plp.png"
+        src="/ZolaCustomWeb/zola-web-plp.png"
       />
       <GridBox center>
         <Box>
@@ -151,7 +155,7 @@ const ZolaCustomWebsite: React.FC = () => (
         </Box>
         <Image
           alt="Screenshots of user testing website"
-          src="/ZolaWebsite/zola-web-usertesting.png"
+          src="/ZolaCustomWeb/zola-web-usertesting.png"
         />
       </GridBox>
       <Title bold>Launch and Learn</Title>
