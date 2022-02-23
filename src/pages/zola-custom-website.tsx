@@ -19,7 +19,9 @@ const PaddedExternalVideo = styled(ExternalVideo)`
 const ZolaCustomWebsite: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title bold>Wedding Website Customization Tools</Title>
+      <Title bold>
+        Enhancing the customization options for Zola&apos;s Wedding Website tool
+      </Title>
       <Image
         alt="Website Preview"
         src="/ZolaCustomWeb/zola-custom-hero-2.png"
@@ -158,16 +160,7 @@ const ZolaCustomWebsite: React.FC = () => (
           src="/ZolaCustomWeb/zola-web-usertesting.png"
         />
       </GridBox>
-      <Title bold>Launch and Learn</Title>
-      <Body mb={20}>
-        After launching the feature, we addressed a few fast follows like adding
-        a reset button, smoothing some interactions and a few small UI
-        adjustments.
-      </Body>
-
-      <Heading bold mb={0}>
-        Initial Analysis
-      </Heading>
+      <Title bold>Initial Results</Title>
       <ul>
         <li>
           <Body mb={20}>
@@ -185,7 +178,8 @@ const ZolaCustomWebsite: React.FC = () => (
         <li>
           <Body mb={20}>
             The native experience launched a few weeks after web and with its
-            launch we found that we doubled the usage of customization tools.
+            launch we found that we doubled the usage of website customization
+            tools.
           </Body>
         </li>
       </ul>
