@@ -33,9 +33,9 @@ const ZolaManageWebsite: React.FC = () => (
       <Title bold>Getting into the user mindset</Title>
       <Body>xyz</Body>
       <Title bold>Simplifying and building for scale</Title>
-      <Body>xyz</Body>
+      <Body>current, sectioned, new</Body>
       <Heading>Making the Edit Content CTA more prominent</Heading>
-      <Body>xyz</Body>
+      <Body>diagram of old and new page</Body>
       <Title bold>Creating cross platform consistency</Title>
       <Body>xyz</Body>
       <Heading>Design system updates</Heading>
