@@ -49,7 +49,7 @@ const ZolaPaper: React.FC = () => (
         and quicker to complete and also the word &quot;Sample&quot; is a little
         more user friendly.
       </Body>
-      <GridBox center>
+      <GridBox center mb={80}>
         <Box>
           <Heading bold>
             Order a <s>Proof</s> Sample
@@ -68,7 +68,7 @@ const ZolaPaper: React.FC = () => (
           src="/ZolaPaper/zola-paper-sample-cta.png"
         />
       </GridBox>
-      <GridBox center>
+      <GridBox center mb={80}>
         <Box>
           <Heading bold>Personalizing our promos</Heading>
           <Body>
@@ -86,15 +86,22 @@ const ZolaPaper: React.FC = () => (
           src="/ZolaPaper/zola-paper-photo-promo.png"
         />
       </GridBox>
-      <Heading bold>Highlight Samples More</Heading>
-      <Body>
-        Overall, we added more entry points to the samples flow to increase
-        traffic. Some places included the Your Drafts page, where couples view
-        paper products they have previously started customizing, the paper
-        product listing pages, where couples browse options, and also in our
-        push notifications.
-      </Body>
-      <Heading>Fix this, add image</Heading>
+      <GridBox center mb={80}>
+        <Box>
+          <Heading bold>Highlight Samples More</Heading>
+          <Body>
+            Overall, we added more entry points to the samples flow to increase
+            traffic. Some places this felt most relevant were the paper product
+            listing and product detail pages, in the Drafts experience and also
+            in push notifications.
+          </Body>
+        </Box>
+
+        <Image
+          alt="Push Notification on iPhone"
+          src="/ZolaPaper/notification.png"
+        />
+      </GridBox>
       <Title bold>
         Improving the browsing and customization flows for samples
       </Title>
@@ -182,10 +189,15 @@ const ZolaPaper: React.FC = () => (
         src="/ZolaPaper/zola-paper-review-page.png"
       />
       <Title bold>Big results from small changes</Title>
+      <Body mb={20}>
+        Small tweaks aren&apos;t always the most fun projects to work on but it
+        is always exciting when they pay off.
+      </Body>
       <ul>
         <li>
           <Body mb={20}>
-            We ultimately found that we beat our revenue goal by 100%.
+            We ultimately found that we beat our incremental revenue goal by
+            100%.
           </Body>
         </li>
         <li>
@@ -195,7 +207,7 @@ const ZolaPaper: React.FC = () => (
         </li>
         <li>
           <Body mb={20}>
-            We increase the number of paper checkouts started by 20%.
+            We increased the number of paper checkouts started by 20%.
           </Body>
         </li>
       </ul>
