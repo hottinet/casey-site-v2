@@ -12,6 +12,10 @@ import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 
+const PaddedExternalVideo = styled(ExternalVideo)`
+  margin-bottom: 80px;
+`;
+
 const ZolaPaper: React.FC = () => (
   <Layout>
     <ContentBox column>
@@ -21,7 +25,7 @@ const ZolaPaper: React.FC = () => (
     </ContentBox>
     <DetailPickle>
       <StackedText
-        bottomText="We found that the Zola native apps were accounting for 35% of traffic to paper products but only 15% of sales. Our goal was to increase conversion at different steps of the funnel by executing only extra-small and small sized projects."
+        bottomText="We found that the Zola native apps were accounting for a large amount of traffic to paper products but only a small amount of sales. Our goal was to increase conversion, and ultimately increase annualized revenue, by executing small and extra-small sized projects at different points in the funnel."
         topText="The Goal"
       />
       <StackedText
@@ -30,13 +34,13 @@ const ZolaPaper: React.FC = () => (
       />
     </DetailPickle>
     <ContentBox column>
-      <Title bold>Increasing traffic to the samples flow</Title>
+      <Title bold>Encouraging couples to order free samples</Title>
       <Body mb={20}>
         In the Zola app, couples can try out their products before purchasing by
-        ordering a selection of free samples or a free proof of their paper
-        order. We know that couples who order one or the other convert to
-        placing paper orders at a high rate. However, there is not a clear
-        distinction between how we expect couples to use the two options.
+        either ordering a selection of free samples or a free proof of their
+        paper order. We know that couples who order one or the other are more
+        likely to purchase. However, there is not a clear distinction between
+        how we expect couples to use the two options.
       </Body>
       <Body mb={20}>
         Our hypothesis was that the if we prioritize adding entry points to
@@ -60,6 +64,7 @@ const ZolaPaper: React.FC = () => (
         </Box>
         <Image
           alt="Before and After changing the CTA"
+          mb={20}
           src="/ZolaPaper/zola-paper-sample-cta.png"
         />
       </GridBox>
@@ -83,13 +88,16 @@ const ZolaPaper: React.FC = () => (
       </GridBox>
       <Heading bold>Highlight Samples More</Heading>
       <Body>
-        Overall, we added more entry points to the samples flow to make it
-        easier for couples to access. Some places included the Your Drafts page,
-        where couples view paper products they have previously started
-        customizing, the paper product listing pages, where couples browse
-        options, and also in our push notifications.
+        Overall, we added more entry points to the samples flow to increase
+        traffic. Some places included the Your Drafts page, where couples view
+        paper products they have previously started customizing, the paper
+        product listing pages, where couples browse options, and also in our
+        push notifications.
       </Body>
-      <Title bold>Improving Conversion in the Samples Flow</Title>
+      <Heading>Fix this, add image</Heading>
+      <Title bold>
+        Improving the browsing and customization flows for samples
+      </Title>
       <Body>
         Samples are a very important for getting users to purchase Save the
         Dates and Invitations. We noticed that in the native app our samples
@@ -99,7 +107,7 @@ const ZolaPaper: React.FC = () => (
         in this process. However, large changes to the functionality would not
         be in scope.
       </Body>
-      <GridBox center columnGap={40} mb={80}>
+      <GridBox center columnGap={24} mb={80}>
         <Box>
           <Heading bold>Browsing with intent</Heading>
           <ul>
@@ -126,7 +134,7 @@ const ZolaPaper: React.FC = () => (
         </Box>
         <ExternalVideo
           aspectRatio="1:1"
-          src="https://player.vimeo.com/video/679368547"
+          src="https://player.vimeo.com/video/683514574"
           title="Screen recording of filtering UI"
         />
       </GridBox>
@@ -147,9 +155,8 @@ const ZolaPaper: React.FC = () => (
         couples the trouble of fumbling through their photo library for the
         perfect pic when we might already have access to their number one.
       </Body>
-      <ExternalVideo
-        aspectRatio="1:1"
-        src="https://player.vimeo.com/video/679368586"
+      <PaddedExternalVideo
+        src="https://player.vimeo.com/video/683511986"
         title="xyz"
       />
       <Title bold>Speeding up Paper Checkout</Title>
@@ -174,11 +181,24 @@ const ZolaPaper: React.FC = () => (
         mb={80}
         src="/ZolaPaper/zola-paper-review-page.png"
       />
-      <Title bold>Results!</Title>
-      <Body>
-        Our goal was to increase annualized revenue by 170K and we found that
-        with these small changes would see an estimated increase of 350K.
-      </Body>
+      <Title bold>Big results from small changes</Title>
+      <ul>
+        <li>
+          <Body mb={20}>
+            We ultimately found that we beat our revenue goal by 100%.
+          </Body>
+        </li>
+        <li>
+          <Body mb={20}>
+            We improved the completion rate on the Sample flow by 108%.
+          </Body>
+        </li>
+        <li>
+          <Body mb={20}>
+            We increase the number of paper checkouts started by 20%.
+          </Body>
+        </li>
+      </ul>
     </ContentBox>
   </Layout>
 );
