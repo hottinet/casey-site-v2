@@ -53,7 +53,7 @@ const ZolaCustomWebsite: React.FC = () => (
         title="video of customization tools on web"
       />
       <Title bold>The Customization Flow</Title>
-      <GridBox center mb={80}>
+      <GridBox center columnGap={20} mb={80}>
         <Box>
           <Heading bold>Creating the customization drawer UI</Heading>
           <Body mb={20}>
@@ -72,7 +72,12 @@ const ZolaCustomWebsite: React.FC = () => (
             when swiping away the drawer without saving first.
           </Body>
         </Box>
-        <Heading>Image goes here</Heading>
+
+        <ExternalVideo
+          aspectRatio="1:1"
+          src="https://player.vimeo.com/video/685623616"
+          title="video of customization tools on iOS"
+        />
       </GridBox>
       <GridBox center mb={80}>
         <Box>
@@ -164,8 +169,8 @@ const ZolaCustomWebsite: React.FC = () => (
       <ul>
         <li>
           <Body mb={20}>
-            We found that 46% of new website sign ups chose to start with
-            customizable designs.
+            We found that almost half of all new website sign ups chose to start
+            with customizable designs.
           </Body>
         </li>
         <li>
@@ -180,6 +185,12 @@ const ZolaCustomWebsite: React.FC = () => (
             The native experience launched a few weeks after web and with its
             launch we found that we doubled the usage of website customization
             tools.
+          </Body>
+        </li>
+        <li>
+          <Body mb={20}>
+            All of these findings led us to invest in website customization
+            more.
           </Body>
         </li>
       </ul>
