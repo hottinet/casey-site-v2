@@ -25,7 +25,7 @@ const ZolaPaper: React.FC = () => (
     </ContentBox>
     <DetailPickle>
       <StackedText
-        bottomText="We found that the Zola native apps were accounting for a large amount of traffic to paper products but only a small amount of sales. Our goal was to increase conversion, and ultimately increase annualized revenue, by executing small and extra-small sized projects at different points in the funnel."
+        bottomText="We found that the Zola native apps were accounting for a large amount of traffic to paper products but only a small amount of sales. Our goal was to increase conversion, and ultimately revenue, by executing small and extra-small sized projects at different points in the funnel."
         topText="The Goal"
       />
       <StackedText

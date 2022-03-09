@@ -96,7 +96,7 @@ const AboutMe: React.FC = () => {
             <Link
               hoverImgAlt="resume"
               hoverImgSrc="/About/resumehover.png"
-              href="/Casey_Resume_082021.pdf"
+              href="/CaseyBradfordResume.pdf"
             >
               resume
             </Link>
