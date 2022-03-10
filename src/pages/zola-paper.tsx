@@ -22,6 +22,11 @@ const ZolaPaper: React.FC = () => (
       <Title bold>
         Increasing Conversion on Zola Invites and Save the Dates
       </Title>
+      <Image
+        alt="Selection of screens"
+        mb={20}
+        src="/ZolaPaper/zola-paper-hero.png"
+      />
     </ContentBox>
     <DetailPickle>
       <StackedText
@@ -86,22 +91,13 @@ const ZolaPaper: React.FC = () => (
           src="/ZolaPaper/zola-paper-photo-promo.png"
         />
       </GridBox>
-      <GridBox center mb={80}>
-        <Box>
-          <Heading bold>Highlight Samples More</Heading>
-          <Body>
-            Overall, we added more entry points to the samples flow to increase
-            traffic. Some places this felt most relevant were the paper product
-            listing and product detail pages, in the Drafts experience and also
-            in push notifications.
-          </Body>
-        </Box>
-
-        <Image
-          alt="Push Notification on iPhone"
-          src="/ZolaPaper/notification.png"
-        />
-      </GridBox>
+      <Heading bold>Highlight Samples More</Heading>
+      <Body>
+        Overall, we added more entry points to the samples flow to increase
+        traffic. Some places this felt most relevant were the paper product
+        listing and product detail pages, in the Drafts experience and also in
+        push notifications.
+      </Body>
       <Title bold>
         Improving the browsing and customization flows for samples
       </Title>
