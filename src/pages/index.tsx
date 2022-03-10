@@ -14,7 +14,6 @@ import Pickle from '~/components/pickles/Pickle';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import {
-  CORE_COMPONENT_LIBRARY_ROUTE,
   CORE_LIVE_CLASSES,
   CORE_PROGRAMS,
   CORE_SESSIONS,
@@ -22,6 +21,8 @@ import {
   IRTH_ROUTE,
   LADDERS_ROUTE,
   LISTENJAY_ROUTE,
+  ZOLA_CUSTOM_WEBSITE_ROUTE,
+  ZOLA_PAPER_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color, Spacing } from '~/typings/theme';
@@ -123,7 +124,7 @@ const BannerSticker = styled(Image)`
 
 const BannerTextBox = styled(Box)`
   ${({ theme }) => theme.breakpoints.sm} {
-    padding-left: 11.25rem;
+    /* padding-left: 11.25rem; */
   }
 `;
 
@@ -222,10 +223,10 @@ const GraphicDesignBanner: React.FC<BannerProps> = ({ xSpace, isXss }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <BannerBox alignItems="center" justifyContent="space-between" mx={xSpace}>
-        <BannerSticker
+        {/* <BannerSticker
           alt="'Change things' sticker"
           src="/Graphic/banner-sticker.png"
-        />
+        /> */}
         <BannerTextBox>
           {!isXss && (
             <Heading mb={12}>Looking for someone who can do both?</Heading>
@@ -275,9 +276,20 @@ const Home: React.FC = () => {
             ? '/LiveClasses/home-small-LC.png'
             : '/LiveClasses/LiveClassHero.png'
         }
-        linkTo={CORE_LIVE_CLASSES}
+        linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
         pickleColor="green"
-        title="Designing a live class experience for fitness"
+        title="Enhanced customization options for Zola wedding websites"
+      />
+      <HomePickle
+        imageAlt="Video Upload states"
+        imageSrc={
+          lessThanMd
+            ? '/Sessions/home-small-sessions.png'
+            : '/Sessions/VideoCover.png'
+        }
+        linkTo={ZOLA_PAPER_ROUTE}
+        pickleColor="yellow"
+        title="Improving conversion on Zola paper products"
       />
       <HomePickle
         imageAlt="CMS and customer facing screens"
@@ -288,7 +300,7 @@ const Home: React.FC = () => {
         }
         linkTo={CORE_PROGRAMS}
         pickleColor="red"
-        title="Building fitness programs on Core"
+        title="Building digital fitness programs"
       />
       <HomePickle
         imageAlt="several app screens"
@@ -301,26 +313,21 @@ const Home: React.FC = () => {
         pickleColor="blue"
         title="Rediscovering the Core Customer"
       />
-      <HomePickle
-        imageAlt="Video Upload states"
-        imageSrc={
-          lessThanMd
-            ? '/Sessions/home-small-sessions.png'
-            : '/Sessions/VideoCover.png'
-        }
-        linkTo={CORE_SESSIONS}
-        pickleColor="yellow"
-        title="Improving content creation and consumption"
-      />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
-          href={CORE_COMPONENT_LIBRARY_ROUTE}
-          imgAlt="component w toggle controls"
-          imgSrc="/ComponentLibrary/componenthover.png"
-          text="Building the Core Component Library"
+          href={CORE_LIVE_CLASSES}
+          imgAlt=""
+          imgSrc=""
+          text="Designing a live class experience for fitness"
+        />
+        <SecondaryProjectLink
+          href={CORE_SESSIONS}
+          imgAlt=""
+          imgSrc=""
+          text="Improving fitness content creation and consumption"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
