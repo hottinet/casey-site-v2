@@ -1,14 +1,10 @@
-import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
-import GridBox from '~/components/box/GridBox';
-import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
-import ExternalVideo from '~/components/videos/ExternalVideo';
 
 const ZolaManageWebsite: React.FC = () => (
   <Layout>

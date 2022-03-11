@@ -113,15 +113,6 @@ const BannerBox = styled(FlexBox)`
   width: 100%;
 `;
 
-const BannerSticker = styled(Image)`
-  display: none;
-  position: absolute;
-  max-height: 12.5rem;
-  ${({ theme }) => theme.breakpoints.sm} {
-    display: block;
-  }
-`;
-
 const BannerTextBox = styled(Box)`
   ${({ theme }) => theme.breakpoints.sm} {
     /* padding-left: 11.25rem; */
@@ -190,8 +181,8 @@ const HomePickle: React.FC<HomePickleProps> = ({
 type SecondaryProjectLinkProps = {
   href: string;
   text: string;
-  imgSrc: string;
-  imgAlt: string;
+  imgSrc?: string;
+  imgAlt?: string;
 };
 
 const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
@@ -223,10 +214,6 @@ const GraphicDesignBanner: React.FC<BannerProps> = ({ xSpace, isXss }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <BannerBox alignItems="center" justifyContent="space-between" mx={xSpace}>
-        {/* <BannerSticker
-          alt="'Change things' sticker"
-          src="/Graphic/banner-sticker.png"
-        /> */}
         <BannerTextBox>
           {!isXss && (
             <Heading mb={12}>Looking for someone who can do both?</Heading>
@@ -319,32 +306,22 @@ const Home: React.FC = () => {
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
           href={CORE_LIVE_CLASSES}
-          // imgAlt=""
-          // imgSrc=""
           text="Designing a live class experience for fitness"
         />
         <SecondaryProjectLink
           href={CORE_SESSIONS}
-          // imgAlt=""
-          // imgSrc=""
           text="Improving fitness content creation and consumption"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
-          // imgAlt="Irth app screens"
-          // imgSrc="/Irth/IrthHover.png"
           text="UI Refresh for the Irth app"
         />
         <SecondaryProjectLink
           href={LADDERS_ROUTE}
-          // imgAlt="Gaming Rankings"
-          // imgSrc="/Ladders/laddershover.png"
           text="Design for a gaming leaderboard"
         />
         <SecondaryProjectLink
           href={LISTENJAY_ROUTE}
-          // imgAlt="Quote UI"
-          // imgSrc="/ListenJay/listenjayhover.png"
           text="New feature for a podcast discovery platform"
         />
       </GridBox>

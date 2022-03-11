@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { MarginProps } from '../box/types';
 
 type HeadingProps = Pick<MarginProps, 'mb'> & {
-  children: string;
+  children: React.ReactNode;
   bold?: boolean;
   className?: string;
 };
