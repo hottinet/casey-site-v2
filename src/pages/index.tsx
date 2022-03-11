@@ -284,8 +284,8 @@ const Home: React.FC = () => {
         imageAlt="Video Upload states"
         imageSrc={
           lessThanMd
-            ? '/Sessions/home-small-sessions.png'
-            : '/Sessions/VideoCover.png'
+            ? '/ZolaPaper/Home_Small_ZolaPaper.png'
+            : '/ZolaPaper/Home_ZolaPaper.png'
         }
         linkTo={ZOLA_PAPER_ROUTE}
         pickleColor="yellow"
