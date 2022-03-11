@@ -45,6 +45,10 @@ const stickerData = [
     src: '/About/terraceHouse_sticker.png',
     alt: 'Terrace House',
   },
+  {
+    src: '/About/sewing.png',
+    alt: 'Sewing Machine',
+  },
 ];
 
 type StickerObj = {
@@ -96,7 +100,7 @@ const AboutMe: React.FC = () => {
             <Link
               hoverImgAlt="resume"
               hoverImgSrc="/About/resumehover.png"
-              href="/Casey_Resume_082021.pdf"
+              href="/CaseyBradfordResume.pdf"
             >
               resume
             </Link>

@@ -14,7 +14,6 @@ import Pickle from '~/components/pickles/Pickle';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 import {
-  CORE_COMPONENT_LIBRARY_ROUTE,
   CORE_LIVE_CLASSES,
   CORE_PROGRAMS,
   CORE_SESSIONS,
@@ -22,6 +21,8 @@ import {
   IRTH_ROUTE,
   LADDERS_ROUTE,
   LISTENJAY_ROUTE,
+  ZOLA_CUSTOM_WEBSITE_ROUTE,
+  ZOLA_PAPER_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color, Spacing } from '~/typings/theme';
@@ -112,18 +113,9 @@ const BannerBox = styled(FlexBox)`
   width: 100%;
 `;
 
-const BannerSticker = styled(Image)`
-  display: none;
-  position: absolute;
-  max-height: 12.5rem;
-  ${({ theme }) => theme.breakpoints.sm} {
-    display: block;
-  }
-`;
-
 const BannerTextBox = styled(Box)`
   ${({ theme }) => theme.breakpoints.sm} {
-    padding-left: 11.25rem;
+    /* padding-left: 11.25rem; */
   }
 `;
 
@@ -189,8 +181,8 @@ const HomePickle: React.FC<HomePickleProps> = ({
 type SecondaryProjectLinkProps = {
   href: string;
   text: string;
-  imgSrc: string;
-  imgAlt: string;
+  imgSrc?: string;
+  imgAlt?: string;
 };
 
 const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
@@ -222,10 +214,6 @@ const GraphicDesignBanner: React.FC<BannerProps> = ({ xSpace, isXss }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <BannerBox alignItems="center" justifyContent="space-between" mx={xSpace}>
-        <BannerSticker
-          alt="'Change things' sticker"
-          src="/Graphic/banner-sticker.png"
-        />
         <BannerTextBox>
           {!isXss && (
             <Heading mb={12}>Looking for someone who can do both?</Heading>
@@ -259,7 +247,7 @@ const Home: React.FC = () => {
             Product Designer balancing personality and utility.
           </Title>
         </Box>
-        <Title>Currently at Zola.</Title>
+        <Title>Currently designing native app solutions at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
@@ -269,15 +257,26 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
-        imageAlt="iOS and Web Mockups"
+        imageAlt="Screens and action sheets from website customization flow"
         imageSrc={
           lessThanMd
-            ? '/LiveClasses/home-small-LC.png'
-            : '/LiveClasses/LiveClassHero.png'
+            ? '/ZolaCustomWeb/Home_Small_ZolaCustom.png'
+            : '/ZolaCustomWeb/Home_ZolaCustom.png'
         }
-        linkTo={CORE_LIVE_CLASSES}
+        linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
         pickleColor="green"
-        title="Designing a live class experience for fitness"
+        title="Enhanced customization options for Zola wedding websites"
+      />
+      <HomePickle
+        imageAlt="Video Upload states"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaPaper/Home_Small_ZolaPaper.png'
+            : '/ZolaPaper/Home_ZolaPaper.png'
+        }
+        linkTo={ZOLA_PAPER_ROUTE}
+        pickleColor="yellow"
+        title="Improving conversion on Zola paper products"
       />
       <HomePickle
         imageAlt="CMS and customer facing screens"
@@ -288,7 +287,7 @@ const Home: React.FC = () => {
         }
         linkTo={CORE_PROGRAMS}
         pickleColor="red"
-        title="Building fitness programs on Core"
+        title="Building digital fitness programs"
       />
       <HomePickle
         imageAlt="several app screens"
@@ -301,43 +300,28 @@ const Home: React.FC = () => {
         pickleColor="blue"
         title="Rediscovering the Core Customer"
       />
-      <HomePickle
-        imageAlt="Video Upload states"
-        imageSrc={
-          lessThanMd
-            ? '/Sessions/home-small-sessions.png'
-            : '/Sessions/VideoCover.png'
-        }
-        linkTo={CORE_SESSIONS}
-        pickleColor="yellow"
-        title="Improving content creation and consumption"
-      />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
-          href={CORE_COMPONENT_LIBRARY_ROUTE}
-          imgAlt="component w toggle controls"
-          imgSrc="/ComponentLibrary/componenthover.png"
-          text="Building the Core Component Library"
+          href={CORE_LIVE_CLASSES}
+          text="Designing a live class experience for fitness"
+        />
+        <SecondaryProjectLink
+          href={CORE_SESSIONS}
+          text="Improving fitness content creation and consumption"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
-          imgAlt="Irth app screens"
-          imgSrc="/Irth/IrthHover.png"
-          text="UI Refresh for Irth"
+          text="UI Refresh for the Irth app"
         />
         <SecondaryProjectLink
           href={LADDERS_ROUTE}
-          imgAlt="Gaming Rankings"
-          imgSrc="/Ladders/laddershover.png"
           text="Design for a gaming leaderboard"
         />
         <SecondaryProjectLink
           href={LISTENJAY_ROUTE}
-          imgAlt="Quote UI"
-          imgSrc="/ListenJay/listenjayhover.png"
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
