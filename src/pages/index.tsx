@@ -260,7 +260,7 @@ const Home: React.FC = () => {
             Product Designer balancing personality and utility.
           </Title>
         </Box>
-        <Title>Currently designing for native apps at Zola.</Title>
+        <Title>Currently designing native app solutions at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
@@ -270,11 +270,11 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
-        imageAlt="iOS and Web Mockups"
+        imageAlt="Screens and action sheets from website customization flow"
         imageSrc={
           lessThanMd
-            ? '/LiveClasses/home-small-LC.png'
-            : '/LiveClasses/LiveClassHero.png'
+            ? '/ZolaCustomWeb/Home_Small_ZolaCustom.png'
+            : '/ZolaCustomWeb/Home_ZolaCustom.png'
         }
         linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
         pickleColor="green"
@@ -319,32 +319,32 @@ const Home: React.FC = () => {
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
         <SecondaryProjectLink
           href={CORE_LIVE_CLASSES}
-          imgAlt=""
-          imgSrc=""
+          // imgAlt=""
+          // imgSrc=""
           text="Designing a live class experience for fitness"
         />
         <SecondaryProjectLink
           href={CORE_SESSIONS}
-          imgAlt=""
-          imgSrc=""
+          // imgAlt=""
+          // imgSrc=""
           text="Improving fitness content creation and consumption"
         />
         <SecondaryProjectLink
           href={IRTH_ROUTE}
-          imgAlt="Irth app screens"
-          imgSrc="/Irth/IrthHover.png"
-          text="UI Refresh for Irth"
+          // imgAlt="Irth app screens"
+          // imgSrc="/Irth/IrthHover.png"
+          text="UI Refresh for the Irth app"
         />
         <SecondaryProjectLink
           href={LADDERS_ROUTE}
-          imgAlt="Gaming Rankings"
-          imgSrc="/Ladders/laddershover.png"
+          // imgAlt="Gaming Rankings"
+          // imgSrc="/Ladders/laddershover.png"
           text="Design for a gaming leaderboard"
         />
         <SecondaryProjectLink
           href={LISTENJAY_ROUTE}
-          imgAlt="Quote UI"
-          imgSrc="/ListenJay/listenjayhover.png"
+          // imgAlt="Quote UI"
+          // imgSrc="/ListenJay/listenjayhover.png"
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
