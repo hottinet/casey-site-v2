@@ -97,6 +97,11 @@ const ZolaBudgetTool: React.FC = () => (
       <Body>
         I looked at a handful of budgeting tools, both wedding related and not.
       </Body>
+      <Image
+        alt="Competitors"
+        mb={80}
+        src="/ZolaBudget/zola-budget-competitor.png"
+      />
     </ContentBox>
     <ContentBox column>
       <Title bold>Our budget model</Title>
@@ -127,7 +132,11 @@ const ZolaBudgetTool: React.FC = () => (
           </Body>
           <Body mb={20}>Example: $1,000 due on MM/DD/YYYY</Body>
         </Box>
-        <Body>Image here</Body>
+        <Image
+          alt="Flow chart of budget model"
+          mb={80}
+          src="/ZolaBudget/zola-budget-model.png"
+        />
       </GridBox>
     </ContentBox>
     <ContentBox column>
@@ -156,7 +165,11 @@ const ZolaBudgetTool: React.FC = () => (
             everything in your due column.
           </Body>
         </Box>
-        <Body>Image here</Body>
+        <Image
+          alt="Bar graph of your budget"
+          mb={80}
+          src="/ZolaBudget/zola-budget-math.png"
+        />
       </GridBox>
     </ContentBox>
   </Layout>
