@@ -46,6 +46,7 @@ const ZolaBudgetTool: React.FC = () => (
         I interviewed 5 users in the midst of wedding planning and actively
         involved in managing their budgets.
       </Body>
+      <Heading>Key Takeaways</Heading>
     </ContentBox>
     <ContentBox>
       <ContainerBox>
@@ -91,12 +92,6 @@ const ZolaBudgetTool: React.FC = () => (
         I looked at a handful of budgeting tools, both wedding related and not.
         what did we learn?
       </Body>
-    </ContentBox>
-    <ContentBox column>
-      <Title bold>Should this go in? What goes in the MVP?</Title>
-      <Body>
-        I looked at a handful of budgeting tools, both wedding related and not.
-      </Body>
       <Image
         alt="Competitors"
         mb={80}
@@ -104,9 +99,15 @@ const ZolaBudgetTool: React.FC = () => (
       />
     </ContentBox>
     <ContentBox column>
+      <Title bold>Should this go in? What goes in the MVP?</Title>
+      <Body>
+        I looked at a handful of budgeting tools, both wedding related and not.
+      </Body>
+    </ContentBox>
+    <ContentBox column>
       <Title bold>Our budget model</Title>
       <Body>xyz</Body>
-      <GridBox center columnGap={20} mb={80}>
+      <GridBox center columnGap={40} mb={80}>
         <Box>
           <Heading bold mb={8}>
             Budget Categories
@@ -141,7 +142,7 @@ const ZolaBudgetTool: React.FC = () => (
     </ContentBox>
     <ContentBox column>
       <Title bold>Our math</Title>
-      <GridBox center columnGap={20} mb={80}>
+      <GridBox center columnGap={40} mb={80}>
         <Box>
           <Heading bold mb={8}>
             Max Spend
