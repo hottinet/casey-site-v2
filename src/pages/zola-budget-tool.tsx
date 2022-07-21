@@ -11,16 +11,17 @@ import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 
-const ContainerBox = styled(Box)`
-  width: 100%;
-  display: flex;
-  column-gap: 20px;
-  margin-bottom: 40px;
-`;
+const TwoByTwoGrid = styled(GridBox)(({ theme, columns }) => ({
+  [theme.breakpoints.sm]: {
+    gridTemplateColumns: '1fr 1fr',
+  },
+  [theme.breakpoints.md]: {
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+  },
+}));
 
 const UTBox = styled(Box)`
   background-color: white;
-  width: 25%;
   padding: 12px;
 `;
 
@@ -49,7 +50,7 @@ const ZolaBudgetTool: React.FC = () => (
       <Heading>Key Takeaways</Heading>
     </ContentBox>
     <ContentBox>
-      <ContainerBox>
+      <TwoByTwoGrid columnGap={20} columns={4} mb={40} rowGap={20}>
         <UTBox>
           <Body bold mb={8}>
             Phases of the journey 🗓️
@@ -84,7 +85,7 @@ const ZolaBudgetTool: React.FC = () => (
             it felt comfortable and flexible
           </Body>
         </UTBox>
-      </ContainerBox>
+      </TwoByTwoGrid>
     </ContentBox>
     <ContentBox column>
       <Title bold>Competetive Research</Title>
