@@ -23,6 +23,7 @@ const TwoByTwoGrid = styled(GridBox)(({ theme, columns }) => ({
 const UTBox = styled(Box)`
   background-color: white;
   padding: 12px;
+  border-radius: 10px;
 `;
 
 const ZolaBudgetTool: React.FC = () => (
@@ -143,6 +144,11 @@ const ZolaBudgetTool: React.FC = () => (
     </ContentBox>
     <ContentBox column>
       <Title bold>Our math</Title>
+      <Body>
+        xyz some apps used confusing math, we wanted ours to be as
+        straightforward as possible and we worked with the copy team to create
+        the best names
+      </Body>
       <GridBox center columnGap={40} mb={80}>
         <Box>
           <Heading bold mb={8}>
@@ -173,6 +179,29 @@ const ZolaBudgetTool: React.FC = () => (
           src="/ZolaBudget/zola-budget-math.png"
         />
       </GridBox>
+    </ContentBox>
+    <ContentBox column>
+      <Title bold>Design Iterations</Title>
+      <Heading bold>How do we show all the necessary numbers?</Heading>
+      <Heading>Iteration 1</Heading>
+      <GridBox columnGap={20} columns={3} mb={40} rowGap={20}>
+        <Image
+          alt="Bar graph of your budget"
+          src="/ZolaBudget/zola-main-1.png"
+        />
+        <Image
+          alt="Bar graph of your budget"
+          src="/ZolaBudget/zola-main-2.png"
+        />
+        <Image
+          alt="Bar graph of your budget"
+          src="/ZolaBudget/zola-main-3.png"
+        />
+      </GridBox>
+      <Body>we decided to remove the oncept of an estimate</Body>
+      <Heading>Iteration 2</Heading>
+      <Heading bold>How do we relate payments and reminders?</Heading>
+      <Heading bold>How do we treat the at-a-glance numbers?</Heading>
     </ContentBox>
   </Layout>
 );
