@@ -109,8 +109,8 @@ const ZolaBudgetTool: React.FC = () => (
     <ContentBox column>
       <Title bold>Our budget model</Title>
       <Body>xyz</Body>
-      <GridBox center columnGap={40} mb={80}>
-        <Box>
+      <GridBox center columnGap={40} mb={80} smColumns={2}>
+        <Box width="100%">
           <Heading bold mb={8}>
             Budget Categories
           </Heading>
@@ -149,8 +149,8 @@ const ZolaBudgetTool: React.FC = () => (
         straightforward as possible and we worked with the copy team to create
         the best names
       </Body>
-      <GridBox center columnGap={40} mb={80}>
-        <Box>
+      <GridBox center columnGap={40} mb={80} smColumns={2}>
+        <Box width="100%">
           <Heading bold mb={8}>
             Max Spend
           </Heading>
@@ -184,55 +184,65 @@ const ZolaBudgetTool: React.FC = () => (
       <Title bold>Design Iterations</Title>
       <Heading bold>How do we show all the necessary numbers?</Heading>
       <Heading>Iteration 1</Heading>
-      <GridBox columnGap={20} columns={3} mb={40} rowGap={20}>
+      <GridBox columnGap={20} columns={3} mb={40} rowGap={20} smColumns={2}>
         <Image
           alt="Iteration of the design with two separate views"
+          fitParent
           src="/ZolaBudget/zola-main-1.png"
         />
         <Image
           alt="Iteration of the design where actual and estimate cost are in the same column"
+          fitParent
           src="/ZolaBudget/zola-main-2.png"
         />
         <Image
           alt="Iteration of the design that shows three columns"
+          fitParent
           src="/ZolaBudget/zola-main-3.png"
         />
       </GridBox>
       <Body>we decided to remove the oncept of an estimate</Body>
       <Heading>Iteration 2</Heading>
-      <GridBox columnGap={20} columns={2} mb={40} rowGap={20}>
+      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
         <Image
           alt="Design with a tab to swap between cost and balance due"
+          fitParent
           src="/ZolaBudget/zola-mainb-1.png"
         />
         <Image
           alt="Design with cost and balance due columns both showing"
+          fitParent
           src="/ZolaBudget/zola-mainb-2.png"
         />
       </GridBox>
       <Heading bold>How do we relate payments and reminders?</Heading>
-      <GridBox columnGap={20} columns={2} mb={40} rowGap={20}>
+      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
         <Image
           alt="Design with reminders and payments combined"
+          fitParent
           src="/ZolaBudget/zola-pay-1.png"
         />
         <Image
           alt="Design with reminders separate from payments"
+          fitParent
           src="/ZolaBudget/zola-pay-2.png"
         />
       </GridBox>
       <Heading bold>How do we treat the at-a-glance numbers?</Heading>
-      <GridBox columnGap={20} columns={3} mb={40} rowGap={20}>
+      <GridBox columnGap={20} columns={3} mb={40} rowGap={20} smColumns={2}>
         <Image
           alt="Design with three big numbers at the top"
+          fitParent
           src="/ZolaBudget/zola-graph-1.png"
         />
         <Image
           alt="Design with overlapping bar graph"
+          fitParent
           src="/ZolaBudget/zola-graph-2.png"
         />
         <Image
           alt="Design with three bar graph"
+          fitParent
           src="/ZolaBudget/zola-graph-3.png"
         />
       </GridBox>

@@ -36,6 +36,7 @@ export type BoxProps = MarginProps & {
   borderWidth?: BorderWidth;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  width?: string;
 };
 
 export type JustifyContent =
