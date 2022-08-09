@@ -34,7 +34,7 @@ const ZolaBudgetTool: React.FC = () => (
     </ContentBox>
     <DetailPickle>
       <StackedText
-        bottomText="Our first goal, was to win back prospective couples explicitly searching for this budgeting tools and choosing competitors. Our second was to build an MVP buget tool and provide a simple and useful experience for early funnel users"
+        bottomText="Our first goal, was to win back prospective couples who were explicitly searching for budgeting tools and choosing competitors. Our second was to build an MVP buget tool that would provide a simple and useful experience for early funnel users"
         topText="The Goal"
       />
       <StackedText
@@ -45,8 +45,8 @@ const ZolaBudgetTool: React.FC = () => (
     <ContentBox column>
       <Title bold>Getting in the user mindset</Title>
       <Body mb={20}>
-        I interviewed 5 users in the midst of wedding planning and actively
-        involved in managing their budgets.
+        I interviewed 5 users who were in the midst of wedding planning and
+        actively involved in managing their budgets.
       </Body>
       <Heading>Key Takeaways</Heading>
     </ContentBox>
@@ -58,14 +58,16 @@ const ZolaBudgetTool: React.FC = () => (
           </Body>
           <Body mb={8}>
             Couples describe distinct phases to budgeting: Research and
-            education, booking vendors, coasting period, making payments
+            education, booking vendors, coasting period, making payments.
           </Body>
         </UTBox>
         <UTBox>
           <Body bold mb={8}>
             Customization 🖌️
           </Body>
-          <Body mb={8}>Every wedding is different!</Body>
+          <Body mb={8}>
+            Every wedding is different! Every budget will flex accordingly.
+          </Body>
         </UTBox>
         <UTBox>
           <Body bold mb={8}>
@@ -73,8 +75,8 @@ const ZolaBudgetTool: React.FC = () => (
           </Body>
           <Body mb={8}>
             There is a large lag time between initial booking and making final
-            payments.Most couples mentioned having reminders for payments being
-            a dream feature
+            payments. Most couples mentioned payment reminders as a dream
+            feature.
           </Body>
         </UTBox>
         <UTBox>
@@ -83,7 +85,7 @@ const ZolaBudgetTool: React.FC = () => (
           </Body>
           <Body mb={8}>
             Most people we spoke to used a spreadsheet for their budget because
-            it felt comfortable and flexible
+            it felt comfortable and flexible.
           </Body>
         </UTBox>
       </TwoByTwoGrid>
@@ -92,7 +94,9 @@ const ZolaBudgetTool: React.FC = () => (
       <Title bold>Competetive Research</Title>
       <Body>
         I looked at a handful of budgeting tools, both wedding related and not.
-        what did we learn?
+        Most wedding specific tools did not break down to a payment level or
+        include the ability to set reminders. Many of them also started with
+        lots of prepopulated items that could be overwhleming to the couple.
       </Body>
       <Image
         alt="Competitors"
@@ -101,14 +105,36 @@ const ZolaBudgetTool: React.FC = () => (
       />
     </ContentBox>
     <ContentBox column>
-      <Title bold>Should this go in? What goes in the MVP?</Title>
-      <Body>
-        I looked at a handful of budgeting tools, both wedding related and not.
+      <Title bold>What goes in the MVP?</Title>
+      <Body mb={0}>
+        In our research we identified a wide variety of pain points across the
+        entire wedding budget journey from initial research and sticker shock to
+        keeping track of payments in the final days. For our MVP, we decided to
+        focus in narrowly on allowing users to do the following:
       </Body>
+      <ul>
+        <li>
+          <Body mb={20}>work towards a max budget</Body>
+        </li>
+        <li>
+          <Body mb={20}>track both past and upcoming payments</Body>
+        </li>
+        <li>
+          <Body mb={20}>utilize payment reminders</Body>
+        </li>
+        <li>
+          <Body mb={20}>
+            start with a limited amount of prefilled budget items but customize
+            as much as they please
+          </Body>
+        </li>
+        <li>
+          <Body mb={80}>access Zola budgeting tips where appropriate</Body>
+        </li>
+      </ul>
     </ContentBox>
     <ContentBox column>
       <Title bold>Our budget model</Title>
-      <Body>xyz</Body>
       <GridBox center columnGap={40} mb={80} smColumns={2}>
         <Box width="100%">
           <Heading bold mb={8}>
@@ -145,9 +171,10 @@ const ZolaBudgetTool: React.FC = () => (
     <ContentBox column>
       <Title bold>Our math</Title>
       <Body>
-        xyz some apps used confusing math, we wanted ours to be as
-        straightforward as possible and we worked with the copy team to create
-        the best names
+        Some competitors used confusing math to display the amounts left or
+        paid. We wanted our numbers to be as straightforward as possible and we
+        worked with the copy team to create simple names and descriptions for
+        each.
       </Body>
       <GridBox center columnGap={40} mb={80} smColumns={2}>
         <Box width="100%">
@@ -184,7 +211,15 @@ const ZolaBudgetTool: React.FC = () => (
       <Title bold>Design Iterations</Title>
       <Heading bold>How do we show all the necessary numbers?</Heading>
       <Heading>Iteration 1</Heading>
-      <GridBox columnGap={20} columns={3} mb={40} rowGap={20} smColumns={2}>
+      <Body>
+        Most wedding budgets include an estimate, total and balance for each
+        budget item. We wanted to find a way to display these numbers in a way
+        that made them easy to compare like the spreadsheets most of our couples
+        were currently using. After exploring these three iterations, we decided
+        that we would remove the concept of an estimate cost from our initial
+        system.
+      </Body>
+      <GridBox columnGap={20} columns={3} mb={80} rowGap={20} smColumns={2}>
         <Image
           alt="Iteration of the design with two separate views"
           fitParent
@@ -201,9 +236,15 @@ const ZolaBudgetTool: React.FC = () => (
           src="/ZolaBudget/zola-main-3.png"
         />
       </GridBox>
-      <Body>we decided to remove the oncept of an estimate</Body>
       <Heading>Iteration 2</Heading>
-      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
+      <Body>
+        Once we narrowed down to two numbers per item, we ran a user test where
+        we asked users to compare a version of the budget that showed the
+        numbers side by side to a version with a segmented control. We found
+        that an overwhelming number of people preferred to see the numbers next
+        to eachother.
+      </Body>
+      <GridBox columnGap={20} columns={2} mb={80} rowGap={20} smColumns={2}>
         <Image
           alt="Design with a tab to swap between cost and balance due"
           fitParent
@@ -216,7 +257,12 @@ const ZolaBudgetTool: React.FC = () => (
         />
       </GridBox>
       <Heading bold>How do we relate payments and reminders?</Heading>
-      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
+      <Body>
+        We also had user testers compare a budget tool where the reminders and
+        payments were separate to one where the two were combined. We found a
+        slight lean towards combining the concepts.
+      </Body>
+      <GridBox columnGap={20} columns={2} mb={80} rowGap={20} smColumns={2}>
         <Image
           alt="Design with reminders and payments combined"
           fitParent
@@ -229,7 +275,13 @@ const ZolaBudgetTool: React.FC = () => (
         />
       </GridBox>
       <Heading bold>How do we treat the at-a-glance numbers?</Heading>
-      <GridBox columnGap={20} columns={3} mb={40} rowGap={20} smColumns={2}>
+      <Body>
+        We wanted to have a visual way to show a users progress with their
+        budget. Below are three of the top contenders for displaying those main
+        numbers. Internally, we decided to move forward with the bar graph
+        option.
+      </Body>
+      <GridBox columnGap={20} columns={3} mb={80} rowGap={20} smColumns={2}>
         <Image
           alt="Design with three big numbers at the top"
           fitParent
@@ -246,6 +298,17 @@ const ZolaBudgetTool: React.FC = () => (
           src="/ZolaBudget/zola-graph-3.png"
         />
       </GridBox>
+    </ContentBox>
+    <ContentBox column>
+      <Title bold>Performance</Title>
+      <Body>
+        In the first two weeks, we saw 25,000 users explore the budget tool with
+        no marketing efforts. and 8,257 signups
+      </Body>
+      <Body>
+        Our goal for conversion was 25% and we found that our conversion rate
+        hovered around 34%
+      </Body>
     </ContentBox>
   </Layout>
 );
