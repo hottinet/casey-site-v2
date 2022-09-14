@@ -117,10 +117,9 @@ const ZolaBudgetTool: React.FC = () => (
           <Body mb={20}>work towards a max budget</Body>
         </li>
         <li>
-          <Body mb={20}>track both past and upcoming payments</Body>
-        </li>
-        <li>
-          <Body mb={20}>utilize payment reminders</Body>
+          <Body mb={20}>
+            track both past and upcoming payments with reminders
+          </Body>
         </li>
         <li>
           <Body mb={20}>
@@ -129,9 +128,13 @@ const ZolaBudgetTool: React.FC = () => (
           </Body>
         </li>
         <li>
-          <Body mb={80}>access Zola budgeting tips where appropriate</Body>
+          <Body mb={20}>access Zola budgeting tips where appropriate</Body>
         </li>
       </ul>
+      <Body>
+        For this version we did not focus on the very early stages of budgeting
+        where couples are looking for budget education.
+      </Body>
     </ContentBox>
     <ContentBox column>
       <Title bold>Our budget model</Title>
@@ -217,7 +220,7 @@ const ZolaBudgetTool: React.FC = () => (
         that made them easy to compare like the spreadsheets most of our couples
         were currently using. After exploring these three iterations, we decided
         that we would remove the concept of an estimate cost from our initial
-        system.
+        system to reduce complexity.
       </Body>
       <GridBox columnGap={20} columns={3} mb={80} rowGap={20} smColumns={2}>
         <Image
@@ -242,7 +245,7 @@ const ZolaBudgetTool: React.FC = () => (
         we asked users to compare a version of the budget that showed the
         numbers side by side to a version with a segmented control. We found
         that an overwhelming number of people preferred to see the numbers next
-        to eachother.
+        to each other.
       </Body>
       <GridBox columnGap={20} columns={2} mb={80} rowGap={20} smColumns={2}>
         <Image
@@ -300,15 +303,39 @@ const ZolaBudgetTool: React.FC = () => (
       </GridBox>
     </ContentBox>
     <ContentBox column>
+      <Title bold>show some screens</Title>
+    </ContentBox>
+    <ContentBox column>
       <Title bold>Performance</Title>
-      <Body>
-        In the first two weeks, we saw 25,000 users explore the budget tool with
-        no marketing efforts. and 8,257 signups
+      <Body mb={20}>
+        In the first few weeks, we saw 25,000 users explore the budget tool and
+        8,250 take a key action. Our goal for conversion was 25% and we found
+        that our conversion rate hovered around 35%.
       </Body>
-      <Body>
-        Our goal for conversion was 25% and we found that our conversion rate
-        hovered around 34%
+      <Body mb={20}>
+        We ran a survey some time after launch that was completed by about 300
+        regular budget tool users. We found that{' '}
+        <b>53% of survey takers gave the tool 5 out of 5 stars</b> and another
+        34% gave it 4 out of 5 stars.
       </Body>
+      <Body mb={0}>The most highly requested additions were:</Body>
+      <ul>
+        <li>
+          <Body mb={20}>Access to the tool on web</Body>
+        </li>
+        <li>
+          <Body mb={20}>More budget setting guidance</Body>
+        </li>
+        <li>
+          <Body mb={20}>Ability to include estimate costs</Body>
+        </li>
+        <li>
+          <Body mb={20}>More clear access to some existing features</Body>
+        </li>
+      </ul>
+    </ContentBox>
+    <ContentBox column>
+      <Title bold>What did I learn from this project?</Title>
     </ContentBox>
   </Layout>
 );
