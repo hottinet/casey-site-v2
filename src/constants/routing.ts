@@ -1,4 +1,3 @@
-export const CORE_COMPONENT_LIBRARY_ROUTE = '/component-library';
 export const VIDEO_UPLOAD_ROUTE = '/video-uploads';
 export const CUSTOMER_DISCOVERY_ROUTE = '/customer-discovery';
 export const CORE_LIVE_CLASSES = '/core-live-classes';
@@ -13,6 +12,7 @@ export const ABOUT_ROUTE = '/about';
 export const ZOLA_CUSTOM_WEBSITE_ROUTE = '/zola-custom-website';
 export const ZOLA_FILTER_ROUTE = '/zola-filters';
 export const ZOLA_PAPER_ROUTE = '/zola-paper';
+export const ZOLA_BUDGET_ROUTE = '/zola-budget-tool';
 
 export const RESTRICTED_ROUTES = [ZOLA_CUSTOM_WEBSITE_ROUTE, ZOLA_PAPER_ROUTE];
 

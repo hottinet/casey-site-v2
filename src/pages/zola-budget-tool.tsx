@@ -4,12 +4,14 @@ import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
 import Image from '~/components/Image';
+import Link from '~/components/Link';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
 import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
+import ExternalVideo from '~/components/videos/ExternalVideo';
 
 const TwoByTwoGrid = styled(GridBox)(({ theme, columns }) => ({
   [theme.breakpoints.sm]: {
@@ -30,7 +32,16 @@ const ZolaBudgetTool: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold>Building an app-first wedding budget tool for Zola</Title>
-      <Title bold>VIDEO</Title>
+      <ExternalVideo
+        aspectRatio="16:9"
+        src="https://player.vimeo.com/video/750456231"
+        title="video of budget tool features"
+      />
+      {/* <ExternalVideo
+        aspectRatio="1:1"
+        src="https://player.vimeo.com/video/750455888"
+        title="video of budget tool features"
+      /> */}
     </ContentBox>
     <DetailPickle>
       <StackedText
@@ -114,21 +125,21 @@ const ZolaBudgetTool: React.FC = () => (
       </Body>
       <ul>
         <li>
-          <Body mb={20}>work towards a max budget</Body>
+          <Body mb={8}>work towards a max budget</Body>
         </li>
         <li>
-          <Body mb={20}>
+          <Body mb={8}>
             track both past and upcoming payments with reminders
           </Body>
         </li>
         <li>
-          <Body mb={20}>
+          <Body mb={8}>
             start with a limited amount of prefilled budget items but customize
             as much as they please
           </Body>
         </li>
         <li>
-          <Body mb={20}>access Zola budgeting tips where appropriate</Body>
+          <Body mb={8}>access Zola budgeting tips where appropriate</Body>
         </li>
       </ul>
       <Body>
@@ -303,7 +314,37 @@ const ZolaBudgetTool: React.FC = () => (
       </GridBox>
     </ContentBox>
     <ContentBox column>
-      <Title bold>show some screens</Title>
+      <Title bold>The MVP Final Product</Title>
+      <Body mb={20}>
+        Check out the tool on&thinsp;
+        <Link
+          hoverImgAlt="iOS"
+          href="https://apps.apple.com/us/app/zola/id852691916"
+        >
+          iOS
+        </Link>
+        &thinsp;or&thinsp;
+        <Link
+          hoverImgAlt="Android"
+          href="https://play.google.com/store/apps/details?id=com.zola.android.wedding&hl=en_US&gl=US"
+        >
+          Android.
+        </Link>
+      </Body>
+      <Image
+        alt="4 key screens"
+        mb={40}
+        src="/ZolaBudget/zola-budget-hero.png"
+      />
+      <Body mb={20}>
+        Since launching the budget tool, we have refreshed our branding. See it
+        below with a fresh new look.
+      </Body>
+      <Image
+        alt="4 key screens"
+        mb={80}
+        src="/ZolaBudget/zola-budget-hero-2.png"
+      />
     </ContentBox>
     <ContentBox column>
       <Title bold>Performance</Title>
@@ -321,21 +362,43 @@ const ZolaBudgetTool: React.FC = () => (
       <Body mb={0}>The most highly requested additions were:</Body>
       <ul>
         <li>
-          <Body mb={20}>Access to the tool on web</Body>
+          <Body mb={8}>Access to the tool on web</Body>
         </li>
         <li>
-          <Body mb={20}>More budget setting guidance</Body>
+          <Body mb={8}>More budget setting guidance</Body>
         </li>
         <li>
-          <Body mb={20}>Ability to include estimate costs</Body>
+          <Body mb={8}>Ability to include estimate costs</Body>
         </li>
         <li>
-          <Body mb={20}>More clear access to some existing features</Body>
+          <Body>More clear access to some existing features</Body>
         </li>
       </ul>
     </ContentBox>
     <ContentBox column>
       <Title bold>What did I learn from this project?</Title>
+      <Heading bold>Utlilize the copy team early and often.</Heading>
+      <Body mb={20}>
+        Not all product designers have the luxury of working with a copy writer.
+        For small copy tweaks we usually pull in the copy team once designs are
+        fairly final but for such a large project I would have loved to
+        collaborate with them more from the start.
+      </Body>
+      <Heading bold>
+        Use components for repetetive copy and clearly mark changes
+      </Heading>
+      <Body mb={20}>
+        Because we were making a lot of copy changes toward the end of our
+        process, it was sometimes hard for the developers to know what had
+        changed. In the future, we hope to use components for any repetetive
+        copy and clearly mark changes along the way.
+      </Body>
+      <Heading bold>Sticking to the scope</Heading>
+      <Body mb={20}>
+        One of our biggest struggles with this project was scope creep as we
+        identifies features that could let us stand apart from competitors. From
+        the start we could have been more clear about what we meant by MVP.
+      </Body>
     </ContentBox>
   </Layout>
 );
