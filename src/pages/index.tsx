@@ -21,11 +21,11 @@ import {
   IRTH_ROUTE,
   LADDERS_ROUTE,
   LISTENJAY_ROUTE,
+  ZOLA_BUDGET_ROUTE,
   ZOLA_CUSTOM_WEBSITE_ROUTE,
-  ZOLA_PAPER_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
-import { Color, Spacing } from '~/typings/theme';
+import { Color } from '~/typings/theme';
 
 // START - MISC STYLES - START
 const LinkText = styled.span(({ theme }) => ({
@@ -104,35 +104,6 @@ const PickleContentWrapper = styled(ContentBox)(({ theme }) => ({
 }));
 // END - PICKLE STYLES - END
 
-// START - BANNER STYLES - START
-const BannerBox = styled(FlexBox)`
-  background-color: #2b2b2b;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  border-radius: ${({ theme }) => theme.spacing[20]};
-  padding: ${({ theme }) => theme.spacing[24]};
-  width: 100%;
-`;
-
-const BannerTextBox = styled(Box)`
-  ${({ theme }) => theme.breakpoints.sm} {
-    /* padding-left: 11.25rem; */
-  }
-`;
-
-const BannerLink = styled(Link)`
-  width: 100%;
-  text-decoration: none;
-  ${({ theme }) => theme.breakpoints.xs} {
-    margin-top: ${({ theme }) => theme.spacing[64]};
-  }
-`;
-
-const BannerButton = styled(ArrowButton)`
-  flex-shrink: 0;
-  margin-left: ${({ theme }) => theme.spacing[8]};
-`;
-// END - BANNER STYLES - END
-
 // START - SUBCOMPONENTS - START
 type HomePickleProps = {
   imageSrc: string;
@@ -198,39 +169,6 @@ const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
   </span>
 );
 
-type BannerProps = {
-  xSpace: Spacing;
-  isXss: boolean;
-};
-
-const GraphicDesignBanner: React.FC<BannerProps> = ({ xSpace, isXss }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  return (
-    <BannerLink
-      href="/graphic-design"
-      internal
-      noHoverStyles
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <BannerBox alignItems="center" justifyContent="space-between" mx={xSpace}>
-        <BannerTextBox>
-          {!isXss && (
-            <Heading mb={12}>Looking for someone who can do both?</Heading>
-          )}
-          <Title bold mb={0}>
-            Graphic Design Sample
-          </Title>
-        </BannerTextBox>
-        <BannerButton
-          forceHover={isHovered}
-          title="Navigate to Graphic Design portfolio"
-          onClick={undefined}
-        />
-      </BannerBox>
-    </BannerLink>
-  );
-};
 // END - SUBCOMPONENTS - END
 
 const Home: React.FC = () => {
@@ -257,6 +195,17 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
+        imageAlt="Budget tool app screens"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
+            : '/ZolaBudget/Home_ZolaBudget.png'
+        }
+        linkTo={ZOLA_BUDGET_ROUTE}
+        pickleColor="green"
+        title="Building a wedding budgeting tool for the Zola app"
+      />
+      <HomePickle
         imageAlt="Screens and action sheets from website customization flow"
         imageSrc={
           lessThanMd
@@ -264,19 +213,8 @@ const Home: React.FC = () => {
             : '/ZolaCustomWeb/Home_ZolaCustom.png'
         }
         linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
-        pickleColor="green"
-        title="Enhanced customization options for Zola wedding websites"
-      />
-      <HomePickle
-        imageAlt="Video Upload states"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaPaper/Home_Small_ZolaPaper.png'
-            : '/ZolaPaper/Home_ZolaPaper.png'
-        }
-        linkTo={ZOLA_PAPER_ROUTE}
         pickleColor="yellow"
-        title="Improving conversion on Zola paper products"
+        title="Enhanced customization options for Zola wedding websites"
       />
       <HomePickle
         imageAlt="CMS and customer facing screens"
@@ -325,7 +263,6 @@ const Home: React.FC = () => {
           text="New feature for a podcast discovery platform"
         />
       </GridBox>
-      <GraphicDesignBanner isXss={isXss} xSpace={xSpace} />
     </Layout>
   );
 };
