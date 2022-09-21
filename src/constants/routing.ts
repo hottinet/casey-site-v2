@@ -6,7 +6,6 @@ export const CORE_SESSIONS = '/core-sessions';
 export const IRTH_ROUTE = '/irth';
 export const LADDERS_ROUTE = '/ladders';
 export const LISTENJAY_ROUTE = '/listenjay';
-export const GRAPHICDESIGN_ROUTE = '/graphic-design';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
 export const ZOLA_CUSTOM_WEBSITE_ROUTE = '/zola-custom-website';
@@ -17,6 +16,7 @@ export const ZOLA_BUDGET_ROUTE = '/zola-budget-tool';
 export const RESTRICTED_ROUTES = [ZOLA_CUSTOM_WEBSITE_ROUTE, ZOLA_PAPER_ROUTE];
 
 export const NEXT_ROUTE_MAP: Record<string, string> = {
+  [ZOLA_BUDGET_ROUTE]: ZOLA_CUSTOM_WEBSITE_ROUTE,
   [ZOLA_CUSTOM_WEBSITE_ROUTE]: ZOLA_PAPER_ROUTE,
   [ZOLA_PAPER_ROUTE]: CORE_PROGRAMS,
   [CORE_PROGRAMS]: CUSTOMER_DISCOVERY_ROUTE,
