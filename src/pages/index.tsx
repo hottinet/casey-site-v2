@@ -23,7 +23,6 @@ import {
   LISTENJAY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_CUSTOM_WEBSITE_ROUTE,
-  ZOLA_PAPER_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -218,17 +217,6 @@ const Home: React.FC = () => {
         title="Enhanced customization options for Zola wedding websites"
       />
       <HomePickle
-        imageAlt="Video Upload states"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaPaper/Home_Small_ZolaPaper.png'
-            : '/ZolaPaper/Home_ZolaPaper.png'
-        }
-        linkTo={ZOLA_PAPER_ROUTE}
-        pickleColor="red"
-        title="Improving conversion on Zola paper products"
-      />
-      <HomePickle
         imageAlt="CMS and customer facing screens"
         imageSrc={
           lessThanMd
@@ -236,7 +224,7 @@ const Home: React.FC = () => {
             : '/Programs/ProgramHero.png'
         }
         linkTo={CORE_PROGRAMS}
-        pickleColor="blue"
+        pickleColor="red"
         title="Building digital fitness programs"
       />
       <HomePickle
