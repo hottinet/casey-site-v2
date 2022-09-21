@@ -195,15 +195,15 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
-        imageAlt="CHANGE ME"
+        imageAlt="Budget tool app screens"
         imageSrc={
           lessThanMd
-            ? '/ZolaCustomWeb/Home_Small_ZolaCustom.png'
-            : '/ZolaCustomWeb/Home_ZolaCustom.png'
+            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
+            : '/ZolaBudget/Home_ZolaBudget.png'
         }
         linkTo={ZOLA_BUDGET_ROUTE}
         pickleColor="green"
-        title="CHANGE ME BUDGET TOOL"
+        title="Building a wedding budgeting tool for the Zola app"
       />
       <HomePickle
         imageAlt="Screens and action sheets from website customization flow"

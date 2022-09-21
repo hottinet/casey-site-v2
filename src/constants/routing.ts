@@ -9,7 +9,6 @@ export const LISTENJAY_ROUTE = '/listenjay';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
 export const ZOLA_CUSTOM_WEBSITE_ROUTE = '/zola-custom-website';
-export const ZOLA_FILTER_ROUTE = '/zola-filters';
 export const ZOLA_BUDGET_ROUTE = '/zola-budget-tool';
 
 export const RESTRICTED_ROUTES = [ZOLA_CUSTOM_WEBSITE_ROUTE, ZOLA_BUDGET_ROUTE];
