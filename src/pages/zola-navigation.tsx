@@ -56,17 +56,22 @@ const ZolaNavigation: React.FC = () => (
       </Body>
       <Body>
         We set up a card sort activity to do with 6 real Zola users who were in
-        the midst of wedding planning. We presented users with a QUOTE pile
-        QUOTE of cards, each reflecting a different product or page in the Zola
-        app and asked them to group the cards however made sense to them. After
-        a user had grouped the cards how they saw fit, we would often ask them
-        to consolidate down to 4 or 5 groups. Interviews were executed via Zoom.
+        the midst of wedding planning. We presented users with a
+        &quot;pileß&quot; of cards, each reflecting a different product or page
+        in the Zola app and asked them to group the cards however made sense to
+        them. After a user had grouped the cards how they saw fit, we would
+        often ask them to consolidate down to 4 or 5 groups. Interviews were
+        executed via Zoom.
       </Body>
-      <Body> show cards</Body>
+      <Image
+        alt="assortment of all of the cards shown in card sort"
+        mb={80}
+        src="/ZolaNav/zola-cards-pre.png"
+      />
       <Heading bold>fpo Card sort key learnings</Heading>
     </ContentBox>
     <ContentBox>
-      <TwoByTwoGrid columnGap={20} columns={3} mb={40} rowGap={20}>
+      <TwoByTwoGrid columnGap={20} columns={3} mb={80} rowGap={20}>
         <UTBox>
           <Body bold mb={8}>
             Inspiration 💡
@@ -119,7 +124,24 @@ const ZolaNavigation: React.FC = () => (
     </ContentBox>
     <ContentBox column>
       <Heading bold>The resulting organization</Heading>
-      <Body>Show cards</Body>
+      <Image
+        alt="cards organized into 4 groups: planning, guests and paper, inspo, and registry"
+        mb={80}
+        src="/ZolaNav/zola-cards-post.png"
+      />
+    </ContentBox>
+    <ContentBox column>
+      <Heading bold>fpo Protoypes</Heading>
+      <Body>
+        When translating the groupings from our card sort into designs that we
+        could put in front of users, we had two solutions in mind. One that
+        continued to use the home page as navigation but in an even bigegr way
+        and a second that used sheets to expand each section in the bottom bar.
+      </Body>
+      <Body> show two protos in two side by side images</Body>
+    </ContentBox>
+    <ContentBox column>
+      <Title bold>FPO Refining designs and applying new branding</Title>
     </ContentBox>
   </Layout>
 );
