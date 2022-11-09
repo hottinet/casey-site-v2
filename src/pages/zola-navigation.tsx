@@ -135,13 +135,37 @@ const ZolaNavigation: React.FC = () => (
       <Body>
         When translating the groupings from our card sort into designs that we
         could put in front of users, we had two solutions in mind. One that
-        continued to use the home page as navigation but in an even bigegr way
+        continued to use the home page as navigation but in an even bigger way
         and a second that used sheets to expand each section in the bottom bar.
       </Body>
-      <Body> show two protos in two side by side images</Body>
+      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
+        <Image
+          alt="Home page prototype in which the home page is a niv list of navigation links"
+          fitParent
+          src="/ZolaNav/zola-navproto-1.png"
+        />
+        <Image
+          alt="Home page design in which clicking on a tab in the bottom bar opens a sub-menu"
+          fitParent
+          src="/ZolaNav/zola-navproto-2.png"
+        />
+      </GridBox>
+      <Body>
+        4 out of 5 of the users prefered the giant jump menu option because they
+        liked having a high level view of all of the things they could do on
+        Zola. Most couples are not experienced wedding planners and seeing
+        everything, helped them think about all the things they might need to do
+        for their wedding.
+      </Body>
     </ContentBox>
     <ContentBox column>
       <Title bold>FPO Refining designs and applying new branding</Title>
+      <Body>
+        At the same time that the mobile team was working on this project, Zola
+        was refining some new branding. We decided that this project would be
+        the first that we would execute in the new styling. In parallel, we
+        worked on restyling all of our components across the app.
+      </Body>
     </ContentBox>
   </Layout>
 );
