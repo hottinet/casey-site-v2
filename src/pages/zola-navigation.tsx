@@ -45,7 +45,44 @@ const ZolaNavigation: React.FC = () => (
     </DetailPickle>
     <ContentBox column>
       <Title bold>explain problem better?</Title>
-      <Title bold>process image?</Title>
+      <Title bold>fpo Project timeline idk if I need this</Title>
+      <TwoByTwoGrid columnGap={20} columns={4} mb={80} rowGap={20}>
+        <UTBox>
+          <Body bold mb={8}>
+            Week 1-2
+          </Body>
+          <Body mb={8}>
+            Project kickoff. Plan and execute card sorts interviews
+          </Body>
+        </UTBox>
+        <UTBox>
+          <Body bold mb={8}>
+            Week 2-4
+          </Body>
+          <Body mb={8}>
+            Apply learnings from card sort exercises to prototypes for another
+            round of user testing. Present results to the team.
+          </Body>
+        </UTBox>
+        <UTBox>
+          <Body bold mb={8}>
+            Week 5-8
+          </Body>
+          <Body mb={8}>
+            Focus on moving designs to high fidelity, collaborating with copy
+            team, incorporating new branding and mapping out changes on affected
+            pages!
+          </Body>
+        </UTBox>
+        <UTBox>
+          <Body bold mb={8}>
+            Week 9-13
+          </Body>
+          <Body mb={8}>In development</Body>
+        </UTBox>
+      </TwoByTwoGrid>
+    </ContentBox>
+    <ContentBox column>
       <Title bold>FPO User testing strategy</Title>
       <Body>Card sort and prototypes</Body>
       <Heading bold>FPO Card Sort</Heading>
