@@ -30,12 +30,15 @@ const UTBox = styled(Box)`
 const ZolaNavigation: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title bold>FPO idk ehat the title is</Title>
-      <Title bold>Image?</Title>
+      <Title bold>Re-designing the Zola iOS nav for scale</Title>
+      <Image
+        alt="Old home page compared to new home page"
+        src="/ZolaNav/zola-nav-hero-rectangle.png"
+      />
     </ContentBox>
     <DetailPickle>
       <StackedText
-        bottomText="Our previous navigation was extremely active but not very scalable. We wanted to have a design framework that would work well as we continued to add products. We also wanted to convert new users into multiple products better."
+        bottomText="Our previous navigation was extremely active but not very scalable. We wanted to have a design framework that would work well as we continued to add products. We also wanted to convert new users into more products."
         topText="The Goal"
       />
       <StackedText
@@ -44,8 +47,7 @@ const ZolaNavigation: React.FC = () => (
       />
     </DetailPickle>
     <ContentBox column>
-      <Title bold>explain problem better?</Title>
-      <Title bold>fpo Project timeline idk if I need this</Title>
+      <Title bold>Our timeline</Title>
       <TwoByTwoGrid columnGap={20} columns={4} mb={80} rowGap={20}>
         <UTBox>
           <Body bold mb={8}>
@@ -78,14 +80,13 @@ const ZolaNavigation: React.FC = () => (
           <Body bold mb={8}>
             Week 9-13
           </Body>
-          <Body mb={8}>In development</Body>
+          <Body mb={8}>Kick off with developers, answer questions, VQA.</Body>
         </UTBox>
       </TwoByTwoGrid>
     </ContentBox>
     <ContentBox column>
-      <Title bold>FPO User testing strategy</Title>
-      <Body>Card sort and prototypes</Body>
-      <Heading bold>FPO Card Sort</Heading>
+      <Title bold>User testing strategy</Title>
+      <Heading bold>Card Sort</Heading>
       <Body mb={20}>
         Internally, we had lots of ideas about how the ecosystem of Zola
         products might be organized but it was important for us to leave our own
@@ -94,7 +95,7 @@ const ZolaNavigation: React.FC = () => (
       <Body>
         We set up a card sort activity to do with 6 real Zola users who were in
         the midst of wedding planning. We presented users with a
-        &quot;pileß&quot; of cards, each reflecting a different product or page
+        &quot;pile&quot; of cards, each reflecting a different product or page
         in the Zola app and asked them to group the cards however made sense to
         them. After a user had grouped the cards how they saw fit, we would
         often ask them to consolidate down to 4 or 5 groups. Interviews were
@@ -105,7 +106,9 @@ const ZolaNavigation: React.FC = () => (
         mb={80}
         src="/ZolaNav/zola-cards-pre.png"
       />
-      <Heading bold>fpo Card sort key learnings</Heading>
+      <Heading bold>
+        Three specific groups emerge from card sort results
+      </Heading>
     </ContentBox>
     <ContentBox>
       <TwoByTwoGrid columnGap={20} columns={3} mb={80} rowGap={20}>
@@ -119,8 +122,8 @@ const ZolaNavigation: React.FC = () => (
             This was also a theme we saw in interviews for other projects.
           </Body>
           <Body>
-            &quot; I’m going there to engage with people or like seek outside
-            inspiration &quot;
+            &quot;I’m going there to engage with people or seek outside
+            inspiration&quot;
           </Body>
         </UTBox>
         <UTBox>
@@ -132,12 +135,12 @@ const ZolaNavigation: React.FC = () => (
             or website with the rest of the guest list tools
           </Body>
           <Body mb={8}>
-            &quot; The guest group is like who you have and how you communicate
-            with them &quot;
+            &quot;The guest group is like who you have and how you communicate
+            with them&quot;
           </Body>
           <Body mb={8}>
-            &quot; put the paper samples, invites and save the dates with all
-            this guest stuff sort of make that all go hand in hand &quot;
+            &quot;Put the paper samples, invites and save the dates with all
+            this guest stuff sort of make that all go hand in hand&quot;
           </Body>
         </UTBox>
         <UTBox>
@@ -149,18 +152,23 @@ const ZolaNavigation: React.FC = () => (
             to-dos
           </Body>
           <Body mb={8}>
-            &quot; Something that I feel like i&apos;ll continue to like check
-            in on &quot;
+            &quot;Something that I feel like i&apos;ll continue to check in
+            on&quot;
           </Body>
           <Body mb={8}>
-            &quot; That all seems to be like things you&apos;re doing to keep
-            track of your wedding holistically on Zola. &quot;
+            &quot;That all seems to be things you&apos;re doing to keep track of
+            your wedding holistically on Zola.&quot;
           </Body>
         </UTBox>
       </TwoByTwoGrid>
     </ContentBox>
     <ContentBox column>
-      <Heading bold>The resulting organization</Heading>
+      <Heading bold>The resulting structure</Heading>
+      <Body mb={20}>
+        From our interviews, we identified 4 main groups to start with. We
+        planned to put this new grouping in a prototype and guage reactions in
+        another round of testing.
+      </Body>
       <Image
         alt="cards organized into 4 groups: planning, guests and paper, inspo, and registry"
         mb={80}
@@ -168,8 +176,10 @@ const ZolaNavigation: React.FC = () => (
       />
     </ContentBox>
     <ContentBox column>
-      <Heading bold>fpo Protoypes</Heading>
-      <Body>
+      <Heading bold>
+        Prototypes: Two different ways to present this new structure
+      </Heading>
+      <Body mb={20}>
         When translating the groupings from our card sort into designs that we
         could put in front of users, we had two solutions in mind. One that
         continued to use the home page as navigation but in an even bigger way
@@ -196,13 +206,51 @@ const ZolaNavigation: React.FC = () => (
       </Body>
     </ContentBox>
     <ContentBox column>
-      <Title bold>FPO Refining designs and applying new branding</Title>
-      <Body>
+      <Title bold>Refining designs and applying new branding</Title>
+      <Body mb={40}>
         At the same time that the mobile team was working on this project, Zola
         was refining some new branding. We decided that this project would be
         the first that we would execute in the new styling. In parallel, we
         worked on restyling all of our components across the app.
       </Body>
+      <Image
+        alt="Different design iterations of what the nav links might look like"
+        mb={40}
+        src="/ZolaNav/zola-nav-style.png"
+      />
+      <Body>
+        {' '}
+        For our final iteration of the nav links themselves, we decided to use
+        our new brand colors to separate the sections. We worked with the copy
+        team to create titles for each section and link. We explored lots of
+        options for tapped states of these links.
+      </Body>
+      <Image
+        alt="Final design iteration of the nav links"
+        mb={40}
+        src="/ZolaNav/zola-nav-links-rectangle.png"
+      />
+      <Heading bold>Designing into the rest of the page</Heading>
+      <Body>What else goes on the page? widget, theming, quicklinks</Body>
+      <Body>
+        Our previous home page allowed users to upload a photo, but it
+        wasn&apos;t always clear what the photo was used for. For our new home
+        page, we wanted to highlight our wedding countdown widget in that space.
+      </Body>
+      <Body>
+        Our old home page also included a marketing carousel which we decide to
+        keep for this version. Although, for a future version we would like to
+        integrate the marketing more.
+      </Body>
+      <Body>
+        We tried a few other versions where we added quick links and theming but
+        ultimately decided to take them out to get more of the nav above the
+        fold.
+      </Body>
+      <Body>tabs? bottom bar?</Body>
+    </ContentBox>
+    <ContentBox column>
+      <Title bold>Results</Title>
     </ContentBox>
   </Layout>
 );
