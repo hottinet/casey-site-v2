@@ -243,7 +243,7 @@ const ZolaNavigation: React.FC = () => (
       <Body mb={20}>
         After we felt good about the nav links and bottom bar, we turned our
         attention to the rest of the home page. The previous page included a lot
-        of marketing, education and other modules that got little to no
+        of marketing, education and other modules that got littleß to no
         interaction.
       </Body>
       <Body>
@@ -263,6 +263,15 @@ const ZolaNavigation: React.FC = () => (
     </ContentBox>
     <ContentBox column>
       <Title bold>Results</Title>
+      <Body>
+        we fit 125% more products in the nav, time spent in app in first session
+        and number of clicks in nav are up
+      </Body>
+      <Body>
+        # of app sign ups activating 1+ and 2+ products within 7 days up
+      </Body>
+      <Body>paper sign ups up 59%, rgp sign ups up 25%</Body>
+      <Body>Registry slightly down</Body>
     </ContentBox>
   </Layout>
 );
