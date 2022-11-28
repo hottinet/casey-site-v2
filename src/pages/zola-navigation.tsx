@@ -30,11 +30,19 @@ const UTBox = styled(Box)`
 const ZolaNavigation: React.FC = () => (
   <Layout>
     <ContentBox column>
-      <Title bold>Re-designing the Zola iOS nav for scale</Title>
-      <Image
-        alt="Old home page compared to new home page"
-        src="/ZolaNav/zola-nav-hero-rectangle.png"
-      />
+      <Title bold mb={80}>
+        Re-designing the Zola iOS nav for scale
+      </Title>
+      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
+        <Image
+          alt="Old home page compared to new home page"
+          src="/ZolaNav/zola-nav-hero-old-square.png"
+        />
+        <Image
+          alt="Old home page compared to new home page"
+          src="/ZolaNav/zola-nav-hero-new-square.png"
+        />
+      </GridBox>
     </ContentBox>
     <DetailPickle>
       <StackedText
@@ -42,7 +50,7 @@ const ZolaNavigation: React.FC = () => (
         topText="The Goal"
       />
       <StackedText
-        bottomText="Lead design process with support from other designers, create and execute user testing plan, collaborate with tech, copy and product teams"
+        bottomText="Lead design process with support from other designers, create and execute user testing plan, collaborate with tech, copy and product teams."
         topText="My Role"
       />
     </DetailPickle>
@@ -54,7 +62,7 @@ const ZolaNavigation: React.FC = () => (
             Week 1-2
           </Body>
           <Body mb={8}>
-            Project kickoff. Plan and execute card sorts interviews
+            Project kickoff. Plan and execute card sorts interviews.
           </Body>
         </UTBox>
         <UTBox>
@@ -225,29 +233,33 @@ const ZolaNavigation: React.FC = () => (
         team to create titles for each section and link. We explored lots of
         options for tapped states of these links.
       </Body>
+      <Heading bold>Add video of the nav</Heading>
       <Image
         alt="Final design iteration of the nav links"
         mb={40}
         src="/ZolaNav/zola-nav-links-rectangle.png"
       />
       <Heading bold>Designing into the rest of the page</Heading>
-      <Body>What else goes on the page? widget, theming, quicklinks</Body>
-      <Body>
-        Our previous home page allowed users to upload a photo, but it
-        wasn&apos;t always clear what the photo was used for. For our new home
-        page, we wanted to highlight our wedding countdown widget in that space.
+      <Body mb={20}>
+        After we felt good about the nav links and bottom bar, we turned our
+        attention to the rest of the home page. The previous page included a lot
+        of marketing, education and other modules that got little to no
+        interaction.
       </Body>
       <Body>
-        Our old home page also included a marketing carousel which we decide to
-        keep for this version. Although, for a future version we would like to
-        integrate the marketing more.
+        In the old version of the home page, we allowed users to upload a photo,
+        but it was not very clear what the photo was connected to. For our new
+        home page, we wanted to highlight our wedding countdown widget in that
+        space. This would encourage couples to add a wedding date, get them
+        familiar with the widget and personalize the home page.
       </Body>
       <Body>
-        We tried a few other versions where we added quick links and theming but
-        ultimately decided to take them out to get more of the nav above the
-        fold.
+        We tried a few other additions to the page inspired by our web team
+        including allowing users to choose a theme color for the page and giving
+        them easy access to their shareable links. Ultimately, we wanted to get
+        more navigation above the fold so did not include either of those.
       </Body>
-      <Body>tabs? bottom bar?</Body>
+      <Heading bold>Add video of the nav</Heading>
     </ContentBox>
     <ContentBox column>
       <Title bold>Results</Title>
