@@ -81,7 +81,7 @@ const ZolaNavigation: React.FC = () => (
           <Body mb={8}>
             Focus on moving designs to high fidelity, collaborating with copy
             team, incorporating new branding and mapping out changes on affected
-            pages!
+            pages.
           </Body>
         </UTBox>
         <UTBox>
@@ -91,6 +91,26 @@ const ZolaNavigation: React.FC = () => (
           <Body mb={8}>Kick off with developers, answer questions, VQA.</Body>
         </UTBox>
       </TwoByTwoGrid>
+    </ContentBox>
+    <ContentBox column>
+      <GridBox center columnGap={40} mb={80} smColumns={2}>
+        <Box width="100%">
+          <Title bold>The problem</Title>
+          <Body>
+            Our old navigation had a jump menu with 8 spots for products. This
+            menu got a lot of action from users but had a limited number of
+            spots. Therefore, every time we introduced a new product, we would
+            have to have an debate about which items stayed and which left. We
+            also found that no matter what we tested putting below the jump
+            menu, we could not get anyone to scroll or interact.
+          </Body>
+        </Box>
+        <Image
+          alt="Focus on section of the nav with 8 links"
+          mb={80}
+          src="/ZolaNav/zola-oldnav.png"
+        />
+      </GridBox>
     </ContentBox>
     <ContentBox column>
       <Title bold>User testing strategy</Title>
@@ -114,9 +134,7 @@ const ZolaNavigation: React.FC = () => (
         mb={80}
         src="/ZolaNav/zola-cards-pre.png"
       />
-      <Heading bold>
-        Three specific groups emerge from card sort results
-      </Heading>
+      <Heading bold>Three specific themes emerge from card sorting</Heading>
     </ContentBox>
     <ContentBox>
       <TwoByTwoGrid columnGap={20} columns={3} mb={80} rowGap={20}>
@@ -243,7 +261,7 @@ const ZolaNavigation: React.FC = () => (
       <Body mb={20}>
         After we felt good about the nav links and bottom bar, we turned our
         attention to the rest of the home page. The previous page included a lot
-        of marketing, education and other modules that got littleß to no
+        of marketing, education and other modules that got little to no
         interaction.
       </Body>
       <Body>
