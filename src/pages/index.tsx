@@ -239,21 +239,14 @@ const Home: React.FC = () => {
         pickleColor="blue"
         title="Building digital fitness programs"
       />
-      <HomePickle
-        imageAlt="several app screens"
-        imageSrc={
-          lessThanMd
-            ? '/CustomerDiscovery/HomeCustomerSmall.gif'
-            : '/CustomerDiscovery/CustomerHomePickleImage.gif'
-        }
-        linkTo={CUSTOMER_DISCOVERY_ROUTE}
-        pickleColor="blue"
-        title="Rediscovering the Core Customer"
-      />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
+        <SecondaryProjectLink
+          href={CUSTOMER_DISCOVERY_ROUTE}
+          text="Rediscovering the Core Customer"
+        />
         <SecondaryProjectLink
           href={CORE_LIVE_CLASSES}
           text="Designing a live class experience for fitness"

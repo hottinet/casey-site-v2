@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
+import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
@@ -10,6 +11,7 @@ import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
+import ExternalVideo from '~/components/videos/ExternalVideo';
 
 const TwoByTwoGrid = styled(GridBox)(({ theme, columns }) => ({
   [theme.breakpoints.sm]: {
@@ -220,7 +222,9 @@ const ZolaNavigation: React.FC = () => (
         everything, helped them think about all the things they might need to do
         for their wedding.
       </Body>
+      <Divider />
     </ContentBox>
+
     <ContentBox column>
       <Title bold>Refining designs and applying new branding</Title>
       <Body mb={40}>
@@ -239,7 +243,7 @@ const ZolaNavigation: React.FC = () => (
         our new brand colors to separate the sections. We worked with the copy
         team to create titles for each section and link.
       </Body>
-      <GridBox>
+      <GridBox center columnGap={40} mb={80}>
         <Box>
           <Heading bold>Interaction</Heading>
           <Body>
@@ -251,7 +255,11 @@ const ZolaNavigation: React.FC = () => (
             finger.
           </Body>
         </Box>
-        <Body> video</Body>
+        <ExternalVideo
+          aspectRatio="1:1"
+          src="https://player.vimeo.com/video/779806553"
+          title="exploration of tapped stated for jump menu items"
+        />
       </GridBox>
       <Image
         alt="Final design iteration of the nav links"
@@ -293,18 +301,21 @@ const ZolaNavigation: React.FC = () => (
         mb={40}
         src="/ZolaNav/zola-nav-home-iterations.png"
       />
+      <Divider />
     </ContentBox>
     <ContentBox column>
       <Title bold>Results</Title>
-      <Body>
-        we fit 125% more products in the nav, time spent in app in first session
-        and number of clicks in nav are up
+      <Body mb={20}>
+        With this new design we were able to fit entry points to 10 more
+        products on the home page. And in the first month, we saw clicks and
+        time spent in the first session increase. We also saw 78% of users
+        scrolling all the way to the bottom of the page.
       </Body>
       <Body>
-        # of app sign ups activating 1+ and 2+ products within 7 days up
+        Usage of most products, especially our invites and paper, increased. We
+        saw slighly less traffic do some of the registry products that lived
+        below the fold and addressed those with some fast follow design changes.
       </Body>
-      <Body>paper sign ups up 59%, rgp sign ups up 25%</Body>
-      <Body>Registry slightly down</Body>
     </ContentBox>
   </Layout>
 );
