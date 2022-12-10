@@ -10,7 +10,6 @@ import StackedText from '~/components/StackedText';
 import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
-import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 const TwoByTwoGrid = styled(GridBox)(({ theme, columns }) => ({
   [theme.breakpoints.sm]: {
@@ -31,18 +30,9 @@ const ZolaNavigation: React.FC = () => (
   <Layout>
     <ContentBox column>
       <Title bold mb={80}>
-        Re-designing the Zola iOS nav for scale
+        Creating a more scalable navigation for Zola&apos;s iOS app
       </Title>
-      <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
-        <Image
-          alt="Old home page compared to new home page"
-          src="/ZolaNav/zola-nav-hero-old-square.png"
-        />
-        <Image
-          alt="Old home page compared to new home page"
-          src="/ZolaNav/zola-nav-hero-new-square.png"
-        />
-      </GridBox>
+      <Title bold> image</Title>
     </ContentBox>
     <DetailPickle>
       <StackedText
@@ -54,7 +44,7 @@ const ZolaNavigation: React.FC = () => (
         topText="My Role"
       />
     </DetailPickle>
-    <ContentBox column>
+    {/* <ContentBox column>
       <Title bold>Our timeline</Title>
       <TwoByTwoGrid columnGap={20} columns={4} mb={80} rowGap={20}>
         <UTBox>
@@ -91,18 +81,18 @@ const ZolaNavigation: React.FC = () => (
           <Body mb={8}>Kick off with developers, answer questions, VQA.</Body>
         </UTBox>
       </TwoByTwoGrid>
-    </ContentBox>
+    </ContentBox> */}
     <ContentBox column>
-      <GridBox center columnGap={40} mb={80} smColumns={2}>
+      <GridBox center columnGap={40} mb={40} smColumns={2}>
         <Box width="100%">
           <Title bold>The problem</Title>
           <Body>
             Our old navigation had a jump menu with 8 spots for products. This
             menu got a lot of action from users but had a limited number of
             spots. Therefore, every time we introduced a new product, we would
-            have to have an debate about which items stayed and which left. We
-            also found that no matter what we tested putting below the jump
-            menu, we could not get anyone to scroll or interact.
+            have to debate which items stayed and which left. We also found that
+            no matter what we tested putting below the jump menu, we could not
+            get anyone to scroll or interact.
           </Body>
         </Box>
         <Image
@@ -114,7 +104,7 @@ const ZolaNavigation: React.FC = () => (
     </ContentBox>
     <ContentBox column>
       <Title bold>User testing strategy</Title>
-      <Heading bold>Card Sort</Heading>
+      <Heading bold>Get in the couple&apos;s mindset via card sorting</Heading>
       <Body mb={20}>
         Internally, we had lots of ideas about how the ecosystem of Zola
         products might be organized but it was important for us to leave our own
@@ -134,7 +124,7 @@ const ZolaNavigation: React.FC = () => (
         mb={80}
         src="/ZolaNav/zola-cards-pre.png"
       />
-      <Heading bold>Three specific themes emerge from card sorting</Heading>
+      <Heading bold>Three specific themes emerged from card sorting</Heading>
     </ContentBox>
     <ContentBox>
       <TwoByTwoGrid columnGap={20} columns={3} mb={80} rowGap={20}>
@@ -189,7 +179,7 @@ const ZolaNavigation: React.FC = () => (
       </TwoByTwoGrid>
     </ContentBox>
     <ContentBox column>
-      <Heading bold>The resulting structure</Heading>
+      <Heading bold>Propose new groupings based on our learnings</Heading>
       <Body mb={20}>
         From our interviews, we identified 4 main groups to start with. We
         planned to put this new grouping in a prototype and guage reactions in
@@ -201,9 +191,9 @@ const ZolaNavigation: React.FC = () => (
         src="/ZolaNav/zola-cards-post.png"
       />
     </ContentBox>
-    <ContentBox column>
+    <ContentBox column mb={80}>
       <Heading bold>
-        Prototypes: Two different ways to present this new structure
+        Prototypes: Present two directions for organizing this info
       </Heading>
       <Body mb={20}>
         When translating the groupings from our card sort into designs that we
@@ -235,9 +225,9 @@ const ZolaNavigation: React.FC = () => (
       <Title bold>Refining designs and applying new branding</Title>
       <Body mb={40}>
         At the same time that the mobile team was working on this project, Zola
-        was refining some new branding. We decided that this project would be
-        the first that we would execute in the new styling. In parallel, we
-        worked on restyling all of our components across the app.
+        was rolling out some new branding. We decided that this project would be
+        the first that we would execute in the new style. In parallel, we worked
+        on updating the branding across all of our components and pages.
       </Body>
       <Image
         alt="Different design iterations of what the nav links might look like"
@@ -245,39 +235,64 @@ const ZolaNavigation: React.FC = () => (
         src="/ZolaNav/zola-nav-style.png"
       />
       <Body>
-        {' '}
         For our final iteration of the nav links themselves, we decided to use
         our new brand colors to separate the sections. We worked with the copy
-        team to create titles for each section and link. We explored lots of
-        options for tapped states of these links.
+        team to create titles for each section and link.
       </Body>
-      <Heading bold>Add video of the nav</Heading>
+      <GridBox>
+        <Box>
+          <Heading bold>Interaction</Heading>
+          <Body>
+            I also wanted to put more thought into the tapped states of the jump
+            menu links. In our previous menu, the text changed colors when
+            tapped. However, the change was not very noticeable when the
+            user&apos;s finger was covering most of the icon and text. I worked
+            towards iterations, where the change could still be seen behind a
+            finger.
+          </Body>
+        </Box>
+        <Body> video</Body>
+      </GridBox>
       <Image
         alt="Final design iteration of the nav links"
         mb={40}
         src="/ZolaNav/zola-nav-links-rectangle.png"
       />
-      <Heading bold>Designing into the rest of the page</Heading>
-      <Body mb={20}>
-        After we felt good about the nav links and bottom bar, we turned our
-        attention to the rest of the home page. The previous page included a lot
-        of marketing, education and other modules that got little to no
-        interaction.
-      </Body>
-      <Body>
-        In the old version of the home page, we allowed users to upload a photo,
-        but it was not very clear what the photo was connected to. For our new
-        home page, we wanted to highlight our wedding countdown widget in that
-        space. This would encourage couples to add a wedding date, get them
-        familiar with the widget and personalize the home page.
-      </Body>
+      <GridBox center columnGap={40} mb={40} smColumns={2}>
+        <Box width="100%">
+          <Heading bold>Designing into the rest of the page</Heading>
+          <Body mb={20}>
+            After we felt good about the nav links and bottom bar, we turned our
+            attention to the rest of the home page. The previous page included a
+            lot of marketing, education and other modules that got little to no
+            interaction.
+          </Body>
+          <Body>
+            In the old version of the home page, we allowed users to upload a
+            photo, but it was not very clear what the photo was connected to.
+            For our new home page, we wanted to highlight our wedding countdown
+            widget in that space. This would encourage couples to add a wedding
+            date, get them familiar with the widget and personalize the home
+            page.
+          </Body>
+        </Box>
+        <Image
+          alt="Image of widget on iOS home and in the Zola app home"
+          mb={0}
+          src="/ZolaNav/Widget.png"
+        />
+      </GridBox>
       <Body>
         We tried a few other additions to the page inspired by our web team
         including allowing users to choose a theme color for the page and giving
         them easy access to their shareable links. Ultimately, we wanted to get
         more navigation above the fold so did not include either of those.
       </Body>
-      <Heading bold>Add video of the nav</Heading>
+      <Image
+        alt="Home page with theme options, home page with quick links, home page with more items above the fold"
+        mb={40}
+        src="/ZolaNav/zola-nav-home-iterations.png"
+      />
     </ContentBox>
     <ContentBox column>
       <Title bold>Results</Title>

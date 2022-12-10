@@ -23,6 +23,7 @@ import {
   LISTENJAY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_CUSTOM_WEBSITE_ROUTE,
+  ZOLA_NAVIGATION_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -203,7 +204,18 @@ const Home: React.FC = () => {
         }
         linkTo={ZOLA_BUDGET_ROUTE}
         pickleColor="green"
-        title="Building a wedding budgeting tool for the Zola app"
+        title="Building a wedding budgeting tool for Zola's iOS app"
+      />
+      <HomePickle
+        imageAlt="Zola app home screen"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaNav/Home_Small_ZolaNav.png'
+            : '/ZolaNav/Home_ZolaNav.png'
+        }
+        linkTo={ZOLA_NAVIGATION_ROUTE}
+        pickleColor="yellow"
+        title="Creating a more scalable navigation for Zola's iOS app"
       />
       <HomePickle
         imageAlt="Screens and action sheets from website customization flow"
@@ -213,7 +225,7 @@ const Home: React.FC = () => {
             : '/ZolaCustomWeb/Home_ZolaCustom.png'
         }
         linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
-        pickleColor="yellow"
+        pickleColor="red"
         title="Enhanced customization options for Zola wedding websites"
       />
       <HomePickle
@@ -224,7 +236,7 @@ const Home: React.FC = () => {
             : '/Programs/ProgramHero.png'
         }
         linkTo={CORE_PROGRAMS}
-        pickleColor="red"
+        pickleColor="blue"
         title="Building digital fitness programs"
       />
       <HomePickle
