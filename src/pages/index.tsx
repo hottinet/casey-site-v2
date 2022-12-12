@@ -218,15 +218,15 @@ const Home: React.FC = () => {
         title="Creating a more scalable navigation for Zola's iOS app"
       />
       <HomePickle
-        imageAlt="Screens and action sheets from website customization flow"
+        imageAlt="CMS and customer facing screens"
         imageSrc={
           lessThanMd
-            ? '/ZolaCustomWeb/Home_Small_ZolaCustom.png'
-            : '/ZolaCustomWeb/Home_ZolaCustom.png'
+            ? '/Programs/home-small-programs.png'
+            : '/Programs/ProgramHero.png'
         }
-        linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
+        linkTo={CORE_PROGRAMS}
         pickleColor="red"
-        title="Enhanced customization options for Zola wedding websites"
+        title="Building digital fitness programs"
       />
       <HomePickle
         imageAlt="CMS and customer facing screens"
@@ -235,18 +235,14 @@ const Home: React.FC = () => {
             ? '/Programs/home-small-programs.png'
             : '/Programs/ProgramHero.png'
         }
-        linkTo={CORE_PROGRAMS}
+        linkTo={CUSTOMER_DISCOVERY_ROUTE}
         pickleColor="blue"
-        title="Building digital fitness programs"
+        title="Rediscovering the Core Customer"
       />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
-        <SecondaryProjectLink
-          href={CUSTOMER_DISCOVERY_ROUTE}
-          text="Rediscovering the Core Customer"
-        />
         <SecondaryProjectLink
           href={CORE_LIVE_CLASSES}
           text="Designing a live class experience for fitness"
