@@ -357,13 +357,11 @@ const ZolaBudgetTool: React.FC = () => {
       <ContentBox column>
         <Title bold>Performance</Title>
         <Body mb={20}>
-          In the first few weeks, we saw great adoption of the budget tool.
-          Conversion to budget tool users hovered around 35% beating or goal of
-          25%.
+          In the first few weeks, we saw great adoption of the budget tool and
+          beat our goals for conversion.
         </Body>
         <Body mb={20}>
-          We ran a survey some time after launch that was completed by about 300
-          regular budget tool users. We found that{' '}
+          We ran a survey some time after launch and found that{' '}
           <b>53% of survey takers gave the tool 5 out of 5 stars</b> and another
           34% gave it 4 out of 5 stars.
         </Body>
