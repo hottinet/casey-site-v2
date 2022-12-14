@@ -22,7 +22,6 @@ import {
   LADDERS_ROUTE,
   LISTENJAY_ROUTE,
   ZOLA_BUDGET_ROUTE,
-  ZOLA_CUSTOM_WEBSITE_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
