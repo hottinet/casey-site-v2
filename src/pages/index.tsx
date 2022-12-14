@@ -22,7 +22,7 @@ import {
   LADDERS_ROUTE,
   LISTENJAY_ROUTE,
   ZOLA_BUDGET_ROUTE,
-  ZOLA_CUSTOM_WEBSITE_ROUTE,
+  ZOLA_NAVIGATION_ROUTE,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -185,7 +185,7 @@ const Home: React.FC = () => {
             Product Designer balancing personality and utility.
           </Title>
         </Box>
-        <Title>Currently designing native app solutions at Zola.</Title>
+        <Title>Currently building the mobile experience at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
@@ -203,19 +203,20 @@ const Home: React.FC = () => {
         }
         linkTo={ZOLA_BUDGET_ROUTE}
         pickleColor="green"
-        title="Building a wedding budgeting tool for the Zola app"
+        title="Building a wedding budgeting tool for Zola's iOS app"
       />
       <HomePickle
-        imageAlt="Screens and action sheets from website customization flow"
+        imageAlt="Zola app home screen"
         imageSrc={
           lessThanMd
-            ? '/ZolaCustomWeb/Home_Small_ZolaCustom.png'
-            : '/ZolaCustomWeb/Home_ZolaCustom.png'
+            ? '/ZolaNav/Home_Small_ZolaNav.png'
+            : '/ZolaNav/Home_ZolaNav.png'
         }
-        linkTo={ZOLA_CUSTOM_WEBSITE_ROUTE}
+        linkTo={ZOLA_NAVIGATION_ROUTE}
         pickleColor="yellow"
-        title="Enhanced customization options for Zola wedding websites"
+        title="Creating a more scalable navigation for Zola's iOS app"
       />
+
       <HomePickle
         imageAlt="CMS and customer facing screens"
         imageSrc={
@@ -228,11 +229,11 @@ const Home: React.FC = () => {
         title="Building digital fitness programs"
       />
       <HomePickle
-        imageAlt="several app screens"
+        imageAlt="CMS and customer facing screens"
         imageSrc={
           lessThanMd
-            ? '/CustomerDiscovery/HomeCustomerSmall.gif'
-            : '/CustomerDiscovery/CustomerHomePickleImage.gif'
+            ? '/Programs/home-small-programs.png'
+            : '/Programs/ProgramHero.png'
         }
         linkTo={CUSTOMER_DISCOVERY_ROUTE}
         pickleColor="blue"

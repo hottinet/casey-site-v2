@@ -7,6 +7,20 @@ const breakpointValues = {
   xl: 1440,
 };
 
+const colors = {
+  background: '#F8EDE0',
+  sand: '#F8EDE0',
+  text: '#000',
+  textSecondary: '#fff',
+  textQuote: '#727272',
+  black: '#000',
+  white: '#fff',
+  green: '#416B63',
+  blue: '#5582F7',
+  yellow: '#d48126',
+  red: '#b13627',
+} as const;
+
 const theme = {
   breakpointValues,
   breakpoints: {
@@ -17,18 +31,7 @@ const theme = {
     lg: `@media only screen and (min-width: ${breakpointValues.lg}px)`,
     xl: `@media only screen and (min-width: ${breakpointValues.xl}px)`,
   },
-  colors: {
-    background: '#F8EDE0',
-    sand: '#F8EDE0',
-    text: '#000',
-    textSecondary: '#fff',
-    black: '#000',
-    white: '#fff',
-    green: '#416B63',
-    blue: '#5582F7',
-    yellow: '#d48126',
-    red: '#b13627',
-  },
+  colors,
   spacing: {
     0: '0rem',
     4: '0.25rem',
@@ -75,3 +78,5 @@ export default theme;
 export type ThemeShape = typeof theme;
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Theme extends ThemeShape {}
+
+export type Color = keyof typeof colors;

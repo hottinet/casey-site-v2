@@ -119,7 +119,7 @@ const AboutMe: React.FC = () => {
           <GridBox>
             <Box>
               <Heading bold mb={8}>
-                Product Designer, Native Core Experience
+                Product Designer II, Mobile Core Experience
               </Heading>
               <Heading>Zola</Heading>
               <Body>Oct 2021 - current</Body>

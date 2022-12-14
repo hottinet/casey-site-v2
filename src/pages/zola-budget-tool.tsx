@@ -51,7 +51,7 @@ const ZolaBudgetTool: React.FC = () => {
       </ContentBox>
       <DetailPickle>
         <StackedText
-          bottomText="Our first goal, was to win back prospective couples who were explicitly searching for budgeting tools and choosing competitors. Our second was to build an MVP buget tool that would provide a simple and useful experience for early funnel users"
+          bottomText="Our first goal, was to win back prospective couples who were explicitly searching for budgeting tools and choosing competitors. Our second was to build an MVP buget tool that would provide a simple and useful experience for early funnel users."
           topText="The Goal"
         />
         <StackedText
@@ -357,9 +357,9 @@ const ZolaBudgetTool: React.FC = () => {
       <ContentBox column>
         <Title bold>Performance</Title>
         <Body mb={20}>
-          In the first few weeks, we saw 25,000 users explore the budget tool
-          and 8,250 take a key action. Our goal for conversion was 25% and we
-          found that our conversion rate hovered around 35%.
+          In the first few weeks, we saw great adoption of the budget tool.
+          Conversion to budget tool users hovered around 35% beating or goal of
+          25%.
         </Body>
         <Body mb={20}>
           We ran a survey some time after launch that was completed by about 300
@@ -378,10 +378,8 @@ const ZolaBudgetTool: React.FC = () => {
           <li>
             <Body mb={8}>Ability to include estimate costs</Body>
           </li>
-          <li>
-            <Body>More clear access to some existing features</Body>
-          </li>
         </ul>
+        <Body>All things we would work on next!</Body>
       </ContentBox>
       <ContentBox column>
         <Title bold>What did I learn from this project?</Title>
