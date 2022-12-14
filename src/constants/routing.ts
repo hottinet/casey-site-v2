@@ -8,11 +8,10 @@ export const LADDERS_ROUTE = '/ladders';
 export const LISTENJAY_ROUTE = '/listenjay';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';
-export const ZOLA_CUSTOM_WEBSITE_ROUTE = '/zola-custom-website';
 export const ZOLA_BUDGET_ROUTE = '/zola-budget-tool';
 export const ZOLA_NAVIGATION_ROUTE = '/zola-navigation';
 
-export const RESTRICTED_ROUTES = [ZOLA_CUSTOM_WEBSITE_ROUTE];
+export const RESTRICTED_ROUTES = [];
 
 export const NEXT_ROUTE_MAP: Record<string, string> = {
   [ZOLA_BUDGET_ROUTE]: ZOLA_NAVIGATION_ROUTE,
