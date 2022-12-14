@@ -12,7 +12,7 @@ export const ZOLA_CUSTOM_WEBSITE_ROUTE = '/zola-custom-website';
 export const ZOLA_BUDGET_ROUTE = '/zola-budget-tool';
 export const ZOLA_NAVIGATION_ROUTE = '/zola-navigation';
 
-export const RESTRICTED_ROUTES = [ZOLA_CUSTOM_WEBSITE_ROUTE, ZOLA_BUDGET_ROUTE];
+export const RESTRICTED_ROUTES = [ZOLA_CUSTOM_WEBSITE_ROUTE];
 
 export const NEXT_ROUTE_MAP: Record<string, string> = {
   [ZOLA_BUDGET_ROUTE]: ZOLA_NAVIGATION_ROUTE,

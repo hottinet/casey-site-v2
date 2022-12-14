@@ -186,7 +186,7 @@ const Home: React.FC = () => {
             Product Designer balancing personality and utility.
           </Title>
         </Box>
-        <Title>Currently designing native app solutions at Zola.</Title>
+        <Title>Currently building the mobile experience at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
@@ -217,6 +217,7 @@ const Home: React.FC = () => {
         pickleColor="yellow"
         title="Creating a more scalable navigation for Zola's iOS app"
       />
+
       <HomePickle
         imageAlt="CMS and customer facing screens"
         imageSrc={

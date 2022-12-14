@@ -37,7 +37,17 @@ const ZolaNavigation: React.FC = () => {
         <Title bold mb={80}>
           Creating a more scalable navigation for Zola&apos;s iOS app
         </Title>
-        <Title bold> image</Title>
+        {lessThanSm ? (
+          <Image
+            alt="cards organized into 4 groups: planning, guests and paper, inspo, and registry"
+            src="/ZolaNav/appnavherosq.png"
+          />
+        ) : (
+          <Image
+            alt="cards organized into 4 groups: planning, guests and paper, inspo, and registry"
+            src="/ZolaNav/appnavherorect.png"
+          />
+        )}
       </ContentBox>
       <DetailPickle>
         <StackedText
@@ -106,7 +116,7 @@ const ZolaNavigation: React.FC = () => {
               grouping that included Community, Real Weddings and Expert Advice.
               This was also a theme we saw in interviews for other projects.
             </Body>
-            <Body>
+            <Body color="textQuote" italic>
               &quot;I’m going there to engage with people or seek outside
               inspiration&quot;
             </Body>
@@ -119,11 +129,11 @@ const ZolaNavigation: React.FC = () => {
               When forced to consolidate groups, many people combined either
               paper or website with the rest of the guest list tools.
             </Body>
-            <Body mb={8}>
+            <Body color="textQuote" italic mb={8}>
               &quot;The guest group is like who you have and how you communicate
               with them&quot;
             </Body>
-            <Body mb={8}>
+            <Body color="textQuote" italic mb={8}>
               &quot;Put the paper samples, invites and save the dates with all
               this guest stuff sort of make that all go hand in hand&quot;
             </Body>
@@ -136,11 +146,11 @@ const ZolaNavigation: React.FC = () => {
               Many participants grouped together things that felt like their
               personal to-dos.
             </Body>
-            <Body mb={8}>
+            <Body color="textQuote" italic mb={8}>
               &quot;Something that I feel like i&apos;ll continue to check in
               on&quot;
             </Body>
-            <Body mb={8}>
+            <Body color="textQuote" italic mb={8}>
               &quot;That all seems to be things you&apos;re doing to keep track
               of your wedding holistically on Zola.&quot;
             </Body>
