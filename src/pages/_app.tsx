@@ -32,6 +32,7 @@ const globalStyles = css`
     ${baseStyle};
     position: relative;
     box-sizing: border-box;
+    color: ${theme.colors.text};
   }
   #app {
     ${baseStyle};
