@@ -232,8 +232,8 @@ const Home: React.FC = () => {
         imageAlt="CMS and customer facing screens"
         imageSrc={
           lessThanMd
-            ? '/Programs/home-small-programs.png'
-            : '/Programs/ProgramHero.png'
+            ? '/CustomerDiscovery/HomeCustomerSmall.gif'
+            : '/CustomerDiscovery/CustomerHomePickleImage.gif'
         }
         linkTo={CUSTOMER_DISCOVERY_ROUTE}
         pickleColor="blue"

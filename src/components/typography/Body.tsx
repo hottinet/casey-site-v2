@@ -13,14 +13,14 @@ type BodyProps = Pick<MarginProps, 'mb'> & {
 };
 
 const BodyText = styled.p<Omit<BodyProps, 'children'>>(
-  ({ theme, bold, mb = 48, italic, color = 'text' }) => ({
+  ({ theme, bold, mb = 48, italic, color }) => ({
     fontSize: theme.fontSize.body,
     fontWeight: bold ? theme.fontWeight.bold : theme.fontWeight.regular,
     fontFamily: theme.fontFamily,
     lineHeight: theme.lineHeight.body,
     marginBottom: theme.spacing[mb],
     fontStyle: italic ? 'italic' : 'normal',
-    color: theme.colors[color],
+    color: color ? theme.colors[color] : '',
   })
 );
 
