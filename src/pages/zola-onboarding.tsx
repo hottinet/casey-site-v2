@@ -140,19 +140,53 @@ const ZolaOnboarding: React.FC = () => {
             <Heading bold>FPO Providing feedback to the user</Heading>
             <Body>
               With each question, it was important for us to show the user that
-              we were using their responses to tailor their Zola experience. We
-              want to show them that we are listening and let them know that
-              their responses are valuable. However, we did not want the
-              feedback to massively slow down the process like it had been with
-              the chat bot. For key questions (not every one) in the flow, we
-              animated the button to have a bit of feedback before the screen
-              changed over.
+              each response was tailoring their Zola experience. However, we did
+              not want the feedback to massively slow down the process like it
+              had been with the chat bot. For key questions in the flow, we
+              animated the button to have a bit of personalized feedback before
+              the screen changed over.
             </Body>
           </Box>
           <Video
             sources={[{ src: '/ZolaOnboarding/zola-buttonfeedback.mp4' }]}
           />
         </GridBox>
+        <GridBox center columnGap={40} mb={40} smColumns={2}>
+          <Box width="100%">
+            <Heading bold>FPO Transitions between screens</Heading>
+            <Body>
+              We also wanted to have slick transitions between questions to keep
+              the flow moving. We explored many options, a few shown to the
+              right, but ulitmately desicded to stick something simple -
+              animating the questions in from right to left and keeping the
+              button in place.
+            </Body>
+          </Box>
+          <ExternalVideo
+            aspectRatio="1:1"
+            src="https://player.vimeo.com/video/803284857"
+            title="Screen recording of prototype with different transitions"
+          />
+        </GridBox>
+        <Box mb={80}>
+          <Heading bold>Celebration moment</Heading>
+        </Box>
+        <Divider />
+      </ContentBox>
+      <ContentBox column>
+        <Title bold>The final product</Title>
+        <Divider />
+      </ContentBox>
+      <ContentBox column>
+        <Title bold>What did I learn from this project?</Title>
+        <Heading bold>FPO Adding fun can move the needle</Heading>
+        <Body>
+          Even though our main goal with this project was not tied to a specific
+          KPI, after launch we saw a huge increase in users completing the
+          onboarding on their first session with the app. This means that
+          couples are abandoning the flow less and they are getting into the app
+          and products faster.
+        </Body>
       </ContentBox>
     </Layout>
   );
