@@ -20,22 +20,10 @@ const ZolaOnboarding: React.FC = () => {
   return (
     <Layout>
       <ContentBox column>
-        <Title bold mb={80}>
+        <Title bold mb={40}>
           Making a great first impression with iOS app onboarding
         </Title>
-        {lessThanSm ? (
-          <ExternalVideo
-            aspectRatio="1:1"
-            src="https://player.vimeo.com/video/802475446"
-            title="Demo of zola onboarding"
-          />
-        ) : (
-          <ExternalVideo
-            aspectRatio="16:9"
-            src="https://player.vimeo.com/video/802474956"
-            title="Demo of zola onboarding"
-          />
-        )}
+        <Video sources={[{ src: '/ZolaOnboarding/OnboardingHeroRect.mp4' }]} />
       </ContentBox>
       <DetailPickle>
         <StackedText
@@ -134,26 +122,25 @@ const ZolaOnboarding: React.FC = () => {
         <Divider />
       </ContentBox>
       <ContentBox column>
-        <Title bold>FPO Interaction</Title>
+        <Title bold>Refining the interaction</Title>
         <GridBox center columnGap={40} mb={40} smColumns={2}>
           <Box width="100%">
-            <Heading bold>FPO Providing feedback to the user</Heading>
+            <Heading bold>Providing simple feedback to the user</Heading>
             <Body>
-              With each question, it was important for us to show the user that
-              each response was tailoring their Zola experience. However, we did
-              not want the feedback to massively slow down the process like it
-              had been with the chat bot. For key questions in the flow, we
-              animated the button to have a bit of personalized feedback before
-              the screen changed over.
+              It was important for us to show the user that each response was
+              tailoring their Zola experience. However, we did not want the
+              feedback to massively slow down the process like it had been with
+              the chat bot. For key questions in the flow, we animated the
+              button to have a bit of personalized feedback before the screen
+              changed over. I worked closely with the copy team to decide which
+              questions would have feedback and what the text would be.
             </Body>
           </Box>
-          <Video
-            sources={[{ src: '/ZolaOnboarding/zola-buttonfeedback.mp4' }]}
-          />
+          <Video sources={[{ src: '/ZolaOnboarding/zola-buttons3.mp4' }]} />
         </GridBox>
         <GridBox center columnGap={40} mb={40} smColumns={2}>
           <Box width="100%">
-            <Heading bold>FPO Transitions between screens</Heading>
+            <Heading bold>Slick transitions between screens</Heading>
             <Body>
               We also wanted to have slick transitions between questions to keep
               the flow moving. We explored many options, a few shown to the
@@ -168,24 +155,34 @@ const ZolaOnboarding: React.FC = () => {
             title="Screen recording of prototype with different transitions"
           />
         </GridBox>
-        <Box mb={80}>
-          <Heading bold>Celebration moment</Heading>
+        <Divider />
+      </ContentBox>
+      <ContentBox column>
+        <Title bold>Learning from the final product</Title>
+        <Box mb={40}>
+          {lessThanSm ? (
+            <ExternalVideo
+              aspectRatio="1:1"
+              src="https://player.vimeo.com/video/802475446"
+              title="Demo of zola onboarding"
+            />
+          ) : (
+            <ExternalVideo
+              aspectRatio="16:9"
+              src="https://player.vimeo.com/video/802474956"
+              title="Demo of zola onboarding"
+            />
+          )}
         </Box>
-        <Divider />
-      </ContentBox>
-      <ContentBox column>
-        <Title bold>The final product</Title>
-        <Divider />
-      </ContentBox>
-      <ContentBox column>
-        <Title bold>What did I learn from this project?</Title>
-        <Heading bold>FPO Adding fun can move the needle</Heading>
+        <Heading bold>
+          Prioritizing an emotional experience can move the needle
+        </Heading>
         <Body>
           Even though our main goal with this project was not tied to a specific
           KPI, after launch we saw a huge increase in users completing the
           onboarding on their first session with the app. This means that
           couples are abandoning the flow less and they are getting into the app
-          and products faster.
+          and Zola products faster.
         </Body>
       </ContentBox>
     </Layout>

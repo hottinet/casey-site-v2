@@ -214,19 +214,19 @@ const Home: React.FC = () => {
             : '/ZolaBudget/Home_ZolaBudget.png'
         }
         linkTo={ZOLA_BUDGET_ROUTE}
-        pickleColor="blue"
+        pickleColor="red"
         title="Building a wedding budgeting tool for Zola's iOS app"
       />
       <HomePickle
         imageAlt="alt"
         imageSrc={
           lessThanMd
-            ? '/Programs/home-small-programs.png'
-            : '/Programs/ProgramHero.png'
+            ? '/ZolaOnboarding/Home_Small_ZolaOnboarding.png'
+            : '/ZolaOnboarding/Home_ZolaOnboarding.png'
         }
         linkTo={ZOLA_ONBOARDING}
-        pickleColor="red"
-        title="Making a great first impression with iOS app onboarding"
+        pickleColor="blue"
+        title="Making a great first impression with iOS onboarding"
       />
       <HomePickle
         imageAlt="CMS and customer facing screens"
@@ -239,21 +239,14 @@ const Home: React.FC = () => {
         pickleColor="yellow"
         title="Building digital fitness programs"
       />
-      <HomePickle
-        imageAlt="CMS and customer facing screens"
-        imageSrc={
-          lessThanMd
-            ? '/Programs/home-small-programs.png'
-            : '/Programs/ProgramHero.png'
-        }
-        linkTo={CUSTOMER_DISCOVERY_ROUTE}
-        pickleColor="blue"
-        title="Rediscovering the Core Customer"
-      />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
+        <SecondaryProjectLink
+          href={CUSTOMER_DISCOVERY_ROUTE}
+          text="Rediscovering the Core Customer"
+        />
         <SecondaryProjectLink
           href={CORE_LIVE_CLASSES}
           text="Designing a live class experience for fitness"
