@@ -23,6 +23,7 @@ import {
   LISTENJAY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
+  ZOLA_ONBOARDING,
 } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
@@ -195,17 +196,6 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
-        imageAlt="Budget tool app screens"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
-            : '/ZolaBudget/Home_ZolaBudget.png'
-        }
-        linkTo={ZOLA_BUDGET_ROUTE}
-        pickleColor="green"
-        title="Building a wedding budgeting tool for Zola's iOS app"
-      />
-      <HomePickle
         imageAlt="Zola app home screen"
         imageSrc={
           lessThanMd
@@ -213,10 +203,31 @@ const Home: React.FC = () => {
             : '/ZolaNav/Home_ZolaNav.png'
         }
         linkTo={ZOLA_NAVIGATION_ROUTE}
-        pickleColor="yellow"
+        pickleColor="green"
         title="Creating a more scalable navigation for Zola's iOS app"
       />
-
+      <HomePickle
+        imageAlt="Budget tool app screens"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
+            : '/ZolaBudget/Home_ZolaBudget.png'
+        }
+        linkTo={ZOLA_BUDGET_ROUTE}
+        pickleColor="red"
+        title="Building a wedding budgeting tool for Zola's iOS app"
+      />
+      <HomePickle
+        imageAlt="alt"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaOnboarding/Home_Small_ZolaOnboarding.png'
+            : '/ZolaOnboarding/Home_ZolaOnboarding.png'
+        }
+        linkTo={ZOLA_ONBOARDING}
+        pickleColor="blue"
+        title="Making a great first impression with iOS onboarding"
+      />
       <HomePickle
         imageAlt="CMS and customer facing screens"
         imageSrc={
@@ -225,24 +236,17 @@ const Home: React.FC = () => {
             : '/Programs/ProgramHero.png'
         }
         linkTo={CORE_PROGRAMS}
-        pickleColor="red"
+        pickleColor="yellow"
         title="Building digital fitness programs"
-      />
-      <HomePickle
-        imageAlt="CMS and customer facing screens"
-        imageSrc={
-          lessThanMd
-            ? '/CustomerDiscovery/HomeCustomerSmall.gif'
-            : '/CustomerDiscovery/CustomerHomePickleImage.gif'
-        }
-        linkTo={CUSTOMER_DISCOVERY_ROUTE}
-        pickleColor="blue"
-        title="Rediscovering the Core Customer"
       />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
+        <SecondaryProjectLink
+          href={CUSTOMER_DISCOVERY_ROUTE}
+          text="Rediscovering the Core Customer"
+        />
         <SecondaryProjectLink
           href={CORE_LIVE_CLASSES}
           text="Designing a live class experience for fitness"
