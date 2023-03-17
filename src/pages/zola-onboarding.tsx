@@ -123,7 +123,7 @@ const ZolaOnboarding: React.FC = () => {
       </ContentBox>
       <ContentBox column>
         <Title bold>Refining the interaction</Title>
-        <GridBox center columnGap={40} mb={40} smColumns={2}>
+        <GridBox center columnGap={40} mb={80} smColumns={2}>
           <Box width="100%">
             <Heading bold>Providing simple feedback to the user</Heading>
             <Body>
@@ -141,7 +141,7 @@ const ZolaOnboarding: React.FC = () => {
         <GridBox center columnGap={40} mb={40} smColumns={2}>
           <Box width="100%">
             <Heading bold>Slick transitions between screens</Heading>
-            <Body>
+            <Body mb={0}>
               We also wanted to have slick transitions between questions to keep
               the flow moving. We explored many options, a few shown to the
               right, but ulitmately desicded to stick something simple -
@@ -151,7 +151,7 @@ const ZolaOnboarding: React.FC = () => {
           </Box>
           <ExternalVideo
             aspectRatio="1:1"
-            src="https://player.vimeo.com/video/803284857"
+            src="https://player.vimeo.com/video/803284017"
             title="Screen recording of prototype with different transitions"
           />
         </GridBox>
