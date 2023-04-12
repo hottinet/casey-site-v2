@@ -308,9 +308,7 @@ const ZolaNavigation: React.FC = () => {
         <Body>
           We saw new users, exploring more products in their first week with the
           app and we saw existing users, interacting with certain products, like
-          invites and paper, much more. We did see slightly less users
-          interacting with our registry product, but worked on multiple fast
-          follow changes to the navigation to win those users back.
+          invites and paper, much more.
         </Body>
       </ContentBox>
     </Layout>
