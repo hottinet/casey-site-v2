@@ -329,14 +329,7 @@ const ZolaBudgetTool: React.FC = () => {
             hoverImgAlt="iOS"
             href="https://apps.apple.com/us/app/zola/id852691916"
           >
-            iOS
-          </Link>
-          &thinsp;or&thinsp;
-          <Link
-            hoverImgAlt="Android"
-            href="https://play.google.com/store/apps/details?id=com.zola.android.wedding&hl=en_US&gl=US"
-          >
-            Android.
+            iOS.
           </Link>
         </Body>
         <Image
