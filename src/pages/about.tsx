@@ -26,13 +26,13 @@ const stickerData = [
     alt: 'California State Magnet',
   },
   {
-    src: '/About/campari.png',
-    alt: 'bottle of campari',
+    src: '/About/sake.png',
+    alt: 'bottle of sake',
   },
-  {
-    src: '/About/animalcrossing.png',
-    alt: 'animal crossing character',
-  },
+  // {
+  //   src: '/About/catpeach.png',
+  //   alt: 'cat peach mario cart character',
+  // },
   {
     src: '/About/shoes_sticker.png',
     alt: 'mis-matched shoes',
@@ -42,8 +42,8 @@ const stickerData = [
     alt: 'bread',
   },
   {
-    src: '/About/terraceHouse_sticker.png',
-    alt: 'Terrace House',
+    src: '/About/miami.png',
+    alt: 'Real Housewives of Miami',
   },
   {
     src: '/About/sewing.png',
@@ -119,7 +119,7 @@ const AboutMe: React.FC = () => {
           <GridBox>
             <Box>
               <Heading bold mb={8}>
-                Product Designer II, Mobile Core Experience
+                Senior Product Designer, Mobile Core Experience
               </Heading>
               <Heading>Zola</Heading>
               <Body>Oct 2021 - current</Body>
