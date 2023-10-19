@@ -58,6 +58,25 @@ const ZolaBaby: React.FC = () => {
           requirements, creative implications, logo placements, etc.
         </Body>
         <Body>put an image or video of prototype</Body>
+        <Body>some pages stayed the same and some got an upgrade</Body>
+        <Heading bold mb={40}>
+          Improvements
+        </Heading>
+        <Heading bold mb={40}>
+          Checklist - Guidance
+        </Heading>
+        <Heading bold mb={40}>
+          Widget - Emotion
+        </Heading>
+        <Heading bold mb={40}>
+          Website themes
+        </Heading>
+        <Heading bold mb={40}>
+          Web pre auth page
+        </Heading>
+        <Heading bold mb={40}>
+          Working w creative
+        </Heading>
       </ContentBox>
       <ContentBox>
         {lessThanSm ? (
