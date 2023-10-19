@@ -11,6 +11,7 @@ export const ABOUT_ROUTE = '/about';
 export const ZOLA_BUDGET_ROUTE = '/zola-budget-tool';
 export const ZOLA_NAVIGATION_ROUTE = '/zola-navigation';
 export const ZOLA_ONBOARDING = '/zola-onboarding';
+export const ZOLA_BABY = '/zola-baby';
 
 export const RESTRICTED_ROUTES: string[] = [];
 
