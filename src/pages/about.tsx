@@ -26,17 +26,17 @@ const stickerData = [
     alt: 'California State Magnet',
   },
   {
-    src: '/About/sake.png',
+    src: '/About/strawberry.png',
     alt: 'bottle of sake',
   },
-  // {
-  //   src: '/About/catpeach.png',
-  //   alt: 'cat peach mario cart character',
-  // },
   {
-    src: '/About/shoes_sticker.png',
-    alt: 'mis-matched shoes',
+    src: '/About/catpeach.png',
+    alt: 'cat peach mario cart character',
   },
+  // {
+  //   src: '/About/shoes_sticker.png',
+  //   alt: 'mis-matched shoes',
+  // },
   {
     src: '/About/bread_sticker.png',
     alt: 'bread',

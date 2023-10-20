@@ -57,10 +57,13 @@ const ZolaBaby: React.FC = () => {
           drive product conversations with the whole team regarding tech
           requirements, creative implications, logo placements, etc.
         </Body>
-        <Body>put an image or video of prototype</Body>
-        <Body>some pages stayed the same and some got an upgrade</Body>
+        <ExternalVideo
+          aspectRatio="16:9"
+          src="https://player.vimeo.com/video/876404091"
+          title="Screen recording of prototype"
+        />
         <Heading bold mb={40}>
-          Improvements
+          TBD Improvements
         </Heading>
         <Heading bold mb={40}>
           Checklist - Guidance
@@ -71,6 +74,11 @@ const ZolaBaby: React.FC = () => {
         <Heading bold mb={40}>
           Website themes
         </Heading>
+        <Image
+          alt="baby registry with blue and gold theme"
+          mb={80}
+          src="/ZolaBaby/zola-baby-websitetheme.png"
+        />
         <Heading bold mb={40}>
           Web pre auth page
         </Heading>
