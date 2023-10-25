@@ -32,7 +32,7 @@ const ZolaBaby: React.FC = () => {
       </DetailPickle>
       <ContentBox column>
         <Heading bold mb={40}>
-          Building a foundation from the weddings app
+          Building a foundation from Zola&apos;s best-in-class weddings app
         </Heading>
         <Body>
           We wanted to use as much of the existing wedding registry app as
@@ -133,7 +133,8 @@ const ZolaBaby: React.FC = () => {
         <Title bold>Emotion</Title>
         <Body>
           playing into emotion and adding nice moments without being overbearing
-          or excluding anyone
+          or excluding anyone. with both weddings and babies both are emotional,
+          have to play into it without goign overboard.
         </Body>
         <GridBox center columnGap={40} mb={40} smColumns={2}>
           <Box width="100%">
@@ -146,10 +147,9 @@ const ZolaBaby: React.FC = () => {
               countdown. A fun thing that many other baby related apps include.
             </Body>
           </Box>
-          <ExternalVideo
-            aspectRatio="1:1"
-            src="https://player.vimeo.com/video/877999210"
-            title="Screen recording of checklist feature"
+          <Image
+            alt="Examples of Zola baby widgets that countdown to the due date or tell you what size your baby is relative to a food item"
+            src="/ZolaBaby/zola-baby-widget.png"
           />
         </GridBox>
         <Heading bold mb={40}>
