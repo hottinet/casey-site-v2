@@ -1,6 +1,7 @@
 import Box from '~/components/box/Box';
 import ContentBox from '~/components/box/ContentBox';
 import GridBox from '~/components/box/GridBox';
+import Divider from '~/components/Divider';
 import Image from '~/components/Image';
 import Layout from '~/components/meta/Layout';
 import DetailPickle from '~/components/pickles/DetailPickle';
@@ -31,7 +32,7 @@ const ZolaBaby: React.FC = () => {
         />
       </DetailPickle>
       <ContentBox column>
-        <Heading bold mb={40}>
+        <Heading bold mb={20}>
           Building a foundation from Zola&apos;s best-in-class weddings app
         </Heading>
         <Body>
@@ -47,25 +48,25 @@ const ZolaBaby: React.FC = () => {
         />
       </ContentBox>
       <ContentBox column mb={80}>
-        <Heading bold mb={40}>
+        <Heading bold mb={20}>
           Using prototypes to drive product requirements
         </Heading>
-        <Body>
+        <Body mb={20}>
           Instead of waiting for a project doc, we almost immediately started
           building a prototype from the relevant wedding screens. We noted where
           things would have to change for Zola Baby and used our prototype to
           drive product conversations with the whole team regarding tech
-          requirements, creative implications, logo placements, etc.
+          requirements, creative implications, merch contracts, etc.
         </Body>
-        <ExternalVideo
-          aspectRatio="16:9"
-          src="https://player.vimeo.com/video/876404091"
-          title="Screen recording of prototype"
+        <Image
+          alt="view of figma prototype"
+          mb={80}
+          src="/ZolaBaby/zola-baby-proto2.png"
         />
       </ContentBox>
       <ContentBox column>
         <Heading bold mb={40}>
-          Some screens were stayed almost exactly the same between apps.
+          Some screens stayed almost exactly the same between apps
         </Heading>
         <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
           <Image
@@ -94,7 +95,76 @@ const ZolaBaby: React.FC = () => {
             src="/ZolaBaby/zola-baby-different-2.png"
           />
         </GridBox>
-        <Heading bold mb={40}>
+        <Divider />
+        <Title bold>
+          Whats different about baby? Getting in the baby mindset, switching
+          context
+        </Title>
+        <Body>
+          Although it was not in scope for us to do formal research, both
+          emotional life moments. for wedding you pick what you want. for baby
+          you dont know what you need. Guidance is improtant. A lot of ewmotions
+          come with starting a family. Becoming a parent can be a difficult and
+          sensitive journey. we want to be inclusive of all the ways someone
+          could come to this moment, we dont want anything to seem patronizing
+          in difficult moments.
+        </Body>
+
+        <GridBox center columnGap={40} mb={40} smColumns={2}>
+          <Box width="100%">
+            <Heading bold>
+              New parents want guidance about what to put on their registry
+            </Heading>
+            <Body mb={20}>
+              Compared to a wedding registry user, expecting parents need more
+              guidance about what type of gifts to add to a baby registry -
+              especially if they are a first time parent.
+            </Body>
+            <Body>
+              Although we didn’t have the resources to build up a backlog of
+              expert advice articles, we leaned into the concept of guidance by
+              creating a registry checklist that was accessible via the tab bar
+              navigation.
+            </Body>
+          </Box>
+          <ExternalVideo
+            aspectRatio="1:1"
+            src="https://player.vimeo.com/video/877999210"
+            title="Screen recording of checklist feature"
+          />
+        </GridBox>
+        <Heading bold mb={20}>
+          Creating an onboarding flow that feels personal but not overbearing
+        </Heading>
+        <Body>xyz</Body>
+        <GridBox center columnGap={40} mb={40} smColumns={2}>
+          <Box width="100%">
+            <Heading bold>Designing for all kind of parents</Heading>
+            <Body>
+              Many parents we talked to loved tracking what size their baby was
+              as it grew and having the treat of a weekly update. However, not
+              all parents were interested in it and not all parents were ...
+            </Body>
+          </Box>
+          <Image
+            alt="Examples of Zola baby widgets that countdown to the due date or tell you what size your baby is relative to a food item"
+            src="/ZolaBaby/zola-baby-widget.png"
+          />
+        </GridBox>
+        <Heading bold mb={20}>
+          Website themes - personalization
+        </Heading>
+        <Body>
+          For baby we extracted a handful of wedding website themes to use to
+          allow expecting parents to personalize their registry - something not
+          a lot of competitors are doing.
+        </Body>
+        <ExternalVideo
+          aspectRatio="16:9"
+          src="https://player.vimeo.com/video/878013239"
+          title="Showing off the many website themes available for Zola baby registries"
+        />
+        <Heading bold mb={20}>
           General UX improvments - leave it better than you found it - move this
           section?
         </Heading>
@@ -109,61 +179,6 @@ const ZolaBaby: React.FC = () => {
           alt="baby registry with blue and gold theme"
           mb={80}
           src="/ZolaBaby/zola-baby-improvements.png"
-        />
-        <GridBox center columnGap={40} mb={40} smColumns={2}>
-          <Box width="100%">
-            <Title bold>Checklist</Title>
-            <Body>
-              Compared to a wedding registry user, expecting parents need more
-              guidance about what type of gifts to add to a baby registry -
-              especially if they are a first time parent.
-            </Body>
-            <Body>
-              Although we didn’t have the resources to build up a backlog of
-              expert advice articles, we leaned into guidance by creating a
-              registry checklist that was accessible via the tab bar navigation.
-            </Body>
-          </Box>
-          <ExternalVideo
-            aspectRatio="1:1"
-            src="https://player.vimeo.com/video/877999210"
-            title="Screen recording of checklist feature"
-          />
-        </GridBox>
-        <Title bold>Emotion</Title>
-        <Body>
-          playing into emotion and adding nice moments without being overbearing
-          or excluding anyone. with both weddings and babies both are emotional,
-          have to play into it without goign overboard.
-        </Body>
-        <GridBox center columnGap={40} mb={40} smColumns={2}>
-          <Box width="100%">
-            <Heading bold>
-              &quot;What size is your baby?&quot; iOS widget
-            </Heading>
-            <Body>
-              We also wanted to lean into the emotional side of becoming a
-              parent by including an optional “What size is your baby?”
-              countdown. A fun thing that many other baby related apps include.
-            </Body>
-          </Box>
-          <Image
-            alt="Examples of Zola baby widgets that countdown to the due date or tell you what size your baby is relative to a food item"
-            src="/ZolaBaby/zola-baby-widget.png"
-          />
-        </GridBox>
-        <Heading bold mb={40}>
-          Website themes - show off multiple
-        </Heading>
-        <Body>
-          For baby we extracted a handful of wedding website themes to use to
-          allow expecting parents to personalize their registry - something not
-          a lot of competitors are doing.
-        </Body>
-        <ExternalVideo
-          aspectRatio="16:9"
-          src="https://player.vimeo.com/video/878013239"
-          title="Showing off the many website themes available for Zola baby registries"
         />
         <Heading bold mb={40}>
           Web pre auth page
