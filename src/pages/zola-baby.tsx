@@ -36,10 +36,10 @@ const ZolaBaby: React.FC = () => {
           Building a foundation from Zola&apos;s best-in-class weddings app
         </Heading>
         <Body>
-          We wanted to use as much of the existing wedding registry app as
+          We aimed to leverage as much of the existing wedding registry app as
           possible for our baby product to keep the scope low. As a first step,
-          we did an audit of all of the screens in the weddings app that might
-          be used in baby.
+          we conducted an audit of all the screens in the weddings app that
+          might be used for the baby registry.
         </Body>
         <Image
           alt="sitemap of zola weddings app with parts relevant to baby highlighted"
@@ -51,24 +51,24 @@ const ZolaBaby: React.FC = () => {
         <Heading bold mb={20}>
           Using prototypes to drive product requirements
         </Heading>
-        <Body mb={20}>
-          Instead of waiting for a project doc, we almost immediately started
+        <Body>
+          Instead of waiting for a project document, we immediately started
           building a prototype from the relevant wedding screens. We noted where
-          things would have to change for Zola Baby and used our prototype to
-          drive product conversations with the whole team regarding tech
-          requirements, creative implications, merch contracts, etc.
+          changes would be necessary for Zola Baby and used our prototype to
+          facilitate discussions with the entire team regarding tech
+          requirements, creative implications, merch contracts, and more.
         </Body>
         <Image
           alt="view of figma prototype"
           mb={80}
-          src="/ZolaBaby/zola-baby-proto2.png"
+          src="/ZolaBaby/zola-baby-proto-5.png"
         />
       </ContentBox>
       <ContentBox column>
-        <Heading bold mb={40}>
+        <Heading bold mb={20}>
           Some screens stayed almost exactly the same between apps
         </Heading>
-        <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
+        <GridBox columnGap={20} columns={2} mb={80} rowGap={20} smColumns={2}>
           <Image
             alt="Showing how similar the shop pages in the weddings and baby apps are"
             fitParent
@@ -80,10 +80,10 @@ const ZolaBaby: React.FC = () => {
             src="/ZolaBaby/zola-baby-same-2.png"
           />
         </GridBox>
-        <Heading bold mb={40}>
+        <Heading bold mb={20}>
           While others got some baby-centric upgrades
         </Heading>
-        <GridBox columnGap={20} columns={2} mb={40} rowGap={20} smColumns={2}>
+        <GridBox columnGap={20} columns={2} mb={80} rowGap={20} smColumns={2}>
           <Image
             alt="Showing how different the registry pages in the weddings and baby apps are"
             fitParent
@@ -96,18 +96,14 @@ const ZolaBaby: React.FC = () => {
           />
         </GridBox>
         <Divider />
-        <Title bold>
-          Whats different about baby? Getting in the baby mindset, switching
-          context
-        </Title>
+        <Title bold>Getting in the baby mindset</Title>
         <Body>
-          Although it was not in scope for us to do formal research, both
-          emotional life moments. for wedding you pick what you want. for baby
-          you dont know what you need. Guidance is improtant. A lot of ewmotions
-          come with starting a family. Becoming a parent can be a difficult and
-          sensitive journey. we want to be inclusive of all the ways someone
-          could come to this moment, we dont want anything to seem patronizing
-          in difficult moments.
+          Both getting married and starting a family can be incredibly emotional
+          life moments. As designers, it&apos;s crucial to be mindful of the
+          user&apos;s state of mind. While it wasn&apos;t within our
+          project&apos;s scope to conduct much formal user research, we talked
+          with coworkers and friends to identify key principles we needed to
+          consider when switching context from Zola Weddings to Zola Baby.
         </Body>
 
         <GridBox center columnGap={40} mb={40} smColumns={2}>
@@ -116,15 +112,17 @@ const ZolaBaby: React.FC = () => {
               New parents want guidance about what to put on their registry
             </Heading>
             <Body mb={20}>
-              Compared to a wedding registry user, expecting parents need more
-              guidance about what type of gifts to add to a baby registry -
-              especially if they are a first time parent.
+              For a wedding registry, most users already have specific gifts in
+              mind, like an upgraded vacuum or a coveted Dutch oven. However,
+              expecting parents, especially first-time parents, might have no
+              idea where to start with their baby registry and seek guidance.
             </Body>
             <Body>
-              Although we didn’t have the resources to build up a backlog of
-              expert advice articles, we leaned into the concept of guidance by
-              creating a registry checklist that was accessible via the tab bar
-              navigation.
+              While we didn&apos;t have the resources to build an extensive
+              backlog of expert advice content, we embraced the concept of
+              guidance by creating a customizable registry checklist. This
+              checklist helped parents identify which items were essential for
+              their journey into parenthood.
             </Body>
           </Box>
           <ExternalVideo
@@ -133,17 +131,16 @@ const ZolaBaby: React.FC = () => {
             title="Screen recording of checklist feature"
           />
         </GridBox>
-        <Heading bold mb={20}>
-          Creating an onboarding flow that feels personal but not overbearing
-        </Heading>
-        <Body>xyz</Body>
         <GridBox center columnGap={40} mb={40} smColumns={2}>
           <Box width="100%">
-            <Heading bold>Designing for all kind of parents</Heading>
+            <Heading bold>Variation of our iOS widgets</Heading>
             <Body>
-              Many parents we talked to loved tracking what size their baby was
-              as it grew and having the treat of a weekly update. However, not
-              all parents were interested in it and not all parents were ...
+              Many parents we spoke to loved the novelty of other apps that
+              allowed them to track their baby&apos;s size on a weekly basis.
+              However, we understood that not all parents were interested in
+              this feature, and not all were tracking a growing baby; some were
+              on other paths to parenthood. We created multiple versions of our
+              iOS home screen widget for parents to choose from.
             </Body>
           </Box>
           <Image
@@ -151,41 +148,58 @@ const ZolaBaby: React.FC = () => {
             src="/ZolaBaby/zola-baby-widget.png"
           />
         </GridBox>
+        <Box mb={80}>
+          <Heading bold mb={20}>
+            Utilizing existing website themes to let parents personalize their
+            registry
+          </Heading>
+          <Body mb={40}>
+            The Zola Weddings experience offers hundreds of wedding website
+            designs for couples to choose from. With Zola Baby, we have curated
+            a select handful of those themes for users to choose from
+          </Body>
+          <ExternalVideo
+            aspectRatio="16:9"
+            src="https://player.vimeo.com/video/878013239"
+            title="Showing off the many website themes available for Zola baby registries"
+          />
+        </Box>
         <Heading bold mb={20}>
-          Website themes - personalization
+          General UX improvments
         </Heading>
         <Body>
-          For baby we extracted a handful of wedding website themes to use to
-          allow expecting parents to personalize their registry - something not
-          a lot of competitors are doing.
-        </Body>
-        <ExternalVideo
-          aspectRatio="16:9"
-          src="https://player.vimeo.com/video/878013239"
-          title="Showing off the many website themes available for Zola baby registries"
-        />
-        <Heading bold mb={20}>
-          General UX improvments - leave it better than you found it - move this
-          section?
-        </Heading>
-        <Body>
-          Putting a new app into the Zola universe gave us a chance to make some
-          long-awaited UX improvements such as, keeping the bottom tab bar
-          persistent across pages, building the ability to quick add gifts from
-          a shop page, and significantly improving our third-party gift adding
-          experience.
+          Introducing a new app into the Zola universe prompted us to make some
+          long-awaited UX improvements. This included maintaining a persistent
+          bottom tab bar across pages, implementing the ability to quickly add
+          gifts from specific screens, and enhancing our third-party gift adding
+          experience significantly.
         </Body>
         <Image
           alt="baby registry with blue and gold theme"
           mb={80}
           src="/ZolaBaby/zola-baby-improvements.png"
         />
-        <Heading bold mb={40}>
-          Web pre auth page
+        <Heading bold mb={20}>
+          Zola Baby&apos;s web presence
         </Heading>
-        <Heading bold mb={40}>
-          Working w creative
+        <Body>
+          Along with the users&apos; public-facing registry pages, we created an
+          informational landing page for Zola Baby on the web. From this page
+          visitors could download our app or search for a registry.
+        </Body>
+        <Image
+          alt="Web page for Zola Baby with QR code to download the app"
+          mb={80}
+          src="/ZolaBaby/zola-baby-web-noshadow.png"
+        />
+        <Heading bold mb={20}>
+          Working with the creative team to incoporate new branding
         </Heading>
+        <Body>
+          The creative team worked in parallel with us to craft a distinct brand
+          for Zola Baby. We collaborated closely with them to test various color
+          palettes in the app and make sure that their choices were accessible.
+        </Body>
         {lessThanSm ? (
           <ExternalVideo
             aspectRatio="1:1"
