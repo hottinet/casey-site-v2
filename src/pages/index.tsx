@@ -19,8 +19,6 @@ import {
   CORE_SESSIONS,
   CUSTOMER_DISCOVERY_ROUTE,
   IRTH_ROUTE,
-  LADDERS_ROUTE,
-  LISTENJAY_ROUTE,
   ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
@@ -263,14 +261,6 @@ const Home: React.FC = () => {
         <SecondaryProjectLink
           href={IRTH_ROUTE}
           text="UI Refresh for the Irth app"
-        />
-        <SecondaryProjectLink
-          href={LADDERS_ROUTE}
-          text="Design for a gaming leaderboard"
-        />
-        <SecondaryProjectLink
-          href={LISTENJAY_ROUTE}
-          text="New feature for a podcast discovery platform"
         />
       </GridBox>
     </Layout>
