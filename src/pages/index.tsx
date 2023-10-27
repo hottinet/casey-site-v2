@@ -19,8 +19,7 @@ import {
   CORE_SESSIONS,
   CUSTOMER_DISCOVERY_ROUTE,
   IRTH_ROUTE,
-  LADDERS_ROUTE,
-  LISTENJAY_ROUTE,
+  ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
   ZOLA_ONBOARDING,
@@ -186,7 +185,7 @@ const Home: React.FC = () => {
             Product Designer balancing personality and utility.
           </Title>
         </Box>
-        <Title>Currently building the mobile experience at Zola.</Title>
+        <Title>Most recently building the mobile experience at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
@@ -195,28 +194,6 @@ const Home: React.FC = () => {
           </MobileAboutWrapper>
         )}
       </Box>
-      <HomePickle
-        imageAlt="Zola app home screen"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaNav/Home_Small_ZolaNav.png'
-            : '/ZolaNav/Home_ZolaNav.png'
-        }
-        linkTo={ZOLA_NAVIGATION_ROUTE}
-        pickleColor="green"
-        title="Creating a more scalable navigation for Zola's iOS app"
-      />
-      <HomePickle
-        imageAlt="Budget tool app screens"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
-            : '/ZolaBudget/Home_ZolaBudget.png'
-        }
-        linkTo={ZOLA_BUDGET_ROUTE}
-        pickleColor="red"
-        title="Building a wedding budgeting tool for Zola's iOS app"
-      />
       <HomePickle
         imageAlt="alt"
         imageSrc={
@@ -229,20 +206,46 @@ const Home: React.FC = () => {
         title="Making a great first impression with iOS onboarding"
       />
       <HomePickle
-        imageAlt="CMS and customer facing screens"
+        imageAlt="Zola app home screen"
         imageSrc={
           lessThanMd
-            ? '/Programs/home-small-programs.png'
-            : '/Programs/ProgramHero.png'
+            ? '/ZolaNav/Home_Small_ZolaNav.png'
+            : '/ZolaNav/Home_ZolaNav.png'
         }
-        linkTo={CORE_PROGRAMS}
+        linkTo={ZOLA_NAVIGATION_ROUTE}
+        pickleColor="green"
+        title="Creating a more scalable navigation for Zola's iOS app"
+      />
+      <HomePickle
+        imageAlt="baby registry website and app"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaBaby/Home_Small_ZolaBaby.png'
+            : '/ZolaBaby/Home_ZolaBaby.png'
+        }
+        linkTo={ZOLA_BABY_ROUTE}
         pickleColor="yellow"
-        title="Building digital fitness programs"
+        title="Launching Zola's baby registry product"
+      />
+      <HomePickle
+        imageAlt="Budget tool app screens"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
+            : '/ZolaBudget/Home_ZolaBudget.png'
+        }
+        linkTo={ZOLA_BUDGET_ROUTE}
+        pickleColor="red"
+        title="Building a wedding budgeting tool for Zola's iOS app"
       />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
+        <SecondaryProjectLink
+          href={CORE_PROGRAMS}
+          text="Building digital fitness programs"
+        />
         <SecondaryProjectLink
           href={CUSTOMER_DISCOVERY_ROUTE}
           text="Rediscovering the Core Customer"
@@ -258,14 +261,6 @@ const Home: React.FC = () => {
         <SecondaryProjectLink
           href={IRTH_ROUTE}
           text="UI Refresh for the Irth app"
-        />
-        <SecondaryProjectLink
-          href={LADDERS_ROUTE}
-          text="Design for a gaming leaderboard"
-        />
-        <SecondaryProjectLink
-          href={LISTENJAY_ROUTE}
-          text="New feature for a podcast discovery platform"
         />
       </GridBox>
     </Layout>
