@@ -355,8 +355,8 @@ const ZolaBudgetTool: React.FC = () => {
         </Body>
         <Body mb={20}>
           We ran a survey some time after launch and found that{' '}
-          <b>53% of survey takers gave the tool 5 out of 5 stars</b> and another
-          34% gave it 4 out of 5 stars.
+          <b>more than half of survey takers gave the tool 5 out of 5 stars</b>{' '}
+          and most others gave it 4 out of 5 stars.
         </Body>
         <Body mb={0}>The most highly requested additions were:</Body>
         <ul>

@@ -302,8 +302,8 @@ const ZolaNavigation: React.FC = () => {
         <Body mb={20}>
           With this new design we were able to fit 10 more products in our jump
           menu. In the first month, we saw clicks and time spent in the first
-          session increase significantly. We also saw 78% of users scrolling all
-          the way to the bottom of the page to view all their options.
+          session increase significantly. We also saw many more users scrolling
+          all the way to the bottom of the page to view all their options.
         </Body>
         <Body>
           We saw new users, exploring more products in their first week with the

@@ -21,6 +21,7 @@ import {
   IRTH_ROUTE,
   LADDERS_ROUTE,
   LISTENJAY_ROUTE,
+  ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
   ZOLA_ONBOARDING,
@@ -196,6 +197,17 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
+        imageAlt="alt"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaOnboarding/Home_Small_ZolaOnboarding.png'
+            : '/ZolaOnboarding/Home_ZolaOnboarding.png'
+        }
+        linkTo={ZOLA_ONBOARDING}
+        pickleColor="blue"
+        title="Making a great first impression with iOS onboarding"
+      />
+      <HomePickle
         imageAlt="Zola app home screen"
         imageSrc={
           lessThanMd
@@ -205,6 +217,17 @@ const Home: React.FC = () => {
         linkTo={ZOLA_NAVIGATION_ROUTE}
         pickleColor="green"
         title="Creating a more scalable navigation for Zola's iOS app"
+      />
+      <HomePickle
+        imageAlt="baby registry website and app"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaBaby/Home_Small_ZolaBaby.png'
+            : '/ZolaBaby/Home_ZolaBaby.png'
+        }
+        linkTo={ZOLA_BABY_ROUTE}
+        pickleColor="yellow"
+        title="Launching Zola's baby registry product"
       />
       <HomePickle
         imageAlt="Budget tool app screens"
@@ -217,32 +240,14 @@ const Home: React.FC = () => {
         pickleColor="red"
         title="Building a wedding budgeting tool for Zola's iOS app"
       />
-      <HomePickle
-        imageAlt="alt"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaOnboarding/Home_Small_ZolaOnboarding.png'
-            : '/ZolaOnboarding/Home_ZolaOnboarding.png'
-        }
-        linkTo={ZOLA_ONBOARDING}
-        pickleColor="blue"
-        title="Making a great first impression with iOS onboarding"
-      />
-      <HomePickle
-        imageAlt="CMS and customer facing screens"
-        imageSrc={
-          lessThanMd
-            ? '/Programs/home-small-programs.png'
-            : '/Programs/ProgramHero.png'
-        }
-        linkTo={CORE_PROGRAMS}
-        pickleColor="yellow"
-        title="Building digital fitness programs"
-      />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
       </Box>
       <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
+        <SecondaryProjectLink
+          href={CORE_PROGRAMS}
+          text="Building digital fitness programs"
+        />
         <SecondaryProjectLink
           href={CUSTOMER_DISCOVERY_ROUTE}
           text="Rediscovering the Core Customer"

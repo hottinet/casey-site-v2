@@ -20,6 +20,17 @@ const ZolaBaby: React.FC = () => {
         <Title bold mb={40}>
           Launching Zola&apos;s first baby registry product
         </Title>
+        {lessThanSm ? (
+          <Image
+            alt="key screens from the baby app"
+            src="/ZolaBaby/zola-baby-hero-sm.png"
+          />
+        ) : (
+          <Image
+            alt="key screens from the baby app"
+            src="/ZolaBaby/zola-baby-hero.png"
+          />
+        )}
       </ContentBox>
       <DetailPickle>
         <StackedText
@@ -35,11 +46,17 @@ const ZolaBaby: React.FC = () => {
         <Heading bold mb={20}>
           Building a foundation from Zola&apos;s best-in-class weddings app
         </Heading>
+        <Body mb={20}>
+          Zola&apos;s original business is a one-stop-shop for planning your
+          wedding. It is a platform that allows couples to create a registry,
+          search for vendors, build a guest list, order invites, budget for
+          their big day, and more.
+        </Body>
         <Body>
-          We aimed to leverage as much of the existing wedding registry app as
-          possible for our baby product to keep the scope low. As a first step,
-          we conducted an audit of all the screens in the weddings app that
-          might be used for the baby registry.
+          For the baby product, we aimed to leverage as much of the existing
+          wedding registry app as possible to keep the scope low. As a first
+          step, we conducted an audit of all the screens in the weddings app
+          that might be re-used.
         </Body>
         <Image
           alt="sitemap of zola weddings app with parts relevant to baby highlighted"
@@ -155,12 +172,12 @@ const ZolaBaby: React.FC = () => {
           </Heading>
           <Body mb={40}>
             The Zola Weddings experience offers hundreds of wedding website
-            designs for couples to choose from. With Zola Baby, we have curated
-            a select handful of those themes for users to choose from
+            designs for couples to choose from. With Zola Baby, we curated a
+            select handful of those themes for users to choose from.
           </Body>
           <ExternalVideo
             aspectRatio="16:9"
-            src="https://player.vimeo.com/video/878013239"
+            src="https://player.vimeo.com/video/878718473"
             title="Showing off the many website themes available for Zola baby registries"
           />
         </Box>
@@ -193,24 +210,37 @@ const ZolaBaby: React.FC = () => {
           src="/ZolaBaby/zola-baby-web-noshadow.png"
         />
         <Heading bold mb={20}>
-          Working with the creative team to incoporate new branding
+          Working with the creative team to pressure test new branding
         </Heading>
         <Body>
           The creative team worked in parallel with us to craft a distinct brand
           for Zola Baby. We collaborated closely with them to test various color
           palettes in the app and make sure that their choices were accessible.
         </Body>
+        <Image
+          alt="Screenshot of various text and background color combos with accessbility ratings"
+          mb={80}
+          src="/ZolaBaby/zola-baby-accessibility.png"
+        />
+        <Heading bold mb={20}>
+          Launching Zola Baby
+        </Heading>
+        <Body>
+          In the first month after launch we saw thousands of registries being
+          created by couples who had used Zola for their wedding. More results
+          coming soon!
+        </Body>
         {lessThanSm ? (
           <ExternalVideo
             aspectRatio="1:1"
-            src="https://player.vimeo.com/video/750455888"
-            title="video of budget tool features"
+            src="https://player.vimeo.com/video/878773013"
+            title="video of a few key baby features"
           />
         ) : (
           <ExternalVideo
             aspectRatio="16:9"
-            src="https://player.vimeo.com/video/750456231"
-            title="video of budget tool features"
+            src="https://player.vimeo.com/video/878771980"
+            title="video of a few key baby features"
           />
         )}
       </ContentBox>
