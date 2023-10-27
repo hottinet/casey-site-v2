@@ -16,7 +16,10 @@ const Head: React.FC<HeadProps> = ({ title = 'CHANGE ME' }) => (
     <title>{title}</title>
     <meta charSet="utf-8" />
     <meta content="initial-scale=1.0, width=device-width" name="viewport" />
-    <meta content="Troy Chryssos' Next JS template" name="description" />
+    <meta
+      content="Personal website for Product Designer Casey Bradford"
+      name="description"
+    />
   </NextHead>
 );
 
