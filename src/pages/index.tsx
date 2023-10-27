@@ -195,6 +195,28 @@ const Home: React.FC = () => {
         )}
       </Box>
       <HomePickle
+        imageAlt="Budget tool app screens"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
+            : '/ZolaBudget/Home_ZolaBudget.png'
+        }
+        linkTo={ZOLA_BUDGET_ROUTE}
+        pickleColor="green"
+        title="Building a wedding budgeting tool for Zola's iOS app"
+      />
+      <HomePickle
+        imageAlt="Zola app home screen"
+        imageSrc={
+          lessThanMd
+            ? '/ZolaNav/Home_Small_ZolaNav.png'
+            : '/ZolaNav/Home_ZolaNav.png'
+        }
+        linkTo={ZOLA_NAVIGATION_ROUTE}
+        pickleColor="red"
+        title="Creating a more scalable navigation for Zola's iOS app"
+      />
+      <HomePickle
         imageAlt="alt"
         imageSrc={
           lessThanMd
@@ -206,17 +228,6 @@ const Home: React.FC = () => {
         title="Making a great first impression with iOS onboarding"
       />
       <HomePickle
-        imageAlt="Zola app home screen"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaNav/Home_Small_ZolaNav.png'
-            : '/ZolaNav/Home_ZolaNav.png'
-        }
-        linkTo={ZOLA_NAVIGATION_ROUTE}
-        pickleColor="green"
-        title="Creating a more scalable navigation for Zola's iOS app"
-      />
-      <HomePickle
         imageAlt="baby registry website and app"
         imageSrc={
           lessThanMd
@@ -226,17 +237,6 @@ const Home: React.FC = () => {
         linkTo={ZOLA_BABY_ROUTE}
         pickleColor="yellow"
         title="Launching Zola's baby registry product"
-      />
-      <HomePickle
-        imageAlt="Budget tool app screens"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
-            : '/ZolaBudget/Home_ZolaBudget.png'
-        }
-        linkTo={ZOLA_BUDGET_ROUTE}
-        pickleColor="red"
-        title="Building a wedding budgeting tool for Zola's iOS app"
       />
       <Box mb={24} mt={128} mx={xSpace}>
         <Heading bold>Other Projects</Heading>
