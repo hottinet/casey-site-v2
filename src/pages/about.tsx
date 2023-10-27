@@ -26,7 +26,7 @@ const stickerData = [
     alt: 'California State Magnet',
   },
   {
-    src: '/About/strawberry.png',
+    src: '/About/sake.png',
     alt: 'bottle of sake',
   },
   {
