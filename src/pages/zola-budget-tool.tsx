@@ -35,23 +35,29 @@ const ZolaBudgetTool: React.FC = () => {
     <Layout>
       <ContentBox column>
         <Title bold>Building an app-first wedding budget tool for Zola</Title>
-        {lessThanSm ? (
-          <ExternalVideo
-            aspectRatio="1:1"
-            src="https://player.vimeo.com/video/750455888"
-            title="video of budget tool features"
-          />
-        ) : (
-          <ExternalVideo
-            aspectRatio="16:9"
-            src="https://player.vimeo.com/video/750456231"
-            title="video of budget tool features"
-          />
-        )}
+        <Box mb={20}>
+          {lessThanSm ? (
+            <ExternalVideo
+              aspectRatio="1:1"
+              src="https://player.vimeo.com/video/881215320"
+              title="video of budget tool features"
+            />
+          ) : (
+            <ExternalVideo
+              aspectRatio="16:9"
+              src="https://player.vimeo.com/video/881214462"
+              title="video of budget tool features"
+            />
+          )}
+        </Box>
+        <Body>
+          Note: This video has been updated to reflect new Zola branding as well
+          as a few new features added after this case study was created.
+        </Body>
       </ContentBox>
       <DetailPickle>
         <StackedText
-          bottomText="Our first goal, was to win back prospective couples who were explicitly searching for budgeting tools and choosing competitors. Our second was to build an MVP buget tool that would provide a simple and useful experience for early funnel users."
+          bottomText="Win back prospective couples who were explicitly searching for budgeting tools and choosing competitors. Build an MVP buget tool that would provide a simple and useful experience for early funnel users."
           topText="The Goal"
         />
         <StackedText
