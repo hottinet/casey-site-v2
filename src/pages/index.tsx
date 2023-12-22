@@ -18,7 +18,6 @@ import {
   CORE_PROGRAMS,
   CORE_SESSIONS,
   CUSTOMER_DISCOVERY_ROUTE,
-  IRTH_ROUTE,
   ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
@@ -257,10 +256,6 @@ const Home: React.FC = () => {
         <SecondaryProjectLink
           href={CORE_SESSIONS}
           text="Improving fitness content creation and consumption"
-        />
-        <SecondaryProjectLink
-          href={IRTH_ROUTE}
-          text="UI Refresh for the Irth app"
         />
       </GridBox>
     </Layout>
