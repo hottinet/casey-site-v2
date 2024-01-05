@@ -181,10 +181,10 @@ const Home: React.FC = () => {
       <Box mx={xSpace}>
         <Box>
           <Title mb={8}>
-            Product Designer balancing personality and utility.
+            Senior Product Designer working with small teams to turn vague ideas
+            into incredible mobile app experiences
           </Title>
         </Box>
-        <Title>Most recently building the mobile experience at Zola.</Title>
         {!breakpoints.includes('sm') && (
           <MobileAboutWrapper>
             <Link href="/about" internal noHoverStyles>
