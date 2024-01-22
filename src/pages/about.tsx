@@ -96,7 +96,7 @@ const AboutMe: React.FC = () => {
     <>
       <Layout>
         <AboutContentBox mb={80}>
-          <Title mb={8}>Click anywhere to learn about me.</Title>
+          <Title mb={8}>Click anywhere to learn about my interests.</Title>
           <Title mb={8}>
             Download my&thinsp;
             <Link
@@ -117,6 +117,15 @@ const AboutMe: React.FC = () => {
           </Title>
         </AboutContentBox>
         <AboutContentBox mb={48}>
+          <Title bold>About me</Title>
+          <Body>
+            I&apos;m a Senior Product Designer with a focus on crafting awesome
+            mobile apps. I thrive in scrappy startup teams, turning vague ideas
+            into reality. I&apos;m organized, collaborative, and ready for a
+            challenge. With 8 years of experience between visual and product
+            design, I&apos;m looking to join a team where I can contribute as a
+            design leader.
+          </Body>
           <Title bold>Experience</Title>
           <GridBox>
             <Box>
@@ -124,13 +133,13 @@ const AboutMe: React.FC = () => {
                 Senior Product Designer, Mobile Core Experience
               </Heading>
               <Heading>Zola</Heading>
-              <Body>Oct 2021 - current</Body>
+              <Body>Nov 2021 - Oct 2023</Body>
             </Box>
             <Box>
               <Heading bold mb={8}>
                 Product Designer
               </Heading>
-              <Heading>Core &#40;An AlleyCorp Company&#41;</Heading>
+              <Heading>Core &#40;Incubated by AlleyCorp&#41;</Heading>
               <Body>Feb 2021 - July 2021</Body>
             </Box>
             <Box>
@@ -138,15 +147,15 @@ const AboutMe: React.FC = () => {
                 Freelance Product Designer
               </Heading>
               <Heading>
-                Irth, Enkasa Homes, Ellipsis Health, Something Else
+                Working with The Culinistas, Ellipsis Health, Irth and more
               </Heading>
-              <Body>May 2020 - Feb 2021</Body>
+              <Body>May 2020 - current</Body>
             </Box>
             <Box>
               <Heading bold mb={8}>
                 Design Manager
               </Heading>
-              <Heading>Flatiron School &#40;A WeWork Company&#41;</Heading>
+              <Heading>Flatiron School &#40;Acquired by WeWork&#41;</Heading>
               <Body>Jan 2018 - April 2020</Body>
             </Box>
           </GridBox>
