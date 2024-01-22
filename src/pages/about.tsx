@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import random from 'lodash.random';
 import { useEffect, useRef, useState } from 'react';
 
 import Box from '~/components/box/Box';
@@ -26,28 +25,28 @@ const stickerData = [
     alt: 'California State Magnet',
   },
   {
-    src: '/About/sake.png',
+    src: '/About/sake.gif',
     alt: 'bottle of sake',
-  },
-  {
-    src: '/About/catpeach.png',
-    alt: 'cat peach mario cart character',
-  },
-  // {
-  //   src: '/About/shoes_sticker.png',
-  //   alt: 'mis-matched shoes',
-  // },
-  {
-    src: '/About/bread_sticker.png',
-    alt: 'bread',
   },
   {
     src: '/About/miami.png',
     alt: 'Real Housewives of Miami',
   },
   {
+    src: '/About/cookie.gif',
+    alt: 'cookie',
+  },
+  {
     src: '/About/sewing.png',
     alt: 'Sewing Machine',
+  },
+  {
+    src: '/About/catpeach.png',
+    alt: 'cat peach mario cart character',
+  },
+  {
+    src: '/About/travelme.png',
+    alt: 'Travel Me',
   },
 ];
 
@@ -63,10 +62,13 @@ const stickerHeight = 150;
 const AboutMe: React.FC = () => {
   const stickerRef = useRef<StickerObj[]>(emptyStickers);
   const [stickers, setStickers] = useState<StickerObj[]>(emptyStickers);
+  const stickerIndexRef = useRef(0);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      const { src, alt } = stickerData[random(0, stickerData.length - 1)];
+      const { src, alt } = stickerData[stickerIndexRef.current];
+      const nextIdx = stickerIndexRef.current + 1;
+      stickerIndexRef.current = nextIdx >= stickerData.length ? 0 : nextIdx;
       setStickers([
         ...stickerRef.current,
         {
