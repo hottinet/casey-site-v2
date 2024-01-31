@@ -10,7 +10,10 @@ import {
 } from '~/constants/css';
 import { makeCssPropStyles } from '~/utils/css';
 
-type BoxProps = Omit<AllowedCommonCssProps, 'borderWidth' | 'borderRadius'> &
+export type BoxProps = Omit<
+  AllowedCommonCssProps,
+  'borderWidth' | 'borderRadius'
+> &
   AllowedCustomCssSpacingProps &
   AllowedFlexboxCssProps &
   AllowedGridBoxCssProps &

@@ -17,7 +17,7 @@ export function NavBar() {
     return (
       <>
         <ContentContainer>
-          <FlexBox gap={48} height="fit-content" marginY={24}>
+          <FlexBox gap={48} height="fit-content" marginY={16}>
             <Link href={HOME_ROUTE}>
               <Body bold mb={0}>
                 Home

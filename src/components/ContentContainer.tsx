@@ -1,7 +1,6 @@
 import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
-import { Box } from './box/Box';
-import { BoxProps } from './box/types';
+import { Box, BoxProps } from './box/Box';
 
 export function ContentContainer({ children, ...rest }: BoxProps) {
   const mdUp = useBreakpointsAtLeast('md');

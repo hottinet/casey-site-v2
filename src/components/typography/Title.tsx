@@ -1,22 +1,21 @@
 import styled from '@emotion/styled';
+import { PropsWithChildren } from 'react';
 
-import { Color } from '~/typings/theme';
+import { AllowedCommonCssProps } from '~/constants/css';
+import { Color, Spacing } from '~/typings/theme';
 
-import { MarginProps } from '../box/types';
-
-type TitleProps = Pick<MarginProps, 'mb'> & {
-  children: string | (string | React.ReactElement)[];
+type TitleProps = Pick<AllowedCommonCssProps, 'marginBottom'> & {
   bold?: boolean;
   className?: string;
   color?: Color;
 };
 
 const Text = styled.h2<Omit<TitleProps, 'children'>>(
-  ({ theme, bold, mb = 24, color }) => ({
+  ({ theme, bold, marginBottom = 24, color }) => ({
     fontSize: theme.fontSize.mobileTitle,
     fontWeight: bold ? theme.fontWeight.bold : theme.fontWeight.regular,
     fontFamily: theme.fontFamily,
-    marginBottom: theme.spacing[mb],
+    marginBottom: theme.spacing[marginBottom as Spacing],
     color: color ? theme.colors[color] : '',
     [theme.breakpoints.xs]: {
       fontSize: theme.fontSize.title,
@@ -24,16 +23,21 @@ const Text = styled.h2<Omit<TitleProps, 'children'>>(
   })
 );
 
-const Title: React.FC<TitleProps> = ({
+export function Title({
   bold,
   className,
   children,
-  mb,
+  marginBottom,
   color,
-}) => (
-  <Text bold={bold} className={className} color={color} mb={mb}>
-    {children}
-  </Text>
-);
-
-export default Title;
+}: PropsWithChildren<TitleProps>) {
+  return (
+    <Text
+      bold={bold}
+      className={className}
+      color={color}
+      marginBottom={marginBottom}
+    >
+      {children}
+    </Text>
+  );
+}
