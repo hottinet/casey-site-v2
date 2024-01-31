@@ -1,6 +1,6 @@
 {
   "name": "casey-bradford-dot-club",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "private": false,
   "author": "<caseyebradford@gmail.com>",
   "description": "Personal website for UX/UI Designer Casey Bradford",
@@ -16,19 +16,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@types/lodash.throttle": "^4.1.6",
     "lodash.random": "^3.2.0",
     "lodash.throttle": "^4.1.1",
-    "next": "^12.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "next": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@emotion/babel-plugin": "^11.2.0",
-    "@emotion/eslint-plugin": "^11.2.0",
+    "@emotion/eslint-plugin": "^11.11.0",
     "@testing-library/react": "^12.0.0",
     "@tsconfig/recommended": "^1.0.1",
     "@types/lodash.random": "^3.2.6",
@@ -38,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "babel-loader": "^8.2.2",
+    "csstype": "^3.1.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
@@ -47,7 +48,7 @@
     "husky": "^7.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "2.3.2",
-    "typescript": "^4.5.5"
+    "typescript": "^5.3.3"
   },
   "husky": {
     "hooks": {
