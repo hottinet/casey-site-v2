@@ -1,65 +1,31 @@
-import styled from '@emotion/styled';
-import random from 'lodash.random';
-import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+// import { useRouter } from 'next/router';
 
-import CB from '~/components/icons/CB';
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
-import { BreakpointsContext } from '~/contexts/breakpointsContext';
-import { Color } from '~/typings/theme';
+import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
 import { FlexBox } from '../box/FlexBox';
-import TextButton from '../buttons/TextButton';
+import { ContentContainer } from '../ContentContainer';
 import Link from '../Link';
+import Body from '../typography/Body';
 
-const CaseyLink = styled(Link)`
-  text-decoration: none;
-  width: 80px;
-  margin-top: 8px;
-  height: min-content;
-`;
+export function NavBar() {
+  // const { pathname } = useRouter();
+  const smUp = useBreakpointsAtLeast('sm');
 
-const cbColors: Color[] = ['blue', 'red', 'green', 'text', 'yellow'];
-
-function CBLink() {
-  const [color, setColor] = useState<Color>('text');
-  const nextColors = cbColors.filter((c) => c !== color);
-
-  const onEnter = () => setColor(nextColors[random(0, nextColors.length - 1)]);
-
-  return (
-    <CaseyLink href="/" internal noHoverStyles onMouseEnter={onEnter}>
-      <CB color={color} title="Casey Bradford Logo" titleId="cb-icon" />
-    </CaseyLink>
-  );
-}
-
-const NavBar: React.FC = () => {
-  const breakpoints = useContext(BreakpointsContext);
-  const { pathname } = useRouter();
-  return (
-    <FlexBox justifyContent="space-between" padding={24} paddingBottom={80}>
-      <CBLink />
-      {breakpoints.includes('sm') && (
-        <FlexBox>
-          <Link href="/" internal noHoverStyles>
-            <TextButton
-              forceHover={pathname === HOME_ROUTE}
-              label="Home"
-              onClick={undefined}
-            />
+  if (smUp) {
+    return (
+      <ContentContainer>
+        <FlexBox gap={48} height="fit-content">
+          <Link href={HOME_ROUTE}>
+            <Body bold>Home</Body>
           </Link>
-          <Link href="/about" internal noHoverStyles>
-            <TextButton
-              forceHover={pathname === ABOUT_ROUTE}
-              label="About Me"
-              onClick={undefined}
-            />
+          <Link href={ABOUT_ROUTE}>
+            <Body bold>About</Body>
           </Link>
         </FlexBox>
-      )}
-    </FlexBox>
-  );
-};
+      </ContentContainer>
+    );
+  }
 
-export default NavBar;
+  return <div>sm screen nav</div>;
+}

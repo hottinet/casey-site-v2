@@ -67,7 +67,7 @@ const HoverTarget = styled.div`
   z-index: 999;
 `;
 
-const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
+function Page({ Component, pageProps }: AppProps) {
   const portalImageRef = useRef<HTMLDivElement>(null);
 
   const [windowBreakpoints, setWindowBreakpoints] = useState<BreakpointSize[]>([
@@ -107,6 +107,6 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
       </BreakpointsContext.Provider>
     </ThemeProvider>
   );
-};
+}
 
 export default Page;

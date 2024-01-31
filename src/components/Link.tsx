@@ -20,7 +20,7 @@ type HoverImageLinkProps = LinkProps & {
   hoverImgAlt: string;
 };
 
-const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>(
+const StyledLink = styled(NextLink)<Pick<LinkProps, 'noHoverStyles'>>(
   ({ theme, noHoverStyles }) => ({
     color: theme.colors.text,
     display: 'inline-block',
@@ -111,22 +111,21 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
 
   return (
     <>
-      <NextLink href={href} passHref>
-        <StyledLink
-          className={className}
-          noHoverStyles={noHoverStyles}
-          rel="noopener noreferrer"
-          target={internal ? '_self' : '_blank'}
-        >
-          {/*
+      <StyledLink
+        className={className}
+        href={href}
+        noHoverStyles={noHoverStyles}
+        rel="noopener noreferrer"
+        target={internal ? '_self' : '_blank'}
+      >
+        {/*
             Hack to allow mouseEvents inside nextjs links
             See https://github.com/vercel/next.js/issues/1490
           */}
-          <OnMouseSpan onMouseEnter={onEnter} onMouseLeave={onLeave}>
-            {children}
-          </OnMouseSpan>
-        </StyledLink>
-      </NextLink>
+        <OnMouseSpan onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          {children}
+        </OnMouseSpan>
+      </StyledLink>
       {hoverImgSrc && isHovered && (
         <PortalImageWrapper
           hoverImgAlt={hoverImgAlt}
