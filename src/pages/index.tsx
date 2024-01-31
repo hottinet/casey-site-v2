@@ -5,13 +5,15 @@ import { Box } from '~/components/box/Box';
 import { FlexBox } from '~/components/box/FlexBox';
 import { ContentContainer } from '~/components/ContentContainer';
 import { Layout } from '~/components/meta/Layout';
-import { Title } from '~/components/typography/Title';
+import { Text } from '~/components/typography/Text';
+import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
 const TitleContainer = styled(Box)`
   aspect-ratio: 637 / 118;
 `;
 
 function HomePage() {
+  const mdUp = useBreakpointsAtLeast('md');
   return (
     <Layout>
       <FlexBox flexDirection="column" height="100%" width="100%">
@@ -19,20 +21,27 @@ function HomePage() {
           alignItems="center"
           display="flex"
           flexDirection="column"
-          marginTop={24}
+          gap={24}
+          marginTop={32}
         >
-          <TitleContainer position="relative" width="100%">
-            <Image
-              alt="Casey Bradford"
-              fill
-              src="/Home/casey-bradford-title.svg"
-            />
-          </TitleContainer>
+          <Box paddingX={48} width="100%">
+            <TitleContainer position="relative" width="100%">
+              <Image
+                alt="Casey Bradford"
+                fill
+                src="/Home/casey-bradford-title.svg"
+              />
+            </TitleContainer>
+          </Box>
           <Box maxWidth="869px" width="fit-content">
-            <Title bold={false} marginBottom={0}>
+            <Text
+              as="p"
+              textAlign="center"
+              variant={mdUp ? 'title' : 'title-sm'}
+            >
               Senior Product Designer working with small teams to turn vague
               ideas into incredible mobile app experiences
-            </Title>
+            </Text>
           </Box>
         </ContentContainer>
       </FlexBox>

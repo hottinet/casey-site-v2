@@ -65,6 +65,7 @@ export const ALLOWED_COMMON_CSS_KEYS = [
   'position',
   'right',
   'textOverflow',
+  'textAlign',
   'top',
   'width',
   'textDecoration',
