@@ -2,7 +2,7 @@ import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import Title from '~/components/typography/Title';
 
-import FlexBox from './box/FlexBox';
+import { FlexBox } from './box/FlexBox';
 
 type StackedTextProps = {
   topText: string;
@@ -24,7 +24,7 @@ const StackedText: React.FC<StackedTextProps> = ({
   title,
   className,
 }) => (
-  <FlexBox className={className} column>
+  <FlexBox className={className} flexDirection="column">
     <TopText title={title}>{topText}</TopText>
     <Body mb={0}>{bottomText}</Body>
   </FlexBox>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-import FlexBox from './box/FlexBox';
+import { FlexBox } from './box/FlexBox';
 import Button from './buttons/Button';
 import Body from './typography/Body';
 
@@ -60,10 +60,10 @@ export const ImageClicker: React.FC<ImageClickerProps> = ({
       <ImageButton onClick={setNextIndex}>
         <>
           {children[childIndex]}
-          <Tooltip m={8} px={24} py={8}>
+          <Tooltip margin={8} paddingX={24} paddingY={8}>
             <TooltipLabel mb={0}>Click to see the next image</TooltipLabel>
           </Tooltip>
-          <ImageCount m={8} px={24} py={8}>
+          <ImageCount margin={8} paddingX={24} paddingY={8}>
             <TooltipLabel mb={0}>
               {`${childIndex + 1}/${children.length}`}
             </TooltipLabel>

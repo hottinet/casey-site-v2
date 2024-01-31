@@ -10,7 +10,7 @@ import Body from '~/components/typography/Body';
 import Heading from '~/components/typography/Heading';
 import { AuthContext } from '~/contexts/authContext';
 
-import Box from '../box/Box';
+import { Box } from '../box/Box';
 import IconButton from '../buttons/IconButton';
 import Pickle from '../pickles/Pickle';
 
@@ -36,8 +36,8 @@ const Input = styled.input(({ theme }) => ({
 }));
 
 const PwIconButton = styled(IconButton)(({ theme }) => ({
-  width: theme.spacing[100],
-  height: theme.spacing[100],
+  width: theme.spacing[96],
+  height: theme.spacing[96],
   flexShrink: 0,
   marginLeft: theme.spacing[24],
 }));

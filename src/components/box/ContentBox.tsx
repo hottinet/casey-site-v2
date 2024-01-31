@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import styled from '@emotion/styled';
 
-import FlexBox, { FlexBoxProps } from './FlexBox';
-import GridBox, { GridBoxProps } from './GridBox';
+import { FlexBox, FlexBoxProps } from './FlexBox';
+import { GridBox, GridBoxProps } from './GridBox';
 
 const extractRemVal = (remString: string) => {
   const captureRemRegex = /\d+.?\d+/;
@@ -10,11 +10,18 @@ const extractRemVal = (remString: string) => {
   return parseFloat(match);
 };
 
+interface GridContentProps extends Omit<GridBoxProps, 'grid'> {
+  grid: true;
+}
+
+type FlexContentProps = {
+  grid?: never;
+} & FlexBoxProps;
+
 type ContentBoxProps = {
   leftOnly?: boolean;
-  grid?: boolean;
   widthRatio?: number;
-} & (FlexBoxProps | GridBoxProps);
+} & (GridContentProps | FlexContentProps);
 
 const Wrapper: React.FC<ContentBoxProps> = ({ grid, children, ...rest }) =>
   grid ? (
