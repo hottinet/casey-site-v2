@@ -1,7 +1,7 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import FlexBox from '../box/FlexBox';
+import { FlexBox } from '../box/FlexBox';
 import Button from './Button';
 import { ButtonProps } from './types';
 
@@ -31,33 +31,35 @@ const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
   width: 100%;
 `;
 
-const StyledButton = styled(Button)<IconButtonProps>(
-  ({ theme, variant, forceHover }) => {
-    const hoverStyles = {
-      borderWidth: theme.border.borderWidth[1],
-      animation: `${wobble} 0.5s forwards`,
-      [`${Animator}`]: {
-        transform: 'scale(0.81)',
-        border: `${theme.border.borderWidth[3]} solid ${
-          variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-        }`,
-      },
-    };
-    return {
-      borderRadius: '50%',
-      padding: 0,
-      margin: 0,
-      height: theme.spacing[64],
-      width: theme.spacing[64],
-      borderColor:
-        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
-      borderStyle: 'solid',
-      borderWidth: theme.border.borderWidth[3],
-      '&:hover': hoverStyles,
-      ...(forceHover && hoverStyles),
-    };
-  }
-);
+const StyledButton = styled(Button)<IconButtonProps>(({
+  theme,
+  variant,
+  forceHover,
+}) => {
+  const hoverStyles = {
+    borderWidth: theme.borderWidth[1],
+    animation: `${wobble} 0.5s forwards`,
+    [`${Animator}`]: {
+      transform: 'scale(0.81)',
+      border: `${theme.borderWidth[3]} solid ${
+        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
+      }`,
+    },
+  };
+  return {
+    borderRadius: '50%',
+    padding: 0,
+    margin: 0,
+    height: theme.spacing[64],
+    width: theme.spacing[64],
+    borderColor:
+      variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth[3],
+    '&:hover': hoverStyles,
+    ...(forceHover && hoverStyles),
+  };
+});
 
 const IconButton: React.FC<IconButtonProps> = ({
   children,

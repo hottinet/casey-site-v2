@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import type { AppProps /* , AppContext */ } from 'next/app';
 import { useEffect, useRef, useState } from 'react';
 
-import FlexBox from '~/components/box/FlexBox';
+import { FlexBox } from '~/components/box/FlexBox';
 import theme from '~/constants/theme';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { PortalImageContext } from '~/contexts/portalImageContext';
@@ -98,7 +98,7 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
       <BreakpointsContext.Provider value={windowBreakpoints}>
         <PortalImageContext.Provider value={portalImageRef}>
           <Global styles={globalStyles} />
-          <GlobalWrapper column>
+          <GlobalWrapper flexDirection="column">
             <HoverTarget ref={portalImageRef} />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />

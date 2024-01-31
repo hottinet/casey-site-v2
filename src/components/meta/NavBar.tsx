@@ -8,7 +8,7 @@ import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { Color } from '~/typings/theme';
 
-import FlexBox from '../box/FlexBox';
+import { FlexBox } from '../box/FlexBox';
 import TextButton from '../buttons/TextButton';
 import Link from '../Link';
 
@@ -21,7 +21,7 @@ const CaseyLink = styled(Link)`
 
 const cbColors: Color[] = ['blue', 'red', 'green', 'text', 'yellow'];
 
-const CBLink = () => {
+function CBLink() {
   const [color, setColor] = useState<Color>('text');
   const nextColors = cbColors.filter((c) => c !== color);
 
@@ -32,13 +32,13 @@ const CBLink = () => {
       <CB color={color} title="Casey Bradford Logo" titleId="cb-icon" />
     </CaseyLink>
   );
-};
+}
 
 const NavBar: React.FC = () => {
   const breakpoints = useContext(BreakpointsContext);
   const { pathname } = useRouter();
   return (
-    <FlexBox justifyContent="space-between" p={24} pb={80}>
+    <FlexBox justifyContent="space-between" padding={24} paddingBottom={80}>
       <CBLink />
       {breakpoints.includes('sm') && (
         <FlexBox>

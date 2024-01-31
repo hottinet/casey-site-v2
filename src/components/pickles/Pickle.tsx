@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { Color } from '~/typings/theme';
 
-import FlexBox from '../box/FlexBox';
+import { FlexBox } from '../box/FlexBox';
 
 type PickleProps = {
   children: React.ReactNode | React.ReactNode[];

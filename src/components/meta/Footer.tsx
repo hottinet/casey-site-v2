@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import FlexBox from '../box/FlexBox';
+import { FlexBox } from '../box/FlexBox';
 import Divider from '../Divider';
 import Link, { LinkProps } from '../Link';
 import NextProjectPickle from '../pickles/NextProjectPickle';
@@ -58,7 +58,7 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = ({ nextPath }) => (
   <>
     {nextPath && (
-      <FlexBox justifyContent="flex-end" mt={64}>
+      <FlexBox justifyContent="flex-end" marginTop={64}>
         <NextProjectPickle nextProjectPath={nextPath} />
       </FlexBox>
     )}

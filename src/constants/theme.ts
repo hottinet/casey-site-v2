@@ -1,3 +1,5 @@
+import { pxToRem } from '~/utils/pxToRem';
+
 const breakpointValues = {
   xxs: 479,
   xs: 480,
@@ -31,28 +33,33 @@ const theme = {
     lg: `@media only screen and (min-width: ${breakpointValues.lg}px)`,
     xl: `@media only screen and (min-width: ${breakpointValues.xl}px)`,
   },
-  colors,
   spacing: {
-    0: '0rem',
-    4: '0.25rem',
-    8: '0.5rem',
-    12: '0.75rem',
-    16: '1rem',
-    20: '1.25rem',
-    24: '1.5rem',
-    32: '2rem',
-    40: '2.5rem',
-    48: '3rem',
-    64: '4rem',
-    80: '5rem',
-    100: '6.25rem',
-    128: '8rem',
+    0: pxToRem(0),
+    2: pxToRem(2),
+    4: pxToRem(4),
+    8: pxToRem(8),
+    10: pxToRem(10),
+    12: pxToRem(12),
+    16: pxToRem(16),
+    20: pxToRem(20),
+    24: pxToRem(24),
+    32: pxToRem(32),
+    40: pxToRem(40),
+    48: pxToRem(48),
+    64: pxToRem(64),
+    80: pxToRem(80),
+    96: pxToRem(96),
+    128: pxToRem(128),
   },
-  border: {
-    borderWidth: {
-      1: '1px',
-      3: '0.1875rem',
-    },
+  borderWidth: {
+    1: pxToRem(1),
+    3: pxToRem(3),
+  },
+  borderRadius: {
+    2: pxToRem(2),
+    4: pxToRem(4),
+    round: '50%',
+    200: pxToRem(200),
   },
   fontSize: {
     subBody: '0.75rem',
@@ -71,6 +78,7 @@ const theme = {
     bold: 700,
     black: 800,
   },
+  colors,
 };
 
 export default theme;

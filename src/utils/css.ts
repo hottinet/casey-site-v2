@@ -145,7 +145,7 @@ export const filterCssProps = (props: Record<string, any>, theme: Theme) =>
       } else if (
         // If it isn't, check if it is a valid CSS prop
         ALL_ALLOWED_CSS_PROPS.includes(
-          currPropKey as typeof ALL_ALLOWED_CSS_PROPS[number]
+          currPropKey as (typeof ALL_ALLOWED_CSS_PROPS)[number]
         )
       ) {
         // If it is, add it to the propObj
