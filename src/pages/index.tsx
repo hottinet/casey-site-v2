@@ -3,17 +3,28 @@ import Image from 'next/image';
 
 import { Box } from '~/components/box/Box';
 import { FlexBox } from '~/components/box/FlexBox';
-import { ContentContainer } from '~/components/ContentContainer';
+import {
+  ContentContainer,
+  useContentContainerPadding,
+} from '~/components/ContentContainer';
 import { Layout } from '~/components/meta/Layout';
+import { ShowoffBlock } from '~/components/ShowoffBlock';
 import { Text } from '~/components/typography/Text';
-import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
+import {
+  useBreakpointsAtLeast,
+  useBreakpointsIsExactly,
+} from '~/utils/useBreakpoints';
 
 const TitleContainer = styled(Box)`
+  /* Calculated from Casey Bradford svg */
   aspect-ratio: 637 / 118;
 `;
 
 function HomePage() {
   const mdUp = useBreakpointsAtLeast('md');
+  const isXxs = useBreakpointsIsExactly('xxs');
+  const contentPadding = useContentContainerPadding();
+
   return (
     <Layout>
       <FlexBox flexDirection="column" height="100%" width="100%">
@@ -44,6 +55,17 @@ function HomePage() {
             </Text>
           </Box>
         </ContentContainer>
+        <ShowoffBlock
+          backgroundColor="green"
+          borderRadius={30}
+          color="textSecondary"
+          imageAlt="Zola Budget Tool on an iPhone"
+          imageSrc="/Home/budget-tool.png"
+          linkHref=""
+          marginX={isXxs ? 0 : contentPadding}
+          tags={['zola', 'ios']}
+          title="Building a Wedding Budget Tool"
+        />
       </FlexBox>
     </Layout>
   );

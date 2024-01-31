@@ -58,6 +58,7 @@ const theme = {
   borderRadius: {
     2: pxToRem(2),
     4: pxToRem(4),
+    30: pxToRem(30),
     round: '50%',
     200: pxToRem(200),
   },
@@ -75,7 +76,7 @@ const theme = {
     24: pxToRem(24),
     32: pxToRem(32),
     40: pxToRem(40),
-    56: pxToRem(56),
+    48: pxToRem(48),
     64: pxToRem(64),
   },
   fontFamily: "'Raleway', sans-serif",

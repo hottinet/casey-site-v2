@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { HOME_ROUTE } from '~/constants/routing';
 
 import Arrow from '../icons/Arrow';
-import Link from '../Link';
+import { Link } from '../Link';
 import Heading from '../typography/Heading';
 import Pickle from './Pickle';
 

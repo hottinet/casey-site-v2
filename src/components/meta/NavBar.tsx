@@ -6,7 +6,7 @@ import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 import { FlexBox } from '../box/FlexBox';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
-import Link from '../Link';
+import { Link } from '../Link';
 import Body from '../typography/Body';
 
 export function NavBar() {

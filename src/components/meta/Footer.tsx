@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { FlexBox } from '../box/FlexBox';
 import { Divider } from '../Divider';
-import Link, { LinkProps } from '../Link';
+import { Link, LinkProps } from '../Link';
 import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
 

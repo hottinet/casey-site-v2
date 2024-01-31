@@ -1,14 +1,18 @@
 import styled from '@emotion/styled';
 import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
-import { MouseEventHandler, useEffect, useState } from 'react';
+import {
+  MouseEventHandler,
+  PropsWithChildren,
+  useEffect,
+  useState,
+} from 'react';
 
 import PortalImage from './PortalImage';
 
 export type LinkProps = {
   internal?: boolean;
   href: string;
-  children: React.ReactNode;
   className?: string;
   onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
   onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
@@ -42,10 +46,10 @@ type PortalImageWrapperProps = Pick<
   'hoverImgAlt' | 'hoverImgSrc'
 >;
 
-const PortalImageWrapper: React.FC<PortalImageWrapperProps> = ({
+function PortalImageWrapper({
   hoverImgAlt,
   hoverImgSrc,
-}) => {
+}: PortalImageWrapperProps) {
   const [mouseCoords, setMouseCoords] = useState<[number, number]>();
 
   useEffect(() => {
@@ -78,9 +82,11 @@ const PortalImageWrapper: React.FC<PortalImageWrapperProps> = ({
       imgSrc={hoverImgSrc}
     />
   );
-};
+}
 
-const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
+export function Link(
+  props: PropsWithChildren<HoverImageLinkProps | LinkProps>
+) {
   const {
     internal,
     href,
@@ -134,6 +140,4 @@ const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
       )}
     </>
   );
-};
-
-export default Link;
+}
