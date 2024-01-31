@@ -1,5 +1,5 @@
 import { FlexBox } from '~/components/box/FlexBox';
-import Layout from '~/components/meta/Layout';
+import { Layout } from '~/components/meta/Layout';
 import Body from '~/components/typography/Body';
 
 function HomePage() {

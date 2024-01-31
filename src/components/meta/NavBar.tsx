@@ -5,6 +5,7 @@ import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
 import { FlexBox } from '../box/FlexBox';
 import { ContentContainer } from '../ContentContainer';
+import { Divider } from '../Divider';
 import Link from '../Link';
 import Body from '../typography/Body';
 
@@ -14,16 +15,23 @@ export function NavBar() {
 
   if (smUp) {
     return (
-      <ContentContainer>
-        <FlexBox gap={48} height="fit-content">
-          <Link href={HOME_ROUTE}>
-            <Body bold>Home</Body>
-          </Link>
-          <Link href={ABOUT_ROUTE}>
-            <Body bold>About</Body>
-          </Link>
-        </FlexBox>
-      </ContentContainer>
+      <>
+        <ContentContainer>
+          <FlexBox gap={48} height="fit-content" marginY={24}>
+            <Link href={HOME_ROUTE}>
+              <Body bold mb={0}>
+                Home
+              </Body>
+            </Link>
+            <Link href={ABOUT_ROUTE}>
+              <Body bold mb={0}>
+                About
+              </Body>
+            </Link>
+          </FlexBox>
+        </ContentContainer>
+        <Divider />
+      </>
     );
   }
 

@@ -5,7 +5,7 @@ import { NEXT_ROUTE_MAP, RESTRICTED_ROUTES } from '~/constants/routing';
 import { AuthContext } from '~/contexts/authContext';
 
 import AuthOverlay from './AuthOverlay';
-import Footer from './Footer';
+import { Footer } from './Footer';
 import Head from './Head';
 import { NavBar } from './NavBar';
 

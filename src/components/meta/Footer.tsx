@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import { FlexBox } from '../box/FlexBox';
-import Divider from '../Divider';
+import { Divider } from '../Divider';
 import Link, { LinkProps } from '../Link';
 import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
@@ -55,35 +55,35 @@ type FooterProps = {
   nextPath?: string;
 };
 
-const Footer: React.FC<FooterProps> = ({ nextPath }) => (
-  <>
-    {nextPath && (
-      <FlexBox justifyContent="flex-end" marginTop={64}>
-        <NextProjectPickle nextProjectPath={nextPath} />
-      </FlexBox>
-    )}
-    <OuterFooterWrapper>
-      <FooterDivider />
-      <FooterWrapper justifyContent="space-between">
-        <CaseyLink href="/" internal noHoverStyles>
-          <Heading bold mb={0}>
-            Casey Bradford
-          </Heading>
-        </CaseyLink>
-        <LinkWrapper>
-          <FooterLink href="mailto:caseyebradford@gmail.com">
-            <Heading mb={0}>Email</Heading>
-          </FooterLink>
-          <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
-            <Heading mb={0}>LinkedIn</Heading>
-          </FooterLink>
-          <FooterLink href="/CaseyBradfordResume.pdf">
-            <Heading mb={0}>Resume</Heading>
-          </FooterLink>
-        </LinkWrapper>
-      </FooterWrapper>
-    </OuterFooterWrapper>
-  </>
-);
-
-export default Footer;
+export function Footer({ nextPath }: FooterProps) {
+  return (
+    <>
+      {nextPath && (
+        <FlexBox justifyContent="flex-end" marginTop={64}>
+          <NextProjectPickle nextProjectPath={nextPath} />
+        </FlexBox>
+      )}
+      <OuterFooterWrapper>
+        <FooterDivider />
+        <FooterWrapper justifyContent="space-between">
+          <CaseyLink href="/" internal noHoverStyles>
+            <Heading bold mb={0}>
+              Casey Bradford
+            </Heading>
+          </CaseyLink>
+          <LinkWrapper>
+            <FooterLink href="mailto:caseyebradford@gmail.com">
+              <Heading mb={0}>Email</Heading>
+            </FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
+              <Heading mb={0}>LinkedIn</Heading>
+            </FooterLink>
+            <FooterLink href="/CaseyBradfordResume.pdf">
+              <Heading mb={0}>Resume</Heading>
+            </FooterLink>
+          </LinkWrapper>
+        </FooterWrapper>
+      </OuterFooterWrapper>
+    </>
+  );
+}
