@@ -8,8 +8,9 @@ import {
   useContentContainerPadding,
 } from '~/components/ContentContainer';
 import { Layout } from '~/components/meta/Layout';
-import { ShowoffBlock } from '~/components/ShowoffBlock';
+import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { Text } from '~/components/typography/Text';
+import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsAtLeast,
   useBreakpointsIsExactly,
@@ -57,12 +58,14 @@ function HomePage() {
         </ContentContainer>
         <ShowoffBlock
           backgroundColor="green"
-          borderRadius={30}
+          borderRadius={isXxs ? 0 : 30}
           color="textSecondary"
           imageAlt="Zola Budget Tool on an iPhone"
+          imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
           linkHref=""
           marginX={isXxs ? 0 : contentPadding}
+          marginY={pxToRem(140)}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />

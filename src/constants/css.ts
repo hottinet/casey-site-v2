@@ -6,6 +6,7 @@ import { Theme } from './theme';
 
 export const ALLOWED_COMMON_CSS_KEYS = [
   'alignSelf',
+  'aspectRatio',
   'background',
   'backgroundColor',
   'border',
@@ -69,6 +70,7 @@ export const ALLOWED_COMMON_CSS_KEYS = [
   'top',
   'width',
   'textDecoration',
+  'zIndex',
 ] as const;
 
 const CUSTOM_CSS_SPACING_KEYS = [

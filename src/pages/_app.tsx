@@ -26,31 +26,44 @@ const baseStyle = css`
 const globalStyles = css`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
   html {
+    background-color: ${theme.colors.background};
     ${baseStyle};
   }
   body {
     ${baseStyle};
     position: relative;
     box-sizing: border-box;
+    font-family: ${theme.fontFamily};
     color: ${theme.colors.text};
   }
-  #app {
+  #app,
+  #__next {
     ${baseStyle};
   }
-  div {
+  div,
+  input,
+  select,
+  textarea,
+  ul,
+  li,
+  a {
     box-sizing: border-box;
   }
-  p {
+  p,
+  h1,
+  h2,
+  h3,
+  pre,
+  figure,
+  ul,
+  li {
     ${marPadZero};
   }
-  h1 {
-    ${marPadZero};
+  li {
+    list-style: none;
   }
-  h2 {
-    ${marPadZero};
-  }
-  h3 {
-    ${marPadZero};
+  ul {
+    list-style: none;
   }
 `;
 

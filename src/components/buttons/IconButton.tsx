@@ -50,8 +50,8 @@ const StyledButton = styled(Button)<IconButtonProps>(({
     borderRadius: '50%',
     padding: 0,
     margin: 0,
-    height: theme.spacing[64],
-    width: theme.spacing[64],
+    height: theme.spacing[48],
+    width: theme.spacing[48],
     borderColor:
       variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
     borderStyle: 'solid',
