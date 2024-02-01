@@ -54,7 +54,7 @@ export function ShowoffContent({
           <TagList>
             {tags.map((t) => (
               <li key={t}>
-                <Text as="span" variant="caption">
+                <Text as="span" variant="body">
                   {upperCase(t)}
                 </Text>
               </li>

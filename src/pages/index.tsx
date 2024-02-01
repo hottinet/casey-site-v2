@@ -3,12 +3,14 @@ import Image from 'next/image';
 
 import { Box } from '~/components/box/Box';
 import { FlexBox } from '~/components/box/FlexBox';
+import { GridBox } from '~/components/box/GridBox';
 import {
   ContentContainer,
   useContentContainerPadding,
 } from '~/components/ContentContainer';
 import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
+import { ShowoffContent } from '~/components/showoff/ShowoffContent';
 import { Text } from '~/components/typography/Text';
 import { pxToRem } from '~/utils/pxToRem';
 import {
@@ -69,6 +71,22 @@ function HomePage() {
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
+        <ContentContainer>
+          <GridBox alignItems="start" columns={2} gap={40}>
+            <ShowoffContent
+              color="text"
+              linkHref=""
+              tags={['zola', 'ios']}
+              title="Designing a more scalable home page and navigation"
+            />
+            <ShowoffContent
+              color="text"
+              linkHref=""
+              tags={['zola', 'ios']}
+              title="Launching a baby registry product"
+            />
+          </GridBox>
+        </ContentContainer>
       </FlexBox>
     </Layout>
   );

@@ -18,6 +18,7 @@ export function NavBar() {
   if (smUp) {
     return (
       <>
+        {/* Height of the navbar */}
         <Box height={pxToRem(66)} width="100%" />
         <Box
           backgroundColor="background"

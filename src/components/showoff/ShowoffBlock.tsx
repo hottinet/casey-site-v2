@@ -26,7 +26,8 @@ export function ShowoffBlock({
         backgroundColor={backgroundColor}
         color={color}
         columns={2}
-        minHeight={pxToRem(450)}
+        height={pxToRem(450)}
+        paddingRight={48}
         {...gridBoxProps}
       >
         <Box />
@@ -38,16 +39,25 @@ export function ShowoffBlock({
         />
       </GridBox>
       <Box
-        alignItems="center"
         display="flex"
         height="100%"
+        justifyContent="center"
         left={0}
         position="absolute"
         top={0}
         width="50%"
       >
-        <Box aspectRatio={imageAspectRatio} position="relative" width="100%">
-          <Image alt={imageAlt} fill src={imageSrc} />
+        <Box
+          alignItems="center"
+          display="flex"
+          height="100%"
+          justifyContent="center"
+          maxWidth={pxToRem(442)}
+          width="100%"
+        >
+          <Box aspectRatio={imageAspectRatio} position="relative" width="100%">
+            <Image alt={imageAlt} fill src={imageSrc} />
+          </Box>
         </Box>
       </Box>
     </Box>
