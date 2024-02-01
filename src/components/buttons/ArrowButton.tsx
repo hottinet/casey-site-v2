@@ -1,13 +1,16 @@
 import styled from '@emotion/styled';
 
+import { Color } from '~/typings/theme';
+
 import Arrow from '../icons/Arrow';
-import IconButton from './IconButton';
+import { IconButton } from './IconButton';
 import { ButtonProps } from './types';
 
 type ArrowButtonProps = Pick<ButtonProps, 'onClick' | 'variant'> & {
   className?: string;
   title: string;
   forceHover?: boolean;
+  color?: Color;
 };
 
 const ArrowIcon = styled(Arrow)`
@@ -18,18 +21,22 @@ const ArrowIcon = styled(Arrow)`
 export function ArrowButton({
   onClick,
   title,
-  variant = 'secondary',
+  color = 'textSecondary',
   className,
   forceHover,
 }: ArrowButtonProps) {
   return (
     <IconButton
       className={className}
+      color={color}
       forceHover={forceHover}
-      variant={variant}
       onClick={onClick}
     >
-      <ArrowIcon title={`Navigate to ${title}`} titleId={`${title}Id`} />
+      <ArrowIcon
+        color={color}
+        title={`Navigate to ${title}`}
+        titleId={`${title}Id`}
+      />
     </IconButton>
   );
 }

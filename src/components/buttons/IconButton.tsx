@@ -1,13 +1,16 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { PropsWithChildren } from 'react';
+
+import { Color } from '~/typings/theme';
 
 import { FlexBox } from '../box/FlexBox';
 import Button from './Button';
 import { ButtonProps } from './types';
 
-type IconButtonProps = Omit<ButtonProps, 'childre'> & {
-  children: React.ReactNode;
+type IconButtonProps = Omit<ButtonProps, 'children' | 'variant'> & {
   forceHover?: boolean;
+  color?: Color;
 };
 
 const AnimationWrapper = styled(FlexBox)`
@@ -24,7 +27,7 @@ const wobble = keyframes`
   }
 `;
 
-const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
+const Animator = styled(FlexBox)`
   transform-origin: center center;
   transition: transform 0.2s linear;
   height: 100%;
@@ -33,7 +36,7 @@ const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
 
 const StyledButton = styled(Button)<IconButtonProps>(({
   theme,
-  variant,
+  color = 'text',
   forceHover,
 }) => {
   const hoverStyles = {
@@ -41,9 +44,7 @@ const StyledButton = styled(Button)<IconButtonProps>(({
     animation: `${wobble} 0.5s forwards`,
     [`${Animator}`]: {
       transform: 'scale(0.81)',
-      border: `${theme.borderWidth[3]} solid ${
-        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-      }`,
+      border: `${theme.borderWidth[3]} solid ${theme.colors[color]}`,
     },
   };
   return {
@@ -52,8 +53,7 @@ const StyledButton = styled(Button)<IconButtonProps>(({
     margin: 0,
     height: theme.spacing[48],
     width: theme.spacing[48],
-    borderColor:
-      variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
+    borderColor: theme.colors[color],
     borderStyle: 'solid',
     borderWidth: theme.borderWidth[3],
     '&:hover': hoverStyles,
@@ -61,25 +61,25 @@ const StyledButton = styled(Button)<IconButtonProps>(({
   };
 });
 
-const IconButton: React.FC<IconButtonProps> = ({
+export function IconButton({
   children,
   onClick,
   className,
-  variant = 'primary',
+  color,
   forceHover,
-}) => (
-  <StyledButton
-    className={className}
-    forceHover={forceHover}
-    variant={variant}
-    onClick={onClick}
-  >
-    <AnimationWrapper center>
-      <Animator borderRadius="50%" center variant={variant}>
-        {children}
-      </Animator>
-    </AnimationWrapper>
-  </StyledButton>
-);
-
-export default IconButton;
+}: PropsWithChildren<IconButtonProps>) {
+  return (
+    <StyledButton
+      className={className}
+      color={color}
+      forceHover={forceHover}
+      onClick={onClick}
+    >
+      <AnimationWrapper center>
+        <Animator borderRadius="50%" center>
+          {children}
+        </Animator>
+      </AnimationWrapper>
+    </StyledButton>
+  );
+}

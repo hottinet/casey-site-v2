@@ -11,7 +11,7 @@ import Heading from '~/components/typography/Heading';
 import { AuthContext } from '~/contexts/authContext';
 
 import { Box } from '../box/Box';
-import IconButton from '../buttons/IconButton';
+import { IconButton } from '../buttons/IconButton';
 import Pickle from '../pickles/Pickle';
 
 const Input = styled.input(({ theme }) => ({

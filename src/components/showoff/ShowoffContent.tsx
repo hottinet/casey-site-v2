@@ -32,7 +32,12 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
         <Text as="span" color={color} variant="title-lg">
           {title}
         </Text>
-        <ArrowButton forceHover={isHovered} title="" onClick={undefined} />
+        <ArrowButton
+          color={color}
+          forceHover={isHovered}
+          title=""
+          onClick={undefined}
+        />
       </FlexBox>
     </Link>
   );
