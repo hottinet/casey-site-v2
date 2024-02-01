@@ -8,6 +8,7 @@ import {
   ContentContainer,
   useContentContainerPadding,
 } from '~/components/ContentContainer';
+import { Link } from '~/components/Link';
 import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { ShowoffContent } from '~/components/showoff/ShowoffContent';
@@ -86,6 +87,48 @@ function HomePage() {
               title="Launching a baby registry product"
             />
           </GridBox>
+        </ContentContainer>
+        <ShowoffBlock
+          backgroundColor="blue"
+          borderRadius={isXxs ? 0 : 30}
+          color="textSecondary"
+          imageAlt="Zola Budget Tool on an iPhone"
+          imageAspectRatio="356/515"
+          imageSrc="/Home/onboarding.png"
+          linkHref=""
+          marginX={isXxs ? 0 : contentPadding}
+          marginY={pxToRem(140)}
+          tags={['zola', 'ios']}
+          title="Building a Wedding Budget Tool"
+        />
+        <ContentContainer>
+          <FlexBox flexDirection="column" gap={40}>
+            <Text as="p" variant="body">
+              Other Projects
+            </Text>
+            <GridBox columns={3} gap={40}>
+              <Link href="" internal>
+                <Text as="span" variant="title">
+                  Building digital fitness classes
+                </Text>
+              </Link>
+              <Link href="" internal>
+                <Text as="span" variant="title">
+                  Rediscovering the Core Customer
+                </Text>
+              </Link>
+              <Link href="" internal>
+                <Text as="span" variant="title">
+                  Designing a live class experience for fitness
+                </Text>
+              </Link>
+              <Link href="" internal>
+                <Text as="span" variant="title">
+                  Improving fitness content creation and consumption
+                </Text>
+              </Link>
+            </GridBox>
+          </FlexBox>
         </ContentContainer>
       </FlexBox>
     </Layout>
