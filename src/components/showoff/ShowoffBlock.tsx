@@ -1,7 +1,10 @@
 import Image from 'next/image';
 
 import { pxToRem } from '~/utils/pxToRem';
-import { useBreakpointsIsExactly } from '~/utils/useBreakpoints';
+import {
+  useBreakpointsIsExactly,
+  useBreakpointsLessThan,
+} from '~/utils/useBreakpoints';
 
 import { Box } from '../box/Box';
 import { GridBox } from '../box/GridBox';
@@ -19,9 +22,13 @@ export function ShowoffBlock({
   marginX,
   imageAspectRatio,
   marginY,
+  imageMaxWidth = pxToRem(442),
+  smScreenImageHeight = pxToRem(444),
   ...gridBoxProps
 }: ShowoffBlockProps) {
   const exactlySm = useBreakpointsIsExactly('sm');
+  const smAndDown = useBreakpointsLessThan('md');
+  const xsAndDown = useBreakpointsLessThan('sm');
   const blockHeight = pxToRem(450);
 
   return (
@@ -29,22 +36,28 @@ export function ShowoffBlock({
       <GridBox
         backgroundColor={backgroundColor}
         color={color}
-        columns={2}
-        height={blockHeight}
+        columns={xsAndDown ? 1 : 2}
+        height={xsAndDown ? undefined : blockHeight}
         paddingRight={48}
         {...gridBoxProps}
       >
         <Box
           display="flex"
-          height={exactlySm ? blockHeight : undefined}
+          height={
+            exactlySm
+              ? blockHeight
+              : xsAndDown
+                ? smScreenImageHeight
+                : undefined
+          }
           justifyContent="center"
           paddingY={exactlySm ? 24 : 0}
         >
           {/*
-            At the sm breakpoint, the image should be "inside" the block,
+            At the sm breakpoint and below, the image should be "inside" the block,
             rather than "floating"
           */}
-          {exactlySm && (
+          {smAndDown && (
             <Box
               aspectRatio={imageAspectRatio}
               height="100%"
@@ -61,7 +74,7 @@ export function ShowoffBlock({
           title={title}
         />
       </GridBox>
-      {!exactlySm && (
+      {!xsAndDown && (
         <Box
           display="flex"
           height="100%"
@@ -76,8 +89,7 @@ export function ShowoffBlock({
             display="flex"
             height="100%"
             justifyContent="center"
-            // Width from design
-            maxWidth={pxToRem(442)}
+            maxWidth={imageMaxWidth}
             width="100%"
           >
             <Box

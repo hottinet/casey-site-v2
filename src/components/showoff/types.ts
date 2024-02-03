@@ -1,5 +1,6 @@
 import { Color } from '~/typings/theme';
 
+import { BoxProps } from '../box/Box';
 import { GridBoxProps } from '../box/GridBox';
 
 export interface ShowoffBlockProps
@@ -12,4 +13,6 @@ export interface ShowoffBlockProps
   color: Color;
   backgroundColor: Color;
   imageAspectRatio: string;
+  imageMaxWidth?: BoxProps['maxWidth'];
+  smScreenImageHeight?: BoxProps['height'];
 }

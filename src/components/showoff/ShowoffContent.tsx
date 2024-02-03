@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import upperCase from 'lodash.uppercase';
 import { useState } from 'react';
 
+import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
+
 import { FlexBox } from '../box/FlexBox';
 import { ArrowButton } from '../buttons/ArrowButton';
 import { Link } from '../Link';
@@ -19,6 +21,7 @@ interface ShowoffLinkProps
 
 function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const smDown = useBreakpointsLessThan('md');
 
   return (
     <Link
@@ -29,7 +32,7 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <FlexBox flexDirection="column" gap={8}>
-        <Text as="span" color={color} variant="title-lg">
+        <Text as="span" color={color} variant={smDown ? 'title' : 'title-lg'}>
           {title}
         </Text>
         <ArrowButton
@@ -66,8 +69,8 @@ export function ShowoffContent({
             ))}
           </TagList>
         )}
-        <ShowoffLink color={color} linkHref={linkHref} title={title} />
       </FlexBox>
+      <ShowoffLink color={color} linkHref={linkHref} title={title} />
     </FlexBox>
   );
 }

@@ -16,7 +16,7 @@ import { Text } from '~/components/typography/Text';
 import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsAtLeast,
-  useBreakpointsIsExactly,
+  useBreakpointsLessThan,
 } from '~/utils/useBreakpoints';
 
 const TitleContainer = styled(Box)`
@@ -26,7 +26,7 @@ const TitleContainer = styled(Box)`
 
 function HomePage() {
   const mdUp = useBreakpointsAtLeast('md');
-  const isXxs = useBreakpointsIsExactly('xxs');
+  const belowSm = useBreakpointsLessThan('sm');
   const contentPadding = useContentContainerPadding();
 
   return (
@@ -61,14 +61,15 @@ function HomePage() {
         </ContentContainer>
         <ShowoffBlock
           backgroundColor="green"
-          borderRadius={isXxs ? 0 : 30}
+          borderRadius={belowSm ? 0 : 30}
           color="textSecondary"
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
           linkHref=""
-          marginX={isXxs ? 0 : contentPadding}
+          marginX={belowSm ? 0 : contentPadding}
           marginY={pxToRem(140)}
+          paddingX={belowSm ? contentPadding : 0}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
@@ -90,14 +91,15 @@ function HomePage() {
         </ContentContainer>
         <ShowoffBlock
           backgroundColor="blue"
-          borderRadius={isXxs ? 0 : 30}
+          borderRadius={belowSm ? 0 : 30}
           color="textSecondary"
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"
           linkHref=""
-          marginX={isXxs ? 0 : contentPadding}
+          marginX={belowSm ? 0 : contentPadding}
           marginY={pxToRem(140)}
+          paddingX={belowSm ? contentPadding : 0}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
