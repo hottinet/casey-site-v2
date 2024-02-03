@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { pxToRem } from '~/utils/pxToRem';
+import { useBreakpointsIsExactly } from '~/utils/useBreakpoints';
 
 import { Box } from '../box/Box';
 import { GridBox } from '../box/GridBox';
@@ -20,17 +21,39 @@ export function ShowoffBlock({
   marginY,
   ...gridBoxProps
 }: ShowoffBlockProps) {
+  const exactlySm = useBreakpointsIsExactly('sm');
+  const blockHeight = pxToRem(450);
+
   return (
     <Box marginX={marginX} marginY={marginY} position="relative">
       <GridBox
         backgroundColor={backgroundColor}
         color={color}
         columns={2}
-        height={pxToRem(450)}
+        height={blockHeight}
         paddingRight={48}
         {...gridBoxProps}
       >
-        <Box />
+        <Box
+          display="flex"
+          height={exactlySm ? blockHeight : undefined}
+          justifyContent="center"
+          paddingY={exactlySm ? 24 : 0}
+        >
+          {/*
+            At the sm breakpoint, the image should be "inside" the block,
+            rather than "floating"
+          */}
+          {exactlySm && (
+            <Box
+              aspectRatio={imageAspectRatio}
+              height="100%"
+              position="relative"
+            >
+              <Image alt={imageAlt} fill src={imageSrc} />
+            </Box>
+          )}
+        </Box>
         <ShowoffContent
           color={color}
           linkHref={linkHref}
@@ -38,28 +61,35 @@ export function ShowoffBlock({
           title={title}
         />
       </GridBox>
-      <Box
-        display="flex"
-        height="100%"
-        justifyContent="center"
-        left={0}
-        position="absolute"
-        top={0}
-        width="50%"
-      >
+      {!exactlySm && (
         <Box
-          alignItems="center"
           display="flex"
           height="100%"
           justifyContent="center"
-          maxWidth={pxToRem(442)}
-          width="100%"
+          left={0}
+          position="absolute"
+          top={0}
+          width="50%"
         >
-          <Box aspectRatio={imageAspectRatio} position="relative" width="100%">
-            <Image alt={imageAlt} fill src={imageSrc} />
+          <Box
+            alignItems="center"
+            display="flex"
+            height="100%"
+            justifyContent="center"
+            // Width from design
+            maxWidth={pxToRem(442)}
+            width="100%"
+          >
+            <Box
+              aspectRatio={imageAspectRatio}
+              position="relative"
+              width="100%"
+            >
+              <Image alt={imageAlt} fill src={imageSrc} />
+            </Box>
           </Box>
         </Box>
-      </Box>
+      )}
     </Box>
   );
 }

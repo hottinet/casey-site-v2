@@ -28,12 +28,12 @@ export function NavBar() {
         >
           <ContentContainer>
             <FlexBox gap={48} height="fit-content" marginY={16}>
-              <Link href={HOME_ROUTE}>
+              <Link href={HOME_ROUTE} internal>
                 <Body bold mb={0}>
                   Home
                 </Body>
               </Link>
-              <Link href={ABOUT_ROUTE}>
+              <Link href={ABOUT_ROUTE} internal>
                 <Body bold mb={0}>
                   About
                 </Body>
