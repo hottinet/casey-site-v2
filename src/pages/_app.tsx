@@ -111,7 +111,7 @@ function Page({ Component, pageProps }: AppProps) {
       <BreakpointsContext.Provider value={windowBreakpoints}>
         <PortalImageContext.Provider value={portalImageRef}>
           <Global styles={globalStyles} />
-          <GlobalWrapper flexDirection="column">
+          <GlobalWrapper flexDirection="column" minHeight="100%">
             <HoverTarget ref={portalImageRef} />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />

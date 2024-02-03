@@ -7,6 +7,7 @@ import NextProjectPickle from '../pickles/NextProjectPickle';
 import Heading from '../typography/Heading';
 
 const OuterFooterWrapper = styled.div(({ theme }) => ({
+  marginTop: 'auto',
   padding: `${theme.spacing[48]} ${theme.spacing[24]}`,
   [theme.breakpoints.md]: {
     padding: theme.spacing[48],
