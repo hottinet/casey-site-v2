@@ -31,7 +31,7 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <FlexBox flexDirection="column" gap={8}>
+      <FlexBox flexDirection="column" gap={16}>
         <Text as="span" color={color} variant={smDown ? 'title' : 'title-lg'}>
           {title}
         </Text>

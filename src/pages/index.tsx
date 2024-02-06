@@ -25,12 +25,13 @@ const TitleContainer = styled(Box)`
 `;
 
 function HomePage() {
+  const lgUp = useBreakpointsAtLeast('lg');
   const mdUp = useBreakpointsAtLeast('md');
   const belowSm = useBreakpointsLessThan('sm');
   const contentPadding = useContentContainerPadding();
 
-  const showoffMarginY = belowSm ? pxToRem(100) : pxToRem(140);
-  const showoffPaddingX = belowSm ? contentPadding : 0;
+  const showoffMarginY = mdUp ? pxToRem(140) : pxToRem(100);
+  const showoffPaddingX = belowSm ? contentPadding : undefined;
   const showoffMarginX = belowSm ? 0 : contentPadding;
 
   return (
@@ -40,10 +41,10 @@ function HomePage() {
           alignItems="center"
           display="flex"
           flexDirection="column"
-          gap={24}
+          gap={32}
           marginTop={32}
         >
-          <Box paddingX={48} width="100%">
+          <Box paddingX={0} width="100%">
             <TitleContainer position="relative" width="100%">
               <Image
                 alt="Casey Bradford"
@@ -52,7 +53,7 @@ function HomePage() {
               />
             </TitleContainer>
           </Box>
-          <Box maxWidth="869px" width="fit-content">
+          <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
             <Text
               as="p"
               textAlign="center"
@@ -78,7 +79,11 @@ function HomePage() {
           title="Building a Wedding Budget Tool"
         />
         <ContentContainer>
-          <GridBox alignItems="start" columns={belowSm ? 1 : 2} gap={40}>
+          <GridBox
+            alignItems="start"
+            columns={belowSm ? 1 : 2}
+            gap={belowSm ? 64 : 40}
+          >
             <ShowoffContent
               color="text"
               linkHref=""
@@ -112,7 +117,7 @@ function HomePage() {
             <Text as="p" variant="body">
               Other Projects
             </Text>
-            <GridBox columns={belowSm ? 1 : 3} gap={40}>
+            <GridBox columns={mdUp ? 3 : 1} gap={40}>
               <Link href="" internal>
                 <Text as="span" variant="title">
                   Building digital fitness classes

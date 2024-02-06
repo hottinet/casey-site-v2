@@ -27,7 +27,7 @@ export function NavBar() {
           zIndex={999}
         >
           <ContentContainer>
-            <FlexBox gap={48} height="fit-content" marginY={16}>
+            <FlexBox gap={32} height="fit-content" marginY={16}>
               <Link href={HOME_ROUTE} internal>
                 <Body bold mb={0}>
                   Home
