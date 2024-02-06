@@ -13,7 +13,7 @@ import { ShowoffBlockProps } from './types';
 const TagList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: ${({ theme }) => theme.spacing[8]};
+  gap: ${({ theme }) => theme.spacing[16]};
 `;
 
 interface ShowoffLinkProps
@@ -56,8 +56,8 @@ export function ShowoffContent({
   title,
 }: ShowoffContentProps) {
   return (
-    <FlexBox flexDirection="column" justifyContent="center">
-      <FlexBox flexWrap="wrap" gap={8}>
+    <FlexBox flexDirection="column" gap={8} justifyContent="center">
+      <FlexBox flexWrap="wrap">
         {tags && (
           <TagList>
             {tags.map((t) => (

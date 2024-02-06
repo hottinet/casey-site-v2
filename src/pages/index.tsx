@@ -29,6 +29,10 @@ function HomePage() {
   const belowSm = useBreakpointsLessThan('sm');
   const contentPadding = useContentContainerPadding();
 
+  const showoffMarginY = belowSm ? pxToRem(100) : pxToRem(140);
+  const showoffPaddingX = belowSm ? contentPadding : 0;
+  const showoffMarginX = belowSm ? 0 : contentPadding;
+
   return (
     <Layout>
       <FlexBox flexDirection="column" height="100%" width="100%">
@@ -67,14 +71,14 @@ function HomePage() {
           imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
           linkHref=""
-          marginX={belowSm ? 0 : contentPadding}
-          marginY={pxToRem(140)}
-          paddingX={belowSm ? contentPadding : 0}
+          marginX={showoffMarginX}
+          marginY={showoffMarginY}
+          paddingX={showoffPaddingX}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
         <ContentContainer>
-          <GridBox alignItems="start" columns={2} gap={40}>
+          <GridBox alignItems="start" columns={belowSm ? 1 : 2} gap={40}>
             <ShowoffContent
               color="text"
               linkHref=""
@@ -97,9 +101,9 @@ function HomePage() {
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"
           linkHref=""
-          marginX={belowSm ? 0 : contentPadding}
-          marginY={pxToRem(140)}
-          paddingX={belowSm ? contentPadding : 0}
+          marginX={showoffMarginX}
+          marginY={showoffMarginY}
+          paddingX={showoffPaddingX}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
@@ -108,7 +112,7 @@ function HomePage() {
             <Text as="p" variant="body">
               Other Projects
             </Text>
-            <GridBox columns={3} gap={40}>
+            <GridBox columns={belowSm ? 1 : 3} gap={40}>
               <Link href="" internal>
                 <Text as="span" variant="title">
                   Building digital fitness classes
