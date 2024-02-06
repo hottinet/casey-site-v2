@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
@@ -28,9 +29,15 @@ function HomePage() {
   const lgUp = useBreakpointsAtLeast('lg');
   const mdUp = useBreakpointsAtLeast('md');
   const belowSm = useBreakpointsLessThan('sm');
+  const exactlySm = !mdUp && !belowSm;
   const contentPadding = useContentContainerPadding();
 
-  const showoffMarginY = mdUp ? pxToRem(140) : pxToRem(100);
+  const showoffMarginTop = mdUp
+    ? pxToRem(140)
+    : exactlySm
+      ? pxToRem(60)
+      : pxToRem(100);
+  const showoffMarginBottom = mdUp ? showoffMarginTop : pxToRem(60);
   const showoffPaddingX = belowSm ? contentPadding : undefined;
   const showoffMarginX = belowSm ? 0 : contentPadding;
 
@@ -72,8 +79,9 @@ function HomePage() {
           imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
           linkHref=""
+          marginBottom={showoffMarginBottom}
+          marginTop={showoffMarginTop}
           marginX={showoffMarginX}
-          marginY={showoffMarginY}
           paddingX={showoffPaddingX}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
@@ -106,8 +114,9 @@ function HomePage() {
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"
           linkHref=""
+          marginBottom={showoffMarginBottom}
+          marginTop={showoffMarginTop}
           marginX={showoffMarginX}
-          marginY={showoffMarginY}
           paddingX={showoffPaddingX}
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"

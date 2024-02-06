@@ -22,8 +22,11 @@ export function ShowoffBlock({
   marginX,
   imageAspectRatio,
   marginY,
+  marginTop,
+  marginBottom,
   imageMaxWidth = pxToRem(442),
   smScreenImageHeight = pxToRem(444),
+  paddingX,
   ...gridBoxProps
 }: ShowoffBlockProps) {
   const exactlySm = useBreakpointsIsExactly('sm');
@@ -32,7 +35,14 @@ export function ShowoffBlock({
   const blockHeight = pxToRem(450);
 
   return (
-    <Box marginX={marginX} marginY={marginY} position="relative">
+    <Box
+      marginBottom={marginBottom}
+      marginTop={marginTop}
+      marginX={marginX}
+      position="relative"
+      // marginY overrides top and bottom even when undefined
+      {...(marginY && { marginY })}
+    >
       <GridBox
         backgroundColor={backgroundColor}
         color={color}
@@ -43,6 +53,7 @@ export function ShowoffBlock({
         paddingBottom={xsAndDown ? 32 : 0}
         paddingRight={xsAndDown ? 0 : 48}
         paddingTop={0}
+        {...(paddingX && { paddingX })}
         {...gridBoxProps}
       >
         <Box
@@ -80,7 +91,7 @@ export function ShowoffBlock({
           title={title}
         />
       </GridBox>
-      {!xsAndDown && (
+      {!smAndDown && (
         <Box
           display="flex"
           height="100%"
