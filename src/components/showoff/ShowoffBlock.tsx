@@ -37,13 +37,18 @@ export function ShowoffBlock({
         backgroundColor={backgroundColor}
         color={color}
         columns={xsAndDown ? 1 : 2}
+        gap={xsAndDown ? 0 : 8}
+        gridTemplateRows={xsAndDown ? 'auto auto' : '1fr'}
         height={xsAndDown ? undefined : blockHeight}
-        paddingRight={48}
+        paddingBottom={xsAndDown ? 32 : 0}
+        paddingRight={xsAndDown ? 0 : 48}
+        paddingTop={0}
         {...gridBoxProps}
       >
         <Box
           display="flex"
           height={
+            // eslint-disable-next-line no-nested-ternary
             exactlySm
               ? blockHeight
               : xsAndDown
@@ -62,6 +67,7 @@ export function ShowoffBlock({
               aspectRatio={imageAspectRatio}
               height="100%"
               position="relative"
+              transform={xsAndDown ? 'translateY(-10%) scale(1.1)' : 'none'}
             >
               <Image alt={imageAlt} fill src={imageSrc} />
             </Box>
