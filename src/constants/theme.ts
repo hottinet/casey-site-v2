@@ -10,18 +10,17 @@ const breakpointValues = {
 };
 
 const colors = {
-  background: '#F8EDE0',
-  sand: '#F8EDE0',
+  background: '#fd9e88',
   text: '#000',
   textSecondary: '#fff',
   textQuote: '#727272',
   black: '#000',
   white: '#fff',
-  green: '#416B63',
-  blue: '#5582F7',
-  yellow: '#d48126',
-  red: '#b13627',
-} as const;
+  pink: '#fd9e88',
+  red: '#e44116',
+  blue: '#3475cc',
+  yellow: '#f1e339',
+};
 
 const theme = {
   breakpointValues,
@@ -79,7 +78,10 @@ const theme = {
     48: pxToRem(48),
     64: pxToRem(64),
   },
-  fontFamily: "'Raleway', sans-serif",
+  fontFamily: {
+    normal: '"Public Sans", sans-serif',
+    title: '"miller-text",serif',
+  },
   lineHeight: {
     body: 1.5,
     regular: 1,

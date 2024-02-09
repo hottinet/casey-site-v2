@@ -72,7 +72,7 @@ function HomePage() {
           </Box>
         </ContentContainer>
         <ShowoffBlock
-          backgroundColor="green"
+          backgroundColor="red"
           borderRadius={belowSm ? 0 : 30}
           color="textSecondary"
           imageAlt="Zola Budget Tool on an iPhone"

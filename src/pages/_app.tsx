@@ -24,7 +24,8 @@ const baseStyle = css`
 `;
 
 const globalStyles = css`
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+  @import url('https://use.typekit.net/lrw6qnz.css');
+  @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap')
   html {
     background-color: ${theme.colors.background};
     ${baseStyle};

@@ -66,7 +66,7 @@ export const Text = styled('span')<TextProps>(({
 
   return {
     fontWeight: theme.fontWeight.regular,
-    fontFamily: theme.fontFamily,
+    fontFamily: theme.fontFamily.normal,
     fontSize,
     ...filterCssProps(rest, theme),
   };

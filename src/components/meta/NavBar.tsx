@@ -1,5 +1,3 @@
-// import { useRouter } from 'next/router';
-
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
@@ -9,7 +7,7 @@ import { FlexBox } from '../box/FlexBox';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
 import { Link } from '../Link';
-import Body from '../typography/Body';
+import { Text } from '../typography/Text';
 
 export function NavBar() {
   // const { pathname } = useRouter();
@@ -23,20 +21,17 @@ export function NavBar() {
         <Box
           backgroundColor="background"
           position="fixed"
+          top={0}
           width="100%"
           zIndex={999}
         >
           <ContentContainer>
             <FlexBox gap={32} height="fit-content" marginY={16}>
               <Link href={HOME_ROUTE} internal>
-                <Body bold mb={0}>
-                  Home
-                </Body>
+                <Text fontWeight={600}>Home</Text>
               </Link>
               <Link href={ABOUT_ROUTE} internal>
-                <Body bold mb={0}>
-                  About
-                </Body>
+                <Text fontWeight={600}>About</Text>
               </Link>
             </FlexBox>
           </ContentContainer>
