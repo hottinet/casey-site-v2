@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
@@ -15,7 +14,6 @@ import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { ShowoffContent } from '~/components/showoff/ShowoffContent';
 import { Text } from '~/components/typography/Text';
-import theme from '~/constants/theme';
 import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsAtLeast,
@@ -27,17 +25,9 @@ const TitleContainer = styled(Box)`
   aspect-ratio: 637 / 118;
 `;
 
-const globals = css`
-  html {
-    background-image: linear-gradient(
-      ${theme.colors.pink},
-      ${theme.colors.pinkLight}
-    );
-  }
-  body {
-    background-color: transparent;
-  }
-`;
+const HomeLayout = styled(Layout)(({ theme }) => ({
+  backgroundImage: `linear-gradient(${theme.colors.pink}, ${theme.colors.pinkLight})`,
+}));
 
 function HomePage() {
   const lgUp = useBreakpointsAtLeast('lg');
@@ -56,7 +46,7 @@ function HomePage() {
   const showoffMarginX = belowSm ? 0 : contentPadding;
 
   return (
-    <Layout globalStyles={globals}>
+    <HomeLayout>
       <FlexBox flexDirection="column" height="100%" width="100%">
         <ContentContainer
           alignItems="center"
@@ -165,7 +155,7 @@ function HomePage() {
           </FlexBox>
         </ContentContainer>
       </FlexBox>
-    </Layout>
+    </HomeLayout>
   );
 }
 
