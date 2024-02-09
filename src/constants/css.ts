@@ -90,7 +90,11 @@ type RawAllowedCommonCssProps = {
   [k in (typeof ALLOWED_COMMON_CSS_KEYS)[number]]?: CSS.Properties[k];
 };
 
-export const ALLOWED_TEXT_CSS_KEYS = ['lineHeight', 'lineClamp'] as const;
+export const ALLOWED_TEXT_CSS_KEYS = [
+  'lineHeight',
+  'lineClamp',
+  'textTransform',
+] as const;
 
 type RawAllowedTextCssProps = {
   [k in (typeof ALLOWED_TEXT_CSS_KEYS)[number]]?: CSS.Properties[k];

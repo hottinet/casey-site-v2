@@ -17,6 +17,7 @@ const colors = {
   black: '#000',
   white: '#fff',
   pink: '#fd9e88',
+  pinkLight: '#ffceac',
   red: '#e44116',
   blue: '#3475cc',
   yellow: '#f1e339',

@@ -1,3 +1,4 @@
+import { css, Global } from '@emotion/react';
 import { useRouter } from 'next/router';
 import { PropsWithChildren, useMemo, useState } from 'react';
 
@@ -9,7 +10,16 @@ import { Footer } from './Footer';
 import Head from './Head';
 import { NavBar } from './NavBar';
 
-export function Layout({ children }: PropsWithChildren<unknown>) {
+interface LayoutProps {
+  pageTitle?: string;
+  globalStyles?: ReturnType<typeof css>;
+}
+
+export function Layout({
+  children,
+  pageTitle,
+  globalStyles,
+}: PropsWithChildren<LayoutProps>) {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const { pathname } = useRouter();
   const isRestricted = RESTRICTED_ROUTES.includes(pathname);
@@ -25,7 +35,8 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
 
   return (
     <AuthContext.Provider value={authContextVal}>
-      <Head title="Casey Bradford" />
+      <Head title={pageTitle || 'Casey Bradford'} />
+      {globalStyles && <Global styles={globalStyles} />}
       <NavBar />
       {!isAuthorized && isRestricted ? <AuthOverlay /> : children}
       <Footer nextPath={nextPath} />

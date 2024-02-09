@@ -25,16 +25,15 @@ const baseStyle = css`
 
 const globalStyles = css`
   @import url('https://use.typekit.net/lrw6qnz.css');
-  @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap')
+  @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
   html {
-    background-color: ${theme.colors.background};
     ${baseStyle};
   }
   body {
     ${baseStyle};
     position: relative;
     box-sizing: border-box;
-    font-family: ${theme.fontFamily};
+    font-family: ${theme.fontFamily.normal};
     color: ${theme.colors.text};
   }
   #app,

@@ -26,7 +26,15 @@ export function NavBar() {
           zIndex={999}
         >
           <ContentContainer>
-            <FlexBox gap={32} height="fit-content" marginY={16}>
+            <FlexBox
+              alignItems="center"
+              gap={32}
+              height="fit-content"
+              marginY={16}
+            >
+              <Text as="p" fontWeight={600} textTransform="uppercase">
+                Casey Bradford
+              </Text>
               <Link href={HOME_ROUTE} internal>
                 <Text fontWeight={600}>Home</Text>
               </Link>
