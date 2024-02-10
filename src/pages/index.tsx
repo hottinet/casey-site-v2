@@ -44,6 +44,7 @@ function HomePage() {
   const showoffMarginBottom = mdUp ? showoffMarginTop : pxToRem(60);
   const showoffPaddingX = belowSm ? contentPadding : undefined;
   const showoffMarginX = belowSm ? 0 : contentPadding;
+  const showoffBorderRadius = belowSm ? '150px 150px 0 0' : 999;
 
   return (
     <HomeLayout>
@@ -78,7 +79,7 @@ function HomePage() {
         </ContentContainer>
         <ShowoffBlock
           backgroundColor="red"
-          borderRadius={belowSm ? 0 : 999}
+          borderRadius={showoffBorderRadius}
           color="textSecondary"
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
@@ -114,7 +115,7 @@ function HomePage() {
         </ContentContainer>
         <ShowoffBlock
           backgroundColor="blue"
-          borderRadius={belowSm ? 0 : 999}
+          borderRadius={showoffBorderRadius}
           color="textSecondary"
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"

@@ -60,7 +60,10 @@ export function ShowoffBlock({
       {...(marginY && { marginY })}
     >
       <GridBox
-        backgroundImage={getGradient(theme.colors[backgroundColor])}
+        backgroundColor={xsAndDown ? theme.colors[backgroundColor] : undefined}
+        backgroundImage={
+          xsAndDown ? undefined : getGradient(theme.colors[backgroundColor])
+        }
         color={color}
         columns={xsAndDown ? 1 : 2}
         gap={xsAndDown ? 0 : 8}
