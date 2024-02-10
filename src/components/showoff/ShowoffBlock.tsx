@@ -1,5 +1,7 @@
+import { useTheme } from '@emotion/react';
 import Image from 'next/image';
 
+import { hexToRgb } from '~/utils/css';
 import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsIsExactly,
@@ -10,6 +12,18 @@ import { Box } from '../box/Box';
 import { GridBox } from '../box/GridBox';
 import { ShowoffContent } from './ShowoffContent';
 import { ShowoffBlockProps } from './types';
+
+const getGradient = (hex: string) => {
+  const rgb = hexToRgb(hex);
+  if (rgb) {
+    const { r, g, b } = rgb;
+    const full = `rgba(${r}, ${g}, ${b}, 1)`;
+    const half = `rgba(${r}, ${g}, ${b}, 0.5)`;
+
+    return `linear-gradient(to left, ${full}, ${full} 50%, ${half})`;
+  }
+  return undefined;
+};
 
 export function ShowoffBlock({
   imageSrc,
@@ -29,6 +43,7 @@ export function ShowoffBlock({
   paddingX,
   ...gridBoxProps
 }: ShowoffBlockProps) {
+  const theme = useTheme();
   const exactlySm = useBreakpointsIsExactly('sm');
   const smAndDown = useBreakpointsLessThan('md');
   const xsAndDown = useBreakpointsLessThan('sm');
@@ -44,7 +59,8 @@ export function ShowoffBlock({
       {...(marginY && { marginY })}
     >
       <GridBox
-        backgroundColor={backgroundColor}
+        // backgroundColor={backgroundColor}
+        backgroundImage={getGradient(theme.colors[backgroundColor])}
         color={color}
         columns={xsAndDown ? 1 : 2}
         gap={xsAndDown ? 0 : 8}
