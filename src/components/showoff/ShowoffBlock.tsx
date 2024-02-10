@@ -59,7 +59,6 @@ export function ShowoffBlock({
       {...(marginY && { marginY })}
     >
       <GridBox
-        // backgroundColor={backgroundColor}
         backgroundImage={getGradient(theme.colors[backgroundColor])}
         color={color}
         columns={xsAndDown ? 1 : 2}

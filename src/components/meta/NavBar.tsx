@@ -34,8 +34,8 @@ export function NavBar({ layoutClassName }: NavBarProps) {
       const scrollPercent = window.scrollY / maxHeight;
       // The navbar changes colors faster than the body
       // because the scroll position is "below" the navbar position
-      // so we just cap it at 80% to stop it from looking TOO off
-      const maxScrollPercent = Math.min(0.8, scrollPercent);
+      // so we just cap it at 75% to stop it from looking TOO off
+      const maxScrollPercent = Math.min(0.7, scrollPercent);
       bgRef!.style.transform = `translateY(-${maxScrollPercent * 100}%)`;
     }, 100);
 

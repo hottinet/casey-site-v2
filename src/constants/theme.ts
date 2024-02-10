@@ -61,6 +61,7 @@ const theme = {
     30: pxToRem(30),
     round: '50%',
     200: pxToRem(200),
+    999: pxToRem(999),
   },
   fontSize: {
     caption: pxToRem(10),
