@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import throttle from 'lodash.throttle';
 import { useEffect, useState } from 'react';
 
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
@@ -17,7 +18,6 @@ const NavBackground = styled('div')`
   width: 100%;
   z-index: -1;
   opacity: 0.9;
-  /* backdrop-filter: blur(100px); */
 `;
 
 interface NavBarProps {
@@ -29,12 +29,25 @@ export function NavBar({ layoutClassName }: NavBarProps) {
   const [bgRef, setBgRef] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const onScroll = throttle(() => {
+      const maxHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = window.scrollY / maxHeight;
+      // The navbar changes colors faster than the body
+      // because the scroll position is "below" the navbar position
+      // so we just cap it at 80% to stop it from looking TOO off
+      const maxScrollPercent = Math.min(0.8, scrollPercent);
+      bgRef!.style.transform = `translateY(-${maxScrollPercent * 100}%)`;
+    }, 100);
+
     if (bgRef) {
-      const pageHeight = document.getElementsByTagName('html')[0].scrollHeight;
+      const pageHeight = document.body.scrollHeight;
       bgRef.style.height = `${pageHeight}px`;
 
-      // const onScroll =
+      window.addEventListener('scroll', onScroll);
     }
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
   }, [bgRef]);
 
   if (smUp) {
