@@ -14,6 +14,7 @@ import { Divider } from '../Divider';
 import { Hamburger } from '../icons/Hamburger';
 import { Link } from '../Link';
 import { Text } from '../typography/Text';
+import { SmNavMenu } from './SmNavMenu';
 
 const NavBackground = styled('div')`
   position: absolute;
@@ -23,11 +24,23 @@ const NavBackground = styled('div')`
   transition: transform 0.2s ease-in-out;
 `;
 
+const navGap = 32;
+
+const Nav = styled('nav')`
+  align-items: center;
+  display: flex;
+  gap: ${({ theme }) => theme.spacing[navGap]};
+  height: 100%;
+  justify-content: flex-start;
+`;
+
 interface NavBarProps {
   layoutClassName?: string;
 }
 
 export function NavBar({ layoutClassName }: NavBarProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const smUp = useBreakpointsAtLeast('sm');
   const [bgRef, setBgRef] = useState<HTMLDivElement | null>(null);
 
@@ -76,7 +89,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
         <ContentContainer>
           <FlexBox
             alignItems="center"
-            gap={32}
+            gap={navGap}
             height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT}
             justifyContent={smUp ? 'flex-start' : 'space-between'}
           >
@@ -84,16 +97,19 @@ export function NavBar({ layoutClassName }: NavBarProps) {
               Casey Bradford
             </Text>
             {smUp ? (
-              <>
+              <Nav>
                 <Link href={HOME_ROUTE} internal>
                   <Text fontWeight={600}>Home</Text>
                 </Link>
                 <Link href={ABOUT_ROUTE} internal>
                   <Text fontWeight={600}>About</Text>
                 </Link>
-              </>
+              </Nav>
             ) : (
-              <IconButton transform="translateX(25%)">
+              <IconButton
+                transform="translateX(25%)"
+                onClick={() => setMenuOpen(true)}
+              >
                 <Hamburger
                   color="text"
                   title="Open menu"
@@ -105,6 +121,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
         </ContentContainer>
         <Divider />
       </Box>
+      {!smUp && <SmNavMenu isOpen={menuOpen} setIsOpen={setMenuOpen} />}
     </>
   );
 }

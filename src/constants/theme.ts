@@ -69,6 +69,7 @@ const theme = {
     body: pxToRem(16),
     heading: pxToRem(20),
     title: pxToRem(36),
+    titleLg: pxToRem(64),
     10: pxToRem(10),
     14: pxToRem(14),
     16: pxToRem(16),

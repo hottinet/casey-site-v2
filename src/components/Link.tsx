@@ -17,6 +17,7 @@ export type LinkProps = {
   onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
   onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
   noHoverStyles?: boolean;
+  onClick?: MouseEventHandler<HTMLSpanElement>;
 };
 
 type HoverImageLinkProps = LinkProps & {
@@ -95,6 +96,7 @@ export function Link(
     onMouseEnter,
     onMouseLeave,
     noHoverStyles,
+    onClick,
   } = props;
   const { hoverImgSrc, hoverImgAlt } = props as HoverImageLinkProps;
   const [isHovered, setIsHovered] = useState(false);
@@ -128,7 +130,11 @@ export function Link(
             Hack to allow mouseEvents inside nextjs links
             See https://github.com/vercel/next.js/issues/1490
           */}
-        <OnMouseSpan onMouseEnter={onEnter} onMouseLeave={onLeave}>
+        <OnMouseSpan
+          onClick={onClick}
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
+        >
           {children}
         </OnMouseSpan>
       </StyledLink>
