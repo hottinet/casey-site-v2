@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Color } from '~/typings/theme';
 
 import Arrow from '../icons/Arrow';
-import { IconButton } from './IconButton';
+import { RotatingIconButton } from './RotatingIconButton';
 import { ButtonProps } from './types';
 
 type ArrowButtonProps = Pick<ButtonProps, 'onClick' | 'variant'> & {
@@ -26,7 +26,7 @@ export function ArrowButton({
   forceHover,
 }: ArrowButtonProps) {
   return (
-    <IconButton
+    <RotatingIconButton
       className={className}
       color={color}
       forceHover={forceHover}
@@ -37,6 +37,6 @@ export function ArrowButton({
         title={`Navigate to ${title}`}
         titleId={`${title}Id`}
       />
-    </IconButton>
+    </RotatingIconButton>
   );
 }

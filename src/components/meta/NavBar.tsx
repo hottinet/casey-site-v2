@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
-import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
 import { Box } from '../box/Box';
 import { FlexBox } from '../box/FlexBox';
+import { IconButton } from '../buttons/IconButton';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
+import { Hamburger } from '../icons/Hamburger';
 import { Link } from '../Link';
 import { Text } from '../typography/Text';
 
@@ -20,6 +21,11 @@ const NavBackground = styled('div')`
   z-index: -1;
   opacity: 0.9;
   transition: transform 0.2s ease-in-out;
+`;
+
+const HamburgerIcon = styled(Hamburger)`
+  height: ${({ theme }) => theme.spacing['24']};
+  width: ${({ theme }) => theme.spacing['24']};
 `;
 
 interface NavBarProps {
@@ -81,7 +87,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
             <Text as="p" fontWeight={600} textTransform="uppercase">
               Casey Bradford
             </Text>
-            {smUp && (
+            {smUp ? (
               <>
                 <Link href={HOME_ROUTE} internal>
                   <Text fontWeight={600}>Home</Text>
@@ -90,6 +96,14 @@ export function NavBar({ layoutClassName }: NavBarProps) {
                   <Text fontWeight={600}>About</Text>
                 </Link>
               </>
+            ) : (
+              <IconButton>
+                <HamburgerIcon
+                  color="text"
+                  title="Open menu"
+                  titleId="nav-menu-button"
+                />
+              </IconButton>
             )}
           </FlexBox>
         </ContentContainer>

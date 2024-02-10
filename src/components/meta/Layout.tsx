@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router';
-import { PropsWithChildren, useMemo, useState } from 'react';
+import { PropsWithChildren } from 'react';
 
-import { NEXT_ROUTE_MAP, RESTRICTED_ROUTES } from '~/constants/routing';
-import { AuthContext } from '~/contexts/authContext';
+import { NEXT_ROUTE_MAP } from '~/constants/routing';
 
 import { FlexBox } from '../box/FlexBox';
-import AuthOverlay from './AuthOverlay';
 import { Footer } from './Footer';
 import Head from './Head';
 import { NavBar } from './NavBar';
@@ -20,21 +18,11 @@ export function Layout({
   pageTitle,
   className,
 }: PropsWithChildren<LayoutProps>) {
-  const [isAuthorized, setIsAuthorized] = useState(false);
   const { pathname } = useRouter();
-  const isRestricted = RESTRICTED_ROUTES.includes(pathname);
   const nextPath = NEXT_ROUTE_MAP[pathname];
 
-  const authContextVal = useMemo(
-    () => ({
-      isAuthorized,
-      setIsAuthorized,
-    }),
-    [isAuthorized, setIsAuthorized]
-  );
-
   return (
-    <AuthContext.Provider value={authContextVal}>
+    <>
       <Head title={pageTitle || 'Casey Bradford'} />
       <FlexBox
         backgroundColor="red"
@@ -44,9 +32,9 @@ export function Layout({
         width="100%"
       >
         <NavBar layoutClassName={className} />
-        {!isAuthorized && isRestricted ? <AuthOverlay /> : children}
+        {children}
         <Footer nextPath={nextPath} />
       </FlexBox>
-    </AuthContext.Provider>
+    </>
   );
 }
