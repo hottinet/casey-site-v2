@@ -60,6 +60,7 @@ function HomePage() {
               <Image
                 alt="Casey Bradford"
                 fill
+                priority
                 src="/Home/casey-bradford-title.svg"
               />
             </TitleContainer>
@@ -87,6 +88,7 @@ function HomePage() {
           marginTop={showoffMarginTop}
           marginX={showoffMarginX}
           paddingX={showoffPaddingX}
+          priority
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />

@@ -15,4 +15,5 @@ export interface ShowoffBlockProps
   imageAspectRatio: string;
   imageMaxWidth?: BoxProps['maxWidth'];
   smScreenImageHeight?: BoxProps['height'];
+  priority?: boolean;
 }

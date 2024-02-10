@@ -1,90 +1,71 @@
 import styled from '@emotion/styled';
 
+// import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 import { FlexBox } from '../box/FlexBox';
+import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
-import { Link, LinkProps } from '../Link';
-import NextProjectPickle from '../pickles/NextProjectPickle';
-import Heading from '../typography/Heading';
-
-const OuterFooterWrapper = styled.div(({ theme }) => ({
-  marginTop: 'auto',
-  padding: `${theme.spacing[48]} ${theme.spacing[24]}`,
-  [theme.breakpoints.md]: {
-    padding: theme.spacing[48],
-  },
-}));
-
-const FooterDivider = styled(Divider)`
-  margin-bottom: ${({ theme }) => theme.spacing[8]};
-`;
-
-const FooterLink = styled(Link)<LinkProps>(({ theme }) => ({
-  ':last-child': {
-    marginRight: 0,
-  },
-  marginTop: theme.spacing[12],
-  width: 'min-content',
-  [theme.breakpoints.sm]: {
-    marginTop: 0,
-    marginRight: theme.spacing[24],
-  },
-}));
-
-const CaseyLink = styled(Link)`
-  text-decoration: none;
-`;
+import { Link } from '../Link';
+import { Text } from '../typography/Text';
 
 const FooterWrapper = styled(FlexBox)`
   flex-direction: column;
-  align-items: flex-start;
   ${({ theme }) => theme.breakpoints.sm} {
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
   }
 `;
 
-const LinkWrapper = styled(FlexBox)`
-  flex-direction: column;
-  margin-left: -0.25rem;
-  ${({ theme }) => theme.breakpoints.sm} {
-    margin-left: 0;
-    flex-direction: row;
-  }
+const FooterLink = styled(Link)`
+  text-transform: uppercase;
 `;
 
 type FooterProps = {
   nextPath?: string;
 };
 
+const links = [
+  {
+    href: 'mailto:caseyebradford@gmail.com',
+    text: 'Email',
+  },
+  {
+    href: 'https://www.linkedin.com/in/caseyebradford/',
+    text: 'LinkedIn',
+  },
+  {
+    href: '/CaseyBradfordResume.pdf',
+    text: 'Resume',
+  },
+];
+
 export function Footer({ nextPath }: FooterProps) {
+  // const lessThanSm = useBreakpointsLessThan('sm');
   return (
-    <>
-      {nextPath && (
-        <FlexBox justifyContent="flex-end" marginTop={64}>
-          <NextProjectPickle nextProjectPath={nextPath} />
-        </FlexBox>
-      )}
-      <OuterFooterWrapper>
-        <FooterDivider />
-        <FooterWrapper justifyContent="space-between">
-          <CaseyLink href="/" internal noHoverStyles>
-            <Heading bold mb={0}>
-              Casey Bradford
-            </Heading>
-          </CaseyLink>
-          <LinkWrapper>
-            <FooterLink href="mailto:caseyebradford@gmail.com">
-              <Heading mb={0}>Email</Heading>
+    <FlexBox
+      flex={1}
+      flexDirection="column"
+      marginTop="auto"
+      paddingTop={40}
+      width="100%"
+    >
+      <Divider width="100%" />
+      <ContentContainer>
+        <FooterWrapper
+          alignItems="center"
+          gap={40}
+          justifyContent="space-between"
+          paddingY={40}
+          width="100%"
+        >
+          {links.map((link) => (
+            <FooterLink href={link.href} key={link.href}>
+              <Text fontWeight={600} variant="title">
+                {link.text}
+              </Text>
             </FooterLink>
-            <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
-              <Heading mb={0}>LinkedIn</Heading>
-            </FooterLink>
-            <FooterLink href="/CaseyBradfordResume.pdf">
-              <Heading mb={0}>Resume</Heading>
-            </FooterLink>
-          </LinkWrapper>
+          ))}
         </FooterWrapper>
-      </OuterFooterWrapper>
-    </>
+      </ContentContainer>
+    </FlexBox>
   );
 }

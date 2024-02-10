@@ -6,7 +6,7 @@ import Body from './typography/Body';
 type DividerProps = {
   label?: string;
   className?: string;
-} & Pick<FlexBoxProps, 'marginBottom' | 'marginTop'>;
+} & FlexBoxProps;
 
 const Segment = styled.div`
   width: 100%;
@@ -18,19 +18,9 @@ const Label = styled(Body)`
   padding: 0 ${({ theme }) => theme.spacing[16]};
 `;
 
-export function Divider({
-  label,
-  className,
-  marginBottom,
-  marginTop,
-}: DividerProps) {
+export function Divider({ label, className, ...flexProps }: DividerProps) {
   return (
-    <FlexBox
-      center
-      className={className}
-      marginBottom={marginBottom}
-      marginTop={marginTop}
-    >
+    <FlexBox center className={className} {...flexProps}>
       {label && (
         <>
           <Segment />

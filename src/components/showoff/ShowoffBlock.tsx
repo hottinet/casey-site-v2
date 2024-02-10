@@ -41,6 +41,7 @@ export function ShowoffBlock({
   imageMaxWidth = pxToRem(442),
   smScreenImageHeight = pxToRem(444),
   paddingX,
+  priority,
   ...gridBoxProps
 }: ShowoffBlockProps) {
   const theme = useTheme();
@@ -95,7 +96,7 @@ export function ShowoffBlock({
               position="relative"
               transform={xsAndDown ? 'translateY(-10%) scale(1.1)' : 'none'}
             >
-              <Image alt={imageAlt} fill src={imageSrc} />
+              <Image alt={imageAlt} fill priority={priority} src={imageSrc} />
             </Box>
           )}
         </Box>
@@ -129,7 +130,7 @@ export function ShowoffBlock({
               position="relative"
               width="100%"
             >
-              <Image alt={imageAlt} fill src={imageSrc} />
+              <Image alt={imageAlt} fill priority={priority} src={imageSrc} />
             </Box>
           </Box>
         </Box>
