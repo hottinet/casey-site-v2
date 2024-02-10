@@ -3,6 +3,7 @@ import throttle from 'lodash.throttle';
 import { useEffect, useState } from 'react';
 
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
+import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
@@ -18,6 +19,7 @@ const NavBackground = styled('div')`
   width: 100%;
   z-index: -1;
   opacity: 0.9;
+  transition: transform 0.2s ease-in-out;
 `;
 
 interface NavBarProps {
@@ -37,7 +39,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
       // so we just cap it at 75% to stop it from looking TOO off
       const maxScrollPercent = Math.min(0.7, scrollPercent);
       bgRef!.style.transform = `translateY(-${maxScrollPercent * 100}%)`;
-    }, 100);
+    }, 200);
 
     if (bgRef) {
       const pageHeight = document.body.scrollHeight;
@@ -50,51 +52,49 @@ export function NavBar({ layoutClassName }: NavBarProps) {
     };
   }, [bgRef]);
 
-  if (smUp) {
-    return (
-      <>
-        {/* Height of the navbar */}
-        <Box height={pxToRem(66)} width="100%" />
-        <Box
-          backdropFilter="blur(2px)"
-          backgroundColor="transparent"
-          overflow="hidden"
-          position="fixed"
-          top={0}
-          width="100%"
-          zIndex={999}
-        >
-          <NavBackground
-            className={layoutClassName}
-            ref={(node) => {
-              if (node) {
-                setBgRef(node);
-              }
-            }}
-          />
-          <ContentContainer>
-            <FlexBox
-              alignItems="center"
-              gap={32}
-              height="fit-content"
-              marginY={16}
-            >
-              <Text as="p" fontWeight={600} textTransform="uppercase">
-                Casey Bradford
-              </Text>
-              <Link href={HOME_ROUTE} internal>
-                <Text fontWeight={600}>Home</Text>
-              </Link>
-              <Link href={ABOUT_ROUTE} internal>
-                <Text fontWeight={600}>About</Text>
-              </Link>
-            </FlexBox>
-          </ContentContainer>
-          <Divider />
-        </Box>
-      </>
-    );
-  }
-
-  return <div>sm screen nav</div>;
+  return (
+    <>
+      <Box height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT} width="100%" />
+      <Box
+        backdropFilter="blur(2px)"
+        backgroundColor="transparent"
+        overflow="hidden"
+        position="fixed"
+        top={0}
+        width="100%"
+        zIndex={999}
+      >
+        <NavBackground
+          className={layoutClassName}
+          ref={(node) => {
+            if (node) {
+              setBgRef(node);
+            }
+          }}
+        />
+        <ContentContainer>
+          <FlexBox
+            alignItems="center"
+            gap={32}
+            height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT}
+          >
+            <Text as="p" fontWeight={600} textTransform="uppercase">
+              Casey Bradford
+            </Text>
+            {smUp && (
+              <>
+                <Link href={HOME_ROUTE} internal>
+                  <Text fontWeight={600}>Home</Text>
+                </Link>
+                <Link href={ABOUT_ROUTE} internal>
+                  <Text fontWeight={600}>About</Text>
+                </Link>
+              </>
+            )}
+          </FlexBox>
+        </ContentContainer>
+        <Divider />
+      </Box>
+    </>
+  );
 }
