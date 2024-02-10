@@ -23,11 +23,6 @@ const NavBackground = styled('div')`
   transition: transform 0.2s ease-in-out;
 `;
 
-const HamburgerIcon = styled(Hamburger)`
-  height: ${({ theme }) => theme.spacing['24']};
-  width: ${({ theme }) => theme.spacing['24']};
-`;
-
 interface NavBarProps {
   layoutClassName?: string;
 }
@@ -42,7 +37,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
       const scrollPercent = window.scrollY / maxHeight;
       // The navbar changes colors faster than the body
       // because the scroll position is "below" the navbar position
-      // so we just cap it at 75% to stop it from looking TOO off
+      // so we just cap it at 70% to stop it from looking TOO off
       const maxScrollPercent = Math.min(0.7, scrollPercent);
       bgRef!.style.transform = `translateY(-${maxScrollPercent * 100}%)`;
     }, 200);
@@ -83,6 +78,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
             alignItems="center"
             gap={32}
             height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT}
+            justifyContent={smUp ? 'flex-start' : 'space-between'}
           >
             <Text as="p" fontWeight={600} textTransform="uppercase">
               Casey Bradford
@@ -97,8 +93,8 @@ export function NavBar({ layoutClassName }: NavBarProps) {
                 </Link>
               </>
             ) : (
-              <IconButton>
-                <HamburgerIcon
+              <IconButton transform="translateX(25%)">
+                <Hamburger
                   color="text"
                   title="Open menu"
                   titleId="nav-menu-button"
