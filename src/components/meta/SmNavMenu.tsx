@@ -10,6 +10,7 @@ import { ContentContainer } from '../ContentContainer';
 import { X } from '../icons/X';
 import { Link } from '../Link';
 import { Text } from '../typography/Text';
+import { footerLinks } from './Footer';
 
 const NavList = styled('ul')`
   display: flex;
@@ -52,7 +53,7 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
       backgroundColor="red"
       bottom={0}
       flexDirection="column"
-      height="100%"
+      height="100vh"
       left={isOpen ? 0 : '9999px'}
       position="absolute"
       top={`${top}px`}
@@ -60,7 +61,7 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
       zIndex={9999}
     >
       {isOpen && <Global styles={openGlobalStyles} />}
-      <ContentContainer display="flex" flexDirection="column">
+      <ContentContainer display="flex" flexDirection="column" height="100%">
         <IconButton
           alignSelf="end"
           transform="translateX(25%)"
@@ -87,6 +88,21 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
             </li>
           </NavList>
         </nav>
+        <FlexBox
+          alignItems="center"
+          flexDirection="column"
+          gap={32}
+          marginBottom={32}
+          marginTop="auto"
+        >
+          {footerLinks.map((link) => (
+            <Link href={link.href} key={link.href}>
+              <Text fontWeight={600} textTransform="uppercase" variant="title">
+                {link.text}
+              </Text>
+            </Link>
+          ))}
+        </FlexBox>
       </ContentContainer>
     </FlexBox>
   );

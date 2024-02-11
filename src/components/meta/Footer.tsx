@@ -23,18 +23,18 @@ type FooterProps = {
   nextPath?: string;
 };
 
-const links = [
+export const footerLinks = [
   {
-    href: 'mailto:caseyebradford@gmail.com',
-    text: 'Email',
+    href: '/CaseyBradfordResume.pdf',
+    text: 'Resume',
   },
   {
     href: 'https://www.linkedin.com/in/caseyebradford/',
     text: 'LinkedIn',
   },
   {
-    href: '/CaseyBradfordResume.pdf',
-    text: 'Resume',
+    href: 'mailto:caseyebradford@gmail.com',
+    text: 'Email',
   },
 ];
 
@@ -57,7 +57,7 @@ export function Footer({ nextPath }: FooterProps) {
           paddingY={40}
           width="100%"
         >
-          {links.map((link) => (
+          {footerLinks.map((link) => (
             <FooterLink href={link.href} key={link.href}>
               <Text fontWeight={600} variant="title">
                 {link.text}
