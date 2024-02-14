@@ -71,6 +71,28 @@ const getFontWeight = (theme: Theme, variantOrAs: VariantOrAs) => {
   }
 };
 
+const getLetterSpacing = (variantOrAs: VariantOrAs) => {
+  switch (variantOrAs) {
+    case 'subtitle3':
+    case 'subtitle2':
+    case 'subtitle1':
+      return '3%';
+    default:
+      return undefined;
+  }
+};
+
+const getTextTransform = (variantOrAs: VariantOrAs) => {
+  switch (variantOrAs) {
+    case 'subtitle3':
+    case 'subtitle2':
+    case 'subtitle1':
+      return 'uppercase';
+    default:
+      return undefined;
+  }
+};
+
 export const Text = styled('span')<TextProps>(({
   as,
   variant,
@@ -80,11 +102,14 @@ export const Text = styled('span')<TextProps>(({
   const fontSize = getFontSize(theme, variant || as || 'bodySmall');
   const fontFamily = getFontFamily(theme, variant || as || 'bodySmall');
   const fontWeight = getFontWeight(theme, variant || as || 'bodySmall');
+  const textTransform = getTextTransform(variant || as || 'bodySmall');
 
   return {
     fontWeight,
     fontFamily,
     fontSize,
+    textTransform,
+    letterSpacing: getLetterSpacing(variant || as || 'bodySmall'),
     ...filterCssProps(rest, theme),
   };
 });
