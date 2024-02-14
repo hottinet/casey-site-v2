@@ -135,25 +135,25 @@ function HomePage() {
             </Text>
             <GridBox columns={mdUp ? 3 : 1} gap={40}>
               <Link
-                href=""
+                href="/bologna"
                 internal
                 label="Building digital fitness classes"
                 variant="title"
               />
               <Link
-                href=""
+                href="/bologna"
                 internal
                 label="Rediscovering the Core Customer"
                 variant="title"
               />
               <Link
-                href=""
+                href="/bologna"
                 internal
                 label="Designing a live class experience for fitness"
                 variant="title"
               />
               <Link
-                href=""
+                href="/bologna"
                 internal
                 label="Improving fitness content creation and consumption"
                 variant="title"

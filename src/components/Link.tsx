@@ -9,6 +9,8 @@ export type BaseLinkProps = {
   href: string;
   className?: string;
   onClick?: MouseEventHandler<HTMLSpanElement>;
+  onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
+  onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
 };
 
 type ChildLinkProps = {
@@ -60,6 +62,8 @@ export function Link({
   href,
   className,
   onClick,
+  onMouseEnter,
+  onMouseLeave,
   ...rest
 }: LinkProps) {
   return (
@@ -73,7 +77,11 @@ export function Link({
             Hack to allow mouseEvents inside nextjs links
             See https://github.com/vercel/next.js/issues/1490
           */}
-      <OnMouseSpan onClick={onClick}>
+      <OnMouseSpan
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         <LinkChildren {...rest} />
       </OnMouseSpan>
     </StyledLink>
