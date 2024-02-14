@@ -134,26 +134,30 @@ function HomePage() {
               Other Projects
             </Text>
             <GridBox columns={mdUp ? 3 : 1} gap={40}>
-              <Link href="" internal>
-                <Text as="span" variant="title">
-                  Building digital fitness classes
-                </Text>
-              </Link>
-              <Link href="" internal>
-                <Text as="span" variant="title">
-                  Rediscovering the Core Customer
-                </Text>
-              </Link>
-              <Link href="" internal>
-                <Text as="span" variant="title">
-                  Designing a live class experience for fitness
-                </Text>
-              </Link>
-              <Link href="" internal>
-                <Text as="span" variant="title">
-                  Improving fitness content creation and consumption
-                </Text>
-              </Link>
+              <Link
+                href=""
+                internal
+                label="Building digital fitness classes"
+                variant="title"
+              />
+              <Link
+                href=""
+                internal
+                label="Rediscovering the Core Customer"
+                variant="title"
+              />
+              <Link
+                href=""
+                internal
+                label="Designing a live class experience for fitness"
+                variant="title"
+              />
+              <Link
+                href=""
+                internal
+                label="Improving fitness content creation and consumption"
+                variant="title"
+              />
             </GridBox>
           </FlexBox>
         </ContentContainer>
