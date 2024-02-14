@@ -4,56 +4,71 @@ import styled from '@emotion/styled';
 import { AllowedCommonCssProps, AllowedTextCssProps } from '~/constants/css';
 import { filterCssProps } from '~/utils/css';
 
+type TextVariant = keyof {
+  // only use keys from fontSize that aren't numbers
+  [K in keyof Theme['fontSize'] as K extends number ? never : K]: K;
+};
+
 export type TextProps = AllowedCommonCssProps &
   AllowedTextCssProps & {
     className?: string;
     as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
-    variant?:
-      | 'caption'
-      | 'body-sm'
-      | 'body'
-      | 'body-lg'
-      | 'title-sm'
-      | 'title'
-      | 'title-lg';
+    variant?: TextVariant;
   };
 
 type VariantOrAs = NonNullable<TextProps['variant'] | TextProps['as']>;
 
 const getFontSize = (theme: Theme, variantOrAs: VariantOrAs) => {
-  const bodySize = theme.fontSize.body;
-  const bodyLgSize = theme.fontSize.heading;
-  const titleSmSize = theme.fontSize.heading;
-  const titleSize = theme.fontSize.title;
-  const titleLgSize = theme.fontSize.titleLg;
-  // const titleXlSize = theme.fontSize[56];
-
-  const fontSizeLookup: Record<VariantOrAs, string> = {
-    // Variants
-    caption: theme.fontSize.caption,
-    'body-sm': theme.fontSize.subBody,
-    body: bodySize,
-    'body-lg': bodyLgSize,
-    'title-sm': titleSmSize,
-    title: titleSize,
-    'title-lg': titleLgSize,
-    // 'title-xl': titleXlSize,
-
-    // As
-    h1: titleLgSize,
-    h2: titleLgSize,
-    h3: titleSmSize,
-    h4: bodyLgSize,
-    h5: bodyLgSize,
-    h6: bodyLgSize,
-    p: bodySize,
-    span: bodySize,
-    label: bodySize,
+  const fontSizeLookup: Record<NonNullable<TextProps['as']>, string> = {
+    h1: theme.fontSize.headline1,
+    h2: theme.fontSize.headline2,
+    h3: theme.fontSize.headline3,
+    h4: theme.fontSize.headline4,
+    h5: theme.fontSize.bodyLarge,
+    h6: theme.fontSize.bodyLarge,
+    p: theme.fontSize.bodySmall,
+    span: theme.fontSize.bodySmall,
+    label: theme.fontSize.bodySmall,
   };
 
-  const fontSize = fontSizeLookup[variantOrAs];
+  const fontSize =
+    theme.fontSize[variantOrAs as TextVariant] ||
+    fontSizeLookup[variantOrAs as NonNullable<TextProps['as']>];
 
-  return fontSize || theme.fontSize[16];
+  return fontSize || theme.fontSize.bodySmall;
+};
+
+const getFontFamily = (theme: Theme, variantOrAs: VariantOrAs) => {
+  switch (variantOrAs) {
+    case 'h1':
+    case 'h2':
+    case 'h3':
+    case 'h4':
+    case 'h5':
+    case 'h6':
+    case 'headline1':
+    case 'headline2':
+    case 'headline3':
+    case 'headline4':
+      return theme.fontFamily.title;
+    default:
+      return theme.fontFamily.normal;
+  }
+};
+
+const getFontWeight = (theme: Theme, variantOrAs: VariantOrAs) => {
+  switch (variantOrAs) {
+    case 'subtitle3':
+    case 'subtitle2':
+    case 'subtitle1':
+    case 'headline4':
+    case 'headline3':
+    case 'headline2':
+    case 'headline1':
+      return theme.fontWeight.bold;
+    default:
+      return theme.fontWeight.regular;
+  }
 };
 
 export const Text = styled('span')<TextProps>(({
@@ -62,11 +77,13 @@ export const Text = styled('span')<TextProps>(({
   theme,
   ...rest
 }) => {
-  const fontSize = getFontSize(theme, variant || as || 'body');
+  const fontSize = getFontSize(theme, variant || as || 'bodySmall');
+  const fontFamily = getFontFamily(theme, variant || as || 'bodySmall');
+  const fontWeight = getFontWeight(theme, variant || as || 'bodySmall');
 
   return {
-    fontWeight: theme.fontWeight.regular,
-    fontFamily: theme.fontFamily.normal,
+    fontWeight,
+    fontFamily,
     fontSize,
     ...filterCssProps(rest, theme),
   };

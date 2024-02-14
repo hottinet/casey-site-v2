@@ -27,7 +27,6 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
     <Link
       href={linkHref}
       internal
-      noHoverStyles
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
