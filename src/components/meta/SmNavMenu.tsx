@@ -30,13 +30,6 @@ interface SmNavMenuProps {
   setIsOpen: (isOpen: boolean) => void;
 }
 
-const sharedLinkTextProps = {
-  fontFamily: 'title',
-  fontWeight: 600,
-  lineHeight: 1.1,
-  variant: 'title-lg',
-} as const;
-
 export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
   const [top, setTop] = useState(0);
 
@@ -73,18 +66,22 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
         <nav>
           <NavList>
             <li>
-              <Link href={HOME_ROUTE} internal onClick={() => setIsOpen(false)}>
-                <Text {...sharedLinkTextProps}>Home</Text>
-              </Link>
+              <Link
+                href={HOME_ROUTE}
+                internal
+                label="Home"
+                variant="headline2"
+                onClick={() => setIsOpen(false)}
+              />
             </li>
             <li>
               <Link
                 href={ABOUT_ROUTE}
                 internal
+                label="About"
+                variant="headline2"
                 onClick={() => setIsOpen(false)}
-              >
-                <Text {...sharedLinkTextProps}>About</Text>
-              </Link>
+              />
             </li>
           </NavList>
         </nav>
@@ -96,11 +93,12 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
           marginTop="auto"
         >
           {footerLinks.map((link) => (
-            <Link href={link.href} key={link.href}>
-              <Text fontWeight={600} textTransform="uppercase" variant="title">
-                {link.text}
-              </Text>
-            </Link>
+            <Link
+              href={link.href}
+              key={link.href}
+              label={link.text}
+              variant="subtitle2"
+            />
           ))}
         </FlexBox>
       </ContentContainer>
