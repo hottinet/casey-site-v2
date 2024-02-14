@@ -31,7 +31,11 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <FlexBox flexDirection="column" gap={16}>
-        <Text as="span" color={color} variant={smDown ? 'title' : 'title-lg'}>
+        <Text
+          as="span"
+          color={color}
+          variant={smDown ? 'headline4' : 'headline3'}
+        >
           {title}
         </Text>
         <ArrowButton
@@ -61,7 +65,7 @@ export function ShowoffContent({
           <TagList>
             {tags.map((t) => (
               <li key={t}>
-                <Text as="span" variant="body">
+                <Text as="span" fontWeight="bold" variant="bodySmall">
                   {upperCase(t)}
                 </Text>
               </li>

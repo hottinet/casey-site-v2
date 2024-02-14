@@ -93,16 +93,16 @@ export function NavBar({ layoutClassName }: NavBarProps) {
             height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT}
             justifyContent={smUp ? 'flex-start' : 'space-between'}
           >
-            <Text as="p" fontWeight={600} textTransform="uppercase">
+            <Text as="p" fontWeight="bold" textTransform="uppercase">
               Casey Bradford
             </Text>
             {smUp ? (
               <Nav>
                 <Link href={HOME_ROUTE} internal>
-                  <Text fontWeight={600}>Home</Text>
+                  <Text fontWeight="bold">Home</Text>
                 </Link>
                 <Link href={ABOUT_ROUTE} internal>
-                  <Text fontWeight={600}>About</Text>
+                  <Text fontWeight="bold">About</Text>
                 </Link>
               </Nav>
             ) : (

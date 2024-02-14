@@ -5,7 +5,6 @@ import { FlexBox } from '../box/FlexBox';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
 import { Link } from '../Link';
-import { Text } from '../typography/Text';
 
 const FooterWrapper = styled(FlexBox)`
   flex-direction: column;
@@ -58,11 +57,12 @@ export function Footer({ nextPath }: FooterProps) {
           width="100%"
         >
           {footerLinks.map((link) => (
-            <FooterLink href={link.href} key={link.href}>
-              <Text fontWeight={600} variant="title">
-                {link.text}
-              </Text>
-            </FooterLink>
+            <FooterLink
+              href={link.href}
+              key={link.href}
+              label={link.text}
+              variant="subtitle1"
+            />
           ))}
         </FooterWrapper>
       </ContentContainer>

@@ -70,7 +70,7 @@ function HomePage() {
             <Text
               as="p"
               textAlign="center"
-              variant={mdUp ? 'title' : 'title-sm'}
+              variant={mdUp ? 'bodyLarge' : 'bodySmall'}
             >
               Senior Product Designer working with small teams to turn vague
               ideas into incredible mobile app experiences
@@ -130,7 +130,7 @@ function HomePage() {
         />
         <ContentContainer>
           <FlexBox flexDirection="column" gap={40}>
-            <Text as="p" variant="body">
+            <Text as="p" variant="subtitle3">
               Other Projects
             </Text>
             <GridBox columns={mdUp ? 3 : 1} gap={40}>
@@ -138,25 +138,25 @@ function HomePage() {
                 href="/bologna"
                 internal
                 label="Building digital fitness classes"
-                variant="title"
+                variant="bodyLarge"
               />
               <Link
                 href="/bologna"
                 internal
                 label="Rediscovering the Core Customer"
-                variant="title"
+                variant="bodyLarge"
               />
               <Link
                 href="/bologna"
                 internal
                 label="Designing a live class experience for fitness"
-                variant="title"
+                variant="bodyLarge"
               />
               <Link
                 href="/bologna"
                 internal
                 label="Improving fitness content creation and consumption"
-                variant="title"
+                variant="bodyLarge"
               />
             </GridBox>
           </FlexBox>
