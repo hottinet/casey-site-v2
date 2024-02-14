@@ -98,12 +98,20 @@ export function NavBar({ layoutClassName }: NavBarProps) {
             </Text>
             {smUp ? (
               <Nav>
-                <Link href={HOME_ROUTE} internal>
-                  <Text fontWeight="bold">Home</Text>
-                </Link>
-                <Link href={ABOUT_ROUTE} internal>
-                  <Text fontWeight="bold">About</Text>
-                </Link>
+                <Link
+                  fontWeight="bold"
+                  href={HOME_ROUTE}
+                  internal
+                  label="Home"
+                  variant="bodySmall"
+                />
+                <Link
+                  fontWeight="bold"
+                  href={ABOUT_ROUTE}
+                  internal
+                  label="About"
+                  variant="bodySmall"
+                />
               </Nav>
             ) : (
               <IconButton
