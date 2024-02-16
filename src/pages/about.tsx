@@ -2,6 +2,7 @@ import { css, Global, Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FlexBox } from '~/components/box/FlexBox';
+import { ContentContainer } from '~/components/ContentContainer';
 import { Link, LinkProps } from '~/components/Link';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
@@ -34,14 +35,15 @@ const AboutLink = styled(Link)<LinkProps>(({ theme }) => ({
 interface AboutLinkButtonProps {
   href: string;
   text: string;
+  belowSm: boolean;
 }
 
-function AboutLinkButton({ href, text }: AboutLinkButtonProps) {
+function AboutLinkButton({ href, text, belowSm }: AboutLinkButtonProps) {
   return (
     <AboutLink href={href}>
       <Text
         fontWeight="bold"
-        paddingX={32}
+        paddingX={belowSm ? 32 : 96}
         paddingY={16}
         textAlign="center"
         textTransform="uppercase"
@@ -73,30 +75,37 @@ function AboutPage() {
   return (
     <AboutLayout>
       <Global styles={makeAboutGlobalStyles(theme)} />
-      <FlexBox
-        alignItems="center"
-        flex={1}
-        flexDirection="column"
-        gap={gap}
-        height="100%"
-        marginTop={belowSm ? 96 : 128}
-      >
-        <Text as="h1" variant={belowSm ? 'headline3' : 'headline1'}>
-          About Casey
-        </Text>
-        <FlexBox flexDirection={belowSm ? 'column' : 'row'} gap={gap}>
-          {aboutLinks.map((link) => (
-            <AboutLinkButton
-              href={link.href}
-              key={link.href}
-              text={link.text}
-            />
-          ))}
+      <ContentContainer>
+        <FlexBox
+          alignItems="center"
+          flex={1}
+          flexDirection="column"
+          gap={gap}
+          height="100%"
+          marginTop={belowSm ? 96 : 128}
+        >
+          <Text
+            as="h1"
+            lineHeight={1}
+            variant={belowSm ? 'headline3' : 'headline1'}
+          >
+            About Casey
+          </Text>
+          <FlexBox flexDirection={belowSm ? 'column' : 'row'} gap={gap}>
+            {aboutLinks.map((link) => (
+              <AboutLinkButton
+                belowSm={belowSm}
+                href={link.href}
+                key={link.href}
+                text={link.text}
+              />
+            ))}
+          </FlexBox>
+          <Text as="p" variant={belowSm ? 'bodySmall' : 'bodyLarge'}>
+            click anywhere to learn about me
+          </Text>
         </FlexBox>
-        <Text as="p" variant={belowSm ? 'bodySmall' : 'bodyLarge'}>
-          click anywhere to learn about me
-        </Text>
-      </FlexBox>
+      </ContentContainer>
     </AboutLayout>
   );
 }
