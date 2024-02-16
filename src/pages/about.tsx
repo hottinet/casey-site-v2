@@ -2,7 +2,7 @@ import { css, Global, Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FlexBox } from '~/components/box/FlexBox';
-import { Link } from '~/components/Link';
+import { Link, LinkProps } from '~/components/Link';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -20,7 +20,7 @@ const AboutLayout = styled(Layout)(({ theme }) => ({
   minHeight: '100vh',
 }));
 
-const AboutLink = styled(Link)(({ theme }) => ({
+const AboutLink = styled(Link)<LinkProps>(({ theme }) => ({
   backgroundColor: theme.colors.yellow,
   borderColor: theme.colors.text,
   borderWidth: theme.borderWidth['3'],

@@ -38,6 +38,11 @@ interface NavBarProps {
   layoutClassName?: string;
 }
 
+const linkTextProps = {
+  fontWeight: 'bold',
+  variant: 'bodySmall',
+} as const;
+
 export function NavBar({ layoutClassName }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -99,18 +104,16 @@ export function NavBar({ layoutClassName }: NavBarProps) {
             {smUp ? (
               <Nav>
                 <Link
-                  fontWeight="bold"
                   href={HOME_ROUTE}
                   internal
                   label="Home"
-                  variant="bodySmall"
+                  {...linkTextProps}
                 />
                 <Link
-                  fontWeight="bold"
                   href={ABOUT_ROUTE}
                   internal
                   label="About"
-                  variant="bodySmall"
+                  {...linkTextProps}
                 />
               </Nav>
             ) : (

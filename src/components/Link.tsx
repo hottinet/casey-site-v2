@@ -4,7 +4,7 @@ import { MouseEventHandler } from 'react';
 
 import { Text, TextProps } from './typography/Text';
 
-export type BaseLinkProps = {
+type BaseLinkProps = {
   internal?: boolean;
   href: string;
   className?: string;
@@ -15,15 +15,15 @@ export type BaseLinkProps = {
 
 type ChildLinkProps = {
   label?: never;
-  children: Required<React.ReactNode>;
+  children: React.ReactNode;
 };
 
 type LabelLinkProps = {
   label: string;
   children?: never;
-} & TextProps;
+} & Omit<TextProps, 'children'>;
 
-type LinkProps = BaseLinkProps & (ChildLinkProps | LabelLinkProps);
+export type LinkProps = BaseLinkProps & (ChildLinkProps | LabelLinkProps);
 
 const StyledLink = styled(NextLink)(({ theme }) => ({
   color: theme.colors.text,
