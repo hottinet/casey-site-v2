@@ -20,6 +20,7 @@ const colors = {
   pinkLight: '#ffceac',
   red: '#e44116',
   blue: '#3475cc',
+  blueLight: '#7a9fd1',
   yellow: '#f1e339',
 };
 

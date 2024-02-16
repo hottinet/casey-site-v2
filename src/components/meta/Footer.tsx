@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
-// import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
+import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
+
 import { FlexBox } from '../box/FlexBox';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
@@ -38,10 +39,9 @@ export const footerLinks = [
 ];
 
 export function Footer({ nextPath }: FooterProps) {
-  // const lessThanSm = useBreakpointsLessThan('sm');
+  const lessThanSm = useBreakpointsLessThan('sm');
   return (
     <FlexBox
-      flex={1}
       flexDirection="column"
       marginTop="auto"
       paddingTop={40}
@@ -61,7 +61,7 @@ export function Footer({ nextPath }: FooterProps) {
               href={link.href}
               key={link.href}
               label={link.text}
-              variant="subtitle1"
+              variant={lessThanSm ? 'subtitle2' : 'subtitle1'}
             />
           ))}
         </FooterWrapper>

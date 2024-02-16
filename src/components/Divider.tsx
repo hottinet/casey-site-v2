@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { hexToRgba } from '~/utils/css';
+
 import { FlexBox, FlexBoxProps } from './box/FlexBox';
 import Body from './typography/Body';
 
@@ -11,7 +13,7 @@ type DividerProps = {
 const Segment = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.borderWidth[1]};
-  background-color: ${({ theme }) => theme.colors.textQuote};
+  background-color: ${({ theme }) => hexToRgba(theme.colors.text, 0.4)};
 `;
 
 const Label = styled(Body)`

@@ -29,6 +29,7 @@ export function Layout({
         className={className}
         flexDirection="column"
         height="100%"
+        minHeight="100%"
         position="relative"
         width="100%"
       >

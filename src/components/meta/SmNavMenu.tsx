@@ -9,7 +9,6 @@ import { IconButton } from '../buttons/IconButton';
 import { ContentContainer } from '../ContentContainer';
 import { X } from '../icons/X';
 import { Link } from '../Link';
-import { Text } from '../typography/Text';
 import { footerLinks } from './Footer';
 
 const NavList = styled('ul')`

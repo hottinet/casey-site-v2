@@ -166,7 +166,11 @@ export const makeCssPropStyles = (
 };
 
 export function hexToRgb(hex: string) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const fullHex =
+    hex.length === 4
+      ? `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`
+      : hex;
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(fullHex);
   return result
     ? {
         r: parseInt(result[1], 16),
@@ -175,3 +179,13 @@ export function hexToRgb(hex: string) {
       }
     : null;
 }
+
+export const hexToRgba = (hex: string, alpha: number) => {
+  const rgb = hexToRgb(hex);
+  if (rgb) {
+    const { r, g, b } = rgb;
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+  console.error('Invalid hex color');
+  return undefined;
+};

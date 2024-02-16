@@ -14,8 +14,8 @@ export type BaseLinkProps = {
 };
 
 type ChildLinkProps = {
-  children: React.ReactNode;
   label?: never;
+  children: Required<React.ReactNode>;
 };
 
 type LabelLinkProps = {

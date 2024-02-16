@@ -1,7 +1,11 @@
 import { Theme } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { AllowedCommonCssProps, AllowedTextCssProps } from '~/constants/css';
+import {
+  AllowedCommonCssProps,
+  AllowedCustomCssProps,
+  AllowedTextCssProps,
+} from '~/constants/css';
 import { filterCssProps } from '~/utils/css';
 
 type TextVariant = keyof {
@@ -10,7 +14,8 @@ type TextVariant = keyof {
 };
 
 export type TextProps = AllowedCommonCssProps &
-  AllowedTextCssProps & {
+  AllowedTextCssProps &
+  AllowedCustomCssProps & {
     className?: string;
     as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
     variant?: TextVariant;
