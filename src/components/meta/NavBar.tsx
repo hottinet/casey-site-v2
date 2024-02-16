@@ -52,7 +52,10 @@ export function NavBar({ layoutClassName }: NavBarProps) {
   useEffect(() => {
     const onScroll = throttle(() => {
       const maxHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = window.scrollY / maxHeight;
+      // On resize to sizes where scrollHeight === innerHeight,
+      // both scrollY and maxHeight end up as 0
+      // which causes a divide by zero error and returns NaN
+      const scrollPercent = window.scrollY / maxHeight || 0;
       // The navbar changes colors faster than the body
       // because the scroll position is "below" the navbar position
       // so we just cap it at 70% to stop it from looking TOO off
@@ -65,9 +68,11 @@ export function NavBar({ layoutClassName }: NavBarProps) {
       bgRef.style.height = `${pageHeight}px`;
 
       window.addEventListener('scroll', onScroll);
+      window.addEventListener('resize', onScroll);
     }
     return () => {
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
   }, [bgRef]);
 
