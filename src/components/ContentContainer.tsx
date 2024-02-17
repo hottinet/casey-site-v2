@@ -1,19 +1,19 @@
 import { Spacing } from '~/typings/theme';
 import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 
-import { Box, BoxProps } from './box/Box';
+import { FlexBox, FlexBoxProps } from './box/FlexBox';
 
 export const useContentContainerPadding = (): Spacing => {
   const mdUp = useBreakpointsAtLeast('md');
 
   return mdUp ? 64 : 20;
 };
-export function ContentContainer({ children, ...rest }: BoxProps) {
+export function ContentContainer({ children, ...rest }: FlexBoxProps) {
   const padding = useContentContainerPadding();
 
   return (
-    <Box paddingX={padding} {...rest}>
+    <FlexBox flexDirection="column" paddingX={padding} {...rest}>
       {children}
-    </Box>
+    </FlexBox>
   );
 }

@@ -52,13 +52,7 @@ function HomePage() {
     <HomeLayout>
       <BackgroundOverride color="pink" />
       <FlexBox flexDirection="column" height="100%" width="100%">
-        <ContentContainer
-          alignItems="center"
-          display="flex"
-          flexDirection="column"
-          gap={32}
-          marginTop={32}
-        >
+        <ContentContainer alignItems="center" gap={32} marginTop={32}>
           <Box paddingX={0} width="100%">
             <TitleContainer position="relative" width="100%">
               <Image

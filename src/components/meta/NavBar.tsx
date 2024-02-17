@@ -22,13 +22,16 @@ interface NavBarProps {
   nextPageHref?: string;
 }
 
-const NavBackground = styled('div')`
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.9;
-  transition: transform 0.2s ease-in-out;
-`;
+const NavBackground = styled('div')(({ theme, className }) => ({
+  position: 'absolute',
+  width: '100%',
+  zIndex: -1,
+  opacity: 0.9,
+  transition: 'transform 0.2s ease-in-out',
+  ...(!className && {
+    backgroundColor: theme.colors.background,
+  }),
+}));
 
 const navGap = 32;
 
