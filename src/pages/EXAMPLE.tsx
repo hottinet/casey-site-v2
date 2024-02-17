@@ -13,6 +13,11 @@ function EXAMPLE_PAGE_CHANGE_ME() {
   return (
     <Layout nextPageHref={HOME_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
+        {/**
+         *
+         *  ContentContainer is for bounded countent
+         *
+         */}
         <ContentContainer
           gap={32}
           marginTop={belowSm ? SM_NAV_BAR_HEIGHT : NAV_BAR_HEIGHT}
@@ -46,6 +51,12 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             to the couple.
           </Text>
         </ContentContainer>
+
+        {/**
+         *
+         * Anything outside of a content container will go full width
+         *
+         */}
         <Image alt="Competitors" src="/ZolaBudget/zola-budget-competitor.png" />
       </FlexBox>
     </Layout>
