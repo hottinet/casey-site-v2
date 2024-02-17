@@ -2,7 +2,8 @@ import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { PropsWithChildren } from 'react';
 
-import { Color } from '~/typings/theme';
+import { Theme } from '~/constants/theme';
+import { BorderWidth, Color } from '~/typings/theme';
 
 import { FlexBox } from '../box/FlexBox';
 import Button from './Button';
@@ -27,6 +28,13 @@ export const wobble = keyframes`
   }
 `;
 
+interface RotatingStylesArgs {
+  theme: Theme;
+  color: Color;
+  forceHover: boolean;
+  borderWidth?: BorderWidth;
+}
+
 export const Animator = styled(FlexBox)`
   transform-origin: center center;
   transition: transform 0.2s linear;
@@ -34,32 +42,44 @@ export const Animator = styled(FlexBox)`
   width: 100%;
 `;
 
-const StyledButton = styled(Button)<IconButtonProps>(({
+export const makeSharedRotatingButtonStyles = ({
   theme,
-  color = 'text',
+  color,
   forceHover,
-}) => {
+  borderWidth = 3,
+}: RotatingStylesArgs) => {
   const hoverStyles = {
     borderWidth: theme.borderWidth[1],
     animation: `${wobble} 0.5s forwards`,
     [`${Animator}`]: {
       transform: 'scale(0.81)',
-      border: `${theme.borderWidth[3]} solid ${theme.colors[color]}`,
+      border: `${theme.borderWidth[borderWidth]} solid ${theme.colors[color]}`,
     },
   };
+
   return {
     borderRadius: '50%',
     padding: 0,
     margin: 0,
-    height: theme.spacing[48],
-    width: theme.spacing[48],
     borderColor: theme.colors[color],
     borderStyle: 'solid',
-    borderWidth: theme.borderWidth[3],
+    borderWidth: theme.borderWidth[borderWidth],
     '&:hover': hoverStyles,
     ...(forceHover && hoverStyles),
   };
-});
+};
+
+const StyledButton = styled(Button)<IconButtonProps>(
+  ({ theme, color = 'text', forceHover }) => ({
+    height: theme.spacing[48],
+    width: theme.spacing[48],
+    ...makeSharedRotatingButtonStyles({
+      theme,
+      color,
+      forceHover: Boolean(forceHover),
+    }),
+  })
+);
 
 export function RotatingIconButton({
   children,

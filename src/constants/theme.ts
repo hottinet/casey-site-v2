@@ -55,6 +55,7 @@ const theme = {
   },
   borderWidth: {
     1: pxToRem(1),
+    2: pxToRem(2),
     3: pxToRem(3),
   },
   borderRadius: {

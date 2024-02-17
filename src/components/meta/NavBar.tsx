@@ -9,10 +9,9 @@ import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 import { Box } from '../box/Box';
 import { FlexBox } from '../box/FlexBox';
 import { IconButton } from '../buttons/IconButton';
-import { Animator } from '../buttons/RotatingIconButton';
+import { NextProjectButton } from '../buttons/NextProjectNavButton';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
-import Arrow from '../icons/Arrow';
 import { Hamburger } from '../icons/Hamburger';
 import { Link } from '../Link';
 import { Text } from '../typography/Text';
@@ -40,44 +39,6 @@ const Nav = styled('nav')`
   height: 100%;
   justify-content: flex-start;
 `;
-
-const NextProjectLink = styled(Link)`
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: ${NAV_BAR_HEIGHT};
-  background-color: ${({ theme }) => theme.colors.blue};
-`;
-
-function NextProjectButton({
-  nextPageHref,
-}: Pick<NavBarProps, 'nextPageHref'>) {
-  const [hovered, setHovered] = useState(false);
-  if (!nextPageHref) {
-    return null;
-  }
-  return (
-    <NextProjectLink
-      href={nextPageHref}
-      internal
-      onMouseEnter={() => {
-        setHovered(true);
-      }}
-      onMouseLeave={() => {
-        setHovered(false);
-      }}
-    >
-      <FlexBox alignItems="center" gap={16} height="100%" paddingX={32}>
-        <Animator borderRadius="round" center height={20} width={20}>
-          <Arrow height={20} title="" titleId="" width={20} />
-        </Animator>
-        <Text color="textSecondary" variant="subtitle3">
-          Next&nbsp;Project
-        </Text>
-      </FlexBox>
-    </NextProjectLink>
-  );
-}
 
 const linkTextProps = {
   fontWeight: 'bold',
