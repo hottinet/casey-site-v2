@@ -1,5 +1,6 @@
 import { css, Global } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
@@ -31,6 +32,7 @@ interface SmNavMenuProps {
 
 export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
   const [top, setTop] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     if (isOpen) {
@@ -39,6 +41,16 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
       setTop(0);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', () => setIsOpen(false));
+    router.events.on('routeChangeError', () => setIsOpen(false));
+
+    return () => {
+      router.events.off('routeChangeComplete', () => setIsOpen(false));
+      router.events.off('routeChangeError', () => setIsOpen(false));
+    };
+  });
 
   return (
     <FlexBox
@@ -70,7 +82,6 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
                 internal
                 label="Home"
                 variant="headline2"
-                onClick={() => setIsOpen(false)}
               />
             </li>
             <li>
@@ -79,7 +90,6 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
                 internal
                 label="About"
                 variant="headline2"
-                onClick={() => setIsOpen(false)}
               />
             </li>
           </NavList>
