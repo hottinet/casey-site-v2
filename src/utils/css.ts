@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
+import { css } from '@emotion/react';
 import { CSSObject } from '@emotion/styled';
 
 import {
@@ -8,6 +9,7 @@ import {
   CUSTOM_THEME_CSS_PROPS,
 } from '~/constants/css';
 import { Theme } from '~/constants/theme';
+import { Color } from '~/typings/theme';
 
 type CustomCssArgs = {
   currPropKey: keyof typeof CUSTOM_THEME_CSS_PROPS;
@@ -189,3 +191,11 @@ export const hexToRgba = (hex: string, alpha: number) => {
   console.error('Invalid hex color');
   return undefined;
 };
+
+export const makePageBgOverride = (color: Color, theme: Theme) => css`
+  body,
+  html,
+  #__next {
+    background-color: ${theme.colors[color]};
+  }
+`;

@@ -1,23 +1,15 @@
-import { css, Global, Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FlexBox } from '~/components/box/FlexBox';
 import { ContentContainer } from '~/components/ContentContainer';
 import { Link, LinkProps } from '~/components/Link';
+import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
 import { Layout } from '~/components/meta/Layout';
 import PortalImage from '~/components/PortalImage';
 import { Text } from '~/components/typography/Text';
 import { stickerHeight } from '~/constants/stickers';
 import { useStickers } from '~/utils/stickers';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
-
-const makeAboutGlobalStyles = (theme: Theme) => css`
-  body,
-  html,
-  #__next {
-    background-color: ${theme.colors.blue};
-  }
-`;
 
 const AboutLayout = styled(Layout)(({ theme }) => ({
   backgroundImage: `linear-gradient(${theme.colors.blue}, ${theme.colors.blueLight})`,
@@ -72,15 +64,14 @@ const aboutLinks = [
 
 function AboutPage() {
   const belowSm = useBreakpointsLessThan('sm');
-  const theme = useTheme();
 
   const stickers = useStickers();
 
   const gap = belowSm ? 32 : 40;
   return (
     <>
+      <BackgroundOverride color="blue" />
       <AboutLayout>
-        <Global styles={makeAboutGlobalStyles(theme)} />
         <ContentContainer>
           <FlexBox
             alignItems="center"

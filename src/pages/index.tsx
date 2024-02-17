@@ -10,6 +10,7 @@ import {
   useContentContainerPadding,
 } from '~/components/ContentContainer';
 import { Link } from '~/components/Link';
+import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
 import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { ShowoffContent } from '~/components/showoff/ShowoffContent';
@@ -48,6 +49,7 @@ function HomePage() {
 
   return (
     <HomeLayout>
+      <BackgroundOverride color="pink" />
       <FlexBox flexDirection="column" height="100%" width="100%">
         <ContentContainer
           alignItems="center"

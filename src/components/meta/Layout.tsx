@@ -25,7 +25,6 @@ export function Layout({
     <>
       <Head title={pageTitle || 'Casey Bradford'} />
       <FlexBox
-        backgroundColor="red"
         className={className}
         flexDirection="column"
         height="100%"

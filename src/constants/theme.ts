@@ -10,7 +10,7 @@ const breakpointValues = {
 };
 
 const colors = {
-  background: '#fd9e88',
+  background: '#ffe8de',
   text: '#000',
   textSecondary: '#fff',
   textQuote: '#727272',
@@ -18,6 +18,7 @@ const colors = {
   white: '#fff',
   pink: '#fd9e88',
   pinkLight: '#ffceac',
+  pinkLighter: '#ffe8de',
   red: '#e44116',
   blue: '#3475cc',
   blueLight: '#7a9fd1',
