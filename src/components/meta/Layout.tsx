@@ -1,7 +1,4 @@
-import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
-
-import { NEXT_ROUTE_MAP } from '~/constants/routing';
 
 import { FlexBox } from '../box/FlexBox';
 import { Footer } from './Footer';
@@ -11,16 +8,15 @@ import { NavBar } from './NavBar';
 interface LayoutProps {
   pageTitle?: string;
   className?: string;
+  nextPageHref?: string;
 }
 
 export function Layout({
   children,
   pageTitle,
   className,
+  nextPageHref,
 }: PropsWithChildren<LayoutProps>) {
-  const { pathname } = useRouter();
-  const nextPath = NEXT_ROUTE_MAP[pathname];
-
   return (
     <>
       <Head title={pageTitle || 'Casey Bradford'} />
@@ -32,9 +28,9 @@ export function Layout({
         position="relative"
         width="100%"
       >
-        <NavBar layoutClassName={className} />
+        <NavBar layoutClassName={className} nextPageHref={nextPageHref} />
         {children}
-        <Footer nextPath={nextPath} />
+        <Footer />
       </FlexBox>
     </>
   );

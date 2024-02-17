@@ -18,7 +18,7 @@ const AnimationWrapper = styled(FlexBox)`
   height: 100%;
 `;
 
-const wobble = keyframes`
+export const wobble = keyframes`
   from {
     transform: rotate(0)
   }
@@ -27,7 +27,7 @@ const wobble = keyframes`
   }
 `;
 
-const Animator = styled(FlexBox)`
+export const Animator = styled(FlexBox)`
   transform-origin: center center;
   transition: transform 0.2s linear;
   height: 100%;

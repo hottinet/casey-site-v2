@@ -19,10 +19,6 @@ const FooterLink = styled(Link)`
   text-transform: uppercase;
 `;
 
-type FooterProps = {
-  nextPath?: string;
-};
-
 export const footerLinks = [
   {
     href: '/CaseyBradfordResume.pdf',
@@ -38,7 +34,7 @@ export const footerLinks = [
   },
 ];
 
-export function Footer({ nextPath }: FooterProps) {
+export function Footer() {
   const lessThanSm = useBreakpointsLessThan('sm');
   return (
     <FlexBox

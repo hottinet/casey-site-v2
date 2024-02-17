@@ -9,12 +9,19 @@ import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
 import { Box } from '../box/Box';
 import { FlexBox } from '../box/FlexBox';
 import { IconButton } from '../buttons/IconButton';
+import { Animator } from '../buttons/RotatingIconButton';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
+import Arrow from '../icons/Arrow';
 import { Hamburger } from '../icons/Hamburger';
 import { Link } from '../Link';
 import { Text } from '../typography/Text';
 import { SmNavMenu } from './SmNavMenu';
+
+interface NavBarProps {
+  layoutClassName?: string;
+  nextPageHref?: string;
+}
 
 const NavBackground = styled('div')`
   position: absolute;
@@ -34,8 +41,42 @@ const Nav = styled('nav')`
   justify-content: flex-start;
 `;
 
-interface NavBarProps {
-  layoutClassName?: string;
+const NextProjectLink = styled(Link)`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: ${NAV_BAR_HEIGHT};
+  background-color: ${({ theme }) => theme.colors.blue};
+`;
+
+function NextProjectButton({
+  nextPageHref,
+}: Pick<NavBarProps, 'nextPageHref'>) {
+  const [hovered, setHovered] = useState(false);
+  if (!nextPageHref) {
+    return null;
+  }
+  return (
+    <NextProjectLink
+      href={nextPageHref}
+      internal
+      onMouseEnter={() => {
+        setHovered(true);
+      }}
+      onMouseLeave={() => {
+        setHovered(false);
+      }}
+    >
+      <FlexBox alignItems="center" gap={16} height="100%" paddingX={32}>
+        <Animator borderRadius="round" center height={20} width={20}>
+          <Arrow height={20} title="" titleId="" width={20} />
+        </Animator>
+        <Text color="textSecondary" variant="subtitle3">
+          Next&nbsp;Project
+        </Text>
+      </FlexBox>
+    </NextProjectLink>
+  );
 }
 
 const linkTextProps = {
@@ -43,7 +84,7 @@ const linkTextProps = {
   variant: 'bodySmall',
 } as const;
 
-export function NavBar({ layoutClassName }: NavBarProps) {
+export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const smUp = useBreakpointsAtLeast('sm');
@@ -76,9 +117,11 @@ export function NavBar({ layoutClassName }: NavBarProps) {
     };
   }, [bgRef]);
 
+  const navHeight = smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT;
+
   return (
     <>
-      <Box height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT} width="100%" />
+      <Box height={navHeight} width="100%" />
       <Box
         backdropFilter="blur(2px)"
         backgroundColor="transparent"
@@ -100,7 +143,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
           <FlexBox
             alignItems="center"
             gap={navGap}
-            height={smUp ? NAV_BAR_HEIGHT : SM_NAV_BAR_HEIGHT}
+            height={navHeight}
             justifyContent={smUp ? 'flex-start' : 'space-between'}
           >
             <Text as="p" fontWeight="bold" textTransform="uppercase">
@@ -136,6 +179,7 @@ export function NavBar({ layoutClassName }: NavBarProps) {
           </FlexBox>
         </ContentContainer>
         <Divider />
+        {smUp && <NextProjectButton nextPageHref={nextPageHref} />}
       </Box>
       {!smUp && <SmNavMenu isOpen={menuOpen} setIsOpen={setMenuOpen} />}
     </>

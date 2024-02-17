@@ -42,6 +42,7 @@ const LinkText = styled(Text)`
 const OnMouseSpan = styled.span`
   display: inline-flex;
   width: 100%;
+  height: 100%;
 `;
 
 function LinkChildren(props: ChildLinkProps | LabelLinkProps) {

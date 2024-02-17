@@ -1,3 +1,4 @@
+import { AllowedCommonCssProps, AllowedCustomCssProps } from '~/constants/css';
 import { Color } from '~/typings/theme';
 
 export type BaseIconProps = {
@@ -6,11 +7,9 @@ export type BaseIconProps = {
   title: string;
   titleId: string;
   children: React.ReactNode;
-};
+} & AllowedCommonCssProps &
+  AllowedCustomCssProps;
 
-export type IconProps = Pick<
-  BaseIconProps,
-  'title' | 'titleId' | 'className'
-> & {
+export type IconProps = Omit<BaseIconProps, 'viewBox' | 'children'> & {
   color?: Color;
 };
