@@ -15,6 +15,7 @@ import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { ShowoffContent } from '~/components/showoff/ShowoffContent';
 import { Text } from '~/components/typography/Text';
+import { EXAMPLE_DELETE_ME } from '~/constants/routing';
 import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsAtLeast,
@@ -86,7 +87,7 @@ function HomePage() {
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
-          linkHref=""
+          linkHref={EXAMPLE_DELETE_ME}
           marginBottom={showoffMarginBottom}
           marginTop={showoffMarginTop}
           marginX={showoffMarginX}
@@ -103,13 +104,13 @@ function HomePage() {
           >
             <ShowoffContent
               color="text"
-              linkHref=""
+              linkHref={EXAMPLE_DELETE_ME}
               tags={['zola', 'ios']}
               title="Designing a more scalable home page and navigation"
             />
             <ShowoffContent
               color="text"
-              linkHref=""
+              linkHref={EXAMPLE_DELETE_ME}
               tags={['zola', 'ios']}
               title="Launching a baby registry product"
             />
@@ -122,7 +123,7 @@ function HomePage() {
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"
-          linkHref=""
+          linkHref={EXAMPLE_DELETE_ME}
           marginBottom={showoffMarginBottom}
           marginTop={showoffMarginTop}
           marginX={showoffMarginX}
@@ -137,25 +138,25 @@ function HomePage() {
             </Text>
             <GridBox columns={mdUp ? 3 : 1} gap={40}>
               <Link
-                href="/bologna"
+                href={EXAMPLE_DELETE_ME}
                 internal
                 label="Building digital fitness classes"
                 variant="bodyLarge"
               />
               <Link
-                href="/bologna"
+                href={EXAMPLE_DELETE_ME}
                 internal
                 label="Rediscovering the Core Customer"
                 variant="bodyLarge"
               />
               <Link
-                href="/bologna"
+                href={EXAMPLE_DELETE_ME}
                 internal
                 label="Designing a live class experience for fitness"
                 variant="bodyLarge"
               />
               <Link
-                href="/bologna"
+                href={EXAMPLE_DELETE_ME}
                 internal
                 label="Improving fitness content creation and consumption"
                 variant="bodyLarge"
