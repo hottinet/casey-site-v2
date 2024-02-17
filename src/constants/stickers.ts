@@ -1,4 +1,9 @@
-export const STICKER_DATA = [
+export type StickerData = {
+  src: string;
+  alt: string;
+};
+
+export const STICKER_DATA: StickerData[] = [
   {
     src: '/About/CA.png',
     alt: 'California State Magnet',
@@ -28,6 +33,5 @@ export const STICKER_DATA = [
     alt: 'Travel Me',
   },
 ];
-export type StickerData = (typeof STICKER_DATA)[number];
 
 export const stickerHeight = 150;

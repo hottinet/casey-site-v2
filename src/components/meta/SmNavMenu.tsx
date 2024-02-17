@@ -30,6 +30,20 @@ interface SmNavMenuProps {
   setIsOpen: (isOpen: boolean) => void;
 }
 
+const linkButtonData: {
+  href: string;
+  text: string;
+}[] = [
+  {
+    href: HOME_ROUTE,
+    text: 'Home',
+  },
+  {
+    href: ABOUT_ROUTE,
+    text: 'About',
+  },
+];
+
 export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
   const [top, setTop] = useState(0);
   const router = useRouter();
@@ -76,22 +90,16 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
         </IconButton>
         <nav>
           <NavList>
-            <li>
-              <Link
-                href={HOME_ROUTE}
-                internal
-                label="Home"
-                variant="headline2"
-              />
-            </li>
-            <li>
-              <Link
-                href={ABOUT_ROUTE}
-                internal
-                label="About"
-                variant="headline2"
-              />
-            </li>
+            {linkButtonData.map((ld) => (
+              <li key={ld.href}>
+                <Link
+                  href={ld.href}
+                  internal
+                  label={ld.text}
+                  variant="headline2"
+                />
+              </li>
+            ))}
           </NavList>
         </nav>
         <FlexBox
