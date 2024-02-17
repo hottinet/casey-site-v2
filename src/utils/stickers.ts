@@ -9,7 +9,6 @@ type StickerObj = StickerData & {
 const emptyStickers: StickerObj[] = [];
 
 export const useStickers = () => {
-  const stickerRef = useRef<StickerObj[]>(emptyStickers);
   const [stickers, setStickers] = useState<StickerObj[]>(emptyStickers);
   const stickerIndexRef = useRef(0);
 
@@ -18,8 +17,15 @@ export const useStickers = () => {
       const { src, alt } = STICKER_DATA[stickerIndexRef.current];
       const nextIdx = stickerIndexRef.current + 1;
       stickerIndexRef.current = nextIdx >= STICKER_DATA.length ? 0 : nextIdx;
-      setStickers([
-        ...stickerRef.current,
+      setStickers((prevStickers) => [
+        ...prevStickers.slice(
+          // Remove the oldest sticker if there would be more than 3x
+          // the number of available stickers
+          // (aka each sticker has already been placed 3x)
+          // This is a performance save (but like, this isn't too heavy...)
+          // but also kind of fun that they make a little snake
+          prevStickers.length + 1 > STICKER_DATA.length * 3 ? 1 : 0
+        ),
         {
           src,
           alt,
@@ -36,10 +42,6 @@ export const useStickers = () => {
     document.addEventListener('click', onClick);
     return () => document.removeEventListener('click', onClick);
   }, []);
-
-  useEffect(() => {
-    stickerRef.current = stickers;
-  }, [stickers]);
 
   return stickers;
 };
