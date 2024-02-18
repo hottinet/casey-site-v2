@@ -77,7 +77,7 @@ function HomePage() {
         <ShowoffBlock
           backgroundColor="red"
           borderRadius={showoffBorderRadius}
-          color="textSecondary"
+          color="text"
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
@@ -113,7 +113,7 @@ function HomePage() {
         <ShowoffBlock
           backgroundColor="blue"
           borderRadius={showoffBorderRadius}
-          color="textSecondary"
+          color="text"
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"

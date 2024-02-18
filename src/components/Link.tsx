@@ -11,6 +11,7 @@ type BaseLinkProps = {
   onClick?: MouseEventHandler<HTMLSpanElement>;
   onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
   onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
+  noHoverStyles?: boolean;
 };
 
 type ChildLinkProps = {
@@ -31,11 +32,12 @@ const StyledLink = styled(NextLink)(({ theme }) => ({
   cursor: 'pointer',
 }));
 
-const LinkText = styled(Text)`
+const LinkText = styled(Text)<Pick<LinkProps, 'noHoverStyles'>>`
   text-decoration: none;
   color: inherit;
   :hover {
-    text-decoration: underline;
+    text-decoration: ${({ noHoverStyles }) =>
+      noHoverStyles ? 'none' : 'underline'};
   }
 `;
 
@@ -45,7 +47,10 @@ const OnMouseSpan = styled.span`
   height: 100%;
 `;
 
-function LinkChildren(props: ChildLinkProps | LabelLinkProps) {
+function LinkChildren(
+  props: (ChildLinkProps | LabelLinkProps) &
+    Pick<BaseLinkProps, 'noHoverStyles'>
+) {
   if ('label' in props) {
     const { label, ...textProps } = props;
     return (

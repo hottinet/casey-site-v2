@@ -14,7 +14,6 @@ import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
 import { Hamburger } from '../icons/Hamburger';
 import { Link } from '../Link';
-import { Text } from '../typography/Text';
 import { SmNavMenu } from './SmNavMenu';
 
 interface NavBarProps {
@@ -46,6 +45,7 @@ const Nav = styled('nav')`
 const linkTextProps = {
   fontWeight: 'bold',
   variant: 'bodySmall',
+  noHoverStyles: true,
 } as const;
 
 export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
@@ -110,9 +110,14 @@ export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
             height={navHeight}
             justifyContent={smUp ? 'flex-start' : 'space-between'}
           >
-            <Text as="p" fontWeight="bold" textTransform="uppercase">
-              Casey Bradford
-            </Text>
+            <Link
+              fontWeight="bold"
+              href={HOME_ROUTE}
+              internal
+              label="Casey Bradford"
+              noHoverStyles
+              textTransform="uppercase"
+            />
             {smUp ? (
               <Nav>
                 <Link

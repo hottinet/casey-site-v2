@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 import { FlexBox } from '../box/FlexBox';
@@ -40,7 +41,7 @@ export function Footer() {
     <FlexBox
       flexDirection="column"
       marginTop="auto"
-      paddingTop={40}
+      paddingTop={pxToRem(136)}
       width="100%"
     >
       <Divider width="100%" />

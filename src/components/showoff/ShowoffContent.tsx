@@ -34,6 +34,7 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
         <Text
           as="span"
           color={color}
+          lineHeight="115%"
           variant={smDown ? 'headline4' : 'headline3'}
         >
           {title}
