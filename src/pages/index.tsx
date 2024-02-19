@@ -1,6 +1,5 @@
 /* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
-import Image from 'next/image';
 
 import { Box } from '~/components/box/Box';
 import { FlexBox } from '~/components/box/FlexBox';
@@ -20,16 +19,27 @@ import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsAtLeast,
   useBreakpointsLessThan,
+  useSizeByBreakpoint,
 } from '~/utils/useBreakpoints';
-
-const TitleContainer = styled(Box)`
-  /* Calculated from Casey Bradford svg */
-  aspect-ratio: 637 / 118;
-`;
 
 const HomeLayout = styled(Layout)(({ theme }) => ({
   backgroundImage: `linear-gradient(${theme.colors.pink}, ${theme.colors.pinkLight})`,
 }));
+
+function CaseyTitle() {
+  const size = useSizeByBreakpoint({
+    base: 64,
+    sm: 100,
+    md: 120,
+    lg: 140,
+    xl: 175,
+  });
+  return (
+    <Text as="h1" fontSize={pxToRem(size)} lineHeight={1} textAlign="center">
+      Casey Bradford
+    </Text>
+  );
+}
 
 function HomePage() {
   const lgUp = useBreakpointsAtLeast('lg');
@@ -53,16 +63,7 @@ function HomePage() {
       <BackgroundOverride color="pink" />
       <FlexBox flexDirection="column" height="100%" width="100%">
         <ContentContainer alignItems="center" gap={32} marginTop={32}>
-          <Box paddingX={0} width="100%">
-            <TitleContainer position="relative" width="100%">
-              <Image
-                alt="Casey Bradford"
-                fill
-                priority
-                src="/Home/casey-bradford-title.svg"
-              />
-            </TitleContainer>
-          </Box>
+          <CaseyTitle />
           <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
             <Text
               as="p"
