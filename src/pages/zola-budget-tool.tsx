@@ -12,7 +12,7 @@ import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 const DetailBox = styled(FlexBox)`
-  background-image: linear-gradient(to right, #ffe8de, #f8907e);
+  border: 1px solid black;
   padding: 32px;
   border-radius: 10px;
 `;
@@ -184,22 +184,24 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         {/** END MVP */}
         {/** START MODEL */}
         <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
-            Our budget model
-          </Text>
           <GridBox gap={40}>
             <FlexBox flexDirection="column" gap={32}>
-              <FlexBox flexDirection="column" gap={8}>
-                <Text as="p" variant="subtitle3">
-                  Budget Categories
+              <FlexBox flexDirection="column" gap={32}>
+                <Text as="h2" variant="headline4">
+                  Our budget model
                 </Text>
-                <Text as="p" variant="bodySmall">
-                  A group of budget items, some predetermined by Zola and some
-                  custom
-                </Text>
-                <Text as="p" variant="bodySmall">
-                  Example: Attire, Venues and Vendors
-                </Text>
+                <FlexBox flexDirection="column" gap={8}>
+                  <Text as="p" variant="subtitle3">
+                    Budget Categories
+                  </Text>
+                  <Text as="p" variant="bodySmall">
+                    A group of budget items, some predetermined by Zola and some
+                    custom
+                  </Text>
+                  <Text as="p" variant="bodySmall">
+                    Example: Attire, Venues and Vendors
+                  </Text>
+                </FlexBox>
               </FlexBox>
               <FlexBox flexDirection="column" gap={8}>
                 <Text as="p" variant="subtitle3">
@@ -299,23 +301,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               estimate cost from our initial system to reduce complexity.
             </Text>
           </FlexBox>
-          <GridBox columnGap={20} columns={3} rowGap={20}>
-            <Image
-              alt="Iteration of the design with two separate views"
-              fitParent
-              src="/ZolaBudget/zola-main-1.png"
-            />
-            <Image
-              alt="Iteration of the design where actual and estimate cost are in the same column"
-              fitParent
-              src="/ZolaBudget/zola-main-2.png"
-            />
-            <Image
-              alt="Iteration of the design that shows three columns"
-              fitParent
-              src="/ZolaBudget/zola-main-3.png"
-            />
-          </GridBox>
+        </ContentContainer>
+        <Image
+          alt="Iteration of the designs"
+          fitParent
+          src="/ZolaBudget/zola-iteration-1.png"
+        />
+        <ContentContainer>
           <FlexBox flexDirection="column" gap={8}>
             <Text as="p" variant="subtitle3">
               iteration 2
