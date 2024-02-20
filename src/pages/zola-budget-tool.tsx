@@ -1,3 +1,5 @@
+import styled from '@emotion/styled';
+
 import { FlexBox } from '~/components/box/FlexBox';
 import { GridBox } from '~/components/box/GridBox';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -9,16 +11,24 @@ import { HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
+const DetailBox = styled(FlexBox)`
+  background-image: linear-gradient(to right, #ffe8de, #f8907e);
+  padding: 32px;
+  border-radius: 10px;
+`;
+
+const UTBox = styled(FlexBox)`
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+`;
+
 function EXAMPLE_PAGE_CHANGE_ME() {
   const belowSm = useBreakpointsLessThan('sm');
   return (
     <Layout nextPageHref={HOME_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
-        {/**
-         *
-         *  ContentContainer is for bounded countent
-         *
-         */}
+        {/** START INTRO */}
         <ContentContainer
           gap={32}
           marginTop={belowSm ? SM_NAV_BAR_HEIGHT : NAV_BAR_HEIGHT}
@@ -41,9 +51,9 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           </Text>
         </ContentContainer>
         <ContentContainer gap={32}>
-          <GridBox gap={40}>
+          <DetailBox gap={40}>
             <FlexBox flexDirection="column" gap={8}>
-              <Text as="p" variant="headline4">
+              <Text as="p" variant="subtitle3">
                 The Goal
               </Text>
               <Text as="p">
@@ -52,7 +62,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               </Text>
             </FlexBox>
             <FlexBox flexDirection="column" gap={8}>
-              <Text as="p" variant="headline4">
+              <Text as="p" variant="subtitle3">
                 My Role
               </Text>
               <Text as="p">
@@ -60,9 +70,10 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 teams, execute research, user testing, etc.
               </Text>
             </FlexBox>
-          </GridBox>
+          </DetailBox>
         </ContentContainer>
-
+        {/** END INTRO */}
+        {/** START USER RESEARCH */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Getting in the user mindset
@@ -72,8 +83,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             actively involved in managing their budgets. Below are the themes
             that emerged.
           </Text>
-          <GridBox>
-            <FlexBox flexDirection="column" gap={8}>
+          <GridBox columns={4}>
+            <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 Phases of the journey 🗓️
               </Text>
@@ -81,16 +92,16 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 Couples describe distinct phases to budgeting: Research and
                 education, booking vendors, coasting period, making payments.
               </Text>
-            </FlexBox>
-            <FlexBox flexDirection="column" gap={8}>
+            </UTBox>
+            <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 Customization 🖌️
               </Text>
               <Text as="p" variant="bodySmall">
                 Every wedding is different! Every budget will flex accordingly.
               </Text>
-            </FlexBox>
-            <FlexBox flexDirection="column" gap={8}>
+            </UTBox>
+            <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 Reminders ⏰
               </Text>
@@ -99,8 +110,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 final payments. Most couples mentioned payment reminders as a
                 dream feature.
               </Text>
-            </FlexBox>
-            <FlexBox flexDirection="column" gap={8}>
+            </UTBox>
+            <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 Spreadsheet vibes 📊
               </Text>
@@ -108,9 +119,11 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 Most people we spoke to used a spreadsheet for their budget
                 because it felt comfortable and flexible.
               </Text>
-            </FlexBox>
+            </UTBox>
           </GridBox>
         </ContentContainer>
+        {/** END USER RESEARCH */}
+        {/** START COMPETETIVE */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Competetive research
@@ -127,6 +140,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             src="/ZolaBudget/zola-budget-competitor.png"
           />
         </ContentContainer>
+        {/** END COMPETETIVE */}
+        {/** START MVP */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             What goes in the MVP?
@@ -166,6 +181,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             budgeting where couples are looking for budget education.
           </Text>
         </ContentContainer>
+        {/** END MVP */}
+        {/** START MODEL */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Our budget model
@@ -215,7 +232,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             />
           </GridBox>
         </ContentContainer>
-
+        {/** END MODEL */}
+        {/** START MATH */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Our math
@@ -262,7 +280,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             />
           </GridBox>
         </ContentContainer>
-
+        {/** END MATH */}
+        {/** START DESIGN */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Design Iteration
@@ -322,13 +341,56 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             />
           </GridBox>
         </ContentContainer>
+        {/** END DESIGN */}
+        {/** START FINAL */}
+        <ContentContainer gap={32}>
+          <Text as="h2" variant="headline4">
+            The Final Product
+          </Text>
+        </ContentContainer>
 
+        <ContentContainer gap={32}>
+          <Text as="h2" variant="headline4">
+            Performance
+          </Text>
+          <Text as="p" variant="bodySmall">
+            In the first month, we saw great adoption of the budget tool and
+            beat our goals for conversion.
+          </Text>
+          <Text as="p" variant="bodySmall">
+            We ran a survey some time after launch and found that more than half
+            of survey takers gave the tool 5 out of 5 stars and most others gave
+            it 4 out of 5 stars.
+          </Text>
+          <Text as="p" variant="bodySmall">
+            The most highly requested additions were:
+          </Text>
+          <ul>
+            <li>
+              <Text as="p" variant="bodySmall">
+                Access to the tool on web
+              </Text>
+            </li>
+            <li>
+              <Text as="p" variant="bodySmall">
+                More budget setting guidance
+              </Text>
+            </li>
+            <li>
+              <Text as="p" variant="bodySmall">
+                Ability to include estimate costs
+              </Text>
+            </li>
+          </ul>
+          <Text as="p" variant="bodySmall">
+            All things we would work on next.
+          </Text>
+        </ContentContainer>
         {/**
          *
          * Anything outside of a content container will go full width
          *
          */}
-        <Image alt="Competitors" src="/ZolaBudget/zola-budget-competitor.png" />
       </FlexBox>
     </Layout>
   );
