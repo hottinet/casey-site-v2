@@ -86,9 +86,11 @@ export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
   return (
     <>
       <Box height={navHeight} width="100%" />
-      <Box
+      <FlexBox
+        alignItems="center"
         backdropFilter="blur(2px)"
         backgroundColor="transparent"
+        flexDirection="column"
         overflow="hidden"
         position="fixed"
         top={0}
@@ -103,7 +105,7 @@ export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
             }
           }}
         />
-        <ContentContainer>
+        <ContentContainer metaPage width="100%">
           <FlexBox
             alignItems="center"
             gap={navGap}
@@ -147,9 +149,9 @@ export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
             )}
           </FlexBox>
         </ContentContainer>
-        <Divider />
+        <Divider bottom={0} position="absolute" width="100vw" />
         {smUp && <NextProjectButton nextPageHref={nextPageHref} />}
-      </Box>
+      </FlexBox>
       {!smUp && <SmNavMenu isOpen={menuOpen} setIsOpen={setMenuOpen} />}
     </>
   );

@@ -46,7 +46,7 @@ export function Footer() {
       width="100%"
     >
       <Divider width="100%" />
-      <ContentContainer>
+      <ContentContainer metaPage>
         <FooterWrapper
           alignItems="center"
           gap={40}

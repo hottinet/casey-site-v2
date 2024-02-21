@@ -52,7 +52,7 @@ function HomePage() {
   const mdUp = useBreakpointsAtLeast('md');
   const belowSm = useBreakpointsLessThan('sm');
   const exactlySm = !mdUp && !belowSm;
-  const contentPadding = useContentContainerPadding();
+  const contentPadding = useContentContainerPadding(true);
 
   const showoffMarginTop = mdUp
     ? pxToRem(140)
@@ -74,7 +74,7 @@ function HomePage() {
         height="100%"
         width="100%"
       >
-        <ContentContainer alignItems="center" gap={32} marginTop={32}>
+        <ContentContainer alignItems="center" gap={32} marginTop={32} metaPage>
           <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
             <Text
               as="p"
@@ -102,7 +102,7 @@ function HomePage() {
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
-        <ContentContainer>
+        <ContentContainer metaPage>
           <GridBox
             alignItems="start"
             columns={belowSm ? 1 : 2}
@@ -137,7 +137,7 @@ function HomePage() {
           tags={['zola', 'ios']}
           title="Building a Wedding Budget Tool"
         />
-        <ContentContainer>
+        <ContentContainer metaPage>
           <FlexBox flexDirection="column" gap={40}>
             <Text as="p" variant="subtitle3">
               Other Projects

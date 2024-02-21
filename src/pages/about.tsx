@@ -72,7 +72,7 @@ function AboutPage() {
     <>
       <BackgroundOverride color="blue" />
       <AboutLayout>
-        <ContentContainer>
+        <ContentContainer metaPage>
           <FlexBox
             alignItems="center"
             flex={1}
