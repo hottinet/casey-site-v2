@@ -14,13 +14,13 @@ import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 const DetailBox = styled(FlexBox)`
   border: 1px solid black;
   padding: 32px;
-  border-radius: 10px;
+  border-radius: 16px;
 `;
 
 const UTBox = styled(FlexBox)`
   background-color: white;
   padding: 16px;
-  border-radius: 10px;
+  border-radius: 16px;
 `;
 
 function EXAMPLE_PAGE_CHANGE_ME() {
@@ -126,7 +126,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         {/** START COMPETETIVE */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
-            Competetive research
+            Competitive research
           </Text>
           <Text as="p" variant="bodySmall">
             I looked at a handful of budgeting tools, both wedding related and
@@ -142,45 +142,71 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         </ContentContainer>
         {/** END COMPETETIVE */}
         {/** START MVP */}
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
-            What goes in the MVP?
-          </Text>
-          <Text as="p" variant="bodySmall">
-            In our research we identified a wide variety of pain points across
-            the entire wedding budget journey from initial research and sticker
-            shock to keeping track of payments in the final days. For our MVP,
-            we decided to focus in narrowly on allowing users to do the
-            following:
-          </Text>
-          <ul>
-            <li>
-              <Text as="p" variant="bodySmall">
-                work towards a max budget
-              </Text>
-            </li>
-            <li>
-              <Text as="p" variant="bodySmall">
-                track both past and upcoming payments with reminders
-              </Text>
-            </li>
-            <li>
-              <Text as="p" variant="bodySmall">
-                start with a limited amount of prefilled budget items but
-                customize as much as they please
-              </Text>
-            </li>
-            <li>
-              <Text as="p" variant="bodySmall">
-                access Zola budgeting tips where appropriate
-              </Text>
-            </li>
-          </ul>
-          <Text as="p" variant="bodySmall">
-            For this version we did not focus on the very early stages of
-            budgeting where couples are looking for budget education.
-          </Text>
-        </ContentContainer>
+        <FlexBox
+          backgroundImage="linear-gradient(#FD9C86, #FFCEAC)"
+          justifyContent="center"
+          padding={48}
+          width="100vw"
+        >
+          <ContentContainer gap={32}>
+            <Text as="h2" variant="headline4">
+              What goes in the MVP?
+            </Text>
+            <Text as="p" variant="bodySmall">
+              In our research we identified a wide variety of pain points across
+              the entire wedding budget journey from initial research to
+              tracking payments in the final days. For our MVP, we decided to
+              focus in narrowly on allowing users to do the following:
+            </Text>
+            <GridBox columns={3}>
+              <UTBox flexDirection="column" gap={8}>
+                <Text as="p" opacity=".5" variant="subtitle3">
+                  Education & research
+                </Text>
+                <Text as="p" opacity=".5" variant="bodySmall">
+                  Location-based recommendations
+                </Text>
+                <Text as="p" opacity=".5" variant="bodySmall">
+                  Guidance on budget allocation
+                </Text>
+                <Text as="p" opacity=".5" variant="bodySmall">
+                  Onboarding quiz
+                </Text>
+              </UTBox>
+              <UTBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  Locking in costs
+                </Text>
+                <Text as="p" variant="bodySmall">
+                  ✅ Work towards a max budget
+                </Text>
+                <Text as="p" variant="bodySmall">
+                  ✅ Simple tips
+                </Text>
+                <Text as="p" variant="bodySmall">
+                  ✅ Custom categories and items
+                </Text>
+                <Text as="p" opacity=".5" variant="bodySmall">
+                  Link to Zola vendor marketplace
+                </Text>
+                <Text as="p" opacity=".5" variant="bodySmall">
+                  Filtering
+                </Text>
+              </UTBox>
+              <UTBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  Making payments
+                </Text>
+                <Text as="p" variant="bodySmall">
+                  ✅ Push notification payment reminders
+                </Text>
+                <Text as="p" variant="bodySmall">
+                  ✅ Track upcoming and past payments
+                </Text>
+              </UTBox>
+            </GridBox>
+          </ContentContainer>
+        </FlexBox>
         {/** END MVP */}
         {/** START MODEL */}
         <ContentContainer gap={32}>
@@ -290,7 +316,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           </Text>
           <FlexBox flexDirection="column" gap={8}>
             <Text as="p" variant="subtitle3">
-              iteration 1: how do we show all the numbers?
+              iteration 1: how do we show three numbers per item?
             </Text>
             <Text as="p" variant="bodySmall">
               Most wedding budgets include an estimate, total and balance for
@@ -301,20 +327,16 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               estimate cost from our initial system to reduce complexity.
             </Text>
           </FlexBox>
+          <Image
+            alt="Iteration of the designs"
+            fitParent
+            src="/ZolaBudget/zola-iteration-1.png"
+          />
         </ContentContainer>
-        <FlexBox backgroundColor="blue" justifyContent="center" width="100vw">
-          <ContentContainer>
-            <Image
-              alt="Iteration of the designs"
-              fitParent
-              src="/ZolaBudget/zola-iteration-1.png"
-            />
-          </ContentContainer>
-        </FlexBox>
-        <ContentContainer>
+        <ContentContainer gap={32}>
           <FlexBox flexDirection="column" gap={8}>
             <Text as="p" variant="subtitle3">
-              iteration 2
+              iteration 2: simplifying down to two numbers
             </Text>
             <Text as="p" variant="bodySmall">
               Once we narrowed down to two numbers per item, we ran a user test
@@ -324,19 +346,20 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               to see the numbers next to each other.
             </Text>
           </FlexBox>
-          <GridBox columnGap={20} columns={2} rowGap={20}>
+          <GridBox column={2} gap={40}>
             <Image
-              alt="Design with a tab to swap between cost and balance due"
+              alt="Iteration of the designs"
               fitParent
-              src="/ZolaBudget/zola-mainb-1.png"
+              src="/ZolaBudget/zola-budget-iteration-2.png"
             />
             <Image
-              alt="Design with cost and balance due columns both showing"
+              alt="Iteration of the designs"
               fitParent
-              src="/ZolaBudget/zola-mainb-2.png"
+              src="/ZolaBudget/zola-budget-iteration-3.png"
             />
           </GridBox>
         </ContentContainer>
+
         {/** END DESIGN */}
         {/** START FINAL */}
         <ContentContainer gap={32}>
@@ -344,42 +367,25 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             The Final Product
           </Text>
         </ContentContainer>
-
+        <FlexBox backgroundColor="blue" justifyContent="center" width="100vw">
+          <ContentContainer>
+            <Image
+              alt="Final designs for the MVP"
+              fitParent
+              src="/ZolaBudget/zola-budget-mvp.png"
+            />
+          </ContentContainer>
+        </FlexBox>
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Performance
           </Text>
           <Text as="p" variant="bodySmall">
-            In the first month, we saw great adoption of the budget tool and
-            beat our goals for conversion.
-          </Text>
-          <Text as="p" variant="bodySmall">
-            We ran a survey some time after launch and found that more than half
-            of survey takers gave the tool 5 out of 5 stars and most others gave
-            it 4 out of 5 stars.
-          </Text>
-          <Text as="p" variant="bodySmall">
-            The most highly requested additions were:
-          </Text>
-          <ul>
-            <li>
-              <Text as="p" variant="bodySmall">
-                Access to the tool on web
-              </Text>
-            </li>
-            <li>
-              <Text as="p" variant="bodySmall">
-                More budget setting guidance
-              </Text>
-            </li>
-            <li>
-              <Text as="p" variant="bodySmall">
-                Ability to include estimate costs
-              </Text>
-            </li>
-          </ul>
-          <Text as="p" variant="bodySmall">
-            All things we would work on next.
+            In the first months, we beat our goals for conversion and received
+            high ratings from users who took a survey about their experience. We
+            continued to work towards building the tool on web and add value to
+            budget users. Get in touch to learn more about how this project
+            performed and evolved!
           </Text>
         </ContentContainer>
         {/**
