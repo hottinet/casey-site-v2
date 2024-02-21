@@ -35,7 +35,13 @@ function CaseyTitle() {
     xl: 175,
   });
   return (
-    <Text as="h1" fontSize={pxToRem(size)} lineHeight={1} textAlign="center">
+    <Text
+      as="h1"
+      fontSize={pxToRem(size)}
+      lineHeight={1}
+      marginTop={32}
+      textAlign="center"
+    >
       Casey Bradford
     </Text>
   );
@@ -61,9 +67,14 @@ function HomePage() {
   return (
     <HomeLayout>
       <BackgroundOverride color="pink" />
-      <FlexBox flexDirection="column" height="100%" width="100%">
+      <CaseyTitle />
+      <FlexBox
+        alignItems="center"
+        flexDirection="column"
+        height="100%"
+        width="100%"
+      >
         <ContentContainer alignItems="center" gap={32} marginTop={32}>
-          <CaseyTitle />
           <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
             <Text
               as="p"

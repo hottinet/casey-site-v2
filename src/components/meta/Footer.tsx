@@ -39,6 +39,7 @@ export function Footer() {
   const lessThanSm = useBreakpointsLessThan('sm');
   return (
     <FlexBox
+      alignItems="center"
       flexDirection="column"
       marginTop="auto"
       paddingTop={pxToRem(136)}

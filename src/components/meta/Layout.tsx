@@ -21,6 +21,7 @@ export function Layout({
     <>
       <Head title={pageTitle || 'Casey Bradford'} />
       <FlexBox
+        alignItems="center"
         className={className}
         flexDirection="column"
         height="100%"

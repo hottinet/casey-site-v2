@@ -27,7 +27,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
   const belowSm = useBreakpointsLessThan('sm');
   return (
     <Layout nextPageHref={HOME_ROUTE}>
-      <FlexBox flexDirection="column" gap={80}>
+      <FlexBox alignItems="center" flexDirection="column" gap={80}>
         {/** START INTRO */}
         <ContentContainer
           gap={32}
@@ -302,11 +302,15 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             </Text>
           </FlexBox>
         </ContentContainer>
-        <Image
-          alt="Iteration of the designs"
-          fitParent
-          src="/ZolaBudget/zola-iteration-1.png"
-        />
+        <FlexBox backgroundColor="blue" justifyContent="center" width="100vw">
+          <ContentContainer>
+            <Image
+              alt="Iteration of the designs"
+              fitParent
+              src="/ZolaBudget/zola-iteration-1.png"
+            />
+          </ContentContainer>
+        </FlexBox>
         <ContentContainer>
           <FlexBox flexDirection="column" gap={8}>
             <Text as="p" variant="subtitle3">
