@@ -6,6 +6,7 @@ import { ContentContainer } from '~/components/ContentContainer';
 import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
+import ExternalVideo from '~/components/videos/ExternalVideo';
 import { HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -35,9 +36,9 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             lineHeight={1.2}
             variant={belowSm ? 'headline4' : 'headline3'}
           >
-            Redesigning the Zola app home page
+            Creating a scalable home screen navigation for the Zola app
           </Text>
-          <FlexBox gap={40}>
+          <GridBox border="1px solid black" columns={2} gap={40} padding={32}>
             <FlexBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 The Goal
@@ -56,13 +57,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 collaborate with tech, copy and product teams.
               </Text>
             </FlexBox>
-          </FlexBox>
+          </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
-          <GridBox>
-            <FlexBox flexDirection="column" gap={8}>
-              <Text as="h4" variant="headline4">
-                The Problem
+          <GridBox columns={2} gap={40}>
+            <FlexBox flexDirection="column" gap={32}>
+              <Text as="h1" lineHeight={1.2} variant="headline4">
+                The problem
               </Text>
               <Text as="p" variant="bodySmall">
                 Our old navigation had a jump menu with space for 8 products.
@@ -80,11 +81,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
-          <Text as="h4" variant="headline4">
-            User testing strategy
-          </Text>
-          <Text as="p" variant="subtitle3">
-            Getting in the couple&apos;s mindset via card sorting
+          <Text as="h1" lineHeight={1.2} variant="headline4">
+            Getting in the user&apos;s mindset with a card sort activity
           </Text>
           <Text as="p" variant="bodySmall">
             Internally, we had lots of ideas about how the ecosystem of Zola
@@ -104,8 +102,10 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             alt="assortment of all of the cards shown in card sort"
             src="/ZolaNav/zola-cards-pre.png"
           />
-          <Text as="p" variant="subtitle3">
-            Three themes emerge from card sorting
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <Text as="h1" lineHeight={1.2} variant="headline4">
+            Takeaways from card sorting
           </Text>
           <GridBox columns={3}>
             <UTBox flexDirection="column" gap={8}>
@@ -118,6 +118,10 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 Advice. This was also a theme we saw in interviews for other
                 projects.
               </Text>
+              <Text as="p" opacity=".5" variant="bodySmall">
+                &quot;I’m going there to engage with people or seek outside
+                inspiration&quot;
+              </Text>
             </UTBox>
             <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
@@ -126,6 +130,14 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               <Text as="p" variant="bodySmall">
                 When forced to consolidate groups, many people combined either
                 paper or website with the rest of the guest list tools.
+              </Text>
+              <Text as="p" opacity=".5" variant="bodySmall">
+                &quot;The guest group is like who you have and how you
+                communicate with them&quot;
+              </Text>
+              <Text as="p" opacity=".5" variant="bodySmall">
+                &quot;Put the paper samples, invites and save the dates with all
+                this guest stuff sort of make that all go hand in hand&quot;
               </Text>
             </UTBox>
             <UTBox flexDirection="column" gap={8}>
@@ -136,11 +148,16 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 Many participants grouped together things that felt like their
                 personal to-dos.
               </Text>
+              <Text as="p" opacity=".5" variant="bodySmall">
+                &quot;That all seems to be things you&apos;re doing to keep
+                track of your wedding holistically on Zola&quot;
+              </Text>
+              <Text as="p" opacity=".5" variant="bodySmall">
+                &quot;Something that I feel like I&apos;ll continue to check in
+                on&quot;
+              </Text>
             </UTBox>
           </GridBox>
-          <Text as="p" variant="subtitle3">
-            Proposing new groupings based on our learnings
-          </Text>
           <Text as="p" variant="bodySmall">
             From our interviews, we identified 4 main groups to start with. We
             planned to put this new grouping in a prototype and guage reactions
@@ -152,8 +169,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           />
         </ContentContainer>
         <ContentContainer gap={32}>
-          <Text as="p" variant="subtitle3">
-            Prototypes: Presenting two directions for organizing our menu
+          <Text as="h1" lineHeight={1.2} variant="headline4">
+            Prototypes for testing
           </Text>
           <Text as="p" variant="bodySmall">
             When translating the groupings from our card sort into designs that
@@ -182,8 +199,8 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             need to do for their wedding.
           </Text>
         </ContentContainer>
-        <ContentContainer>
-          <Text as="h4" variant="headline4">
+        <ContentContainer gap={32}>
+          <Text as="h1" lineHeight={1.2} variant="headline4">
             Refining designs and applying new branding
           </Text>
           <Text as="p" variant="bodySmall">
@@ -202,6 +219,66 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             use our new brand colors to separate the sections. We worked with
             the copy team to create titles for each section and link.
           </Text>
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <GridBox columnGap={40} columns={2}>
+            <FlexBox flexDirection="column" gap={32}>
+              <Text as="h1" lineHeight={1.2} variant="headline4">
+                Interaction
+              </Text>
+              <Text as="p" variant="bodySmall">
+                I also wanted to put more thought into the tapped states of the
+                jump menu links. In our previous menu, the text changed colors
+                when tapped. However, the change was not very noticeable when
+                the user&apos;s finger was covering most of the icon and text. I
+                worked on multiple iterations where the change could still be
+                seen behind a finger.
+              </Text>
+            </FlexBox>
+            <ExternalVideo
+              aspectRatio="1:1"
+              src="https://player.vimeo.com/video/779806553"
+              title="exploration of tapped stated for jump menu items"
+            />
+          </GridBox>
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <GridBox columnGap={40} columns={2}>
+            <FlexBox flexDirection="column" gap={32}>
+              <Text as="h1" lineHeight={1.2} variant="headline4">
+                Designing into the rest of the page
+              </Text>
+              <Text as="p" variant="bodySmall">
+                After we felt good about the nav links and bottom bar, we turned
+                our attention to the rest of the home page. The previous page
+                included a lot of marketing, education and other modules that
+                got little to no interaction.
+              </Text>
+              <Text as="p" variant="bodySmall">
+                In the old version of the home page, we allowed users to upload
+                a photo, but it was not very clear what the photo was connected
+                to. For our new home page, we wanted to highlight our wedding
+                countdown widget in that space. This would encourage couples to
+                add a wedding date, get them familiar with the widget and
+                personalize the home page.
+              </Text>
+            </FlexBox>
+            <Image
+              alt="Image of widget on iOS home and in the Zola app home"
+              mb={0}
+              src="/ZolaNav/Widget.png"
+            />
+          </GridBox>
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <Text as="h1" lineHeight={1.2} variant="headline4">
+            The final product
+          </Text>
+          <ExternalVideo
+            aspectRatio="16:9"
+            src="https://player.vimeo.com/video/780521675"
+            title="Demo of home page and navgation"
+          />
         </ContentContainer>
 
         {/**

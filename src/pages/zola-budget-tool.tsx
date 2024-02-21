@@ -38,7 +38,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             lineHeight={1.2}
             variant={belowSm ? 'headline4' : 'headline3'}
           >
-            Building an app-first wedding budget tool for Zola
+            Building a wedding budget tool for Zola
           </Text>
           <ExternalVideo
             aspectRatio="16:9"
