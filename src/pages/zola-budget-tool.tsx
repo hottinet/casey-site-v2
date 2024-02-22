@@ -346,7 +346,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               to see the numbers next to each other.
             </Text>
           </FlexBox>
-          <GridBox column={2} gap={40}>
+          <GridBox columns={2} gap={40}>
             <Image
               alt="Iteration of the designs"
               fitParent
