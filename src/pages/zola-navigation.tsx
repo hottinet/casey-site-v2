@@ -9,6 +9,7 @@ import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 import { HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
+import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 const UTBox = styled(FlexBox)`
@@ -38,7 +39,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           >
             Creating a scalable home screen navigation for the Zola app
           </Text>
-          <GridBox border="1px solid black" columns={2} gap={40} padding={32}>
+          <GridBox
+            border="1px solid black"
+            borderRadius={pxToRem(16)}
+            columns={2}
+            gap={40}
+            padding={32}
+          >
             <FlexBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 The Goal
@@ -61,7 +68,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         </ContentContainer>
         <ContentContainer gap={32}>
           <GridBox columns={2} gap={40}>
-            <FlexBox flexDirection="column" gap={32}>
+            <FlexBox flexDirection="column" gap={32} justifyContent="center">
               <Text as="h1" lineHeight={1.2} variant="headline4">
                 The problem
               </Text>
@@ -107,7 +114,12 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           <Text as="h1" lineHeight={1.2} variant="headline4">
             Takeaways from card sorting
           </Text>
-          <GridBox columns={3}>
+          <GridBox
+            gridTemplateColumns={{
+              base: '1fr',
+              md: 'repeat(3, 1fr)',
+            }}
+          >
             <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 Inspiration 💡
@@ -179,7 +191,14 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             bigger way and a second that used sheets to expand each section in
             the bottom bar.
           </Text>
-          <GridBox columnGap={20} columns={2} rowGap={20}>
+          <GridBox
+            columnGap={20}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+            rowGap={20}
+          >
             <Image
               alt="Home page design in which clicking on a tab in the bottom bar opens a sub-menu"
               fitParent
@@ -222,7 +241,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         </ContentContainer>
         <ContentContainer gap={32}>
           <GridBox columnGap={40} columns={2}>
-            <FlexBox flexDirection="column" gap={32}>
+            <FlexBox flexDirection="column" gap={32} justifyContent="center">
               <Text as="h1" lineHeight={1.2} variant="headline4">
                 Interaction
               </Text>
@@ -244,7 +263,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         </ContentContainer>
         <ContentContainer gap={32}>
           <GridBox columnGap={40} columns={2}>
-            <FlexBox flexDirection="column" gap={32}>
+            <FlexBox flexDirection="column" gap={32} justifyContent="center">
               <Text as="h1" lineHeight={1.2} variant="headline4">
                 Designing into the rest of the page
               </Text>

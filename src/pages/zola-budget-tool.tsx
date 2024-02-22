@@ -9,13 +9,8 @@ import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 import { HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
+import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
-
-const DetailBox = styled(FlexBox)`
-  border: 1px solid black;
-  padding: 32px;
-  border-radius: 16px;
-`;
 
 const UTBox = styled(FlexBox)`
   background-color: white;
@@ -28,30 +23,43 @@ function EXAMPLE_PAGE_CHANGE_ME() {
   return (
     <Layout nextPageHref={HOME_ROUTE}>
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
-        {/** START INTRO */}
         <ContentContainer
           gap={32}
           marginTop={belowSm ? SM_NAV_BAR_HEIGHT : NAV_BAR_HEIGHT}
         >
-          <Text
-            as="h1"
-            lineHeight={1.2}
-            variant={belowSm ? 'headline4' : 'headline3'}
+          <GridBox
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
           >
-            Building a wedding budget tool for Zola
-          </Text>
-          <ExternalVideo
-            aspectRatio="16:9"
-            src="https://player.vimeo.com/video/881214462"
-            title="video of budget tool features"
-          />
-          <Text as="p" variant="bodySmall">
-            Note: This video has been updated to reflect new Zola branding as
-            well as a few new features added after this case study was created.
-          </Text>
+            <FlexBox flexDirection="column" gap={32} justifyContent="center">
+              <Text
+                as="h1"
+                lineHeight={1.2}
+                variant={belowSm ? 'headline3' : 'headline2'}
+              >
+                Building a wedding budget tool for Zola
+              </Text>
+            </FlexBox>
+            <Image
+              alt="Bar graph of your budget"
+              src="/ZolaBudget/budget-tool-hero.png"
+            />
+          </GridBox>
         </ContentContainer>
+        {/** START INTRO */}
         <ContentContainer gap={32}>
-          <DetailBox gap={40}>
+          <GridBox
+            border="1px solid black"
+            borderRadius={pxToRem(16)}
+            gap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+            padding={32}
+          >
             <FlexBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 The Goal
@@ -70,7 +78,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 teams, execute research, user testing, etc.
               </Text>
             </FlexBox>
-          </DetailBox>
+          </GridBox>
         </ContentContainer>
         {/** END INTRO */}
         {/** START USER RESEARCH */}
@@ -83,7 +91,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             actively involved in managing their budgets. Below are the themes
             that emerged.
           </Text>
-          <GridBox columns={4}>
+          <GridBox
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: '1fr 1fr',
+              md: 'repeat(4, 1fr)',
+            }}
+          >
             <UTBox flexDirection="column" gap={8}>
               <Text as="p" variant="subtitle3">
                 Phases of the journey 🗓️
@@ -143,9 +157,9 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         {/** END COMPETETIVE */}
         {/** START MVP */}
         <FlexBox
-          backgroundImage="linear-gradient(#FD9C86, #FFCEAC)"
+          backgroundImage="linear-gradient(#FD9C86, #FFE8DE)"
           justifyContent="center"
-          padding={48}
+          paddingY={48}
           width="100vw"
         >
           <ContentContainer gap={32}>
@@ -158,7 +172,12 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               tracking payments in the final days. For our MVP, we decided to
               focus in narrowly on allowing users to do the following:
             </Text>
-            <GridBox columns={3}>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: 'repeat(3, 1fr)',
+              }}
+            >
               <UTBox flexDirection="column" gap={8}>
                 <Text as="p" opacity=".5" variant="subtitle3">
                   Education & research
@@ -362,20 +381,28 @@ function EXAMPLE_PAGE_CHANGE_ME() {
 
         {/** END DESIGN */}
         {/** START FINAL */}
-        <ContentContainer gap={32}>
+        <ContentContainer gap={32} paddingY={48}>
           <Text as="h2" variant="headline4">
             The Final Product
           </Text>
-        </ContentContainer>
-        <FlexBox backgroundColor="blue" justifyContent="center" width="100vw">
-          <ContentContainer>
-            <Image
-              alt="Final designs for the MVP"
-              fitParent
-              src="/ZolaBudget/zola-budget-mvp.png"
+          {belowSm ? (
+            <ExternalVideo
+              aspectRatio="1:1"
+              src="https://player.vimeo.com/video/881215320"
+              title="video of budget tool features"
             />
-          </ContentContainer>
-        </FlexBox>
+          ) : (
+            <ExternalVideo
+              aspectRatio="16:9"
+              src="https://player.vimeo.com/video/881214462"
+              title="video of budget tool features"
+            />
+          )}
+          <Text as="p" variant="bodySmall">
+            Note: This video has been updated to reflect new Zola branding as
+            well as a few new features added after this case study was created.
+          </Text>
+        </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Performance
