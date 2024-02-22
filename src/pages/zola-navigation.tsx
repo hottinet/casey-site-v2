@@ -23,27 +23,37 @@ function EXAMPLE_PAGE_CHANGE_ME() {
   return (
     <Layout nextPageHref={HOME_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
-        {/**
-         *
-         *  ContentContainer is for bounded countent
-         *
-         */}
         <ContentContainer
           gap={32}
           marginTop={belowSm ? SM_NAV_BAR_HEIGHT : NAV_BAR_HEIGHT}
         >
-          <Text
-            as="h1"
-            lineHeight={1.2}
-            variant={belowSm ? 'headline4' : 'headline3'}
+          <GridBox
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
           >
-            Creating a scalable home screen navigation for the Zola app
-          </Text>
+            <FlexBox flexDirection="column" gap={32} justifyContent="center">
+              <Text
+                as="h1"
+                lineHeight={1.2}
+                variant={belowSm ? 'headline3' : 'headline2'}
+              >
+                Designing a more scalable and effective home screen
+              </Text>
+            </FlexBox>
+            <Image alt="Zola Home Page" src="/ZolaNav/nav-hero.png" />
+          </GridBox>
+        </ContentContainer>
+        <ContentContainer gap={32}>
           <GridBox
             border="1px solid black"
             borderRadius={pxToRem(16)}
-            columns={2}
             gap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
             padding={32}
           >
             <FlexBox flexDirection="column" gap={8}>
@@ -67,7 +77,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
-          <GridBox columns={2} gap={40}>
+          <GridBox
+            gap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+          >
             <FlexBox flexDirection="column" gap={32} justifyContent="center">
               <Text as="h1" lineHeight={1.2} variant="headline4">
                 The problem
@@ -177,7 +193,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           </Text>
           <Image
             alt="cards organized into 4 groups: planning, guests and paper, inspo, and registry"
-            src="/ZolaNav/zola-cards-post.png"
+            src="/ZolaNav/zola-nav-post.png"
           />
         </ContentContainer>
         <ContentContainer gap={32}>
@@ -238,9 +254,19 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             use our new brand colors to separate the sections. We worked with
             the copy team to create titles for each section and link.
           </Text>
+          <Image
+            alt="Different design iterations of what the nav links might look like"
+            src="/ZolaNav/zola-nav-links-rectangle.png"
+          />
         </ContentContainer>
         <ContentContainer gap={32}>
-          <GridBox columnGap={40} columns={2}>
+          <GridBox
+            columnGap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+          >
             <FlexBox flexDirection="column" gap={32} justifyContent="center">
               <Text as="h1" lineHeight={1.2} variant="headline4">
                 Interaction
@@ -262,7 +288,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
-          <GridBox columnGap={40} columns={2}>
+          <GridBox
+            columnGap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+          >
             <FlexBox flexDirection="column" gap={32} justifyContent="center">
               <Text as="h1" lineHeight={1.2} variant="headline4">
                 Designing into the rest of the page
@@ -298,6 +330,17 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             src="https://player.vimeo.com/video/780521675"
             title="Demo of home page and navgation"
           />
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <Text as="h2" variant="headline4">
+            Performance
+          </Text>
+          <Text as="p" variant="bodySmall">
+            This design solution increased the number of links that we could fit
+            on our home page and it also caused users to interact with more
+            products, scroll more and spend more time in the app. Get in touch
+            to learn more about how this project impacted app usage!
+          </Text>
         </ContentContainer>
 
         {/**

@@ -43,7 +43,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               </Text>
             </FlexBox>
             <Image
-              alt="Bar graph of your budget"
+              alt="Main Budget Screen"
               src="/ZolaBudget/budget-tool-hero.png"
             />
           </GridBox>
