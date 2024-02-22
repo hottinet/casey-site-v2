@@ -100,7 +100,7 @@ function HomePage() {
           paddingX={showoffPaddingX}
           priority
           tags={['zola', 'ios']}
-          title="Building a Wedding Budget Tool"
+          title="Building a wedding budget tool"
         />
         <ContentContainer metaPage>
           <GridBox
@@ -112,7 +112,7 @@ function HomePage() {
               color="text"
               linkHref={EXAMPLE_DELETE_ME}
               tags={['zola', 'ios']}
-              title="Designing a more scalable home page and navigation"
+              title="Designing a more scalable home page"
             />
             <ShowoffContent
               color="text"
@@ -126,7 +126,7 @@ function HomePage() {
           backgroundColor="blue"
           borderRadius={showoffBorderRadius}
           color="text"
-          imageAlt="Zola Budget Tool on an iPhone"
+          imageAlt="Zola onboarding on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"
           linkHref={EXAMPLE_DELETE_ME}
@@ -135,7 +135,7 @@ function HomePage() {
           marginX={showoffMarginX}
           paddingX={showoffPaddingX}
           tags={['zola', 'ios']}
-          title="Building a Wedding Budget Tool"
+          title="Making a great first impression with onboarding"
         />
         <ContentContainer metaPage>
           <FlexBox flexDirection="column" gap={40}>

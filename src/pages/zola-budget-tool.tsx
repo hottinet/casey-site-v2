@@ -39,7 +39,7 @@ function EXAMPLE_PAGE_CHANGE_ME() {
                 lineHeight={1.2}
                 variant={belowSm ? 'headline3' : 'headline2'}
               >
-                Building a wedding budget tool for Zola
+                Building a wedding budget tool
               </Text>
             </FlexBox>
             <Image
