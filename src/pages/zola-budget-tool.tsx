@@ -7,7 +7,7 @@ import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
-import { HOME_ROUTE } from '~/constants/routing';
+import { ZOLA_NAVIGATION_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -18,10 +18,10 @@ const UTBox = styled(FlexBox)`
   border-radius: 16px;
 `;
 
-function EXAMPLE_PAGE_CHANGE_ME() {
+function ZOLA_BUGDET_TOOL() {
   const belowSm = useBreakpointsLessThan('sm');
   return (
-    <Layout nextPageHref={HOME_ROUTE}>
+    <Layout nextPageHref={ZOLA_NAVIGATION_ROUTE}>
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}
@@ -229,7 +229,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
         {/** END MVP */}
         {/** START MODEL */}
         <ContentContainer gap={32}>
-          <GridBox gap={40}>
+          <GridBox
+            gap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+          >
             <FlexBox flexDirection="column" gap={32}>
               <FlexBox flexDirection="column" gap={32}>
                 <Text as="h2" variant="headline4">
@@ -291,7 +297,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
             we worked with the copy team to create simple names and descriptions
             for each.
           </Text>
-          <GridBox gap={40}>
+          <GridBox
+            gap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+          >
             <FlexBox flexDirection="column" gap={32}>
               <FlexBox flexDirection="column" gap={8}>
                 <Text as="p" variant="subtitle3">
@@ -365,7 +377,13 @@ function EXAMPLE_PAGE_CHANGE_ME() {
               to see the numbers next to each other.
             </Text>
           </FlexBox>
-          <GridBox columns={2} gap={40}>
+          <GridBox
+            gap={40}
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+          >
             <Image
               alt="Iteration of the designs"
               fitParent
@@ -425,4 +443,4 @@ function EXAMPLE_PAGE_CHANGE_ME() {
   );
 }
 
-export default EXAMPLE_PAGE_CHANGE_ME;
+export default ZOLA_BUGDET_TOOL;

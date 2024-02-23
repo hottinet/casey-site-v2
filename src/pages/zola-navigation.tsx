@@ -7,7 +7,7 @@ import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
-import { HOME_ROUTE } from '~/constants/routing';
+import { ZOLA_BABY_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -18,10 +18,10 @@ const UTBox = styled(FlexBox)`
   border-radius: 10px;
 `;
 
-function EXAMPLE_PAGE_CHANGE_ME() {
+function ZOLA_NAV() {
   const belowSm = useBreakpointsLessThan('sm');
   return (
-    <Layout nextPageHref={HOME_ROUTE}>
+    <Layout nextPageHref={ZOLA_BABY_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}
@@ -325,11 +325,19 @@ function EXAMPLE_PAGE_CHANGE_ME() {
           <Text as="h1" lineHeight={1.2} variant="headline4">
             The final product
           </Text>
-          <ExternalVideo
-            aspectRatio="16:9"
-            src="https://player.vimeo.com/video/780521675"
-            title="Demo of home page and navgation"
-          />
+          {belowSm ? (
+            <ExternalVideo
+              aspectRatio="1:1"
+              src="https://player.vimeo.com/video/780521056"
+              title="Demo of home page and navgation"
+            />
+          ) : (
+            <ExternalVideo
+              aspectRatio="16:9"
+              src="https://player.vimeo.com/video/780521675"
+              title="Demo of home page and navgation"
+            />
+          )}
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
@@ -353,4 +361,4 @@ function EXAMPLE_PAGE_CHANGE_ME() {
   );
 }
 
-export default EXAMPLE_PAGE_CHANGE_ME;
+export default ZOLA_NAV;

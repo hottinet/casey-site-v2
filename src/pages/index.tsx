@@ -14,7 +14,13 @@ import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { ShowoffContent } from '~/components/showoff/ShowoffContent';
 import { Text } from '~/components/typography/Text';
-import { EXAMPLE_DELETE_ME } from '~/constants/routing';
+import {
+  EXAMPLE_DELETE_ME,
+  ZOLA_BABY_ROUTE,
+  ZOLA_BUDGET_ROUTE,
+  ZOLA_NAVIGATION_ROUTE,
+  ZOLA_ONBOARDING,
+} from '~/constants/routing';
 import { pxToRem } from '~/utils/pxToRem';
 import {
   useBreakpointsAtLeast,
@@ -93,7 +99,7 @@ function HomePage() {
           imageAlt="Zola Budget Tool on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/budget-tool.png"
-          linkHref={EXAMPLE_DELETE_ME}
+          linkHref={ZOLA_BUDGET_ROUTE}
           marginBottom={showoffMarginBottom}
           marginTop={showoffMarginTop}
           marginX={showoffMarginX}
@@ -110,13 +116,13 @@ function HomePage() {
           >
             <ShowoffContent
               color="text"
-              linkHref={EXAMPLE_DELETE_ME}
+              linkHref={ZOLA_NAVIGATION_ROUTE}
               tags={['zola', 'ios']}
               title="Designing a more scalable home page"
             />
             <ShowoffContent
               color="text"
-              linkHref={EXAMPLE_DELETE_ME}
+              linkHref={ZOLA_BABY_ROUTE}
               tags={['zola', 'ios']}
               title="Launching a baby registry product"
             />
@@ -129,7 +135,7 @@ function HomePage() {
           imageAlt="Zola onboarding on an iPhone"
           imageAspectRatio="356/515"
           imageSrc="/Home/onboarding.png"
-          linkHref={EXAMPLE_DELETE_ME}
+          linkHref={ZOLA_ONBOARDING}
           marginBottom={showoffMarginBottom}
           marginTop={showoffMarginTop}
           marginX={showoffMarginX}
