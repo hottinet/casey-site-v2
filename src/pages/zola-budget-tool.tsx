@@ -18,7 +18,7 @@ const UTBox = styled(FlexBox)`
   border-radius: 16px;
 `;
 
-function ZOLA_BUGDET_TOOL() {
+function ZOLA_BUDGET_TOOL() {
   const belowSm = useBreakpointsLessThan('sm');
   return (
     <Layout nextPageHref={ZOLA_NAVIGATION_ROUTE}>
@@ -443,4 +443,4 @@ function ZOLA_BUGDET_TOOL() {
   );
 }
 
-export default ZOLA_BUGDET_TOOL;
+export default ZOLA_BUDGET_TOOL;
