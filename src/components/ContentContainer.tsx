@@ -33,6 +33,7 @@ export function ContentContainer({
       flexDirection="column"
       maxWidth={`${theme.breakpointValues.xl}px`}
       paddingX={padding}
+      width="100%"
       {...rest}
     >
       {children}

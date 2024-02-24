@@ -19,6 +19,7 @@ import { SmNavMenu } from './SmNavMenu';
 interface NavBarProps {
   layoutClassName?: string;
   nextPageHref?: string;
+  nextPageLabel?: string;
 }
 
 const NavBackground = styled('div')(({ theme, className }) => ({
@@ -48,7 +49,11 @@ const linkTextProps = {
   noHoverStyles: true,
 } as const;
 
-export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
+export function NavBar({
+  layoutClassName,
+  nextPageHref,
+  nextPageLabel,
+}: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const smUp = useBreakpointsAtLeast('sm');
@@ -150,7 +155,12 @@ export function NavBar({ layoutClassName, nextPageHref }: NavBarProps) {
           </FlexBox>
         </ContentContainer>
         <Divider bottom={0} position="absolute" width="100vw" />
-        {smUp && <NextProjectButton nextPageHref={nextPageHref} />}
+        {smUp && (
+          <NextProjectButton
+            nextPageHref={nextPageHref}
+            nextPageLabel={nextPageLabel}
+          />
+        )}
       </FlexBox>
       {!smUp && <SmNavMenu isOpen={menuOpen} setIsOpen={setMenuOpen} />}
     </>

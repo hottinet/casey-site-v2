@@ -2,6 +2,7 @@ import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
+import { NON_BREAKING_SPACE } from '~/constants/characterEntitites';
 import { NAV_BAR_HEIGHT } from '~/constants/styles';
 
 import { FlexBox } from '../box/FlexBox';
@@ -34,9 +35,13 @@ const Animator = styled(FlexBox)<{ hovered: boolean }>(({ hovered }) => ({
 
 interface NextProjectButtonProps {
   nextPageHref?: string;
+  nextPageLabel?: string;
 }
 
-export function NextProjectButton({ nextPageHref }: NextProjectButtonProps) {
+export function NextProjectButton({
+  nextPageHref,
+  nextPageLabel = `Next${NON_BREAKING_SPACE}Project`,
+}: NextProjectButtonProps) {
   const [hovered, setHovered] = useState(false);
   if (!nextPageHref) {
     return null;
@@ -67,7 +72,7 @@ export function NextProjectButton({ nextPageHref }: NextProjectButtonProps) {
           <Arrow height={12} title="" titleId="" width={12} />
         </Animator>
         <Text color="textSecondary" variant="subtitle3">
-          Next&nbsp;Project
+          {nextPageLabel}
         </Text>
       </FlexBox>
     </NextProjectLink>

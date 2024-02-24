@@ -137,7 +137,7 @@ function ZOLA_BUDGET_TOOL() {
           </GridBox>
         </ContentContainer>
         {/** END USER RESEARCH */}
-        {/** START COMPETETIVE */}
+        {/** START COMPETITIVE */}
         <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
             Competitive research
@@ -146,7 +146,7 @@ function ZOLA_BUDGET_TOOL() {
             I looked at a handful of budgeting tools, both wedding related and
             not. Most wedding specific tools did not break down to a payment
             level or include the ability to set reminders. Many of them also
-            started with lots of prepopulated items that could be overwhleming
+            started with lots of prepopulated items that could be overwhelming
             to the couple.
           </Text>
           <Image
@@ -154,7 +154,7 @@ function ZOLA_BUDGET_TOOL() {
             src="/ZolaBudget/zola-budget-competitor.png"
           />
         </ContentContainer>
-        {/** END COMPETETIVE */}
+        {/** END COMPETITIVE */}
         {/** START MVP */}
         <FlexBox
           backgroundImage="linear-gradient(#FD9C86, #FFE8DE)"

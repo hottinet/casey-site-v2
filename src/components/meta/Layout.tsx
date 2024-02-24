@@ -9,6 +9,7 @@ interface LayoutProps {
   pageTitle?: string;
   className?: string;
   nextPageHref?: string;
+  nextPageLabel?: string;
 }
 
 export function Layout({
@@ -16,6 +17,7 @@ export function Layout({
   pageTitle,
   className,
   nextPageHref,
+  nextPageLabel,
 }: PropsWithChildren<LayoutProps>) {
   return (
     <>
@@ -29,7 +31,11 @@ export function Layout({
         position="relative"
         width="100%"
       >
-        <NavBar layoutClassName={className} nextPageHref={nextPageHref} />
+        <NavBar
+          layoutClassName={className}
+          nextPageHref={nextPageHref}
+          nextPageLabel={nextPageLabel}
+        />
         {children}
         <Footer />
       </FlexBox>
