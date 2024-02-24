@@ -53,7 +53,7 @@ function AboutLinkButton({ href, text, belowSm }: AboutLinkButtonProps) {
 
 const aboutLinks = [
   {
-    text: 'Download My Resume',
+    text: 'View My Resume',
     href: '/CaseyBradfordResume.pdf',
   },
   {
