@@ -98,7 +98,7 @@ const CUSTOM_CSS_SPACING_KEYS = [
   'paddingY',
 ] as const;
 type SpacingValues = Spacing | CSS.Properties['margin'];
-export type AllowedCustomCssSpacingProps = {
+export type RawCustomCssSpacingProps = {
   [k in (typeof CUSTOM_CSS_SPACING_KEYS)[number]]?: SpacingValues;
 };
 
@@ -147,7 +147,7 @@ type RawAllowedGridBoxCssProps = {
   [k in (typeof ALLOWED_GRIDBOX_CSS_KEYS)[number]]?: CSS.Properties[k];
 };
 
-type RawAllowedCustomCssProps = AllowedCustomCssSpacingProps;
+type RawAllowedCustomCssProps = RawCustomCssSpacingProps;
 
 type RawAllowedCssProps = RawAllowedCommonCssProps &
   RawAllowedTextCssProps &
@@ -215,6 +215,8 @@ type AllowedCssPropsWithTheme<T> = {
   >;
 };
 
+export type AllowedCustomCssSpacingProps =
+  AllowedCssPropsWithTheme<RawCustomCssSpacingProps>;
 export type AllowedCommonCssProps =
   AllowedCssPropsWithTheme<RawAllowedCommonCssProps>;
 export type AllowedTextCssProps =
