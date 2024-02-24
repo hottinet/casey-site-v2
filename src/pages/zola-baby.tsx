@@ -20,6 +20,7 @@ function ZOLA_BABY() {
           marginTop={belowSm ? SM_NAV_BAR_HEIGHT : NAV_BAR_HEIGHT}
         >
           <GridBox
+            gap={40}
             gridTemplateColumns={{
               base: '1fr',
               sm: 'repeat(2, 1fr)',
@@ -34,10 +35,7 @@ function ZOLA_BABY() {
                 Launching a baby registry app
               </Text>
             </FlexBox>
-            <Image
-              alt="Main Budget Screen"
-              src="/ZolaBudget/budget-tool-hero.png"
-            />
+            <Image alt="Baby Regsistry Screen" src="/ZolaBaby/baby-hero.png" />
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
@@ -87,9 +85,10 @@ function ZOLA_BABY() {
             step, we conducted an audit of all the screens in the weddings app
             that might be re-used.
           </Text>
-          <Text as="h2" variant="headline4">
-            IMAGE
-          </Text>
+          <Image
+            alt="sitemap of zola weddings app with parts relevant to baby highlighted"
+            src="/ZolaBaby/zolababy-sitemap.png"
+          />
           <Text as="h2" variant="headline4">
             Using prototypes to drive product requirements
           </Text>
@@ -100,43 +99,67 @@ function ZOLA_BABY() {
             prototype to facilitate discussions with the entire team regarding
             tech requirements, creative implications, merch contracts, and more.
           </Text>
-          <Text as="h2" variant="headline4">
-            IMAGE
-          </Text>
+          <Image
+            alt="view of figma prototype"
+            src="/ZolaBaby/zola-baby-proto-5.png"
+          />
           <Text as="h2" variant="headline4">
             Some screens stayed almost exactly the same between apps
           </Text>
-          <Text as="h2" variant="headline4">
-            IMAGE
-          </Text>
+          <GridBox
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+            rowGap={20}
+          >
+            <Image
+              alt="Showing how similar the shop pages in the weddings and baby apps are"
+              fitParent
+              src="/ZolaBaby/zola-baby-same-1.png"
+            />
+            <Image
+              alt="Showing how similar the shop pages in the weddings and baby apps are"
+              fitParent
+              src="/ZolaBaby/zola-baby-same-2.png"
+            />
+          </GridBox>
           <Text as="h2" variant="headline4">
             While others got some baby-centric upgrades
           </Text>
+          <GridBox
+            gridTemplateColumns={{
+              base: '1fr',
+              sm: 'repeat(2, 1fr)',
+            }}
+            rowGap={20}
+          >
+            <Image
+              alt="Showing how different the registry pages in the weddings and baby apps are"
+              fitParent
+              src="/ZolaBaby/zola-baby-different-1.png"
+            />
+            <Image
+              alt="Showing how different the registry pages in the weddings and baby apps are"
+              fitParent
+              src="/ZolaBaby/zola-baby-different-2.png"
+            />
+          </GridBox>
+        </ContentContainer>
+        <ContentContainer gap={32}>
           <Text as="h2" variant="headline4">
-            IMAGE
+            Getting in the baby mindset
+          </Text>
+          <Text as="p" variant="bodySmall">
+            Both getting married and starting a family can be incredibly
+            emotional life moments. As designers, it&apos;s crucial to be
+            mindful of the user&apos;s state of mind. While it wasn&apos;t
+            within our project&apos;s scope to conduct much formal user
+            research, we talked with coworkers and friends to identify key
+            principles we needed to consider when switching context from Zola
+            Weddings to Zola Baby.
           </Text>
         </ContentContainer>
-        <FlexBox
-          backgroundImage="linear-gradient(#3475CC, #FFE8DE)"
-          justifyContent="center"
-          paddingY={48}
-          width="100vw"
-        >
-          <ContentContainer gap={32}>
-            <Text as="h2" variant="headline4">
-              Getting in the baby mindset
-            </Text>
-            <Text as="p" variant="bodySmall">
-              Both getting married and starting a family can be incredibly
-              emotional life moments. As designers, it&apos;s crucial to be
-              mindful of the user&apos;s state of mind. While it wasn&apos;t
-              within our project&apos;s scope to conduct much formal user
-              research, we talked with coworkers and friends to identify key
-              principles we needed to consider when switching context from Zola
-              Weddings to Zola Baby.
-            </Text>
-          </ContentContainer>
-        </FlexBox>
         <ContentContainer gap={32}>
           <GridBox
             columnGap={40}
@@ -146,8 +169,8 @@ function ZOLA_BABY() {
             }}
           >
             <FlexBox flexDirection="column" gap={32} justifyContent="center">
-              <Text as="h1" lineHeight={1.2} variant="headline4">
-                New parents want guidance about what to put on their registry
+              <Text as="h1" variant="subtitle3">
+                New parents want guidance
               </Text>
               <Text as="p" variant="bodySmall">
                 For a wedding registry, most users already have specific gifts
@@ -180,7 +203,7 @@ function ZOLA_BABY() {
             }}
           >
             <FlexBox flexDirection="column" gap={32} justifyContent="center">
-              <Text as="h1" lineHeight={1.2} variant="headline4">
+              <Text as="h1" variant="subtitle3">
                 Variation of our iOS widgets
               </Text>
               <Text as="p" variant="bodySmall">
@@ -225,9 +248,10 @@ function ZOLA_BABY() {
             quickly add gifts from specific screens, and enhancing our
             third-party gift adding experience significantly.
           </Text>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
-            IMAGE
-          </Text>
+          <Image
+            alt="baby registry with blue and gold theme"
+            src="/ZolaBaby/zola-baby-improvements.png"
+          />
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h1" lineHeight={1.2} variant="headline4">
@@ -238,9 +262,11 @@ function ZOLA_BABY() {
             an informational landing page for Zola Baby on the web. From this
             page visitors could download our app or search for a registry.
           </Text>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
-            IMAGE
-          </Text>
+          <Image
+            alt="Web page for Zola Baby with QR code to download the app"
+            mb={80}
+            src="/ZolaBaby/zola-baby-web-noshadow.png"
+          />
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h1" lineHeight={1.2} variant="headline4">

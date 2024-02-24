@@ -35,7 +35,10 @@ function ZOLA_ONBOARDING() {
                 Making a great first impression with onboarding
               </Text>
             </FlexBox>
-            <Image alt="Zola Home Page" src="/ZolaNav/nav-hero.png" />
+            <Image
+              alt="Zola Home Page"
+              src="/ZolaOnboarding/onboarding-hero.png"
+            />
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
