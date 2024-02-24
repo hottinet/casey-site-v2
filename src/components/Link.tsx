@@ -55,7 +55,6 @@ function LinkChildren(
   if ('label' in props) {
     const { label, ...textProps } = props;
     return (
-      // @ts-expect-error This component is all fucked typewise
       <LinkText as="span" {...textProps}>
         {label}
       </LinkText>
