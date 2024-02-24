@@ -108,5 +108,3 @@ export default theme;
 export type ThemeShape = typeof theme;
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Theme extends ThemeShape {}
-
-export type Color = keyof typeof colors;

@@ -198,7 +198,6 @@ export const CUSTOM_THEME_CSS_PROPS = {
   maxHeight: 'spacing',
   minWidth: 'spacing',
   minHeight: 'spacing',
-  // ts-prune-ignore-next
 } satisfies {
   [k in keyof RawAllowedCssProps]: keyof Theme;
 };

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { hexToRgba } from '~/utils/css';
 
 import { FlexBox, FlexBoxProps } from './box/FlexBox';
-import Body from './typography/Body';
+import { Text } from './typography/Text';
 
 type DividerProps = {
   label?: string;
@@ -16,19 +16,15 @@ const Segment = styled.div`
   background-color: ${({ theme }) => hexToRgba(theme.colors.text, 0.4)};
 `;
 
-const Label = styled(Body)`
-  padding: 0 ${({ theme }) => theme.spacing[16]};
-`;
-
 export function Divider({ label, className, ...flexProps }: DividerProps) {
   return (
     <FlexBox center className={className} {...flexProps}>
       {label && (
         <>
           <Segment />
-          <Label bold mb={0}>
+          <Text as="p" fontWeight="bold" paddingX={16} variant="bodySmall">
             {label}
-          </Label>
+          </Text>
         </>
       )}
       <Segment />

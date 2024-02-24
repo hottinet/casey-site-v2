@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { FlexBox } from './box/FlexBox';
 import Button from './buttons/Button';
-import Body from './typography/Body';
+import { Text } from './typography/Text';
 
 interface ImageClickerProps {
   children: React.ReactNode[];
@@ -32,19 +32,12 @@ const Tooltip = styled(FlexBox)`
   border-radius: ${({ theme }) => theme.spacing[12]};
 `;
 
-const TooltipLabel = styled(Body)`
-  font-size: ${({ theme }) => theme.fontSize.subBody};
-`;
-
 const ImageCount = styled(Tooltip)`
   left: unset;
   right: 0;
 `;
 
-export const ImageClicker: React.FC<ImageClickerProps> = ({
-  children,
-  className,
-}) => {
+export function ImageClicker({ children, className }: ImageClickerProps) {
   const [childIndex, setChildIndex] = useState(0);
 
   const setNextIndex = () => {
@@ -61,15 +54,17 @@ export const ImageClicker: React.FC<ImageClickerProps> = ({
         <>
           {children[childIndex]}
           <Tooltip margin={8} paddingX={24} paddingY={8}>
-            <TooltipLabel mb={0}>Click to see the next image</TooltipLabel>
+            <Text as="span" variant="bodySmall">
+              Click to see the next image
+            </Text>
           </Tooltip>
           <ImageCount margin={8} paddingX={24} paddingY={8}>
-            <TooltipLabel mb={0}>
+            <Text as="span" variant="bodySmall">
               {`${childIndex + 1}/${children.length}`}
-            </TooltipLabel>
+            </Text>
           </ImageCount>
         </>
       </ImageButton>
     </ClickerWrapper>
   );
-};
+}
