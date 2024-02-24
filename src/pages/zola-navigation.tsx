@@ -316,7 +316,6 @@ function ZOLA_NAV() {
             </FlexBox>
             <Image
               alt="Image of widget on iOS home and in the Zola app home"
-              mb={0}
               src="/ZolaNav/Widget.png"
             />
           </GridBox>

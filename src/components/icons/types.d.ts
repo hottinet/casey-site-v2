@@ -7,7 +7,7 @@ export type BaseIconProps = {
   title: string;
   titleId: string;
   children: React.ReactNode;
-} & AllowedCommonCssProps &
+} & Omit<AllowedCommonCssProps, 'color'> &
   AllowedCustomCssProps;
 
 export type IconProps = Omit<BaseIconProps, 'viewBox' | 'children'> & {

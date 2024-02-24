@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ComponentType, SVGProps } from 'react';
 
 import { filterCssProps } from '~/utils/css';
 
@@ -8,7 +9,10 @@ const Svg = styled.svg(({ theme, ...props }) => ({
   height: '100%',
   width: '100%',
   ...filterCssProps(props, theme),
-}));
+})) as ComponentType<
+  Omit<BaseIconProps, 'title' | 'titleId'> &
+    Pick<SVGProps<SVGSVGElement>, 'role' | 'xmlns'>
+>;
 
 function Icon({
   viewBox = '0 0 24 24',

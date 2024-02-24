@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, ComponentType } from 'react';
 
 import { AllowedCommonCssProps } from '~/constants/css';
 import { Spacing } from '~/typings/theme';
@@ -24,7 +24,7 @@ const Button = styled('button')(({ theme, ...rest }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   ...filterCssProps(rest, theme),
-}));
+})) as ComponentType<Omit<IconButtonProps, 'iconSize'>>;
 
 export function IconButton({
   iconSize = 24,

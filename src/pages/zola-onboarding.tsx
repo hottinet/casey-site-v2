@@ -118,7 +118,11 @@ function ZOLA_ONBOARDING() {
             to understand how we could create more consistency between the two
             flows.
           </Text>
-          <Image alt="xyz" mb={40} src="/ZolaOnboarding/zola-new-flow.png" />
+          <Image
+            alt="xyz"
+            marginBottom={40}
+            src="/ZolaOnboarding/zola-new-flow.png"
+          />
           <Text as="p" variant="bodySmall">
             We didn&apos;t make massive changes to the existing questions. We
             ended up adding one new question about what stage of planning the
@@ -153,7 +157,7 @@ function ZOLA_ONBOARDING() {
           </FlexBox>
           <Image
             alt="examples of the screens with imagery"
-            mb={80}
+            marginBottom={80}
             src="/ZolaOnboarding/zola-imagery.png"
           />
           <FlexBox flexDirection="column" gap={8}>

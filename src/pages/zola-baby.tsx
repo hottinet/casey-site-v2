@@ -264,7 +264,7 @@ function ZOLA_BABY() {
           </Text>
           <Image
             alt="Web page for Zola Baby with QR code to download the app"
-            mb={80}
+            marginBottom={80}
             src="/ZolaBaby/zola-baby-web-noshadow.png"
           />
         </ContentContainer>
@@ -279,8 +279,8 @@ function ZOLA_BABY() {
             were accessible.
           </Text>
           <Image
-            alt="Screenshot of various text and background color combos with accessbility ratings"
-            mb={80}
+            alt="Screenshot of various text and background color combos with accessability ratings"
+            marginBottom={80}
             src="/ZolaBaby/zola-baby-accessibility.png"
           />
         </ContentContainer>

@@ -79,7 +79,7 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
       zIndex={9999}
     >
       {isOpen && <Global styles={openGlobalStyles} />}
-      <ContentContainer display="flex" flexDirection="column" height="100%">
+      <ContentContainer flexDirection="column" height="100%">
         <IconButton
           alignSelf="end"
           transform="translateX(25%)"

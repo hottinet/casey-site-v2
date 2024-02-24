@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
 import { checkIsIOS } from '~/utils/checkIsIOS';
+import { pxToRem } from '~/utils/pxToRem';
 
-import Body from '../typography/Body';
+import { Text } from '../typography/Text';
 import Button from './Button';
 import { ButtonProps } from './types';
 
@@ -57,13 +58,7 @@ const StyledButton = styled(Button)<
   }),
 }));
 
-const StyledText = styled(Body)<Pick<TextButtonProps, 'variant'>>`
-  color: ${({ theme, variant }) =>
-    variant !== 'primary' && theme.colors.textSecondary};
-  font-size: 0.8rem;
-`;
-
-const TextButton: React.FC<TextButtonProps> = ({
+function TextButton({
   label,
   onClick,
   variant = 'primary',
@@ -71,7 +66,7 @@ const TextButton: React.FC<TextButtonProps> = ({
   buttonClassName,
   type,
   forceHover,
-}) => {
+}: TextButtonProps) {
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
@@ -90,12 +85,16 @@ const TextButton: React.FC<TextButtonProps> = ({
         variant={variant}
         onClick={onClick}
       >
-        <StyledText bold variant={variant}>
+        <Text
+          color={variant !== 'primary' ? 'textSecondary' : undefined}
+          fontSize={pxToRem(12)}
+          fontWeight="bold"
+        >
           {label}
-        </StyledText>
+        </Text>
       </StyledButton>
     </AnimationWrapper>
   );
-};
+}
 
 export default TextButton;
