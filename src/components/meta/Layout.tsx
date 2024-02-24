@@ -37,7 +37,7 @@ export function Layout({
           nextPageLabel={nextPageLabel}
         />
         {children}
-        <Footer />
+        <Footer nextPageHref={nextPageHref} nextPageLabel={nextPageLabel} />
       </FlexBox>
     </>
   );

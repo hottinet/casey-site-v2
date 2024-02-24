@@ -36,11 +36,13 @@ const Animator = styled(FlexBox)<{ hovered: boolean }>(({ hovered }) => ({
 interface NextProjectButtonProps {
   nextPageHref?: string;
   nextPageLabel?: string;
+  className?: string;
 }
 
 export function NextProjectButton({
   nextPageHref,
   nextPageLabel = `Next${NON_BREAKING_SPACE}Project`,
+  className,
 }: NextProjectButtonProps) {
   const [hovered, setHovered] = useState(false);
   if (!nextPageHref) {
@@ -48,6 +50,7 @@ export function NextProjectButton({
   }
   return (
     <NextProjectLink
+      className={className}
       href={nextPageHref}
       internal
       onMouseEnter={() => {

@@ -3,7 +3,9 @@ import styled from '@emotion/styled';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
+import { Box } from '../box/Box';
 import { FlexBox } from '../box/FlexBox';
+import { NextProjectButton } from '../buttons/NextProjectNavButton';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
 import { Link } from '../Link';
@@ -18,6 +20,14 @@ const FooterWrapper = styled(FlexBox)`
 
 const FooterLink = styled(Link)`
   text-transform: uppercase;
+`;
+
+const FooterNext = styled(NextProjectButton)`
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 `;
 
 export const footerLinks = [
@@ -35,7 +45,12 @@ export const footerLinks = [
   },
 ];
 
-export function Footer() {
+interface FooterProps {
+  nextPageHref?: string;
+  nextPageLabel?: string;
+}
+
+export function Footer({ nextPageHref, nextPageLabel }: FooterProps) {
   const lessThanSm = useBreakpointsLessThan('sm');
   return (
     <FlexBox
@@ -45,6 +60,14 @@ export function Footer() {
       paddingTop={pxToRem(136)}
       width="100%"
     >
+      {lessThanSm && (
+        <Box paddingBottom={20} paddingX={20} width="100%">
+          <FooterNext
+            nextPageHref={nextPageHref}
+            nextPageLabel={nextPageLabel}
+          />
+        </Box>
+      )}
       <Divider width="100%" />
       <ContentContainer metaPage>
         <FooterWrapper

@@ -45,6 +45,7 @@ const OnMouseSpan = styled.span`
   display: inline-flex;
   width: 100%;
   height: 100%;
+  justify-content: center;
 `;
 
 function LinkChildren(
