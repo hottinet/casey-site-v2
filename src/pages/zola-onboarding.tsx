@@ -14,6 +14,7 @@ import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 function ZOLA_ONBOARDING() {
   const belowSm = useBreakpointsLessThan('sm');
+  const belowMd = useBreakpointsLessThan('md');
   return (
     <Layout
       nextPageHref={HOME_ROUTE}
@@ -34,7 +35,7 @@ function ZOLA_ONBOARDING() {
               <Text
                 as="h1"
                 lineHeight={1.2}
-                variant={belowSm ? 'headline3' : 'headline2'}
+                variant={belowMd ? 'headline3' : 'headline2'}
               >
                 Making a great first impression with onboarding
               </Text>
@@ -87,8 +88,8 @@ function ZOLA_ONBOARDING() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
-              <Text as="h1" lineHeight={1.2} variant="headline4">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
+              <Text as="h1" lineHeight={1.1} variant="headline4">
                 Taking time to add some delight
               </Text>
               <Text as="p" variant="bodySmall">
@@ -108,8 +109,8 @@ function ZOLA_ONBOARDING() {
             <Video sources={[{ src: '/ZolaOnboarding/zola-melissa.mp4' }]} />
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Aligning on the flow
           </Text>
           <Text as="p" variant="bodySmall">
@@ -132,8 +133,8 @@ function ZOLA_ONBOARDING() {
             to keep the flow short.
           </Text>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Bringing it to life with our new branding
           </Text>
           <Text as="p" variant="bodySmall">
@@ -202,9 +203,9 @@ function ZOLA_ONBOARDING() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
               {' '}
-              <Text as="h1" lineHeight={1.2} variant="headline4">
+              <Text as="h1" lineHeight={1.1} variant="headline4">
                 Refining the interaction
               </Text>
               <Text as="h3" variant="subtitle3">
@@ -253,8 +254,8 @@ function ZOLA_ONBOARDING() {
             />
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Learning from the final product
           </Text>
           {belowSm ? (

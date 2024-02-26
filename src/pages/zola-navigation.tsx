@@ -20,6 +20,7 @@ const UTBox = styled(FlexBox)`
 
 function ZOLA_NAV() {
   const belowSm = useBreakpointsLessThan('sm');
+  const belowMd = useBreakpointsLessThan('md');
   return (
     <Layout nextPageHref={ZOLA_BABY_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
@@ -37,7 +38,7 @@ function ZOLA_NAV() {
               <Text
                 as="h1"
                 lineHeight={1.2}
-                variant={belowSm ? 'headline3' : 'headline2'}
+                variant={belowMd ? 'headline3' : 'headline2'}
               >
                 Designing a more scalable and effective home screen
               </Text>
@@ -84,8 +85,8 @@ function ZOLA_NAV() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
-              <Text as="h1" lineHeight={1.2} variant="headline4">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
+              <Text as="h1" lineHeight={1.1} variant="headline4">
                 The problem
               </Text>
               <Text as="p" variant="bodySmall">
@@ -103,8 +104,8 @@ function ZOLA_NAV() {
             />
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Getting in the user&apos;s mindset with a card sort activity
           </Text>
           <Text as="p" variant="bodySmall">
@@ -126,8 +127,8 @@ function ZOLA_NAV() {
             src="/ZolaNav/zola-cards-pre.png"
           />
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Takeaways from card sorting
           </Text>
           <GridBox
@@ -196,8 +197,8 @@ function ZOLA_NAV() {
             src="/ZolaNav/zola-nav-post.png"
           />
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Prototypes for testing
           </Text>
           <Text as="p" variant="bodySmall">
@@ -234,8 +235,8 @@ function ZOLA_NAV() {
             need to do for their wedding.
           </Text>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Refining designs and applying new branding
           </Text>
           <Text as="p" variant="bodySmall">
@@ -267,8 +268,8 @@ function ZOLA_NAV() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
-              <Text as="h1" lineHeight={1.2} variant="headline4">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
+              <Text as="h1" lineHeight={1.1} variant="headline4">
                 Interaction
               </Text>
               <Text as="p" variant="bodySmall">
@@ -295,8 +296,8 @@ function ZOLA_NAV() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
-              <Text as="h1" lineHeight={1.2} variant="headline4">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
+              <Text as="h1" lineHeight={1.1} variant="headline4">
                 Designing into the rest of the page
               </Text>
               <Text as="p" variant="bodySmall">
@@ -320,8 +321,8 @@ function ZOLA_NAV() {
             />
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             The final product
           </Text>
           {belowSm ? (
@@ -338,8 +339,8 @@ function ZOLA_NAV() {
             />
           )}
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Performance
           </Text>
           <Text as="p" variant="bodySmall">
@@ -349,12 +350,6 @@ function ZOLA_NAV() {
             to learn more about how this project impacted app usage!
           </Text>
         </ContentContainer>
-
-        {/**
-         *
-         * Anything outside of a content container will go full width
-         *
-         */}
       </FlexBox>
     </Layout>
   );

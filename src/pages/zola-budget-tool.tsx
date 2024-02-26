@@ -20,6 +20,7 @@ const UTBox = styled(FlexBox)`
 
 function ZOLA_BUDGET_TOOL() {
   const belowSm = useBreakpointsLessThan('sm');
+  const belowMd = useBreakpointsLessThan('md');
   return (
     <Layout nextPageHref={ZOLA_NAVIGATION_ROUTE}>
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
@@ -37,7 +38,7 @@ function ZOLA_BUDGET_TOOL() {
               <Text
                 as="h1"
                 lineHeight={1.2}
-                variant={belowSm ? 'headline3' : 'headline2'}
+                variant={belowMd ? 'headline3' : 'headline2'}
               >
                 Building a wedding budget tool
               </Text>
@@ -82,8 +83,8 @@ function ZOLA_BUDGET_TOOL() {
         </ContentContainer>
         {/** END INTRO */}
         {/** START USER RESEARCH */}
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Getting in the user mindset
           </Text>
           <Text as="p" variant="bodySmall">
@@ -138,8 +139,8 @@ function ZOLA_BUDGET_TOOL() {
         </ContentContainer>
         {/** END USER RESEARCH */}
         {/** START COMPETITIVE */}
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Competitive research
           </Text>
           <Text as="p" variant="bodySmall">
@@ -162,8 +163,8 @@ function ZOLA_BUDGET_TOOL() {
           paddingY={48}
           width="100vw"
         >
-          <ContentContainer gap={32}>
-            <Text as="h2" variant="headline4">
+          <ContentContainer gap={24}>
+            <Text as="h2" lineHeight={1.1} variant="headline4">
               What goes in the MVP?
             </Text>
             <Text as="p" variant="bodySmall">
@@ -237,8 +238,8 @@ function ZOLA_BUDGET_TOOL() {
             }}
           >
             <FlexBox flexDirection="column" gap={32}>
-              <FlexBox flexDirection="column" gap={32}>
-                <Text as="h2" variant="headline4">
+              <FlexBox flexDirection="column" gap={24}>
+                <Text as="h2" lineHeight={1.1} variant="headline4">
                   Our budget model
                 </Text>
                 <FlexBox flexDirection="column" gap={8}>
@@ -287,8 +288,8 @@ function ZOLA_BUDGET_TOOL() {
         </ContentContainer>
         {/** END MODEL */}
         {/** START MATH */}
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Our math
           </Text>
           <Text as="p" variant="bodySmall">
@@ -341,8 +342,8 @@ function ZOLA_BUDGET_TOOL() {
         </ContentContainer>
         {/** END MATH */}
         {/** START DESIGN */}
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Design Iteration
           </Text>
           <FlexBox flexDirection="column" gap={8}>
@@ -399,8 +400,8 @@ function ZOLA_BUDGET_TOOL() {
 
         {/** END DESIGN */}
         {/** START FINAL */}
-        <ContentContainer gap={32} paddingY={48}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             The Final Product
           </Text>
           {belowSm ? (
@@ -421,8 +422,8 @@ function ZOLA_BUDGET_TOOL() {
             well as a few new features added after this case study was created.
           </Text>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={16}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Performance
           </Text>
           <Text as="p" variant="bodySmall">
@@ -433,11 +434,6 @@ function ZOLA_BUDGET_TOOL() {
             performed and evolved!
           </Text>
         </ContentContainer>
-        {/**
-         *
-         * Anything outside of a content container will go full width
-         *
-         */}
       </FlexBox>
     </Layout>
   );

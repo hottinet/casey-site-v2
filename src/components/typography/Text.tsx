@@ -99,18 +99,29 @@ const getTextTransform = (variantOrAs: VariantOrAs) => {
   }
 };
 
+const getLineHeight = (variantOrAs: VariantOrAs) => {
+  switch (variantOrAs) {
+    case 'bodySmall':
+      return 1.2;
+    default:
+      return undefined;
+  }
+};
+
 export const Text = styled('span')<TextProps>(
   ({ as, variant, theme, ...rest }) => {
     const fontSize = getFontSize(theme, variant || as || 'bodySmall');
     const fontFamily = getFontFamily(theme, variant || as || 'bodySmall');
     const fontWeight = getFontWeight(theme, variant || as || 'bodySmall');
     const textTransform = getTextTransform(variant || as || 'bodySmall');
+    const lineHeight = getLineHeight(variant || as || 'bodySmall');
 
     return {
       fontWeight,
       fontFamily,
       fontSize,
       textTransform,
+      lineHeight,
       letterSpacing: getLetterSpacing(variant || as || 'bodySmall'),
       ...filterCssProps(rest, theme),
     };

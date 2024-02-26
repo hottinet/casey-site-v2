@@ -12,6 +12,7 @@ import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 function ZOLA_BABY() {
   const belowSm = useBreakpointsLessThan('sm');
+  const belowMd = useBreakpointsLessThan('md');
   return (
     <Layout nextPageHref={ZOLA_ONBOARDING}>
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
@@ -30,7 +31,7 @@ function ZOLA_BABY() {
               <Text
                 as="h1"
                 lineHeight={1.2}
-                variant={belowSm ? 'headline3' : 'headline2'}
+                variant={belowMd ? 'headline3' : 'headline2'}
               >
                 Launching a baby registry app
               </Text>
@@ -69,8 +70,8 @@ function ZOLA_BABY() {
             </FlexBox>
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Building a foundation from Zola&apos;s best-in-class weddings app
           </Text>
           <Text as="p" variant="bodySmall">
@@ -89,7 +90,7 @@ function ZOLA_BABY() {
             alt="sitemap of zola weddings app with parts relevant to baby highlighted"
             src="/ZolaBaby/zolababy-sitemap.png"
           />
-          <Text as="h2" variant="headline4">
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Using prototypes to drive product requirements
           </Text>
           <Text as="p" variant="bodySmall">
@@ -103,7 +104,7 @@ function ZOLA_BABY() {
             alt="view of figma prototype"
             src="/ZolaBaby/zola-baby-proto-5.png"
           />
-          <Text as="h2" variant="headline4">
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Some screens stayed almost exactly the same between apps
           </Text>
           <GridBox
@@ -124,7 +125,7 @@ function ZOLA_BABY() {
               src="/ZolaBaby/zola-baby-same-2.png"
             />
           </GridBox>
-          <Text as="h2" variant="headline4">
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             While others got some baby-centric upgrades
           </Text>
           <GridBox
@@ -146,8 +147,8 @@ function ZOLA_BABY() {
             />
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h2" variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
             Getting in the baby mindset
           </Text>
           <Text as="p" variant="bodySmall">
@@ -168,7 +169,7 @@ function ZOLA_BABY() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
               <Text as="h1" variant="subtitle3">
                 New parents want guidance
               </Text>
@@ -202,7 +203,7 @@ function ZOLA_BABY() {
               sm: 'repeat(2, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32} justifyContent="center">
+            <FlexBox flexDirection="column" gap={24} justifyContent="center">
               <Text as="h1" variant="subtitle3">
                 Variation of our iOS widgets
               </Text>
@@ -221,8 +222,8 @@ function ZOLA_BABY() {
             />
           </GridBox>
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Utilizing existing website themes to let parents personalize their
             registry
           </Text>
@@ -237,8 +238,8 @@ function ZOLA_BABY() {
             title="Showing off the many website themes available for Zola baby registries"
           />
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             General UX improvements
           </Text>
           <Text as="p" variant="bodySmall">
@@ -253,8 +254,8 @@ function ZOLA_BABY() {
             src="/ZolaBaby/zola-baby-improvements.png"
           />
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Zola Baby&apos;s web presence
           </Text>
           <Text as="p" variant="bodySmall">
@@ -268,8 +269,8 @@ function ZOLA_BABY() {
             src="/ZolaBaby/zola-baby-web-noshadow.png"
           />
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Working with the creative team to pressure test new branding
           </Text>
           <Text as="p" variant="bodySmall">
@@ -284,8 +285,8 @@ function ZOLA_BABY() {
             src="/ZolaBaby/zola-baby-accessibility.png"
           />
         </ContentContainer>
-        <ContentContainer gap={32}>
-          <Text as="h1" lineHeight={1.2} variant="headline4">
+        <ContentContainer gap={24}>
+          <Text as="h1" lineHeight={1.1} variant="headline4">
             Launching Zola Baby
           </Text>
           <Text as="p" variant="bodySmall">
