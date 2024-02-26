@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import type { AppProps /* , AppContext */ } from 'next/app';
 import { useEffect, useRef, useState } from 'react';
 
-import FlexBox from '~/components/box/FlexBox';
+import { FlexBox } from '~/components/box/FlexBox';
 import theme from '~/constants/theme';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { PortalImageContext } from '~/contexts/portalImageContext';
@@ -24,7 +24,8 @@ const baseStyle = css`
 `;
 
 const globalStyles = css`
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+  @import url('https://use.typekit.net/lrw6qnz.css');
+  @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
   html {
     ${baseStyle};
   }
@@ -32,34 +33,46 @@ const globalStyles = css`
     ${baseStyle};
     position: relative;
     box-sizing: border-box;
+    font-family: ${theme.fontFamily.normal};
     color: ${theme.colors.text};
   }
-  #app {
+  #app,
+  #__next {
     ${baseStyle};
   }
-  div {
+  div,
+  input,
+  select,
+  textarea,
+  ul,
+  li,
+  a {
     box-sizing: border-box;
   }
-  p {
+  p,
+  h1,
+  h2,
+  h3,
+  pre,
+  figure,
+  ul,
+  li {
     ${marPadZero};
   }
-  h1 {
-    ${marPadZero};
+  li {
+    list-style: none;
   }
-  h2 {
-    ${marPadZero};
-  }
-  h3 {
-    ${marPadZero};
+  ul {
+    list-style: none;
   }
 `;
 
 const GlobalWrapper = styled(FlexBox)`
   width: 100%;
   overflow: hidden;
-  ${theme.breakpoints.sm} {
-    cursor: url('/Misc/cursor.png'), auto;
-  }
+  cursor:
+    url('/Misc/cursor.png') 12 12,
+    auto;
 `;
 
 const HoverTarget = styled.div`
@@ -67,7 +80,7 @@ const HoverTarget = styled.div`
   z-index: 999;
 `;
 
-const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
+function Page({ Component, pageProps }: AppProps) {
   const portalImageRef = useRef<HTMLDivElement>(null);
 
   const [windowBreakpoints, setWindowBreakpoints] = useState<BreakpointSize[]>([
@@ -98,7 +111,7 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
       <BreakpointsContext.Provider value={windowBreakpoints}>
         <PortalImageContext.Provider value={portalImageRef}>
           <Global styles={globalStyles} />
-          <GlobalWrapper column>
+          <GlobalWrapper flexDirection="column" minHeight="100%">
             <HoverTarget ref={portalImageRef} />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
@@ -107,6 +120,6 @@ const Page: React.FC<AppProps> = ({ Component, pageProps }) => {
       </BreakpointsContext.Provider>
     </ThemeProvider>
   );
-};
+}
 
 export default Page;

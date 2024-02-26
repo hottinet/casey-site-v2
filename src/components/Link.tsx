@@ -1,140 +1,97 @@
 import styled from '@emotion/styled';
-import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
-import { MouseEventHandler, useEffect, useState } from 'react';
+import { MouseEventHandler } from 'react';
 
-import PortalImage from './PortalImage';
+import { Text, TextProps } from './typography/Text';
 
-export type LinkProps = {
+type BaseLinkProps = {
   internal?: boolean;
   href: string;
-  children: React.ReactNode;
   className?: string;
+  onClick?: MouseEventHandler<HTMLSpanElement>;
   onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
   onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
   noHoverStyles?: boolean;
 };
 
-type HoverImageLinkProps = LinkProps & {
-  hoverImgSrc: string;
-  hoverImgAlt: string;
+type ChildLinkProps = {
+  label?: never;
+  children: React.ReactNode;
 };
 
-const StyledLink = styled.a<Pick<LinkProps, 'noHoverStyles'>>(
-  ({ theme, noHoverStyles }) => ({
-    color: theme.colors.text,
-    display: 'inline-block',
-    padding: noHoverStyles ? 0 : theme.spacing[4],
-    ':hover, :active': {
-      backgroundColor: noHoverStyles ? 'transparent' : theme.colors.yellow,
-      color: noHoverStyles ? 'inherit' : theme.colors.textSecondary,
-    },
-  })
-);
+type LabelLinkProps = {
+  label: string;
+  children?: never;
+} & Omit<TextProps, 'children'>;
+
+export type LinkProps = BaseLinkProps & (ChildLinkProps | LabelLinkProps);
+
+const StyledLink = styled(NextLink)(({ theme }) => ({
+  color: theme.colors.text,
+  display: 'inline-block',
+  cursor: 'pointer',
+  textDecoration: 'none',
+}));
+
+const LinkText = styled(Text)<Pick<LinkProps, 'noHoverStyles'>>`
+  text-decoration: none;
+  color: inherit;
+  :hover {
+    text-decoration: ${({ noHoverStyles }) =>
+      noHoverStyles ? 'none' : 'underline'};
+  }
+`;
 
 const OnMouseSpan = styled.span`
   display: inline-flex;
   width: 100%;
+  height: 100%;
+  justify-content: center;
 `;
 
-type PortalImageWrapperProps = Pick<
-  HoverImageLinkProps,
-  'hoverImgAlt' | 'hoverImgSrc'
->;
-
-const PortalImageWrapper: React.FC<PortalImageWrapperProps> = ({
-  hoverImgAlt,
-  hoverImgSrc,
-}) => {
-  const [mouseCoords, setMouseCoords] = useState<[number, number]>();
-
-  useEffect(() => {
-    const setCoords = throttle(
-      (e: MouseEvent) =>
-        setMouseCoords([
-          // The added number here needs to be great enough that an average user
-          // won't scroll that distance in the # of seconds the function is throttled
-          //
-          // If they do, they'll overlap the calculated position of the image, thus
-          // stopping their "hover" on the link, and removing the hover image
-          e.clientX + 48,
-
-          document.documentElement.scrollTop + e.clientY,
-        ]),
-      15
+function LinkChildren(
+  props: (ChildLinkProps | LabelLinkProps) &
+    Pick<BaseLinkProps, 'noHoverStyles'>
+) {
+  if ('label' in props) {
+    const { label, ...textProps } = props;
+    return (
+      <LinkText as="span" {...textProps}>
+        {label}
+      </LinkText>
     );
-    if (hoverImgSrc) {
-      window.addEventListener('mousemove', setCoords);
-    }
-    return () => {
-      setCoords.cancel();
-      window.removeEventListener('mousemove', setCoords);
-    };
-  }, [hoverImgSrc]);
+  }
+  const { children } = props;
+  return <>{children}</>;
+}
+
+export function Link({
+  internal,
+  href,
+  className,
+  onClick,
+  onMouseEnter,
+  onMouseLeave,
+  ...rest
+}: LinkProps) {
   return (
-    <PortalImage
-      coords={mouseCoords}
-      imgAlt={hoverImgAlt}
-      imgSrc={hoverImgSrc}
-    />
-  );
-};
-
-const Link: React.FC<LinkProps | HoverImageLinkProps> = (props) => {
-  const {
-    internal,
-    href,
-    children,
-    className,
-    onMouseEnter,
-    onMouseLeave,
-    noHoverStyles,
-  } = props;
-  const { hoverImgSrc, hoverImgAlt } = props as HoverImageLinkProps;
-  const [isHovered, setIsHovered] = useState(false);
-
-  const onEnter: MouseEventHandler<HTMLSpanElement> = (e) => {
-    if (hoverImgSrc) {
-      setIsHovered(true);
-    }
-    onMouseEnter?.(e);
-  };
-
-  const onLeave: MouseEventHandler<HTMLSpanElement> = (e) => {
-    if (hoverImgSrc) {
-      setIsHovered(false);
-    }
-    onMouseLeave?.(e);
-  };
-
-  useEffect(() => () => setIsHovered(false), []);
-
-  return (
-    <>
-      <NextLink href={href} passHref>
-        <StyledLink
-          className={className}
-          noHoverStyles={noHoverStyles}
-          rel="noopener noreferrer"
-          target={internal ? '_self' : '_blank'}
-        >
-          {/*
+    <StyledLink
+      className={className}
+      href={href}
+      rel="noopener noreferrer"
+      target={internal ? '_self' : '_blank'}
+    >
+      {/*
             Hack to allow mouseEvents inside nextjs links
             See https://github.com/vercel/next.js/issues/1490
           */}
-          <OnMouseSpan onMouseEnter={onEnter} onMouseLeave={onLeave}>
-            {children}
-          </OnMouseSpan>
-        </StyledLink>
-      </NextLink>
-      {hoverImgSrc && isHovered && (
-        <PortalImageWrapper
-          hoverImgAlt={hoverImgAlt}
-          hoverImgSrc={hoverImgSrc}
-        />
-      )}
-    </>
+      <OnMouseSpan
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <LinkChildren {...rest} />
+      </OnMouseSpan>
+    </StyledLink>
   );
-};
-
-export default Link;
+}

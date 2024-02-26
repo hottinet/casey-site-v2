@@ -10,15 +10,6 @@ export const ZOLA_NAVIGATION_ROUTE = '/zola-navigation';
 export const ZOLA_ONBOARDING = '/zola-onboarding';
 export const ZOLA_BABY_ROUTE = '/zola-baby';
 
-export const RESTRICTED_ROUTES: string[] = [];
+export const EXAMPLE_DELETE_ME = '/EXAMPLE';
 
-export const NEXT_ROUTE_MAP: Record<string, string> = {
-  [ZOLA_BUDGET_ROUTE]: ZOLA_NAVIGATION_ROUTE,
-  [ZOLA_NAVIGATION_ROUTE]: ZOLA_ONBOARDING,
-  [ZOLA_ONBOARDING]: ZOLA_BABY_ROUTE,
-  [ZOLA_BABY_ROUTE]: CORE_PROGRAMS,
-  [CORE_PROGRAMS]: CUSTOMER_DISCOVERY_ROUTE,
-  [CUSTOMER_DISCOVERY_ROUTE]: CORE_LIVE_CLASSES,
-  [CORE_LIVE_CLASSES]: CORE_SESSIONS,
-  [CORE_SESSIONS]: HOME_ROUTE,
-};
+export const RESTRICTED_ROUTES: string[] = [];

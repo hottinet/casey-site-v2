@@ -1,89 +1,97 @@
 import styled from '@emotion/styled';
 
-import FlexBox from '../box/FlexBox';
-import Divider from '../Divider';
-import Link, { LinkProps } from '../Link';
-import NextProjectPickle from '../pickles/NextProjectPickle';
-import Heading from '../typography/Heading';
+import { pxToRem } from '~/utils/pxToRem';
+import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
-const OuterFooterWrapper = styled.div(({ theme }) => ({
-  padding: `${theme.spacing[48]} ${theme.spacing[24]}`,
-  [theme.breakpoints.md]: {
-    padding: theme.spacing[48],
-  },
-}));
-
-const FooterDivider = styled(Divider)`
-  margin-bottom: ${({ theme }) => theme.spacing[8]};
-`;
-
-const FooterLink = styled(Link)<LinkProps>(({ theme }) => ({
-  ':last-child': {
-    marginRight: 0,
-  },
-  marginTop: theme.spacing[12],
-  width: 'min-content',
-  [theme.breakpoints.sm]: {
-    marginTop: 0,
-    marginRight: theme.spacing[24],
-  },
-}));
-
-const CaseyLink = styled(Link)`
-  text-decoration: none;
-`;
+import { Box } from '../box/Box';
+import { FlexBox, FlexBoxProps } from '../box/FlexBox';
+import { NextProjectButton } from '../buttons/NextProjectNavButton';
+import { ContentContainer } from '../ContentContainer';
+import { Divider } from '../Divider';
+import { Link } from '../Link';
 
 const FooterWrapper = styled(FlexBox)`
   flex-direction: column;
-  align-items: flex-start;
   ${({ theme }) => theme.breakpoints.sm} {
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
   }
 `;
 
-const LinkWrapper = styled(FlexBox)`
-  flex-direction: column;
-  margin-left: -0.25rem;
-  ${({ theme }) => theme.breakpoints.sm} {
-    margin-left: 0;
-    flex-direction: row;
-  }
+const FooterLink = styled(Link)`
+  text-transform: uppercase;
 `;
 
-type FooterProps = {
-  nextPath?: string;
-};
+const FooterNext = styled(NextProjectButton)`
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+`;
 
-const Footer: React.FC<FooterProps> = ({ nextPath }) => (
-  <>
-    {nextPath && (
-      <FlexBox justifyContent="flex-end" mt={64}>
-        <NextProjectPickle nextProjectPath={nextPath} />
-      </FlexBox>
-    )}
-    <OuterFooterWrapper>
-      <FooterDivider />
-      <FooterWrapper justifyContent="space-between">
-        <CaseyLink href="/" internal noHoverStyles>
-          <Heading bold mb={0}>
-            Casey Bradford
-          </Heading>
-        </CaseyLink>
-        <LinkWrapper>
-          <FooterLink href="mailto:caseyebradford@gmail.com">
-            <Heading mb={0}>Email</Heading>
-          </FooterLink>
-          <FooterLink href="https://www.linkedin.com/in/caseyebradford/">
-            <Heading mb={0}>LinkedIn</Heading>
-          </FooterLink>
-          <FooterLink href="/CaseyBradfordResume.pdf">
-            <Heading mb={0}>Resume</Heading>
-          </FooterLink>
-        </LinkWrapper>
-      </FooterWrapper>
-    </OuterFooterWrapper>
-  </>
-);
+export const footerLinks = [
+  {
+    href: '/CaseyBradfordResume.pdf',
+    text: 'Resume',
+  },
+  {
+    href: 'https://www.linkedin.com/in/caseyebradford/',
+    text: 'LinkedIn',
+  },
+  {
+    href: 'mailto:caseyebradford@gmail.com',
+    text: 'Email',
+  },
+];
 
-export default Footer;
+interface FooterProps {
+  nextPageHref?: string;
+  nextPageLabel?: string;
+  paddingTop?: FlexBoxProps['paddingTop'];
+}
+
+export function Footer({
+  nextPageHref,
+  nextPageLabel,
+  paddingTop = pxToRem(136),
+}: FooterProps) {
+  const lessThanSm = useBreakpointsLessThan('sm');
+  return (
+    <FlexBox
+      alignItems="center"
+      flexDirection="column"
+      marginTop="auto"
+      paddingTop={paddingTop}
+      width="100%"
+    >
+      {lessThanSm && nextPageHref && (
+        <Box paddingBottom={20} paddingX={20} width="100%">
+          <FooterNext
+            nextPageHref={nextPageHref}
+            nextPageLabel={nextPageLabel}
+          />
+        </Box>
+      )}
+      <Divider width="100%" />
+      <ContentContainer metaPage>
+        <FooterWrapper
+          alignItems="center"
+          gap={40}
+          justifyContent="space-between"
+          paddingY={40}
+          width="100%"
+        >
+          {footerLinks.map((link) => (
+            <FooterLink
+              href={link.href}
+              key={link.href}
+              label={link.text}
+              variant={lessThanSm ? 'subtitle2' : 'subtitle1'}
+            />
+          ))}
+        </FooterWrapper>
+      </ContentContainer>
+    </FlexBox>
+  );
+}

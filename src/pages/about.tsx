@@ -1,180 +1,109 @@
 import styled from '@emotion/styled';
-import { useEffect, useRef, useState } from 'react';
 
-import Box from '~/components/box/Box';
-import GridBox from '~/components/box/GridBox';
-import Link from '~/components/Link';
-import Layout from '~/components/meta/Layout';
+import { FlexBox } from '~/components/box/FlexBox';
+import { ContentContainer } from '~/components/ContentContainer';
+import { Link, LinkProps } from '~/components/Link';
+import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
+import { Layout } from '~/components/meta/Layout';
 import PortalImage from '~/components/PortalImage';
-import Body from '~/components/typography/Body';
-import Heading from '~/components/typography/Heading';
-import Title from '~/components/typography/Title';
+import { Text } from '~/components/typography/Text';
+import { stickerHeight } from '~/constants/stickers';
+import { useStickers } from '~/utils/stickers';
+import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
-const AboutContentBox = styled(Box)(({ theme }) => ({
-  marginRight: theme.spacing[24],
-  marginLeft: theme.spacing[24],
-  [theme.breakpoints.md]: {
-    marginRight: theme.spacing[48],
-    marginLeft: theme.spacing[48],
+const AboutLayout = styled(Layout)(({ theme }) => ({
+  backgroundImage: `linear-gradient(${theme.colors.blue}, ${theme.colors.blueLight})`,
+  minHeight: '100vh',
+}));
+
+const AboutLink = styled(Link)<LinkProps>(({ theme }) => ({
+  backgroundColor: theme.colors.yellow,
+  borderColor: theme.colors.text,
+  borderWidth: theme.borderWidth['3'],
+  borderStyle: 'solid',
+  borderRadius: theme.borderRadius[200],
+  ':hover': {
+    backgroundColor: theme.colors.red,
   },
 }));
 
-const stickerData = [
+interface AboutLinkButtonProps {
+  href: string;
+  text: string;
+  belowSm: boolean;
+}
+
+function AboutLinkButton({ href, text, belowSm }: AboutLinkButtonProps) {
+  return (
+    <AboutLink href={href}>
+      <Text
+        fontWeight="bold"
+        paddingX={belowSm ? 32 : 96}
+        paddingY={16}
+        textAlign="center"
+        textTransform="uppercase"
+        variant="bodySmall"
+        width="100%"
+      >
+        {text}
+      </Text>
+    </AboutLink>
+  );
+}
+
+const aboutLinks = [
   {
-    src: '/About/CA.png',
-    alt: 'California State Magnet',
+    text: 'View My Resume',
+    href: '/CaseyBradfordResume.pdf',
   },
   {
-    src: '/About/sake.gif',
-    alt: 'bottle of sake',
-  },
-  {
-    src: '/About/miami.png',
-    alt: 'Real Housewives of Miami',
-  },
-  {
-    src: '/About/cookie.gif',
-    alt: 'cookie',
-  },
-  {
-    src: '/About/sewing.png',
-    alt: 'Sewing Machine',
-  },
-  {
-    src: '/About/catpeach.png',
-    alt: 'cat peach mario cart character',
-  },
-  {
-    src: '/About/travelme.png',
-    alt: 'Travel Me',
+    text: 'Find Me on LinkedIn',
+    href: 'https://linkedin.com/in/caseyebradford/',
   },
 ];
 
-type StickerObj = {
-  src: string;
-  alt: string;
-  coords: [number, number];
-};
+function AboutPage() {
+  const belowSm = useBreakpointsLessThan('sm');
 
-const emptyStickers: StickerObj[] = [];
-const stickerHeight = 150;
+  const stickers = useStickers();
 
-const AboutMe: React.FC = () => {
-  const stickerRef = useRef<StickerObj[]>(emptyStickers);
-  const [stickers, setStickers] = useState<StickerObj[]>(emptyStickers);
-  const stickerIndexRef = useRef(0);
-
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      const { src, alt } = stickerData[stickerIndexRef.current];
-      const nextIdx = stickerIndexRef.current + 1;
-      stickerIndexRef.current = nextIdx >= stickerData.length ? 0 : nextIdx;
-      setStickers([
-        ...stickerRef.current,
-        {
-          src,
-          alt,
-          // Adjust these minus values to change where the sticker drops
-          // in relation to the cursor
-          coords: [
-            e.clientX - 60,
-            e.clientY + document.documentElement.scrollTop - stickerHeight / 2,
-          ],
-        },
-      ]);
-    };
-
-    document.addEventListener('click', onClick);
-    return () => document.removeEventListener('click', onClick);
-  }, []);
-
-  useEffect(() => {
-    stickerRef.current = stickers;
-  }, [stickers]);
-
+  const gap = belowSm ? 32 : 40;
   return (
     <>
-      <Layout>
-        <AboutContentBox mb={80}>
-          <Title mb={8}>Click anywhere to learn about my interests.</Title>
-          <Title mb={8}>
-            Download my&thinsp;
-            <Link
-              hoverImgAlt="resume"
-              hoverImgSrc="/About/resumehover.png"
-              href="/CaseyBradfordResume.pdf"
+      <BackgroundOverride color="blue" />
+      <AboutLayout fallbackNavBackground="blue">
+        <ContentContainer metaPage>
+          <FlexBox
+            alignItems="center"
+            flex={1}
+            flexDirection="column"
+            gap={gap}
+            height="100%"
+            marginTop={belowSm ? 96 : 128}
+          >
+            <Text
+              as="h1"
+              lineHeight={1}
+              variant={belowSm ? 'headline3' : 'headline1'}
             >
-              resume
-            </Link>
-            &thinsp;or find me on&thinsp;
-            <Link
-              hoverImgAlt="linkedin profile"
-              hoverImgSrc="/About/Linkedinhover.png"
-              href="https://linkedin.com/in/caseyebradford/"
-            >
-              LinkedIn.
-            </Link>
-          </Title>
-        </AboutContentBox>
-        <AboutContentBox mb={48}>
-          <Title bold>About me</Title>
-          <Body>
-            I&apos;m a Senior Product Designer with a focus on crafting awesome
-            mobile apps. I thrive in scrappy startup teams, turning vague ideas
-            into reality. I&apos;m organized, collaborative, and ready for a
-            challenge. With 8 years of experience between visual and product
-            design, I&apos;m looking to join a team where I can contribute as a
-            design leader.
-          </Body>
-          <Title bold>Experience</Title>
-          <GridBox>
-            <Box>
-              <Heading bold mb={8}>
-                Senior Product Designer, Mobile Core Experience
-              </Heading>
-              <Heading>Zola</Heading>
-              <Body>Nov 2021 - Oct 2023</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Product Designer
-              </Heading>
-              <Heading>Core &#40;Incubated by AlleyCorp&#41;</Heading>
-              <Body>Feb 2021 - July 2021</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Freelance Product Designer
-              </Heading>
-              <Heading>
-                Working with The Culinistas, Ellipsis Health, Irth and more
-              </Heading>
-              <Body>May 2020 - current</Body>
-            </Box>
-            <Box>
-              <Heading bold mb={8}>
-                Design Manager
-              </Heading>
-              <Heading>Flatiron School &#40;Acquired by WeWork&#41;</Heading>
-              <Body>Jan 2018 - April 2020</Body>
-            </Box>
-          </GridBox>
-        </AboutContentBox>
-        <AboutContentBox>
-          <Heading bold>What my colleagues are saying</Heading>
-          <Title mb={48}>
-            &quot;I was really impressed with her skills in delivering highly
-            buildable designs. She made sure to incorporate feedback from
-            engineers early and often, empowering the team to have valuable
-            conversations around design changes. Would love to work with her
-            again!&quot;
-          </Title>
-          <Heading bold mb={8}>
-            Jill Cohen
-          </Heading>
-          <Heading>Head of Mobile Engineering at Core</Heading>
-        </AboutContentBox>
-      </Layout>
+              About Casey
+            </Text>
+            <FlexBox flexDirection={belowSm ? 'column' : 'row'} gap={gap}>
+              {aboutLinks.map((link) => (
+                <AboutLinkButton
+                  belowSm={belowSm}
+                  href={link.href}
+                  key={link.href}
+                  text={link.text}
+                />
+              ))}
+            </FlexBox>
+            <Text as="p" variant={belowSm ? 'bodySmall' : 'bodyLarge'}>
+              click anywhere to learn about me
+            </Text>
+          </FlexBox>
+        </ContentContainer>
+      </AboutLayout>
       {stickers.map((s, i) => (
         <PortalImage
           coords={s.coords}
@@ -187,6 +116,6 @@ const AboutMe: React.FC = () => {
       ))}
     </>
   );
-};
+}
 
-export default AboutMe;
+export default AboutPage;

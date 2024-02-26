@@ -1,13 +1,16 @@
 import styled from '@emotion/styled';
 
+import { Color } from '~/typings/theme';
+
 import Arrow from '../icons/Arrow';
-import IconButton from './IconButton';
+import { RotatingIconButton } from './RotatingIconButton';
 import { ButtonProps } from './types';
 
-type ArrowButton = Pick<ButtonProps, 'onClick' | 'variant'> & {
+type ArrowButtonProps = Pick<ButtonProps, 'onClick' | 'variant'> & {
   className?: string;
   title: string;
   forceHover?: boolean;
+  color?: Color;
 };
 
 const ArrowIcon = styled(Arrow)`
@@ -15,21 +18,25 @@ const ArrowIcon = styled(Arrow)`
   width: ${({ theme }) => theme.spacing[32]};
 `;
 
-const ArrowButton: React.FC<ArrowButton> = ({
+export function ArrowButton({
   onClick,
   title,
-  variant = 'secondary',
+  color = 'textSecondary',
   className,
   forceHover,
-}) => (
-  <IconButton
-    className={className}
-    forceHover={forceHover}
-    variant={variant}
-    onClick={onClick}
-  >
-    <ArrowIcon title={`Navigate to ${title}`} titleId={`${title}Id`} />
-  </IconButton>
-);
-
-export default ArrowButton;
+}: ArrowButtonProps) {
+  return (
+    <RotatingIconButton
+      className={className}
+      color={color}
+      forceHover={forceHover}
+      onClick={onClick}
+    >
+      <ArrowIcon
+        color={color}
+        title={`Navigate to ${title}`}
+        titleId={`${title}Id`}
+      />
+    </RotatingIconButton>
+  );
+}

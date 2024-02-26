@@ -1,265 +1,194 @@
+/* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
-import { useContext, useState } from 'react';
+import { PropsWithChildren } from 'react';
 
-import Box from '~/components/box/Box';
-import ContentBox from '~/components/box/ContentBox';
-import FlexBox from '~/components/box/FlexBox';
-import GridBox from '~/components/box/GridBox';
-import ArrowButton from '~/components/buttons/ArrowButton';
-import TextButton from '~/components/buttons/TextButton';
-import Image from '~/components/Image';
-import Link from '~/components/Link';
-import Layout from '~/components/meta/Layout';
-import Pickle from '~/components/pickles/Pickle';
-import Heading from '~/components/typography/Heading';
-import Title from '~/components/typography/Title';
+import { Box } from '~/components/box/Box';
+import { FlexBox } from '~/components/box/FlexBox';
+import { GridBox } from '~/components/box/GridBox';
 import {
-  CORE_LIVE_CLASSES,
-  CORE_PROGRAMS,
-  CORE_SESSIONS,
-  CUSTOMER_DISCOVERY_ROUTE,
+  ContentContainer,
+  useContentContainerPadding,
+} from '~/components/ContentContainer';
+import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
+import { Layout } from '~/components/meta/Layout';
+import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
+import { ShowoffContent } from '~/components/showoff/ShowoffContent';
+import { Text } from '~/components/typography/Text';
+import {
   ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
   ZOLA_ONBOARDING,
 } from '~/constants/routing';
-import { BreakpointsContext } from '~/contexts/breakpointsContext';
-import { Color } from '~/typings/theme';
+import { pxToRem } from '~/utils/pxToRem';
+import {
+  useBreakpointsAtLeast,
+  useBreakpointsLessThan,
+  useSizeByBreakpoint,
+} from '~/utils/useBreakpoints';
 
-// START - MISC STYLES - START
-const LinkText = styled.span(({ theme }) => ({
-  fontSize: theme.fontSize.mobileTitle,
-  fontFamily: theme.fontFamily,
-  [theme.breakpoints.xs]: {
-    fontSize: theme.fontSize.title,
-  },
+const HomeLayout = styled(Layout)(({ theme }) => ({
+  backgroundImage: `linear-gradient(${theme.colors.pink}, ${theme.colors.pinkLight})`,
 }));
 
-const MobileAboutWrapper = styled(Box)`
-  margin-left: -0.6rem;
-`;
-// END - MISC STYLES - END
+function ContentContainerOr({ children }: PropsWithChildren<unknown>) {
+  const smUp = useBreakpointsAtLeast('sm');
 
-// START - PICKLE STYLES - START
-const SizedPickle = styled(Pickle)(({ theme }) => ({
-  width: '94%',
-  marginTop: theme.spacing[24],
-  borderRadius: '0 1000px 1000px 0',
-  height: '20rem',
-  [theme.breakpoints.sm]: {
-    marginTop: theme.spacing[48],
-    height: 'unset',
-  },
-}));
+  return smUp ? (
+    <ContentContainer metaPage>{children}</ContentContainer>
+  ) : (
+    <>{children}</>
+  );
+}
 
-const PickleLink = styled(Link)`
-  text-decoration: none;
-`;
-
-const PickleTitle = styled(Title)(({ theme }) => ({
-  color: theme.colors.textSecondary,
-  marginBottom: theme.spacing[16],
-  [theme.breakpoints.sm]: {
-    maxWidth: '24.5rem',
-  },
-  [theme.breakpoints.md]: {
-    maxWidth: 'unset',
-  },
-}));
-
-const ImageBox = styled(FlexBox)`
-  height: 20rem;
-  margin: ${({ theme }) => `${theme.spacing[24]} 0`};
-  justify-content: flex-start;
-  ${({ theme }) => theme.breakpoints.md} {
-    height: unset;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-`;
-
-const TitleBox = styled(FlexBox)`
-  margin-right: 14%;
-  ${({ theme }) => theme.breakpoints.md} {
-    margin-bottom: 0px;
-    margin-right: 0;
-  }
-`;
-
-const PickleContentWrapper = styled(ContentBox)(({ theme }) => ({
-  display: 'grid',
-  marginTop: theme.spacing[48],
-  marginBottom: theme.spacing[48],
-  width: '100%',
-  gridTemplateColumns: 'auto 1fr',
-  [theme.breakpoints.sm]: {
-    columnGap: theme.spacing[24],
-  },
-  [theme.breakpoints.md]: {
-    margin: `${theme.spacing[80]} ${theme.spacing[48]}`,
-    gridTemplateColumns: '1fr 1fr',
-  },
-}));
-// END - PICKLE STYLES - END
-
-// START - SUBCOMPONENTS - START
-type HomePickleProps = {
-  imageSrc: string;
-  title: string;
-  linkTo: string;
-  pickleColor: Color;
-  imageAlt: string;
-};
-
-const HomePickle: React.FC<HomePickleProps> = ({
-  imageSrc,
-  imageAlt,
-  title,
-  linkTo,
-  pickleColor,
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const breakpoints = useContext(BreakpointsContext);
+function CaseyTitle() {
+  const size = useSizeByBreakpoint({
+    base: 64,
+    sm: 100,
+    md: 120,
+    lg: 140,
+    xl: 175,
+  });
   return (
-    <SizedPickle
-      color={pickleColor}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <Text
+      as="h1"
+      fontSize={pxToRem(size)}
+      lineHeight={1}
+      marginTop={32}
+      textAlign="center"
     >
-      <PickleLink href={linkTo} internal noHoverStyles>
-        <PickleContentWrapper alignItems="center">
-          {breakpoints.includes('sm') && (
-            <ImageBox alignItems="center">
-              <Image alt={imageAlt} src={imageSrc} />
-            </ImageBox>
-          )}
-          <TitleBox column>
-            <PickleTitle bold>{title}</PickleTitle>
-            <ArrowButton
-              forceHover={isHovered}
-              title={`Navigate to ${linkTo}`}
-              onClick={undefined}
-            />
-          </TitleBox>
-        </PickleContentWrapper>
-      </PickleLink>
-    </SizedPickle>
+      Casey Bradford
+    </Text>
   );
-};
+}
 
-type SecondaryProjectLinkProps = {
-  href: string;
-  text: string;
-  imgSrc?: string;
-  imgAlt?: string;
-};
+function HomePage() {
+  const lgUp = useBreakpointsAtLeast('lg');
+  const mdUp = useBreakpointsAtLeast('md');
+  const belowSm = useBreakpointsLessThan('sm');
+  const exactlySm = !mdUp && !belowSm;
+  const contentPadding = useContentContainerPadding(true);
 
-const SecondaryProjectLink: React.FC<SecondaryProjectLinkProps> = ({
-  href,
-  text,
-  imgSrc,
-  imgAlt,
-}) => (
-  <span>
-    <Link hoverImgAlt={imgAlt} hoverImgSrc={imgSrc} href={href} internal>
-      <LinkText>{text}</LinkText>
-    </Link>
-  </span>
-);
-
-// END - SUBCOMPONENTS - END
-
-const Home: React.FC = () => {
-  const breakpoints = useContext(BreakpointsContext);
-  const lessThanMd = !breakpoints.includes('md');
-  const isXss = !breakpoints.includes('xs');
-  const xSpace = lessThanMd ? 24 : 48;
+  const showoffMarginTop = mdUp
+    ? pxToRem(140)
+    : exactlySm
+      ? pxToRem(60)
+      : pxToRem(100);
+  const showoffMarginBottom = mdUp ? showoffMarginTop : pxToRem(60);
+  const showoffPaddingX = belowSm ? contentPadding : undefined;
+  const showoffBorderRadius = belowSm ? '150px 150px 0 0' : 999;
 
   return (
-    <Layout>
-      <Box mx={xSpace}>
-        <Box>
-          <Title mb={8}>
-            Senior Product Designer working with small teams to turn vague ideas
-            into incredible mobile app experiences
-          </Title>
-        </Box>
-        {!breakpoints.includes('sm') && (
-          <MobileAboutWrapper>
-            <Link href="/about" internal noHoverStyles>
-              <TextButton label="About Me" onClick={undefined} />
-            </Link>
-          </MobileAboutWrapper>
-        )}
-      </Box>
-      <HomePickle
-        imageAlt="Budget tool app screens"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaBudget/Home_Small_ZolaBudget.png'
-            : '/ZolaBudget/Home_ZolaBudget.png'
-        }
-        linkTo={ZOLA_BUDGET_ROUTE}
-        pickleColor="green"
-        title="Building a wedding budgeting tool for Zola's iOS app"
-      />
-      <HomePickle
-        imageAlt="Zola app home screen"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaNav/Home_Small_ZolaNav.png'
-            : '/ZolaNav/Home_ZolaNav.png'
-        }
-        linkTo={ZOLA_NAVIGATION_ROUTE}
-        pickleColor="red"
-        title="Creating a more scalable navigation for Zola's iOS app"
-      />
-      <HomePickle
-        imageAlt="alt"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaOnboarding/Home_Small_ZolaOnboarding.png'
-            : '/ZolaOnboarding/Home_ZolaOnboarding.png'
-        }
-        linkTo={ZOLA_ONBOARDING}
-        pickleColor="blue"
-        title="Making a great first impression with iOS onboarding"
-      />
-      <HomePickle
-        imageAlt="baby registry website and app"
-        imageSrc={
-          lessThanMd
-            ? '/ZolaBaby/Home_Small_ZolaBaby.png'
-            : '/ZolaBaby/Home_ZolaBaby.png'
-        }
-        linkTo={ZOLA_BABY_ROUTE}
-        pickleColor="yellow"
-        title="Launching Zola's baby registry product"
-      />
-      <Box mb={24} mt={128} mx={xSpace}>
-        <Heading bold>Other Projects</Heading>
-      </Box>
-      <GridBox columnGap={48} mb={80} mx={xSpace} rowGap={isXss ? 24 : 48}>
-        <SecondaryProjectLink
-          href={CORE_PROGRAMS}
-          text="Building digital fitness programs"
-        />
-        <SecondaryProjectLink
-          href={CUSTOMER_DISCOVERY_ROUTE}
-          text="Rediscovering the Core Customer"
-        />
-        <SecondaryProjectLink
-          href={CORE_LIVE_CLASSES}
-          text="Designing a live class experience for fitness"
-        />
-        <SecondaryProjectLink
-          href={CORE_SESSIONS}
-          text="Improving fitness content creation and consumption"
-        />
-      </GridBox>
-    </Layout>
+    <HomeLayout fallbackNavBackground="pink" footerPaddingTop={0}>
+      <BackgroundOverride color="pink" />
+      <CaseyTitle />
+      <FlexBox
+        alignItems="center"
+        flexDirection="column"
+        height="100%"
+        width="100%"
+      >
+        <ContentContainer alignItems="center" gap={32} marginTop={32} metaPage>
+          <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
+            <Text
+              as="p"
+              textAlign="center"
+              variant={mdUp ? 'bodyLarge' : 'bodySmall'}
+            >
+              Senior Product Designer working with small teams to turn vague
+              ideas into incredible mobile app experiences
+            </Text>
+          </Box>
+        </ContentContainer>
+        <ContentContainerOr>
+          <ShowoffBlock
+            backgroundColor="red"
+            borderRadius={showoffBorderRadius}
+            color="text"
+            imageAlt="Zola Budget Tool on an iPhone"
+            imageAspectRatio="356/515"
+            imageSrc="/Home/budget-tool.png"
+            linkHref={ZOLA_BUDGET_ROUTE}
+            marginBottom={showoffMarginBottom}
+            marginTop={showoffMarginTop}
+            paddingX={showoffPaddingX}
+            priority
+            tags={['zola', 'ios']}
+            title="Building a wedding budget tool"
+          />
+        </ContentContainerOr>
+        <ContentContainer metaPage>
+          <GridBox
+            alignItems="start"
+            columns={belowSm ? 1 : 2}
+            gap={belowSm ? 64 : 40}
+          >
+            <ShowoffContent
+              color="text"
+              linkHref={ZOLA_NAVIGATION_ROUTE}
+              tags={['zola', 'ios']}
+              title="Designing a more scalable home page"
+            />
+            <ShowoffContent
+              color="text"
+              linkHref={ZOLA_BABY_ROUTE}
+              tags={['zola', 'ios']}
+              title="Launching a baby registry product"
+            />
+          </GridBox>
+        </ContentContainer>
+        <ContentContainerOr>
+          <ShowoffBlock
+            backgroundColor="blue"
+            borderRadius={showoffBorderRadius}
+            color="text"
+            imageAlt="Zola onboarding on an iPhone"
+            imageAspectRatio="356/515"
+            imageSrc="/Home/onboarding.png"
+            linkHref={ZOLA_ONBOARDING}
+            marginBottom={belowSm ? 0 : showoffMarginBottom}
+            marginTop={showoffMarginTop}
+            paddingX={showoffPaddingX}
+            tags={['zola', 'ios']}
+            title="Making a great first impression with onboarding"
+          />
+        </ContentContainerOr>
+        {/* <ContentContainer metaPage>
+          <FlexBox flexDirection="column" gap={40}>
+            <Text as="p" variant="subtitle3">
+              Other Projects
+            </Text>
+            <GridBox columns={mdUp ? 3 : 1} gap={40}>
+              <Link
+                href={EXAMPLE_DELETE_ME}
+                internal
+                label="Building digital fitness classes"
+                variant="bodyLarge"
+              />
+              <Link
+                href={EXAMPLE_DELETE_ME}
+                internal
+                label="Rediscovering the Core Customer"
+                variant="bodyLarge"
+              />
+              <Link
+                href={EXAMPLE_DELETE_ME}
+                internal
+                label="Designing a live class experience for fitness"
+                variant="bodyLarge"
+              />
+              <Link
+                href={EXAMPLE_DELETE_ME}
+                internal
+                label="Improving fitness content creation and consumption"
+                variant="bodyLarge"
+              />
+            </GridBox>
+          </FlexBox>
+        </ContentContainer> */}
+      </FlexBox>
+    </HomeLayout>
   );
-};
+}
 
-export default Home;
+export default HomePage;

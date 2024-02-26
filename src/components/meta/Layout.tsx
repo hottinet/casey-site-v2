@@ -1,32 +1,55 @@
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { PropsWithChildren } from 'react';
 
-import { NEXT_ROUTE_MAP, RESTRICTED_ROUTES } from '~/constants/routing';
-import { AuthContext } from '~/contexts/authContext';
+import { Color } from '~/typings/theme';
 
-import AuthOverlay from './AuthOverlay';
-import Footer from './Footer';
+import { FlexBox, FlexBoxProps } from '../box/FlexBox';
+import { Footer } from './Footer';
 import Head from './Head';
-import NavBar from './NavBar';
+import { NavBar } from './NavBar';
 
-type LayoutProps = {
-  children?: React.ReactNode;
-};
+interface LayoutProps {
+  pageTitle?: string;
+  className?: string;
+  nextPageHref?: string;
+  nextPageLabel?: string;
+  footerPaddingTop?: FlexBoxProps['paddingTop'];
+  fallbackNavBackground?: Color;
+}
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [isAuthorized, setIsAuthorized] = useState(false);
-  const { pathname } = useRouter();
-  const isRestrited = RESTRICTED_ROUTES.includes(pathname);
-  const nextPath = NEXT_ROUTE_MAP[pathname];
-
+export function Layout({
+  children,
+  pageTitle,
+  className,
+  nextPageHref,
+  nextPageLabel,
+  footerPaddingTop,
+  fallbackNavBackground,
+}: PropsWithChildren<LayoutProps>) {
   return (
-    <AuthContext.Provider value={{ isAuthorized, setIsAuthorized }}>
-      <Head title="Casey Bradford" />
-      <NavBar />
-      {!isAuthorized && isRestrited ? <AuthOverlay /> : children}
-      <Footer nextPath={nextPath} />
-    </AuthContext.Provider>
+    <>
+      <Head title={pageTitle || 'Casey Bradford'} />
+      <FlexBox
+        alignItems="center"
+        className={className}
+        flexDirection="column"
+        height="100%"
+        minHeight="100%"
+        position="relative"
+        width="100%"
+      >
+        <NavBar
+          fallbackNavBackground={fallbackNavBackground}
+          layoutClassName={className}
+          nextPageHref={nextPageHref}
+          nextPageLabel={nextPageLabel}
+        />
+        {children}
+        <Footer
+          nextPageHref={nextPageHref}
+          nextPageLabel={nextPageLabel}
+          paddingTop={footerPaddingTop}
+        />
+      </FlexBox>
+    </>
   );
-};
-
-export default Layout;
+}

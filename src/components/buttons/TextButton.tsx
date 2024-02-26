@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
 
-import { checkIsIOS } from '~/utils/checkIsIOS';
+import { pxToRem } from '~/utils/pxToRem';
+import { useIsIOS } from '~/utils/useIsIOS';
 
-import Body from '../typography/Body';
+import { Text } from '../typography/Text';
 import Button from './Button';
 import { ButtonProps } from './types';
 
@@ -57,13 +57,7 @@ const StyledButton = styled(Button)<
   }),
 }));
 
-const StyledText = styled(Body)<Pick<TextButtonProps, 'variant'>>`
-  color: ${({ theme, variant }) =>
-    variant !== 'primary' && theme.colors.textSecondary};
-  font-size: 0.8rem;
-`;
-
-const TextButton: React.FC<TextButtonProps> = ({
+function TextButton({
   label,
   onClick,
   variant = 'primary',
@@ -71,14 +65,8 @@ const TextButton: React.FC<TextButtonProps> = ({
   buttonClassName,
   type,
   forceHover,
-}) => {
-  const [isIOS, setIsIOS] = useState(false);
-
-  useEffect(() => {
-    // Navigator (used in checkIsIOS) doesn't exist until the browser is ready
-    // so we wait to mount the component before we check IOS status
-    setIsIOS(checkIsIOS());
-  }, []);
+}: TextButtonProps) {
+  const isIOS = useIsIOS();
 
   return (
     <AnimationWrapper className={className}>
@@ -90,12 +78,16 @@ const TextButton: React.FC<TextButtonProps> = ({
         variant={variant}
         onClick={onClick}
       >
-        <StyledText bold variant={variant}>
+        <Text
+          color={variant !== 'primary' ? 'textSecondary' : undefined}
+          fontSize={pxToRem(12)}
+          fontWeight="bold"
+        >
           {label}
-        </StyledText>
+        </Text>
       </StyledButton>
     </AnimationWrapper>
   );
-};
+}
 
 export default TextButton;

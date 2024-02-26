@@ -1,83 +1,46 @@
-import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { ComponentPropsWithoutRef, ComponentType } from 'react';
 
-import FlexBox from '../box/FlexBox';
-import Button from './Button';
-import { ButtonProps } from './types';
+import { AllowedCommonCssProps } from '~/constants/css';
+import { Spacing } from '~/typings/theme';
+import { filterCssProps } from '~/utils/css';
 
-type IconButtonProps = Omit<ButtonProps, 'childre'> & {
-  children: React.ReactNode;
-  forceHover?: boolean;
-};
+import { FlexBox } from '../box/FlexBox';
 
-const AnimationWrapper = styled(FlexBox)`
-  width: 100%;
-  height: 100%;
-`;
+interface IconButtonProps
+  extends Omit<ComponentPropsWithoutRef<'button'>, 'color'>,
+    AllowedCommonCssProps {
+  iconSize?: Spacing;
+}
 
-const wobble = keyframes`
-  from {
-    transform: rotate(0)
-  }
-  to {
-    transform: rotate(-30deg)
-  }
-`;
+const Button = styled('button')(({ theme, ...rest }) => ({
+  backgroundColor: 'transparent',
+  minHeight: theme.spacing['48'],
+  minWidth: theme.spacing['48'],
+  border: 'none',
+  outline: 'none',
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  ...filterCssProps(rest, theme),
+})) as ComponentType<Omit<IconButtonProps, 'iconSize'>>;
 
-const Animator = styled(FlexBox)<Pick<IconButtonProps, 'variant'>>`
-  transform-origin: center center;
-  transition: transform 0.2s linear;
-  height: 100%;
-  width: 100%;
-`;
-
-const StyledButton = styled(Button)<IconButtonProps>(
-  ({ theme, variant, forceHover }) => {
-    const hoverStyles = {
-      borderWidth: theme.border.borderWidth[1],
-      animation: `${wobble} 0.5s forwards`,
-      [`${Animator}`]: {
-        transform: 'scale(0.81)',
-        border: `${theme.border.borderWidth[3]} solid ${
-          variant === 'primary' ? theme.colors.text : theme.colors.textSecondary
-        }`,
-      },
-    };
-    return {
-      borderRadius: '50%',
-      padding: 0,
-      margin: 0,
-      height: theme.spacing[64],
-      width: theme.spacing[64],
-      borderColor:
-        variant === 'primary' ? theme.colors.text : theme.colors.textSecondary,
-      borderStyle: 'solid',
-      borderWidth: theme.border.borderWidth[3],
-      '&:hover': hoverStyles,
-      ...(forceHover && hoverStyles),
-    };
-  }
-);
-
-const IconButton: React.FC<IconButtonProps> = ({
+export function IconButton({
+  iconSize = 24,
   children,
-  onClick,
-  className,
-  variant = 'primary',
-  forceHover,
-}) => (
-  <StyledButton
-    className={className}
-    forceHover={forceHover}
-    variant={variant}
-    onClick={onClick}
-  >
-    <AnimationWrapper center>
-      <Animator borderRadius="50%" center variant={variant}>
+  ...buttonProps
+}: IconButtonProps) {
+  return (
+    <Button {...buttonProps}>
+      <FlexBox
+        alignItems="center"
+        height={iconSize}
+        justifyContent="center"
+        width={iconSize}
+      >
         {children}
-      </Animator>
-    </AnimationWrapper>
-  </StyledButton>
-);
-
-export default IconButton;
+      </FlexBox>
+    </Button>
+  );
+}

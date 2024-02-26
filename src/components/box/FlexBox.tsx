@@ -1,63 +1,37 @@
-import styled from '@emotion/styled';
+/* eslint-disable react/jsx-props-no-spreading */
+import { HTMLAttributes, PropsWithChildren } from 'react';
 
-import Box from './Box';
-import { AlignItems, BoxProps, JustifyContent } from './types';
+import {
+  AllowedCommonCssProps,
+  AllowedCustomCssSpacingProps,
+  AllowedFlexboxCssProps,
+} from '~/constants/css';
 
-export type FlexBoxProps = BoxProps & {
-  center?: boolean;
-  column?: boolean;
-  wrap?: boolean;
-  inline?: boolean;
-  justifyContent?: JustifyContent;
-  alignItems?: AlignItems;
-  flex?: number;
-  flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-  flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-  flexGrow?: number;
-  flexShrink?: number;
-};
+import { Box } from './Box';
 
-const Flex = styled(Box)<FlexBoxProps>(
-  { display: 'flex' },
-  ({
-    center,
-    column,
-    wrap,
-    inline,
-    justifyContent,
-    alignItems,
-    flex,
-    flexDirection,
-    flexWrap,
-    flexGrow,
-    flexShrink,
-  }) => ({
-    justifyContent,
-    alignItems,
-    flex,
-    flexDirection,
-    flexWrap,
-    flexGrow,
-    flexShrink,
-    ...(center && {
-      justifyContent: 'center',
-      alignItems: 'center',
-    }),
-    ...(column && {
-      flexDirection: 'column',
-    }),
-    ...(wrap && {
-      flexWrap: 'wrap',
-    }),
-    ...(inline && {
-      display: 'inline-flex',
-    }),
-  })
-);
+export type FlexBoxProps = Omit<AllowedCommonCssProps, 'display'> &
+  AllowedFlexboxCssProps &
+  AllowedCustomCssSpacingProps &
+  HTMLAttributes<HTMLDivElement> & {
+    className?: string;
+    center?: boolean;
+  };
 
-const FlexBox: React.FC<FlexBoxProps> = ({ children, ...rest }) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  <Flex {...rest}>{children}</Flex>
-);
-
-export default FlexBox;
+export function FlexBox({
+  children,
+  center,
+  ...rest
+}: PropsWithChildren<FlexBoxProps>) {
+  return (
+    <Box
+      display="flex"
+      {...(center && {
+        alignItems: 'center',
+        justifyContent: 'center',
+      })}
+      {...rest}
+    >
+      {children}
+    </Box>
+  );
+}

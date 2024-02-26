@@ -7,22 +7,25 @@ const StyledButton = styled.button<Pick<ButtonProps, 'variant'>>`
   cursor: pointer;
 `;
 
-const Button: React.FC<ButtonProps> = ({
+function Button({
   children,
   onClick,
   className,
   variant = 'primary',
   type = 'button',
-}) => (
-  <StyledButton
-    className={className}
-    role={onClick ? 'button' : 'none'}
-    type={type}
-    variant={variant}
-    onClick={onClick}
-  >
-    {children}
-  </StyledButton>
-);
+}: ButtonProps) {
+  return (
+    <StyledButton
+      aria-hidden={!onClick}
+      className={className}
+      role={onClick ? 'button' : 'none'}
+      type={type}
+      variant={variant}
+      onClick={onClick}
+    >
+      {children}
+    </StyledButton>
+  );
+}
 
 export default Button;
