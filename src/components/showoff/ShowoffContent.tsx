@@ -16,6 +16,10 @@ const TagList = styled.ul`
   gap: ${({ theme }) => theme.spacing[16]};
 `;
 
+const ShowoffStyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 interface ShowoffLinkProps
   extends Pick<ShowoffBlockProps, 'title' | 'linkHref' | 'color'> {}
 
@@ -24,7 +28,7 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
   const smDown = useBreakpointsLessThan('md');
 
   return (
-    <Link
+    <ShowoffStyledLink
       href={linkHref}
       internal
       onMouseEnter={() => setIsHovered(true)}
@@ -35,6 +39,7 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
           as="span"
           color={color}
           lineHeight="115%"
+          textDecoration="none"
           variant={smDown ? 'headline4' : 'headline3'}
         >
           {title}
@@ -46,7 +51,7 @@ function ShowoffLink({ title, linkHref, color }: ShowoffLinkProps) {
           onClick={undefined}
         />
       </FlexBox>
-    </Link>
+    </ShowoffStyledLink>
   );
 }
 

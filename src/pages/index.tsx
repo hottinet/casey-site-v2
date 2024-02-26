@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
+import { PropsWithChildren } from 'react';
 
 import { Box } from '~/components/box/Box';
 import { FlexBox } from '~/components/box/FlexBox';
@@ -29,6 +30,16 @@ import {
 const HomeLayout = styled(Layout)(({ theme }) => ({
   backgroundImage: `linear-gradient(${theme.colors.pink}, ${theme.colors.pinkLight})`,
 }));
+
+function ContentContainerOr({ children }: PropsWithChildren<unknown>) {
+  const smUp = useBreakpointsAtLeast('sm');
+
+  return smUp ? (
+    <ContentContainer metaPage>{children}</ContentContainer>
+  ) : (
+    <>{children}</>
+  );
+}
 
 function CaseyTitle() {
   const size = useSizeByBreakpoint({
@@ -65,7 +76,6 @@ function HomePage() {
       : pxToRem(100);
   const showoffMarginBottom = mdUp ? showoffMarginTop : pxToRem(60);
   const showoffPaddingX = belowSm ? contentPadding : undefined;
-  const showoffMarginX = belowSm ? 0 : contentPadding;
   const showoffBorderRadius = belowSm ? '150px 150px 0 0' : 999;
 
   return (
@@ -90,22 +100,23 @@ function HomePage() {
             </Text>
           </Box>
         </ContentContainer>
-        <ShowoffBlock
-          backgroundColor="red"
-          borderRadius={showoffBorderRadius}
-          color="text"
-          imageAlt="Zola Budget Tool on an iPhone"
-          imageAspectRatio="356/515"
-          imageSrc="/Home/budget-tool.png"
-          linkHref={ZOLA_BUDGET_ROUTE}
-          marginBottom={showoffMarginBottom}
-          marginTop={showoffMarginTop}
-          marginX={showoffMarginX}
-          paddingX={showoffPaddingX}
-          priority
-          tags={['zola', 'ios']}
-          title="Building a wedding budget tool"
-        />
+        <ContentContainerOr>
+          <ShowoffBlock
+            backgroundColor="red"
+            borderRadius={showoffBorderRadius}
+            color="text"
+            imageAlt="Zola Budget Tool on an iPhone"
+            imageAspectRatio="356/515"
+            imageSrc="/Home/budget-tool.png"
+            linkHref={ZOLA_BUDGET_ROUTE}
+            marginBottom={showoffMarginBottom}
+            marginTop={showoffMarginTop}
+            paddingX={showoffPaddingX}
+            priority
+            tags={['zola', 'ios']}
+            title="Building a wedding budget tool"
+          />
+        </ContentContainerOr>
         <ContentContainer metaPage>
           <GridBox
             alignItems="start"
@@ -126,21 +137,22 @@ function HomePage() {
             />
           </GridBox>
         </ContentContainer>
-        <ShowoffBlock
-          backgroundColor="blue"
-          borderRadius={showoffBorderRadius}
-          color="text"
-          imageAlt="Zola onboarding on an iPhone"
-          imageAspectRatio="356/515"
-          imageSrc="/Home/onboarding.png"
-          linkHref={ZOLA_ONBOARDING}
-          marginBottom={showoffMarginBottom}
-          marginTop={showoffMarginTop}
-          marginX={showoffMarginX}
-          paddingX={showoffPaddingX}
-          tags={['zola', 'ios']}
-          title="Making a great first impression with onboarding"
-        />
+        <ContentContainerOr>
+          <ShowoffBlock
+            backgroundColor="blue"
+            borderRadius={showoffBorderRadius}
+            color="text"
+            imageAlt="Zola onboarding on an iPhone"
+            imageAspectRatio="356/515"
+            imageSrc="/Home/onboarding.png"
+            linkHref={ZOLA_ONBOARDING}
+            marginBottom={showoffMarginBottom}
+            marginTop={showoffMarginTop}
+            paddingX={showoffPaddingX}
+            tags={['zola', 'ios']}
+            title="Making a great first impression with onboarding"
+          />
+        </ContentContainerOr>
         {/* <ContentContainer metaPage>
           <FlexBox flexDirection="column" gap={40}>
             <Text as="p" variant="subtitle3">

@@ -30,6 +30,7 @@ const StyledLink = styled(NextLink)(({ theme }) => ({
   color: theme.colors.text,
   display: 'inline-block',
   cursor: 'pointer',
+  textDecoration: 'none',
 }));
 
 const LinkText = styled(Text)<Pick<LinkProps, 'noHoverStyles'>>`
