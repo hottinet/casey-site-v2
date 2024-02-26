@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-import { hexToRgba } from '~/utils/css';
-
 import { FlexBox, FlexBoxProps } from './box/FlexBox';
 import { Text } from './typography/Text';
 
@@ -13,7 +11,7 @@ type DividerProps = {
 const Segment = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.borderWidth[1]};
-  background-color: ${({ theme }) => hexToRgba(theme.colors.text, 0.4)};
+  background-color: ${({ theme }) => theme.colors.text};
 `;
 
 export function Divider({ label, className, ...flexProps }: DividerProps) {
