@@ -56,6 +56,7 @@ export function ShowoffBlock({
       marginTop={marginTop}
       marginX={marginX}
       position="relative"
+      width={{ base: '100%', sm: 'unset' }}
       // marginY overrides top and bottom even when undefined
       {...(marginY && { marginY })}
     >
