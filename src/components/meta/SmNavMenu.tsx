@@ -10,6 +10,7 @@ import { IconButton } from '../buttons/IconButton';
 import { ContentContainer } from '../ContentContainer';
 import { X } from '../icons/X';
 import { Link } from '../Link';
+import { BackgroundOverride } from './BackgroundOverride';
 import { footerLinks } from './Footer';
 
 const NavList = styled('ul')`
@@ -67,58 +68,62 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
   });
 
   return (
-    <FlexBox
-      backgroundColor="red"
-      bottom={0}
-      flexDirection="column"
-      height="100vh"
-      left={isOpen ? 0 : '9999px'}
-      position="absolute"
-      top={`${top}px`}
-      width="100%"
-      zIndex={9999}
-    >
-      {isOpen && <Global styles={openGlobalStyles} />}
-      <ContentContainer flexDirection="column" height="100%">
-        <IconButton
-          alignSelf="end"
-          transform="translateX(25%)"
-          width="fit-content"
-          onClick={() => setIsOpen(false)}
-        >
-          <X color="text" title="Close menu" titleId="close-menu-icon" />
-        </IconButton>
-        <nav>
-          <NavList>
-            {linkButtonData.map((ld) => (
-              <li key={ld.href}>
-                <Link
-                  href={ld.href}
-                  internal
-                  label={ld.text}
-                  variant="headline2"
-                />
-              </li>
+    <>
+      {isOpen && <BackgroundOverride color="red" />}
+
+      <FlexBox
+        backgroundColor="red"
+        bottom={0}
+        flexDirection="column"
+        height="100vh"
+        left={isOpen ? 0 : '9999px'}
+        position="absolute"
+        top={`${top}px`}
+        width="100%"
+        zIndex={9999}
+      >
+        {isOpen && <Global styles={openGlobalStyles} />}
+        <ContentContainer flexDirection="column" height="100%">
+          <IconButton
+            alignSelf="end"
+            transform="translateX(25%)"
+            width="fit-content"
+            onClick={() => setIsOpen(false)}
+          >
+            <X color="text" title="Close menu" titleId="close-menu-icon" />
+          </IconButton>
+          <nav>
+            <NavList>
+              {linkButtonData.map((ld) => (
+                <li key={ld.href}>
+                  <Link
+                    href={ld.href}
+                    internal
+                    label={ld.text}
+                    variant="headline2"
+                  />
+                </li>
+              ))}
+            </NavList>
+          </nav>
+          <FlexBox
+            alignItems="center"
+            flexDirection="column"
+            gap={32}
+            marginBottom={32}
+            marginTop="auto"
+          >
+            {footerLinks.map((link) => (
+              <Link
+                href={link.href}
+                key={link.href}
+                label={link.text}
+                variant="subtitle2"
+              />
             ))}
-          </NavList>
-        </nav>
-        <FlexBox
-          alignItems="center"
-          flexDirection="column"
-          gap={32}
-          marginBottom={32}
-          marginTop="auto"
-        >
-          {footerLinks.map((link) => (
-            <Link
-              href={link.href}
-              key={link.href}
-              label={link.text}
-              variant="subtitle2"
-            />
-          ))}
-        </FlexBox>
-      </ContentContainer>
-    </FlexBox>
+          </FlexBox>
+        </ContentContainer>
+      </FlexBox>
+    </>
   );
 }
