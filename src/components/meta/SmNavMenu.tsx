@@ -20,13 +20,6 @@ const NavList = styled('ul')`
   gap: ${({ theme }) => theme.spacing[32]};
 `;
 
-const MobileBrowserFullHeight = styled.div`
-  height: 100%;
-  height: fill-available;
-  height: -webkit-fill-available;
-  width: 100%;
-`;
-
 const openGlobalStyles = css`
   body {
     overflow: hidden;
@@ -81,56 +74,55 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
       <FlexBox
         backgroundColor="red"
         bottom={0}
-        height="100vh"
+        flexDirection="column"
+        height="100dvh"
         left={isOpen ? 0 : '9999px'}
         position="absolute"
         top={`${top}px`}
         width="100%"
         zIndex={9999}
       >
-        <MobileBrowserFullHeight>
-          <ContentContainer flexDirection="column" height="100%">
-            <IconButton
-              alignSelf="end"
-              // X button is slightly misalgined with menu underneath, so we just scoot it
-              transform="translate(25%, -6px)"
-              width="fit-content"
-              onClick={() => setIsOpen(false)}
-            >
-              <X color="text" title="Close menu" titleId="close-menu-icon" />
-            </IconButton>
-            <nav>
-              <NavList>
-                {linkButtonData.map((ld) => (
-                  <li key={ld.href}>
-                    <Link
-                      href={ld.href}
-                      internal
-                      label={ld.text}
-                      variant="headline2"
-                    />
-                  </li>
-                ))}
-              </NavList>
-            </nav>
-            <FlexBox
-              alignItems="center"
-              flexDirection="column"
-              gap={32}
-              marginBottom={32}
-              marginTop="auto"
-            >
-              {footerLinks.map((link) => (
-                <Link
-                  href={link.href}
-                  key={link.href}
-                  label={link.text}
-                  variant="subtitle2"
-                />
+        <ContentContainer flexDirection="column" height="100%">
+          <IconButton
+            alignSelf="end"
+            // X button is slightly misalgined with menu underneath, so we just scoot it
+            transform="translate(25%, -2px)"
+            width="fit-content"
+            onClick={() => setIsOpen(false)}
+          >
+            <X color="text" title="Close menu" titleId="close-menu-icon" />
+          </IconButton>
+          <nav>
+            <NavList>
+              {linkButtonData.map((ld) => (
+                <li key={ld.href}>
+                  <Link
+                    href={ld.href}
+                    internal
+                    label={ld.text}
+                    variant="headline2"
+                  />
+                </li>
               ))}
-            </FlexBox>
-          </ContentContainer>
-        </MobileBrowserFullHeight>
+            </NavList>
+          </nav>
+          <FlexBox
+            alignItems="center"
+            flexDirection="column"
+            gap={32}
+            marginBottom={32}
+            marginTop="auto"
+          >
+            {footerLinks.map((link) => (
+              <Link
+                href={link.href}
+                key={link.href}
+                label={link.text}
+                variant="subtitle2"
+              />
+            ))}
+          </FlexBox>
+        </ContentContainer>
       </FlexBox>
     </>
   );
