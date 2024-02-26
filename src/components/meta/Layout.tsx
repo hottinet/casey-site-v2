@@ -1,6 +1,8 @@
 import { PropsWithChildren } from 'react';
 
-import { FlexBox } from '../box/FlexBox';
+import { Color } from '~/typings/theme';
+
+import { FlexBox, FlexBoxProps } from '../box/FlexBox';
 import { Footer } from './Footer';
 import Head from './Head';
 import { NavBar } from './NavBar';
@@ -10,6 +12,8 @@ interface LayoutProps {
   className?: string;
   nextPageHref?: string;
   nextPageLabel?: string;
+  footerPaddingTop?: FlexBoxProps['paddingTop'];
+  fallbackNavBackground?: Color;
 }
 
 export function Layout({
@@ -18,6 +22,8 @@ export function Layout({
   className,
   nextPageHref,
   nextPageLabel,
+  footerPaddingTop,
+  fallbackNavBackground,
 }: PropsWithChildren<LayoutProps>) {
   return (
     <>
@@ -32,12 +38,17 @@ export function Layout({
         width="100%"
       >
         <NavBar
+          fallbackNavBackground={fallbackNavBackground}
           layoutClassName={className}
           nextPageHref={nextPageHref}
           nextPageLabel={nextPageLabel}
         />
         {children}
-        <Footer nextPageHref={nextPageHref} nextPageLabel={nextPageLabel} />
+        <Footer
+          nextPageHref={nextPageHref}
+          nextPageLabel={nextPageLabel}
+          paddingTop={footerPaddingTop}
+        />
       </FlexBox>
     </>
   );

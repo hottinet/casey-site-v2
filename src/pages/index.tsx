@@ -79,7 +79,7 @@ function HomePage() {
   const showoffBorderRadius = belowSm ? '150px 150px 0 0' : 999;
 
   return (
-    <HomeLayout>
+    <HomeLayout fallbackNavBackground="pink" footerPaddingTop={0}>
       <BackgroundOverride color="pink" />
       <CaseyTitle />
       <FlexBox
@@ -146,7 +146,7 @@ function HomePage() {
             imageAspectRatio="356/515"
             imageSrc="/Home/onboarding.png"
             linkHref={ZOLA_ONBOARDING}
-            marginBottom={showoffMarginBottom}
+            marginBottom={belowSm ? 0 : showoffMarginBottom}
             marginTop={showoffMarginTop}
             paddingX={showoffPaddingX}
             tags={['zola', 'ios']}

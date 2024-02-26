@@ -4,7 +4,7 @@ import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
 
 import { Box } from '../box/Box';
-import { FlexBox } from '../box/FlexBox';
+import { FlexBox, FlexBoxProps } from '../box/FlexBox';
 import { NextProjectButton } from '../buttons/NextProjectNavButton';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
@@ -48,19 +48,24 @@ export const footerLinks = [
 interface FooterProps {
   nextPageHref?: string;
   nextPageLabel?: string;
+  paddingTop?: FlexBoxProps['paddingTop'];
 }
 
-export function Footer({ nextPageHref, nextPageLabel }: FooterProps) {
+export function Footer({
+  nextPageHref,
+  nextPageLabel,
+  paddingTop = pxToRem(136),
+}: FooterProps) {
   const lessThanSm = useBreakpointsLessThan('sm');
   return (
     <FlexBox
       alignItems="center"
       flexDirection="column"
       marginTop="auto"
-      paddingTop={pxToRem(136)}
+      paddingTop={paddingTop}
       width="100%"
     >
-      {lessThanSm && (
+      {lessThanSm && nextPageHref && (
         <Box paddingBottom={20} paddingX={20} width="100%">
           <FooterNext
             nextPageHref={nextPageHref}

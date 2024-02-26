@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
 
-import { checkIsIOS } from '~/utils/checkIsIOS';
 import { pxToRem } from '~/utils/pxToRem';
+import { useIsIOS } from '~/utils/useIsIOS';
 
 import { Text } from '../typography/Text';
 import Button from './Button';
@@ -67,13 +66,7 @@ function TextButton({
   type,
   forceHover,
 }: TextButtonProps) {
-  const [isIOS, setIsIOS] = useState(false);
-
-  useEffect(() => {
-    // Navigator (used in checkIsIOS) doesn't exist until the browser is ready
-    // so we wait to mount the component before we check IOS status
-    setIsIOS(checkIsIOS());
-  }, []);
+  const isIOS = useIsIOS();
 
   return (
     <AnimationWrapper className={className}>

@@ -71,7 +71,7 @@ function AboutPage() {
   return (
     <>
       <BackgroundOverride color="blue" />
-      <AboutLayout>
+      <AboutLayout fallbackNavBackground="blue">
         <ContentContainer metaPage>
           <FlexBox
             alignItems="center"

@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 
 import { ABOUT_ROUTE, HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
+import { Color } from '~/typings/theme';
 import { useBreakpointsAtLeast } from '~/utils/useBreakpoints';
+import { useIsSafari } from '~/utils/useIsSafari';
 
 import { Box } from '../box/Box';
 import { FlexBox } from '../box/FlexBox';
@@ -20,6 +22,7 @@ interface NavBarProps {
   layoutClassName?: string;
   nextPageHref?: string;
   nextPageLabel?: string;
+  fallbackNavBackground?: Color;
 }
 
 const NavBackground = styled('div')(({ theme, className }) => ({
@@ -53,11 +56,16 @@ export function NavBar({
   layoutClassName,
   nextPageHref,
   nextPageLabel,
+  fallbackNavBackground = 'background',
 }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const smUp = useBreakpointsAtLeast('sm');
   const [bgRef, setBgRef] = useState<HTMLDivElement | null>(null);
+
+  // Safari has some issues with transparency flickering
+  // so we turn off that magic if user is safari
+  const isSafari = useIsSafari();
 
   useEffect(() => {
     const onScroll = throttle(() => {
@@ -93,8 +101,8 @@ export function NavBar({
       <Box height={navHeight} width="100%" />
       <FlexBox
         alignItems="center"
-        backdropFilter="blur(2px)"
-        backgroundColor="transparent"
+        backdropFilter={isSafari ? 'none' : 'blur(2px)'}
+        backgroundColor={isSafari ? fallbackNavBackground : 'transparent'}
         flexDirection="column"
         overflow="hidden"
         position="fixed"
@@ -102,14 +110,16 @@ export function NavBar({
         width="100%"
         zIndex={999}
       >
-        <NavBackground
-          className={layoutClassName}
-          ref={(node) => {
-            if (node) {
-              setBgRef(node);
-            }
-          }}
-        />
+        {!isSafari && (
+          <NavBackground
+            className={layoutClassName}
+            ref={(node) => {
+              if (node) {
+                setBgRef(node);
+              }
+            }}
+          />
+        )}
         <ContentContainer metaPage width="100%">
           <FlexBox
             alignItems="center"
