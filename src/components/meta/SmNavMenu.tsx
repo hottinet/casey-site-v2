@@ -77,6 +77,7 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
         flexDirection="column"
         height="100vh"
         left={isOpen ? 0 : '9999px'}
+        overflow="auto"
         position="absolute"
         top={`${top}px`}
         width="100%"
