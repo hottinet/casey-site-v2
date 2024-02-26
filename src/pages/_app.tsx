@@ -70,7 +70,9 @@ const globalStyles = css`
 const GlobalWrapper = styled(FlexBox)`
   width: 100%;
   overflow: hidden;
-  cursor: url('/Misc/cursor.png'), auto;
+  cursor:
+    url('/Misc/cursor.png') 12 12,
+    auto;
 `;
 
 const HoverTarget = styled.div`
