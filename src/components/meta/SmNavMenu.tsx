@@ -86,7 +86,8 @@ export function SmNavMenu({ isOpen, setIsOpen }: SmNavMenuProps) {
         <ContentContainer flexDirection="column" height="100%">
           <IconButton
             alignSelf="end"
-            transform="translateX(25%)"
+            // X button is slightly misalgined with menu underneath, so we just scoot it
+            transform="translate(25%, -6px)"
             width="fit-content"
             onClick={() => setIsOpen(false)}
           >
