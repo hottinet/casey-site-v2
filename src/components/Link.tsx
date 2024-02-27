@@ -12,6 +12,7 @@ type BaseLinkProps = {
   onMouseEnter?: MouseEventHandler<HTMLSpanElement>;
   onMouseLeave?: MouseEventHandler<HTMLSpanElement>;
   noHoverStyles?: boolean;
+  title?: string;
 };
 
 type ChildLinkProps = {
@@ -72,6 +73,7 @@ export function Link({
   onClick,
   onMouseEnter,
   onMouseLeave,
+  title,
   ...rest
 }: LinkProps) {
   return (
@@ -80,6 +82,7 @@ export function Link({
       href={href}
       rel="noopener noreferrer"
       target={internal ? '_self' : '_blank'}
+      title={title}
     >
       {/*
             Hack to allow mouseEvents inside nextjs links
