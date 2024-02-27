@@ -12,6 +12,7 @@ import { Box } from '../box/Box';
 import { FlexBox } from '../box/FlexBox';
 import { IconButton } from '../buttons/IconButton';
 import { NextProjectButton } from '../buttons/NextProjectNavButton';
+import { CaseyHomeLink } from '../CaseyHomeLink';
 import { ContentContainer } from '../ContentContainer';
 import { Divider } from '../Divider';
 import { Hamburger } from '../icons/Hamburger';
@@ -127,14 +128,7 @@ export function NavBar({
             height={navHeight}
             justifyContent={smUp ? 'flex-start' : 'space-between'}
           >
-            <Link
-              fontWeight="bold"
-              href={HOME_ROUTE}
-              internal
-              label="Casey Bradford"
-              noHoverStyles
-              textTransform="uppercase"
-            />
+            <CaseyHomeLink />
             {smUp ? (
               <Nav>
                 <Link

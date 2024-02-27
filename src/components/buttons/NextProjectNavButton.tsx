@@ -1,9 +1,8 @@
-import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
 import { NON_BREAKING_SPACE } from '~/constants/characterEntitites';
-import { NAV_BAR_HEIGHT } from '~/constants/styles';
+import { NAV_BAR_HEIGHT, spin } from '~/constants/styles';
 
 import { FlexBox } from '../box/FlexBox';
 import Arrow from '../icons/Arrow';
@@ -16,15 +15,6 @@ const NextProjectLink = styled(Link)`
   top: 0;
   height: ${NAV_BAR_HEIGHT};
   background-color: ${({ theme }) => theme.colors.blue};
-`;
-
-const spin = keyframes`
-  from {
-    transform: rotate3D(0, 1, 0, 0deg);
-  }
-  to {
-    transform: rotate3D(0, 1, 0, 360deg);
-  }
 `;
 
 const Animator = styled(FlexBox)<{ hovered: boolean }>(({ hovered }) => ({

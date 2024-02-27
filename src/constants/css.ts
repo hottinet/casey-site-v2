@@ -110,6 +110,7 @@ export const ALLOWED_TEXT_CSS_KEYS = [
   'lineHeight',
   'lineClamp',
   'textTransform',
+  'letterSpacing',
 ] as const;
 
 type RawAllowedTextCssProps = {
