@@ -189,6 +189,241 @@ function CORE_CUSTOMER_DISCOVERY() {
             focus on building features around to differentiate ourselves.
           </Text>
         </ContentContainer>
+        <ContentContainer gap={32}>
+          <FlexBox
+            backgroundImage="linear-gradient(#3475CC, #7A9FD1)"
+            borderRadius={pxToRem(16)}
+            flexDirection="column"
+            gap={32}
+            padding={32}
+          >
+            <Text as="p" color="#F1E339" variant="subtitle2">
+              marketing
+            </Text>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(2, 1fr)',
+              }}
+            >
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;Marketing is super important. I just get lost and
+                  it&apos;s hard for people to find me.&quot;
+                </Text>
+              </FlexBox>
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;I&apos;m an artist, not a business person...this is the
+                  stuff I don&apos;t like doing myself.&quot;
+                </Text>
+              </FlexBox>
+            </GridBox>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(2, 1fr)',
+              }}
+            >
+              <FlexBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  pain point
+                </Text>
+                <Text as="p">
+                  Instructors need help attracting new students
+                </Text>
+              </FlexBox>
+              <FlexBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  what we build
+                </Text>
+                <Text as="p">More robust explore functionality</Text>
+                <Text as="p">Customer referrals</Text>
+                <Text as="p">
+                  Social media and marketing support from our team
+                </Text>
+              </FlexBox>
+            </GridBox>
+          </FlexBox>
+          <FlexBox
+            backgroundImage="linear-gradient(#3475CC, #7A9FD1)"
+            borderRadius={pxToRem(16)}
+            flexDirection="column"
+            gap={32}
+            padding={32}
+          >
+            <Text as="p" color="#F1E339" variant="subtitle2">
+              Flexibility
+            </Text>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(3, 1fr)',
+              }}
+            >
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;I see my future being a hybrid of in person and online
+                  classes&quot;
+                </Text>
+              </FlexBox>
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;I don&apos;t want to charge for my weekly group park
+                  class but I charge for 1:1s&quot;
+                </Text>
+              </FlexBox>
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;My zoom classes are donation based&quot;
+                </Text>
+              </FlexBox>
+            </GridBox>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(2, 1fr)',
+              }}
+            >
+              <FlexBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  pain point
+                </Text>
+                <Text as="p">
+                  Instructors are constantly experimenting with their offerings
+                  to engage students
+                </Text>
+              </FlexBox>
+              <FlexBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  what we build
+                </Text>
+                <Text as="p">
+                  Ticketed, free and donation-based class pricing
+                </Text>
+                <Text as="p">One-off pricing for each product</Text>
+                <Text as="p">Discount codes</Text>
+                <Text as="p">Non-video formats</Text>
+              </FlexBox>
+            </GridBox>
+          </FlexBox>
+          <FlexBox
+            backgroundImage="linear-gradient(#3475CC, #7A9FD1)"
+            borderRadius={pxToRem(16)}
+            flexDirection="column"
+            gap={32}
+            padding={32}
+          >
+            <Text as="p" color="#F1E339" variant="subtitle2">
+              Accountability
+            </Text>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(3, 1fr)',
+              }}
+            >
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;My biggest pain point is accountability of my students.
+                  I&apos;m skeptical of just doing video on demand for that
+                  reason.&quot;
+                </Text>
+              </FlexBox>
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;If someone doesnt show up to my in-person class, I text
+                  them, &quot;where were you?!&quot; I need to be able to
+                  replicate that&quot;
+                </Text>
+              </FlexBox>
+              <FlexBox
+                backgroundColor="white"
+                borderRadius={pxToRem(16)}
+                flexDirection="column"
+                gap={8}
+                padding={16}
+              >
+                <Text as="p" variant="bodySmall">
+                  &quot;My zoom classes are donation based&quot;
+                </Text>
+              </FlexBox>
+            </GridBox>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(2, 1fr)',
+              }}
+            >
+              <FlexBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  pain point
+                </Text>
+                <Text as="p">
+                  Instructors have a hard time holding students accountable,
+                  especially virtually
+                </Text>
+              </FlexBox>
+              <FlexBox flexDirection="column" gap={8}>
+                <Text as="p" variant="subtitle3">
+                  what we build
+                </Text>
+                <Text as="p">
+                  Surface more class history milestones for students and
+                  instructors
+                </Text>
+              </FlexBox>
+            </GridBox>
+          </FlexBox>
+        </ContentContainer>
       </FlexBox>
     </Layout>
   );
