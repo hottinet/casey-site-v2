@@ -27,7 +27,7 @@ function CORE_PROGRAMS() {
               lineHeight={1.2}
               variant={belowMd ? 'headline3' : 'headline2'}
             >
-              Launching fitness programs on Core
+              Launching guided fitness programs
             </Text>
           </FlexBox>
           <Image

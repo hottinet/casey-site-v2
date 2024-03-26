@@ -4,7 +4,6 @@ import { ContentContainer } from '~/components/ContentContainer';
 import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
-import Video from '~/components/videos/Video';
 import { HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
@@ -26,10 +25,13 @@ function CORE_CUSTOMER_DISCOVERY() {
               lineHeight={1.2}
               variant={belowMd ? 'headline3' : 'headline2'}
             >
-              Identifying product-market fit for Core
+              Identifying product-market fit for a fitness app
             </Text>
           </FlexBox>
-          <Video sources={[{ src: '/CustomerDiscovery/customerhero2.mp4' }]} />
+          <Image
+            alt="iPhone screenshot of workout class on Core"
+            src="/CustomerDiscovery/discovery-hero.png"
+          />
         </ContentContainer>
         <ContentContainer gap={32}>
           <GridBox
@@ -197,7 +199,7 @@ function CORE_CUSTOMER_DISCOVERY() {
             gap={32}
             padding={32}
           >
-            <Text as="p" color="#F1E339" variant="subtitle2">
+            <Text as="p" color="#F1E339" textAlign="center" variant="subtitle2">
               marketing
             </Text>
             <GridBox
@@ -266,7 +268,7 @@ function CORE_CUSTOMER_DISCOVERY() {
             gap={32}
             padding={32}
           >
-            <Text as="p" color="#F1E339" variant="subtitle2">
+            <Text as="p" color="#F1E339" textAlign="center" variant="subtitle2">
               Flexibility
             </Text>
             <GridBox
@@ -348,7 +350,7 @@ function CORE_CUSTOMER_DISCOVERY() {
             gap={32}
             padding={32}
           >
-            <Text as="p" color="#F1E339" variant="subtitle2">
+            <Text as="p" color="#F1E339" textAlign="center" variant="subtitle2">
               Accountability
             </Text>
             <GridBox
@@ -420,9 +422,51 @@ function CORE_CUSTOMER_DISCOVERY() {
                   Surface more class history milestones for students and
                   instructors
                 </Text>
+                <Text as="p">Guided programs for students</Text>
               </FlexBox>
             </GridBox>
           </FlexBox>
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <FlexBox flexDirection="column" gap={16}>
+            <Text as="p" variant="subtitle3">
+              Other takeaways from our interviews
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Instructors want to have an app to increase accesibility for
+              students but do not have the resources to create one on their own.
+              This makes our iOS offering an important differentiator.
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Producing high quality video content is hard. The more resources
+              we can provide around creating videos, the better. Any ways that
+              we can provide to communicate workouts outside of video can also
+              be helpful.
+            </Text>
+          </FlexBox>
+          <Image
+            alt="chart of how we differentiate from competitors"
+            src="/CustomerDiscovery/competitors_2.png"
+          />
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <FlexBox flexDirection="column" gap={16}>
+            <Text as="h3" variant="headline4">
+              Translating our findings into a product roadmap
+            </Text>
+            <Text as="p" variant="bodySmall">
+              While we had some catching up to do in terms of payment
+              flexibility and the polish on our live classes feature, we also
+              identified some areas that we thought could help us stand out to
+              customers. Our immediate roadmap was focused on catching up but we
+              also set our sights on ideating larger pushes around Marketing and
+              Accountability.
+            </Text>
+          </FlexBox>
+          <Image
+            alt="what we will work on next"
+            src="/CustomerDiscovery/roadmap.png"
+          />
         </ContentContainer>
       </FlexBox>
     </Layout>

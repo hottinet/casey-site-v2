@@ -1,7 +1,7 @@
 export const VIDEO_UPLOAD_ROUTE = '/video-uploads';
-export const CUSTOMER_DISCOVERY_ROUTE = '/customer-discovery';
+export const CUSTOMER_DISCOVERY_ROUTE = '/core-customer-discovery';
 export const CORE_LIVE_CLASSES = '/core-live-classes';
-export const CORE_PROGRAMS = '/core-programs';
+export const CORE_PROGRAMS_ROUTE = '/core-programs';
 export const CORE_SESSIONS = '/core-sessions';
 export const HOME_ROUTE = '/';
 export const ABOUT_ROUTE = '/about';

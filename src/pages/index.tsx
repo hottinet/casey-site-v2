@@ -9,12 +9,15 @@ import {
   ContentContainer,
   useContentContainerPadding,
 } from '~/components/ContentContainer';
+import { Link } from '~/components/Link';
 import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
 import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
 import { ShowoffContent } from '~/components/showoff/ShowoffContent';
 import { Text } from '~/components/typography/Text';
 import {
+  CORE_PROGRAMS_ROUTE,
+  CUSTOMER_DISCOVERY_ROUTE,
   ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
@@ -153,39 +156,27 @@ function HomePage() {
             title="Making a great first impression with onboarding"
           />
         </ContentContainerOr>
-        {/* <ContentContainer metaPage>
+        <ContentContainer metaPage>
           <FlexBox flexDirection="column" gap={40}>
             <Text as="p" variant="subtitle3">
               Other Projects
             </Text>
             <GridBox columns={mdUp ? 3 : 1} gap={40}>
               <Link
-                href={EXAMPLE_DELETE_ME}
+                href={CORE_PROGRAMS_ROUTE}
                 internal
-                label="Building digital fitness classes"
+                label="Launching guided fitness programs"
                 variant="bodyLarge"
               />
               <Link
-                href={EXAMPLE_DELETE_ME}
+                href={CUSTOMER_DISCOVERY_ROUTE}
                 internal
                 label="Rediscovering the Core Customer"
                 variant="bodyLarge"
               />
-              <Link
-                href={EXAMPLE_DELETE_ME}
-                internal
-                label="Designing a live class experience for fitness"
-                variant="bodyLarge"
-              />
-              <Link
-                href={EXAMPLE_DELETE_ME}
-                internal
-                label="Improving fitness content creation and consumption"
-                variant="bodyLarge"
-              />
             </GridBox>
           </FlexBox>
-        </ContentContainer> */}
+        </ContentContainer>
       </FlexBox>
     </HomeLayout>
   );
