@@ -218,12 +218,10 @@ function ZOLA_NAV() {
           >
             <Image
               alt="Home page design in which clicking on a tab in the bottom bar opens a sub-menu"
-              fitParent
               src="/ZolaNav/zola-navproto-2.png"
             />
             <Image
               alt="Home page prototype in which the home page is a niv list of navigation links"
-              fitParent
               src="/ZolaNav/zola-navproto-1.png"
             />
           </GridBox>

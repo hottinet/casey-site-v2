@@ -90,6 +90,8 @@ function ZOLA_BABY() {
             alt="sitemap of zola weddings app with parts relevant to baby highlighted"
             src="/ZolaBaby/zolababy-sitemap.png"
           />
+        </ContentContainer>
+        <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
             Using prototypes to drive product requirements
           </Text>
@@ -104,6 +106,8 @@ function ZOLA_BABY() {
             alt="view of figma prototype"
             src="/ZolaBaby/zola-baby-proto-5.png"
           />
+        </ContentContainer>
+        <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
             Some screens stayed almost exactly the same between apps
           </Text>
@@ -116,15 +120,15 @@ function ZOLA_BABY() {
           >
             <Image
               alt="Showing how similar the shop pages in the weddings and baby apps are"
-              fitParent
               src="/ZolaBaby/zola-baby-same-1.png"
             />
             <Image
               alt="Showing how similar the shop pages in the weddings and baby apps are"
-              fitParent
               src="/ZolaBaby/zola-baby-same-2.png"
             />
           </GridBox>
+        </ContentContainer>
+        <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
             While others got some baby-centric upgrades
           </Text>
@@ -137,12 +141,10 @@ function ZOLA_BABY() {
           >
             <Image
               alt="Showing how different the registry pages in the weddings and baby apps are"
-              fitParent
               src="/ZolaBaby/zola-baby-different-1.png"
             />
             <Image
               alt="Showing how different the registry pages in the weddings and baby apps are"
-              fitParent
               src="/ZolaBaby/zola-baby-different-2.png"
             />
           </GridBox>

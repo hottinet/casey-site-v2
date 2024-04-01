@@ -185,12 +185,10 @@ function ZOLA_ONBOARDING() {
           >
             <Image
               alt="Examples of other apps with colorful full-page fields"
-              fitParent
               src="/ZolaOnboarding/zola-formfield-example.png"
             />
             <Image
               alt="Vision of how this would come to life for Zola"
-              fitParent
               src="/ZolaOnboarding/zola-formfield.png"
             />
           </GridBox>
