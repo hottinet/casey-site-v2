@@ -387,12 +387,10 @@ function ZOLA_BUDGET_TOOL() {
           >
             <Image
               alt="Iteration of the designs"
-              fitParent
               src="/ZolaBudget/zola-budget-iteration-2.png"
             />
             <Image
               alt="Iteration of the designs"
-              fitParent
               src="/ZolaBudget/zola-budget-iteration-3.png"
             />
           </GridBox>
