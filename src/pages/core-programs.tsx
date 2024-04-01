@@ -51,9 +51,8 @@ function CORE_PROGRAMS() {
                 The Goal
               </Text>
               <Text as="p">
-                Fitness students want to be helpd accountable and instructors
-                want to offer day-by-day guided fitness programs to solve this
-                problem and create revenue.
+                Fitness instructors want to offer day-by-day guided fitness
+                programs but don&apos;t have the tools do it.
               </Text>
             </FlexBox>
             <FlexBox flexDirection="column" gap={8}>
@@ -61,9 +60,9 @@ function CORE_PROGRAMS() {
                 My Role
               </Text>
               <Text as="p">
-                Lead design for both the student and instructor experiences
-                across iOS and web. Interview our clients. Collaborate with tech
-                and product to identify requirements and launch this new
+                I led design for both the student and instructor experiences
+                across iOS and web. I interviewed clients, collaborated with
+                tech and product to identify requirements and launch this new
                 feature.
               </Text>
             </FlexBox>

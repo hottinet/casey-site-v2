@@ -49,8 +49,8 @@ function CORE_CUSTOMER_DISCOVERY() {
                 The Goal
               </Text>
               <Text as="p">
-                Identify the painpoints of an aspiring intructor and solutions
-                we can provide in the context of the competitive landscape.
+                Identify issues our current clients are having and come up with
+                a strategy to increase usage of the product.
               </Text>
             </FlexBox>
             <FlexBox flexDirection="column" gap={8}>
@@ -58,9 +58,9 @@ function CORE_CUSTOMER_DISCOVERY() {
                 My Role
               </Text>
               <Text as="p">
-                Reach out to and conduct interviews and have sales conversations
-                with potential users. Identify common pain points and possible
-                solutions to present to the board.
+                Conduct interviews and have sales conversations with potential
+                users. Identify common pain points and possible solutions to
+                present to the board.
               </Text>
             </FlexBox>
           </GridBox>
