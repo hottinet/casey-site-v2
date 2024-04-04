@@ -25,13 +25,23 @@ function CORE_CUSTOMER_DISCOVERY() {
               lineHeight={1.2}
               variant={belowMd ? 'headline3' : 'headline2'}
             >
-              Identifying product-market fit for a fitness app
+              Identifying product-market fit for a B2C fitness experience
             </Text>
           </FlexBox>
           <Image
-            alt="iPhone screenshot of workout class on Core"
-            src="/CustomerDiscovery/discovery-hero.png"
+            alt="Showing the business and customer ends of the platform"
+            src="/CustomerDiscovery/browse.png"
           />
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              Background
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Core is a fitness startup incubated by AlleyCorp. They are on a
+              mission to make it easy for any fitness professional to manage
+              their business and create a digital offering for their students.
+            </Text>
+          </FlexBox>
         </ContentContainer>
         <ContentContainer gap={32}>
           <GridBox
@@ -79,53 +89,66 @@ function CORE_CUSTOMER_DISCOVERY() {
             difficult to migrate them from their existing platforms for a few
             reasons.
           </Text>
-        </ContentContainer>
-        <ContentContainer gap={24}>
           <GridBox
-            gap={40}
             gridTemplateColumns={{
               base: '1fr',
-              sm: 'repeat(2, 1fr)',
+              sm: 'repeat(3, 1fr)',
             }}
           >
-            <FlexBox flexDirection="column" gap={32}>
-              <FlexBox flexDirection="column" gap={24}>
-                <FlexBox flexDirection="column" gap={8}>
-                  <Text as="p" variant="subtitle3">
-                    Migrating students
-                  </Text>
-                  <Text as="p" variant="bodySmall">
-                    It&apos;s hard to get students to move off of platforms that
-                    they are familiar with and might have purchased long-term
-                    subscriptions on.
-                  </Text>
-                </FlexBox>
-              </FlexBox>
-              <FlexBox flexDirection="column" gap={8}>
-                <Text as="p" variant="subtitle3">
-                  Migrating videos
-                </Text>
-                <Text as="p" variant="bodySmall">
-                  Although Core offered unlimited video storage and white-glove
-                  migration for a fee, migrating all of their existing content
-                  was still an obstacle for instructors.
-                </Text>
-              </FlexBox>
-              <FlexBox flexDirection="column" gap={8}>
-                <Text as="p" variant="subtitle3">
-                  Feature set
-                </Text>
-                <Text as="p" variant="bodySmall">
-                  As a very new company, Core was lacking some basic features
-                  that competitors offered.
-                </Text>
-              </FlexBox>
+            <FlexBox
+              backgroundColor="#ffffff"
+              borderRadius={pxToRem(16)}
+              flexDirection="column"
+              gap={8}
+              padding={16}
+            >
+              <Text as="p" variant="subtitle3">
+                Migrating students
+              </Text>
+              <Text as="p" variant="bodySmall">
+                It&apos;s hard to get students to move off of platforms that
+                they are familiar with and might have purchased long-term
+                subscriptions on.
+              </Text>
             </FlexBox>
-            <Image
-              alt="iPhone screenshot of workout class on Core"
-              src="/CustomerDiscovery/KateSession.png"
-            />
+            <FlexBox
+              backgroundColor="#ffffff"
+              borderRadius={pxToRem(16)}
+              flexDirection="column"
+              gap={8}
+              padding={16}
+            >
+              <Text as="p" variant="subtitle3">
+                Migrating videos
+              </Text>
+              <Text as="p" variant="bodySmall">
+                Although Core offered unlimited video storage and white-glove
+                migration for a fee, migrating all of their existing content was
+                still an obstacle for instructors.
+              </Text>
+            </FlexBox>
+            <FlexBox
+              backgroundColor="#ffffff"
+              borderRadius={pxToRem(16)}
+              flexDirection="column"
+              gap={8}
+              padding={16}
+            >
+              <Text as="p" variant="subtitle3">
+                Feature set
+              </Text>
+              <Text as="p" variant="bodySmall">
+                As a very new company, Core was lacking some basic features that
+                competitors offered.
+              </Text>
+            </FlexBox>
           </GridBox>
+        </ContentContainer>
+        <ContentContainer gap={24}>
+          <Image
+            alt="Showing the business and customer ends of the platform"
+            src="/CustomerDiscovery/session.png"
+          />
         </ContentContainer>
         <ContentContainer gap={24}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
@@ -467,6 +490,15 @@ function CORE_CUSTOMER_DISCOVERY() {
             alt="what we will work on next"
             src="/CustomerDiscovery/roadmap.png"
           />
+        </ContentContainer>
+        <ContentContainer gap={16}>
+          <Text as="h3" variant="headline4">
+            Performance
+          </Text>
+          <Text as="p" variant="bodySmall">
+            Get in touch to learn more about how this project performed and
+            evolved!
+          </Text>
         </ContentContainer>
       </FlexBox>
     </Layout>

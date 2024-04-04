@@ -34,6 +34,16 @@ function CORE_PROGRAMS() {
             alt="Program page on desktop and mobile"
             src="/Programs/programscover.png"
           />
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              Background
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Core is a fitness startup incubated by AlleyCorp. They are on a
+              mission to make it easy for any fitness professional to manage
+              their business and create a digital offering for their students.
+            </Text>
+          </FlexBox>
         </ContentContainer>
         <ContentContainer gap={32}>
           <GridBox
@@ -209,6 +219,15 @@ function CORE_PROGRAMS() {
             src="https://player.vimeo.com/video/574497383"
             title="Student experience following a program on web"
           />
+        </ContentContainer>
+        <ContentContainer gap={16}>
+          <Text as="h3" variant="headline4">
+            Performance
+          </Text>
+          <Text as="p" variant="bodySmall">
+            Get in touch to learn more about how this project performed and
+            evolved!
+          </Text>
         </ContentContainer>
       </FlexBox>
     </Layout>
