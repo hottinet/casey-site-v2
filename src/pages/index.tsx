@@ -88,7 +88,7 @@ function HomePage() {
         alignItems="center"
         flexDirection="column"
         height="100%"
-        paddingBottom={16}
+        paddingBottom={32}
         width="100%"
       >
         <ContentContainer alignItems="center" gap={32} marginTop={32} metaPage>
@@ -161,7 +161,7 @@ function HomePage() {
             imageAspectRatio="356/515"
             imageSrc="/Home/onboarding.png"
             linkHref={ZOLA_ONBOARDING}
-            marginBottom={belowSm ? 0 : showoffMarginBottom}
+            marginBottom={showoffMarginBottom}
             marginTop={showoffMarginTop}
             paddingX={showoffPaddingX}
             tags={['zola', 'ios']}
