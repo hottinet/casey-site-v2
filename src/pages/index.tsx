@@ -9,11 +9,10 @@ import {
   ContentContainer,
   useContentContainerPadding,
 } from '~/components/ContentContainer';
-import { Link } from '~/components/Link';
 import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
 import { Layout } from '~/components/meta/Layout';
 import { ShowoffBlock } from '~/components/showoff/ShowoffBlock';
-import { ShowoffContent } from '~/components/showoff/ShowoffContent';
+import { ShowoffSecondary } from '~/components/showoff/ShowoffSecondary';
 import { Text } from '~/components/typography/Text';
 import {
   CORE_PROGRAMS_ROUTE,
@@ -89,6 +88,7 @@ function HomePage() {
         alignItems="center"
         flexDirection="column"
         height="100%"
+        paddingBottom={16}
         width="100%"
       >
         <ContentContainer alignItems="center" gap={32} marginTop={32} metaPage>
@@ -123,20 +123,32 @@ function HomePage() {
         <ContentContainer metaPage>
           <GridBox
             alignItems="start"
-            columns={belowSm ? 1 : 2}
-            gap={belowSm ? 64 : 40}
+            gap={{ base: 64, sm: 20, md: 40 }}
+            gridTemplateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
           >
-            <ShowoffContent
+            <ShowoffSecondary
+              altText="Donkey Kong"
               color="text"
+              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
               linkHref={ZOLA_NAVIGATION_ROUTE}
-              tags={['zola', 'ios']}
+              tags={['zola', 'Cross Platform']}
               title="Designing a more scalable home page"
             />
-            <ShowoffContent
+            <ShowoffSecondary
+              altText="Donkey Kong"
               color="text"
+              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
               linkHref={ZOLA_BABY_ROUTE}
               tags={['zola', 'ios']}
               title="Launching a baby registry product"
+            />
+            <ShowoffSecondary
+              altText="Donkey Kong"
+              color="text"
+              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
+              linkHref={ZOLA_BABY_ROUTE}
+              tags={['The Culinistas', 'Web']}
+              title="Digitizing the booking flow for private chef exp"
             />
           </GridBox>
         </ContentContainer>
@@ -157,25 +169,27 @@ function HomePage() {
           />
         </ContentContainerOr>
         <ContentContainer metaPage>
-          <FlexBox flexDirection="column" gap={40}>
-            <Text as="p" variant="subtitle3">
-              Other Projects
-            </Text>
-            <GridBox columns={mdUp ? 3 : 1} gap={40}>
-              <Link
-                href={CORE_PROGRAMS_ROUTE}
-                internal
-                label="Launching guided fitness programs"
-                variant="bodyLarge"
-              />
-              <Link
-                href={CUSTOMER_DISCOVERY_ROUTE}
-                internal
-                label="Rediscovering the Core Customer"
-                variant="bodyLarge"
-              />
-            </GridBox>
-          </FlexBox>
+          <GridBox
+            gap={{ base: 64, sm: 20, md: 40 }}
+            gridTemplateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
+          >
+            <ShowoffSecondary
+              altText="Donkey Kong"
+              color="text"
+              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
+              linkHref={CORE_PROGRAMS_ROUTE}
+              tags={['zola', 'Cross Platform']}
+              title="Launching guided fitness programs"
+            />
+            <ShowoffSecondary
+              altText="Donkey Kong"
+              color="text"
+              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
+              linkHref={CUSTOMER_DISCOVERY_ROUTE}
+              tags={['zola', 'Cross Platform']}
+              title="Rediscovering the Core Customer"
+            />
+          </GridBox>
         </ContentContainer>
       </FlexBox>
     </HomeLayout>
