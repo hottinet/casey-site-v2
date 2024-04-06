@@ -4,6 +4,7 @@ import { ContentContainer } from '~/components/ContentContainer';
 import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
+import ExternalVideo from '~/components/videos/ExternalVideo';
 import Video from '~/components/videos/Video';
 import { ZOLA_ONBOARDING } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
@@ -73,11 +74,11 @@ function Culinistas() {
             ensure designs were responsive and create mobile web versions of
             each screen.
           </Text>
-          <Video sources={[{ src: '/Culinistas/culinistas_marketing.mp4' }]} />
+          <Video sources={[{ src: '/Culinistas/culinistas-marketing2.mp4' }]} />
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
-            Building a flow for users to book their own services online
+            Designing a new online booking experience for users
           </Text>
           <Text as="p" variant="bodySmall">
             Next, we focused on allowing customers to book their own services
@@ -99,7 +100,8 @@ function Culinistas() {
                 Looking at the existing flow
               </Text>
               <Text as="p" variant="bodySmall">
-                The existing flow separated each field onto a new page which
+                Most existing customers book via a Customer Service rep. The
+                existing web flow separated each field onto a new page which
                 made the experience feel very long and there was no sense of
                 progress for the user. The menu selection was also crammed into
                 a small drawer which made it very hard to digest.
@@ -127,26 +129,77 @@ function Culinistas() {
           <Text as="p" variant="subtitle3">
             Using wireframes to establish patterns
           </Text>
+          <Text as="p" variant="bodySmall">
+            After a few iterations, we decided to lean into a right rail as a
+            consistent place to show users which dishes they have selected as
+            well as their subtotal information. We could also use this space to
+            open a drawer for special instructions for each dish.
+          </Text>
           <GridBox
             gap={40}
             gridTemplateColumns={{
               base: '1fr',
-              sm: 'repeat(3, 1fr)',
+              sm: 'repeat(2, 1fr)',
             }}
           >
-            <Image alt="" src="/Culinistas/wire_1.png" />
-            <Image alt="" src="/Culinistas/wire_2.png" />
-            <Image alt="" src="/Culinistas/wire_3.png" />
+            <Image
+              alt="wireframe showing selected dishes and subtotal in right rail"
+              src="/Culinistas/wire_1.png"
+            />
+            <Image
+              alt="wireframe showing dish special instructions in right drawer"
+              src="/Culinistas/wire_2.png"
+            />
+            <Image
+              alt="wireframe showing selected dishes and subtotal in right rail"
+              src="/Culinistas/wire_3.png"
+            />
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
-            Booking a gathering
+            What it looks like to book a gathering via web
+          </Text>
+          <ExternalVideo
+            aspectRatio="16:9"
+            src="https://player.vimeo.com/video/931558053"
+            title="video of booking flow"
+          />
+          <Text as="p" variant="bodySmall">
+            On top of just improving the user experience of booking a chef, we
+            were also able to highlight revenue generating add-ons within the
+            flow. Post-launch we saw that clients were much more likely to
+            select these add-ons when booking online vs via an admin.
+          </Text>
+          <Image
+            alt="screen pointing out where users can add extended menu or drink options"
+            src="/Culinistas/culinistas-addons.png"
+          />
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <Text as="p" variant="subtitle3">
+            Fast Follow: Improved filtering
+          </Text>
+        </ContentContainer>
+        <ContentContainer gap={32}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
+            Layering on accounts so users can save their info
+          </Text>
+          <Text as="p" variant="bodySmall">
+            After launching the new and improved booking flows, we focused on
+            building accounts to make booking as simple as possible for
+            returning customers. With an account, users would be able to save
+            their addresses and billing info to reuse in the future, as well as,
+            see order history, track credits, and manage global settings.
+          </Text>
+          <Text as="p" variant="bodySmall">
+            I worked specifically on a logged in state for the nav that would
+            allow users to start a new booking quickly with their saved info.
           </Text>
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
-            Adding filtering
+            Performance
           </Text>
         </ContentContainer>
       </FlexBox>
