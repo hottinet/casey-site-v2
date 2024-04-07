@@ -49,7 +49,7 @@ function Culinistas() {
               </Text>
               <Text as="p">
                 The Culinistas wanted to improve their marketing website as well
-                as bring their analog booking process to the web.
+                as bring their admin driven booking process to the web.
               </Text>
             </FlexBox>
             <FlexBox flexDirection="column" gap={8}>
@@ -117,7 +117,7 @@ function Culinistas() {
         <ContentContainer gap={32}>
           <FlexBox flexDirection="column" gap={24}>
             <Text as="p" variant="subtitle3">
-              Mapping out a new user journey
+              Mapping out a new and more concise user journey
             </Text>
             <Text as="p" variant="bodySmall">
               For our new user flow, we wanted to group related fields into more
@@ -131,7 +131,7 @@ function Culinistas() {
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
-            Using wireframes to establish patterns
+            Using wireframes to establish consistent patterns
           </Text>
           <Text as="p" variant="bodySmall">
             After a few iterations, we decided to lean into a right rail as a
@@ -162,7 +162,7 @@ function Culinistas() {
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
-            What it looks like to book a gathering via web
+            What it looks like to book a gathering via the website
           </Text>
           <ExternalVideo
             aspectRatio="16:9"
@@ -179,10 +179,14 @@ function Culinistas() {
             alt="screen pointing out where users can add extended menu or drink options"
             src="/Culinistas/culinistas-addons.png"
           />
+          <Text as="p" variant="bodySmall">
+            We would apply the same patterns and principles to the flows for
+            booking other service types.
+          </Text>
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
-            Fast Follow: Improved filtering
+            Improving filtering for Meal Prep clients
           </Text>
         </ContentContainer>
         <ContentContainer gap={32}>
@@ -203,18 +207,10 @@ function Culinistas() {
             default the service type to be the same as the last booked service.
           </Text>
           <Video sources={[{ src: '/Culinistas/loggedinnav.mp4' }]} />
-          {/* <Image
-            alt="logged in navigation"
-            src="/Culinistas/culinistas-nav.png"
-          />
-          <Image
-            alt="variants of the logged in nav"
-            src="/Culinistas/culinistas-nav-variants.png"
-          /> */}
         </ContentContainer>
         <ContentContainer gap={32}>
-          <Text as="p" variant="subtitle3">
-            Performance
+          <Text as="h2" lineHeight={1.1} variant="headline4">
+            Impact
           </Text>
         </ContentContainer>
       </FlexBox>
