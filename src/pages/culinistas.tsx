@@ -29,6 +29,7 @@ function Culinistas() {
             >
               Connecting users with private chefs
             </Text>
+            <Image alt="" src="/Culinistas/culinistas-hero.png" />
           </FlexBox>
         </ContentContainer>
         <ContentContainer gap={32}>
@@ -107,7 +108,10 @@ function Culinistas() {
                 a small drawer which made it very hard to digest.
               </Text>
             </FlexBox>
-            <Image alt="" src="/Culinistas/culinistas_old.png" />
+            <Image
+              alt="example of previous flow"
+              src="/Culinistas/culinistas_old.png"
+            />
           </GridBox>
         </ContentContainer>
         <ContentContainer gap={32}>
@@ -183,7 +187,7 @@ function Culinistas() {
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
-            Layering on accounts so users can save their info
+            Layering on accounts so users can book again with saved info
           </Text>
           <Text as="p" variant="bodySmall">
             After launching the new and improved booking flows, we focused on
@@ -194,8 +198,19 @@ function Culinistas() {
           </Text>
           <Text as="p" variant="bodySmall">
             I worked specifically on a logged in state for the nav that would
-            allow users to start a new booking quickly with their saved info.
+            allow users to start a new booking quickly with their saved info. We
+            also know that most users book the same service again, so we would
+            default the service type to be the same as the last booked service.
           </Text>
+          <Video sources={[{ src: '/Culinistas/loggedinnav.mp4' }]} />
+          {/* <Image
+            alt="logged in navigation"
+            src="/Culinistas/culinistas-nav.png"
+          />
+          <Image
+            alt="variants of the logged in nav"
+            src="/Culinistas/culinistas-nav-variants.png"
+          /> */}
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
