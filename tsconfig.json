@@ -13,7 +13,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "es2019", "dom.iterable"],
     "module": "esnext",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,

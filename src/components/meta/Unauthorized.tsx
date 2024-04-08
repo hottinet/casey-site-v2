@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
+import { FormEventHandler, useContext, useState } from 'react';
 
+import { AUTH_ROUTE } from '~/constants/routing';
+import { AuthorizationContext } from '~/contexts/authorizationContext';
 import { pxToRem } from '~/utils/pxToRem';
 
 import { Box } from '../box/Box';
@@ -36,9 +39,28 @@ const SubmitButton = styled('button')`
   width: 100%;
 `;
 
+enum Fields {
+  password = 'password',
+}
+
 export function Unauthorized() {
-  const onSubmit = () => {
-    // console.log('submitted');
+  const [status, setStatus] = useState<'ok' | 'error' | 'loading'>('ok');
+  const { setIsAuthorized } = useContext(AuthorizationContext);
+
+  const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target as HTMLFormElement);
+    setStatus('loading');
+    const res = await fetch(AUTH_ROUTE, {
+      method: 'POST',
+      body: JSON.stringify(Object.fromEntries(data.entries())),
+    });
+    if (res.ok) {
+      setStatus('ok');
+      setIsAuthorized(true);
+    } else {
+      setStatus('error');
+    }
   };
 
   return (
@@ -53,14 +75,18 @@ export function Unauthorized() {
           You need a password to view this page
         </Text>
         <Form onSubmit={onSubmit}>
-          <Label htmlFor="password">
+          <Label htmlFor={Fields.password}>
             <Box height="1px" overflow="hidden" width="1px">
               <Text variant="bodySmall">Password</Text>
             </Box>
-            <PwInput placeholder="Enter password" type="password" />
+            <PwInput
+              name={Fields.password}
+              placeholder="Enter password"
+              type="password"
+            />
           </Label>
           <Box maxWidth={pxToRem(150)}>
-            <SubmitButton type="submit">
+            <SubmitButton disabled={status === 'loading'} type="submit">
               <OnMouseSpan>
                 <AboutLinkText>Submit</AboutLinkText>
               </OnMouseSpan>
