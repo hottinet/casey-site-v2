@@ -68,6 +68,7 @@ const theme = {
   },
   fontSize: {
     bodySmall: pxToRem(16),
+    bodyMedium: pxToRem(24),
     bodyLarge: pxToRem(32),
     subtitle3: pxToRem(16),
     subtitle2: pxToRem(28),

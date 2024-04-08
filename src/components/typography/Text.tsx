@@ -30,7 +30,7 @@ const getFontSize = (theme: Theme, variantOrAs: VariantOrAs) => {
     h2: theme.fontSize.headline2,
     h3: theme.fontSize.headline3,
     h4: theme.fontSize.headline4,
-    h5: theme.fontSize.bodyLarge,
+    h5: theme.fontSize.bodyMedium,
     h6: theme.fontSize.bodyLarge,
     p: theme.fontSize.bodySmall,
     span: theme.fontSize.bodySmall,
