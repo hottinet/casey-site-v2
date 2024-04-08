@@ -212,6 +212,10 @@ function Culinistas() {
           <Text as="h2" lineHeight={1.1} variant="headline4">
             Impact
           </Text>
+          <Text as="p" variant="bodySmall">
+            After updating the online experience, we saw more and more users
+            booking services via the website instead of an admin.
+          </Text>
         </ContentContainer>
       </FlexBox>
     </Layout>
