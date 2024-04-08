@@ -7,7 +7,7 @@ import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
-import { ZOLA_NAVIGATION_ROUTE } from '~/constants/routing';
+import { ZOLA_BABY_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -22,7 +22,7 @@ function ZOLA_BUDGET_TOOL() {
   const belowSm = useBreakpointsLessThan('sm');
   const belowMd = useBreakpointsLessThan('md');
   return (
-    <Layout nextPageHref={ZOLA_NAVIGATION_ROUTE}>
+    <Layout nextPageHref={ZOLA_BABY_ROUTE}>
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}

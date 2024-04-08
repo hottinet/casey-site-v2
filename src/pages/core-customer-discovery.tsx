@@ -4,6 +4,7 @@ import { ContentContainer } from '~/components/ContentContainer';
 import Image from '~/components/Image';
 import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
+import { NON_BREAKING_SPACE } from '~/constants/characterEntitites';
 import { HOME_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
@@ -13,7 +14,10 @@ function CORE_CUSTOMER_DISCOVERY() {
   const belowSm = useBreakpointsLessThan('sm');
   const belowMd = useBreakpointsLessThan('md');
   return (
-    <Layout nextPageHref={HOME_ROUTE}>
+    <Layout
+      nextPageHref={HOME_ROUTE}
+      nextPageLabel={`Back${NON_BREAKING_SPACE}to${NON_BREAKING_SPACE}Home`}
+    >
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}

@@ -6,8 +6,7 @@ import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 import Video from '~/components/videos/Video';
-import { NON_BREAKING_SPACE } from '~/constants/characterEntitites';
-import { HOME_ROUTE } from '~/constants/routing';
+import { CORE_PROGRAMS_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -16,10 +15,7 @@ function ZOLA_ONBOARDING() {
   const belowSm = useBreakpointsLessThan('sm');
   const belowMd = useBreakpointsLessThan('md');
   return (
-    <Layout
-      nextPageHref={HOME_ROUTE}
-      nextPageLabel={`Back${NON_BREAKING_SPACE}to${NON_BREAKING_SPACE}Home`}
-    >
+    <Layout nextPageHref={CORE_PROGRAMS_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}

@@ -6,7 +6,7 @@ import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 import Video from '~/components/videos/Video';
-import { HOME_ROUTE } from '~/constants/routing';
+import { CUSTOMER_DISCOVERY_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -15,7 +15,7 @@ function CORE_PROGRAMS() {
   const belowSm = useBreakpointsLessThan('sm');
   const belowMd = useBreakpointsLessThan('md');
   return (
-    <Layout nextPageHref={HOME_ROUTE}>
+    <Layout nextPageHref={CUSTOMER_DISCOVERY_ROUTE}>
       <FlexBox alignItems="center" flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}

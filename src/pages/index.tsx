@@ -21,7 +21,7 @@ import {
   ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
   ZOLA_NAVIGATION_ROUTE,
-  ZOLA_ONBOARDING,
+  ZOLA_ONBOARDING_ROUTE,
 } from '~/constants/routing';
 import { pxToRem } from '~/utils/pxToRem';
 import {
@@ -173,7 +173,7 @@ function HomePage() {
             imageAlt="Zola onboarding on an iPhone"
             imageAspectRatio="356/515"
             imageSrc="/Home/onboarding.png"
-            linkHref={ZOLA_ONBOARDING}
+            linkHref={ZOLA_ONBOARDING_ROUTE}
             marginBottom={showoffMarginBottom}
             marginTop={showoffMarginTop}
             paddingX={showoffPaddingX}
@@ -200,7 +200,7 @@ function HomePage() {
               imageSrc="/Home/home_core_customer.png"
               linkHref={CUSTOMER_DISCOVERY_ROUTE}
               tags={['Core', 'research']}
-              title="Finding product market fit for a B2C fitness product"
+              title="Finding product market fit for a B2C fitness platform"
             />
           </GridBox>
         </ContentContainer>
