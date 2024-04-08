@@ -1,11 +1,15 @@
-import { PropsWithChildren } from 'react';
+import { useRouter } from 'next/router';
+import { PropsWithChildren, useContext } from 'react';
 
+import { RESTRICTED_ROUTES } from '~/constants/routing';
+import { AuthorizationContext } from '~/contexts/authorizationContext';
 import { Color } from '~/typings/theme';
 
 import { FlexBox, FlexBoxProps } from '../box/FlexBox';
 import { Footer } from './Footer';
 import Head from './Head';
 import { NavBar } from './NavBar';
+import { Unauthorized } from './Unauthorized';
 
 interface LayoutProps {
   pageTitle?: string;
@@ -25,6 +29,9 @@ export function Layout({
   footerPaddingTop,
   fallbackNavBackground,
 }: PropsWithChildren<LayoutProps>) {
+  const { isAuthorized } = useContext(AuthorizationContext);
+  const { pathname } = useRouter();
+  const cantView = !isAuthorized && RESTRICTED_ROUTES.includes(pathname);
   return (
     <>
       <Head title={pageTitle || 'Casey Bradford'} />
@@ -43,7 +50,7 @@ export function Layout({
           nextPageHref={nextPageHref}
           nextPageLabel={nextPageLabel}
         />
-        {children}
+        {cantView ? <Unauthorized /> : children}
         <Footer
           nextPageHref={nextPageHref}
           nextPageLabel={nextPageLabel}

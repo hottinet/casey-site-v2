@@ -13,4 +13,4 @@ export const CULINISTAS_ROUTE = '/culinistas';
 
 export const EXAMPLE_DELETE_ME = '/EXAMPLE';
 
-export const RESTRICTED_ROUTES: string[] = [];
+export const RESTRICTED_ROUTES: string[] = [CULINISTAS_ROUTE];
