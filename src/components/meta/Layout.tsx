@@ -32,6 +32,7 @@ export function Layout({
   const { isAuthorized } = useContext(AuthorizationContext);
   const { pathname } = useRouter();
   const cantView = !isAuthorized && RESTRICTED_ROUTES.includes(pathname);
+
   return (
     <>
       <Head title={pageTitle || 'Casey Bradford'} />
@@ -40,7 +41,7 @@ export function Layout({
         className={className}
         flexDirection="column"
         height="100%"
-        minHeight="100%"
+        minHeight={cantView ? '100vh' : '100%'}
         position="relative"
         width="100%"
       >

@@ -61,6 +61,7 @@ const theme = {
   borderRadius: {
     2: pxToRem(2),
     4: pxToRem(4),
+    8: pxToRem(8),
     30: pxToRem(30),
     round: '50%',
     200: pxToRem(200),
