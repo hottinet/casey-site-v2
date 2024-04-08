@@ -4,6 +4,7 @@ import { PropsWithChildren, useContext } from 'react';
 import { RESTRICTED_ROUTES } from '~/constants/routing';
 import { AuthorizationContext } from '~/contexts/authorizationContext';
 import { Color } from '~/typings/theme';
+import { pxToRem } from '~/utils/pxToRem';
 
 import { FlexBox, FlexBoxProps } from '../box/FlexBox';
 import { Footer } from './Footer';
@@ -55,7 +56,7 @@ export function Layout({
         <Footer
           nextPageHref={nextPageHref}
           nextPageLabel={nextPageLabel}
-          paddingTop={footerPaddingTop}
+          paddingTop={cantView ? pxToRem(20) : footerPaddingTop}
         />
       </FlexBox>
     </>
