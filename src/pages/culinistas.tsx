@@ -201,6 +201,23 @@ function Culinistas() {
             selection flows so that users could quickly narrow down the dish
             options.
           </Text>
+          <Image
+            alt="Log in screen and account settings screen"
+            src="/Culinistas/filter-1.png"
+          />
+          <Image
+            alt="Log in screen and account settings screen"
+            src="/Culinistas/filter-3.png"
+          />
+          <Text as="p" variant="bodySmall">
+            The Culinistas knew that they had many customers with dietary
+            restrictions so we also added a way to flag certain ingredients as
+            you browse.
+          </Text>
+          <Image
+            alt="Log in screen and account settings screen"
+            src="/Culinistas/filter-2.png"
+          />
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
@@ -213,6 +230,10 @@ function Culinistas() {
             their addresses and billing info to reuse in the future, as well as
             see order history, track credits, and manage global settings.
           </Text>
+          <Image
+            alt="Log in screen and account settings screen"
+            src="/Culinistas/accounts.png"
+          />
           <Text as="p" variant="bodySmall">
             I worked specifically on a logged in state for the nav that would
             allow users to start a new booking quickly with their saved info. We
@@ -226,10 +247,19 @@ function Culinistas() {
           <Text as="h2" lineHeight={1.1} variant="headline4">
             Impact
           </Text>
-          <Text as="p" variant="bodySmall">
-            After updating the online experience, we saw more and more users
-            booking services via the website instead of an admin.
-          </Text>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="bodySmall">
+              After the launch of the new online booking flows, we saw an
+              increase in customers booking through the web. We were able to
+              remove the friction of hard to browse menus and time to
+              completion. We also saw more customers choosing to add upgrades to
+              their service at an additional cost.
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Adding accounts greatly improved the booking process for returning
+              users, allowing them to save their info for quicker checkout.
+            </Text>
+          </FlexBox>
         </ContentContainer>
       </FlexBox>
     </Layout>
