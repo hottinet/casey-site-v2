@@ -495,15 +495,6 @@ function CORE_CUSTOMER_DISCOVERY() {
             src="/CustomerDiscovery/roadmap.png"
           />
         </ContentContainer>
-        <ContentContainer gap={16}>
-          <Text as="h3" variant="headline4">
-            Performance
-          </Text>
-          <Text as="p" variant="bodySmall">
-            Get in touch to learn more about how this project performed and
-            evolved!
-          </Text>
-        </ContentContainer>
       </FlexBox>
     </Layout>
   );

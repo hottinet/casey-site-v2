@@ -250,7 +250,14 @@ function ZOLA_ONBOARDING() {
         </ContentContainer>
         <ContentContainer gap={24}>
           <Text as="h1" lineHeight={1.1} variant="headline4">
-            Learning from the final product
+            Prioritizing an emotional experience can have a large imapct
+          </Text>
+          <Text as="p" variant="bodySmall">
+            Even though our main goal with this project was not tied to a
+            specific KPI, after launch we saw a huge increase in users
+            completing the onboarding on their first session with the app. This
+            means that couples are abandoning the flow less and they are getting
+            into the app and Zola products faster.
           </Text>
           {belowSm ? (
             <ExternalVideo
@@ -265,18 +272,6 @@ function ZOLA_ONBOARDING() {
               title="Demo of zola onboarding"
             />
           )}
-          <FlexBox flexDirection="column" gap={8}>
-            <Text as="h3" variant="subtitle3">
-              Prioritizing an emotional experience can move the needle
-            </Text>
-            <Text as="p" variant="bodySmall">
-              Even though our main goal with this project was not tied to a
-              specific KPI, after launch we saw a huge increase in users
-              completing the onboarding on their first session with the app.
-              This means that couples are abandoning the flow less and they are
-              getting into the app and Zola products faster.
-            </Text>
-          </FlexBox>
         </ContentContainer>
       </FlexBox>
     </Layout>

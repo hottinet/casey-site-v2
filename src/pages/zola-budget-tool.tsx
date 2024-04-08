@@ -420,17 +420,70 @@ function ZOLA_BUDGET_TOOL() {
             well as a few new features added after this case study was created.
           </Text>
         </ContentContainer>
-        <ContentContainer gap={16}>
+        <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
-            Performance
+            Impact
           </Text>
-          <Text as="p" variant="bodySmall">
-            In the first months, we beat our goals for conversion and received
-            high ratings from users who took a survey about their experience. We
-            continued to work towards building the tool on web and add value to
-            budget users. Get in touch to learn more about how this project
-            performed and evolved!
-          </Text>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              exceeding our coversion goals
+            </Text>
+            <Text as="p" variant="bodySmall">
+              The budget tool became a great top of funnel offering for Zola
+              couples. Our goal was to see a 25% conversion rate and we saw a
+              34% rate in the first months.
+            </Text>
+          </FlexBox>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              glowing reviews from users
+            </Text>
+            <Text as="p" variant="bodySmall">
+              After some time we surveyed budget tool users, most of whom gave
+              the tool 5/5 stars. Some quotes from the survey below!
+            </Text>
+            <GridBox
+              gridTemplateColumns={{
+                base: '1fr',
+                sm: '1fr 1fr',
+                md: 'repeat(3, 1fr)',
+              }}
+            >
+              <UTBox flexDirection="column" gap={8}>
+                <Text as="p" variant="bodySmall">
+                  &quot;I love that I can see a clear depiction of payments and
+                  outstanding payments with a total. I love it so far.&quot;
+                </Text>
+              </UTBox>
+              <UTBox flexDirection="column" gap={8}>
+                <Text as="p" variant="bodySmall">
+                  &quot;It&apos;s super convenient and helpful for organization.
+                  I also like that you can leave notes on payments.”&quot;
+                </Text>
+              </UTBox>
+              <UTBox flexDirection="column" gap={8}>
+                <Text as="p" variant="bodySmall">
+                  &quot;It&apos;s nice to have in the same app with everything
+                  else Zola. I was using a spreadsheet before, but it
+                  wasn&apos;t convenient on the go.&quot;
+                </Text>
+              </UTBox>
+            </GridBox>
+          </FlexBox>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              continuing to invest in the budget tool
+            </Text>
+            <Text as="p" variant="bodySmall">
+              After the success of our launch on mobile, we continued to work
+              towards launching the tool on web and finding new ways to
+              cross-sell budget tool users into other Zola products.
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Get in touch to learn more specifics on how this project performed
+              and evolved!
+            </Text>
+          </FlexBox>
         </ContentContainer>
       </FlexBox>
     </Layout>

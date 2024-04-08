@@ -267,7 +267,6 @@ function ZOLA_BABY() {
           </Text>
           <Image
             alt="Web page for Zola Baby with QR code to download the app"
-            marginBottom={80}
             src="/ZolaBaby/zola-baby-web-noshadow.png"
           />
         </ContentContainer>
@@ -283,7 +282,6 @@ function ZOLA_BABY() {
           </Text>
           <Image
             alt="Screenshot of various text and background color combos with accessability ratings"
-            marginBottom={80}
             src="/ZolaBaby/zola-baby-accessibility.png"
           />
         </ContentContainer>
@@ -309,6 +307,17 @@ function ZOLA_BABY() {
               title="video of a few key baby features"
             />
           )}
+        </ContentContainer>
+        <ContentContainer gap={16}>
+          <Text as="h2" lineHeight={1.1} variant="headline4">
+            Impact
+          </Text>
+          <Text as="p" variant="bodySmall">
+            The launch of our baby registry product, allowed Zola to break into
+            a new market and continue to provide value to couples after the
+            wedding day. In the first month, we saw thousands of Zola Weddings
+            couples create and use our baby regsitries.
+          </Text>
         </ContentContainer>
       </FlexBox>
     </Layout>

@@ -49,7 +49,8 @@ function Culinistas() {
               </Text>
               <Text as="p">
                 The Culinistas wanted to improve their marketing website as well
-                as bring their admin driven booking process to the web.
+                as bring their admin driven booking process to the web to
+                increase booking potential.
               </Text>
             </FlexBox>
             <FlexBox flexDirection="column" gap={8}>
@@ -58,8 +59,8 @@ function Culinistas() {
               </Text>
               <Text as="p">
                 I worked directly with the Culinistas Design Director to provide
-                product design expertise, do research, design screens and create
-                prototypes.
+                product design expertise, do research, design solutions and
+                create prototypes.
               </Text>
             </FlexBox>
           </GridBox>
@@ -70,7 +71,7 @@ function Culinistas() {
           </Text>
           <Text as="p" variant="bodySmall">
             The first project that I supported was rebranding the marketing
-            site. I worked with the design director to create a style guide,
+            site. I worked with the Design Director to create a style guide,
             component library and documentation for developers. I also worked to
             ensure designs were responsive and create mobile web versions of
             each screen.
@@ -164,11 +165,22 @@ function Culinistas() {
           <Text as="p" variant="subtitle3">
             What it looks like to book a gathering via the website
           </Text>
+          <Text as="p" variant="bodySmall">
+            Our new booking flow grouped the inputs into more condesned and
+            contextual groups and gave users a sense of their progress in the
+            flow. It also laid out the menus and dishes in a much more
+            digestible way with photos to help clients understand what they were
+            getting and led with the dish selection instead of tediuos details
+            to get users excited.
+          </Text>
           <ExternalVideo
             aspectRatio="16:9"
             src="https://player.vimeo.com/video/931558053"
             title="video of booking flow"
           />
+          <Text as="p" variant="subtitle3">
+            Revenue generating add-ons
+          </Text>
           <Text as="p" variant="bodySmall">
             On top of just improving the user experience of booking a chef, we
             were also able to highlight revenue generating add-ons within the
@@ -179,14 +191,15 @@ function Culinistas() {
             alt="screen pointing out where users can add extended menu or drink options"
             src="/Culinistas/culinistas-addons.png"
           />
-          <Text as="p" variant="bodySmall">
-            We would apply the same patterns and principles to the flows for
-            booking other service types.
-          </Text>
         </ContentContainer>
         <ContentContainer gap={32}>
           <Text as="p" variant="subtitle3">
-            Improving filtering for Meal Prep clients
+            Improved filtering and search
+          </Text>
+          <Text as="p" variant="bodySmall">
+            As a fast follow, we wanted to add filtering and search to the dish
+            selection flows so that users could quickly narrow down the dish
+            options.
           </Text>
         </ContentContainer>
         <ContentContainer gap={32}>
@@ -197,14 +210,15 @@ function Culinistas() {
             After launching the new and improved booking flows, we focused on
             building accounts to make booking as simple as possible for
             returning customers. With an account, users would be able to save
-            their addresses and billing info to reuse in the future, as well as,
+            their addresses and billing info to reuse in the future, as well as
             see order history, track credits, and manage global settings.
           </Text>
           <Text as="p" variant="bodySmall">
             I worked specifically on a logged in state for the nav that would
             allow users to start a new booking quickly with their saved info. We
-            also know that most users book the same service again, so we would
-            default the service type to be the same as the last booked service.
+            also knew that most users book the same service type again, so we
+            would default the service type to be the same as the last one
+            booked.
           </Text>
           <Video sources={[{ src: '/Culinistas/loggedinnav.mp4' }]} />
         </ContentContainer>

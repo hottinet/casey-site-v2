@@ -337,16 +337,39 @@ function ZOLA_NAV() {
             />
           )}
         </ContentContainer>
-        <ContentContainer gap={24}>
+        <ContentContainer gap={32}>
           <Text as="h2" lineHeight={1.1} variant="headline4">
-            Performance
+            Impact
           </Text>
-          <Text as="p" variant="bodySmall">
-            This design solution increased the number of links that we could fit
-            on our home page and it also caused users to interact with more
-            products, scroll more and spend more time in the app. Get in touch
-            to learn more about how this project impacted app usage!
-          </Text>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              Improve Scalability
+            </Text>
+            <Text as="p" variant="bodySmall">
+              This design solution increased the number of links that we could
+              fit on our home page. With this new design, users were also more
+              likely to scroll all the way to the bottom of the home page.
+            </Text>
+          </FlexBox>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              Increase performance
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Our main KPI was to increase the number of users signing up for
+              more than 2 products in the first 7 days and we saw that number
+              increase by 7%.
+            </Text>
+          </FlexBox>
+          <FlexBox flexDirection="column" gap={8}>
+            <Text as="p" variant="subtitle3">
+              Enhance Adoption
+            </Text>
+            <Text as="p" variant="bodySmall">
+              Secondarily, we saw clicks and time spent in the first session
+              increase significantly.
+            </Text>
+          </FlexBox>
         </ContentContainer>
       </FlexBox>
     </Layout>
