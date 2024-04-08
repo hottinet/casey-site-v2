@@ -16,6 +16,7 @@ import { ShowoffSecondary } from '~/components/showoff/ShowoffSecondary';
 import { Text } from '~/components/typography/Text';
 import {
   CORE_PROGRAMS_ROUTE,
+  CULINISTAS_ROUTE,
   CUSTOMER_DISCOVERY_ROUTE,
   ZOLA_BABY_ROUTE,
   ZOLA_BUDGET_ROUTE,
@@ -68,6 +69,7 @@ function HomePage() {
   const lgUp = useBreakpointsAtLeast('lg');
   const mdUp = useBreakpointsAtLeast('md');
   const belowSm = useBreakpointsLessThan('sm');
+  const belowMd = useBreakpointsLessThan('md');
   const exactlySm = !mdUp && !belowSm;
   const contentPadding = useContentContainerPadding(true);
 
@@ -87,39 +89,49 @@ function HomePage() {
       <FlexBox
         alignItems="center"
         flexDirection="column"
+        // gap={64}
+        gap={belowMd ? 40 : 64}
         height="100%"
-        paddingBottom={32}
+        paddingBottom={128}
         width="100%"
       >
-        <ContentContainer alignItems="center" gap={32} marginTop={32} metaPage>
-          <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
-            <Text
-              as="p"
-              textAlign="center"
-              variant={mdUp ? 'bodyLarge' : 'bodySmall'}
-            >
-              Senior Product Designer working with small teams to turn vague
-              ideas into incredible mobile app experiences
-            </Text>
-          </Box>
-        </ContentContainer>
-        <ContentContainerOr>
-          <ShowoffBlock
-            backgroundColor="red"
-            borderRadius={showoffBorderRadius}
-            color="text"
-            imageAlt="Zola Budget Tool on an iPhone"
-            imageAspectRatio="356/515"
-            imageSrc="/Home/budget-tool.png"
-            linkHref={ZOLA_BUDGET_ROUTE}
-            marginBottom={showoffMarginBottom}
-            marginTop={showoffMarginTop}
-            paddingX={showoffPaddingX}
-            priority
-            tags={['zola', 'ios']}
-            title="Building a wedding budget tool"
-          />
-        </ContentContainerOr>
+        <FlexBox flexDirection="column">
+          <ContentContainer
+            alignItems="center"
+            gap={32}
+            marginTop={32}
+            metaPage
+          >
+            <Box maxWidth={lgUp ? pxToRem(869) : undefined} width="fit-content">
+              <Text
+                as="p"
+                textAlign="center"
+                variant={mdUp ? 'bodyLarge' : 'bodySmall'}
+              >
+                Senior Product Designer working with small teams to turn vague
+                ideas into incredible mobile experiences
+              </Text>
+            </Box>
+          </ContentContainer>
+          <ContentContainerOr>
+            <ShowoffBlock
+              backgroundColor="red"
+              borderRadius={showoffBorderRadius}
+              color="text"
+              imageAlt="Zola Budget Tool on an iPhone"
+              imageAspectRatio="356/515"
+              imageSrc="/Home/budget-tool.png"
+              linkHref={ZOLA_BUDGET_ROUTE}
+              marginBottom={showoffMarginBottom}
+              marginTop={showoffMarginTop}
+              paddingX={showoffPaddingX}
+              priority
+              tags={['zola', 'ios']}
+              title="Building a wedding budget tool"
+            />
+          </ContentContainerOr>
+        </FlexBox>
+
         <ContentContainer metaPage>
           <GridBox
             alignItems="start"
@@ -127,28 +139,29 @@ function HomePage() {
             gridTemplateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
           >
             <ShowoffSecondary
-              altText="Donkey Kong"
+              altText="Baby Registry"
               color="text"
-              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
-              linkHref={ZOLA_NAVIGATION_ROUTE}
-              tags={['zola', 'Cross Platform']}
-              title="Designing a more scalable home page"
-            />
-            <ShowoffSecondary
-              altText="Donkey Kong"
-              color="text"
-              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
+              imageSrc="/Home/home_baby.png"
               linkHref={ZOLA_BABY_ROUTE}
-              tags={['zola', 'ios']}
+              tags={['zola', 'cross platform']}
               title="Launching a baby registry product"
             />
             <ShowoffSecondary
-              altText="Donkey Kong"
+              altText="Zola app home page"
               color="text"
-              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
-              linkHref={ZOLA_BABY_ROUTE}
+              imageSrc="/Home/home_nav.png"
+              linkHref={ZOLA_NAVIGATION_ROUTE}
+              tags={['zola', 'ios']}
+              title="Designing a more scalable home page"
+            />
+
+            <ShowoffSecondary
+              altText="Dish selection screen"
+              color="text"
+              imageSrc="/Home/home_culinistas.png"
+              linkHref={CULINISTAS_ROUTE}
               tags={['The Culinistas', 'Web']}
-              title="Digitizing the booking flow for private chef exp"
+              title="Connecting users with private chefs"
             />
           </GridBox>
         </ContentContainer>
@@ -174,20 +187,20 @@ function HomePage() {
             gridTemplateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
           >
             <ShowoffSecondary
-              altText="Donkey Kong"
+              altText="overview of fitness program"
               color="text"
-              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
+              imageSrc="/Home/home_programs.png"
               linkHref={CORE_PROGRAMS_ROUTE}
-              tags={['zola', 'Cross Platform']}
+              tags={['Core', 'Cross Platform']}
               title="Launching guided fitness programs"
             />
             <ShowoffSecondary
-              altText="Donkey Kong"
+              altText="b2c fitness platform"
               color="text"
-              imageSrc="https://mario.wiki.gallery/images/f/fb/N64_donkeykong64.jpg"
+              imageSrc="/Home/home_core_customer.png"
               linkHref={CUSTOMER_DISCOVERY_ROUTE}
-              tags={['zola', 'Cross Platform']}
-              title="Rediscovering the Core Customer"
+              tags={['Core', 'research']}
+              title="Finding product market fit for a B2C fitness product"
             />
           </GridBox>
         </ContentContainer>
