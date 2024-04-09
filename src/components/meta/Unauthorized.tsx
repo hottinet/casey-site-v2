@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FormEventHandler, useContext, useState } from 'react';
+import { FormEventHandler, useContext, useRef, useState } from 'react';
 
 import { AUTH_ROUTE } from '~/constants/routing';
 import { AuthorizationContext } from '~/contexts/authorizationContext';
@@ -17,15 +17,19 @@ const Label = styled('label')`
   flex-direction: column;
 `;
 
-const PwInput = styled('input')(({ theme }) => ({
-  padding: theme.spacing[16],
-  fontSize: theme.fontSize.bodyLarge,
-  background: 'transparent',
-  border: `${theme.borderWidth[2]} solid ${theme.colors.text}`,
-  borderRadius: theme.borderRadius[8],
-  textAlign: 'center',
-  width: '100%',
-}));
+const PwInput = styled('input')<{ hasError: boolean }>(
+  ({ theme, hasError }) => ({
+    padding: theme.spacing[16],
+    fontSize: theme.fontSize.bodyLarge,
+    background: 'transparent',
+    borderStyle: 'solid',
+    borderWidth: theme.borderWidth[2],
+    borderColor: hasError ? theme.colors.red : theme.colors.text,
+    borderRadius: theme.borderRadius[8],
+    textAlign: 'center',
+    width: '100%',
+  })
+);
 
 const Form = styled('form')`
   display: flex;
@@ -43,9 +47,12 @@ enum Fields {
   password = 'password',
 }
 
+const errorTextId = 'error-text';
+
 export function Unauthorized() {
   const [status, setStatus] = useState<'ok' | 'error' | 'loading'>('ok');
   const { setIsAuthorized } = useContext(AuthorizationContext);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -60,8 +67,16 @@ export function Unauthorized() {
       setIsAuthorized(true);
     } else {
       setStatus('error');
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }
+    if (inputRef.current) {
+      inputRef.current.value = '';
     }
   };
+
+  const hasError = status === 'error';
 
   return (
     <FlexBox
@@ -75,16 +90,30 @@ export function Unauthorized() {
           You need a password to view this page
         </Text>
         <Form onSubmit={onSubmit}>
-          <Label htmlFor={Fields.password}>
-            <Box height="1px" overflow="hidden" width="1px">
-              <Text variant="bodySmall">Password</Text>
+          <Box>
+            <Label htmlFor={Fields.password}>
+              <Box height="1px" overflow="hidden" width="1px">
+                <Text variant="bodySmall">Password</Text>
+              </Box>
+              <PwInput
+                aria-describedby={errorTextId}
+                aria-invalid={hasError}
+                hasError={hasError}
+                name={Fields.password}
+                placeholder="Enter password"
+                ref={inputRef}
+                required
+                type="password"
+              />
+            </Label>
+            <Box textAlign="start">
+              {hasError && (
+                <Text color="red" id={errorTextId} variant="bodyTiny">
+                  Incorrect password
+                </Text>
+              )}
             </Box>
-            <PwInput
-              name={Fields.password}
-              placeholder="Enter password"
-              type="password"
-            />
-          </Label>
+          </Box>
           <Box maxWidth={pxToRem(150)}>
             <SubmitButton disabled={status === 'loading'} type="submit">
               <OnMouseSpan>

@@ -68,6 +68,7 @@ const theme = {
     999: pxToRem(999),
   },
   fontSize: {
+    bodyTiny: pxToRem(12),
     bodySmall: pxToRem(16),
     bodyMedium: pxToRem(24),
     bodyLarge: pxToRem(32),
