@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { FlexBox } from '~/components/box/FlexBox';
 import theme from '~/constants/theme';
+import { AuthorizationProvider } from '~/contexts/authorizationContext';
 import { BreakpointsContext } from '~/contexts/breakpointsContext';
 import { PortalImageContext } from '~/contexts/portalImageContext';
 import { BreakpointSize } from '~/typings/theme';
@@ -108,16 +109,18 @@ function Page({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme}>
-      <BreakpointsContext.Provider value={windowBreakpoints}>
-        <PortalImageContext.Provider value={portalImageRef}>
-          <Global styles={globalStyles} />
-          <GlobalWrapper flexDirection="column" minHeight="100%">
-            <HoverTarget ref={portalImageRef} />
-            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            <Component {...pageProps} />
-          </GlobalWrapper>
-        </PortalImageContext.Provider>
-      </BreakpointsContext.Provider>
+      <AuthorizationProvider>
+        <BreakpointsContext.Provider value={windowBreakpoints}>
+          <PortalImageContext.Provider value={portalImageRef}>
+            <Global styles={globalStyles} />
+            <GlobalWrapper flexDirection="column" minHeight="100%">
+              <HoverTarget ref={portalImageRef} />
+              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+              <Component {...pageProps} />
+            </GlobalWrapper>
+          </PortalImageContext.Provider>
+        </BreakpointsContext.Provider>
+      </AuthorizationProvider>
     </ThemeProvider>
   );
 }

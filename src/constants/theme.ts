@@ -61,12 +61,14 @@ const theme = {
   borderRadius: {
     2: pxToRem(2),
     4: pxToRem(4),
+    8: pxToRem(8),
     30: pxToRem(30),
     round: '50%',
     200: pxToRem(200),
     999: pxToRem(999),
   },
   fontSize: {
+    bodyTiny: pxToRem(12),
     bodySmall: pxToRem(16),
     bodyMedium: pxToRem(24),
     bodyLarge: pxToRem(32),

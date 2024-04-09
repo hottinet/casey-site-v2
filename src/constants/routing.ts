@@ -1,3 +1,4 @@
+// CLIENT
 export const VIDEO_UPLOAD_ROUTE = '/video-uploads';
 export const CUSTOMER_DISCOVERY_ROUTE = '/core-customer-discovery';
 export const CORE_LIVE_CLASSES = '/core-live-classes';
@@ -13,4 +14,7 @@ export const CULINISTAS_ROUTE = '/culinistas';
 
 export const EXAMPLE_DELETE_ME = '/EXAMPLE';
 
-export const RESTRICTED_ROUTES: string[] = [];
+export const RESTRICTED_ROUTES: string[] = [CULINISTAS_ROUTE];
+
+// SERVER
+export const AUTH_ROUTE = '/api/auth';

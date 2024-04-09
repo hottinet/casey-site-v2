@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
 
 import { FlexBox } from '~/components/box/FlexBox';
+import {
+  AboutLinkButton as AboutLink,
+  AboutLinkText,
+} from '~/components/buttons/AboutLinkButton';
 import { ContentContainer } from '~/components/ContentContainer';
-import { Link, LinkProps } from '~/components/Link';
 import { BackgroundOverride } from '~/components/meta/BackgroundOverride';
 import { Layout } from '~/components/meta/Layout';
 import PortalImage from '~/components/PortalImage';
@@ -16,37 +19,15 @@ const AboutLayout = styled(Layout)(({ theme }) => ({
   minHeight: '100vh',
 }));
 
-const AboutLink = styled(Link)<LinkProps>(({ theme }) => ({
-  backgroundColor: theme.colors.yellow,
-  borderColor: theme.colors.text,
-  borderWidth: theme.borderWidth['3'],
-  borderStyle: 'solid',
-  borderRadius: theme.borderRadius[200],
-  ':hover': {
-    backgroundColor: theme.colors.red,
-  },
-}));
-
 interface AboutLinkButtonProps {
   href: string;
   text: string;
-  belowSm: boolean;
 }
 
-function AboutLinkButton({ href, text, belowSm }: AboutLinkButtonProps) {
+function AboutLinkButton({ href, text }: AboutLinkButtonProps) {
   return (
     <AboutLink href={href}>
-      <Text
-        fontWeight="bold"
-        paddingX={belowSm ? 32 : 96}
-        paddingY={16}
-        textAlign="center"
-        textTransform="uppercase"
-        variant="bodySmall"
-        width="100%"
-      >
-        {text}
-      </Text>
+      <AboutLinkText>{text}</AboutLinkText>
     </AboutLink>
   );
 }
@@ -91,7 +72,6 @@ function AboutPage() {
             <FlexBox flexDirection={belowSm ? 'column' : 'row'} gap={gap}>
               {aboutLinks.map((link) => (
                 <AboutLinkButton
-                  belowSm={belowSm}
                   href={link.href}
                   key={link.href}
                   text={link.text}

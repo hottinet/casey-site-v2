@@ -43,7 +43,7 @@ const LinkText = styled(Text)<Pick<LinkProps, 'noHoverStyles'>>`
   }
 `;
 
-const OnMouseSpan = styled.span`
+export const OnMouseSpan = styled.span`
   display: inline-flex;
   width: 100%;
   height: 100%;
