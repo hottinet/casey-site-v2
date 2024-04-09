@@ -17,6 +17,7 @@ type TextVariant = keyof {
 export type TextProps = AllowedCommonCssProps &
   AllowedTextCssProps &
   AllowedCustomCssProps & {
+    id?: string;
     className?: string;
     as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
     variant?: TextVariant;
@@ -30,7 +31,7 @@ const getFontSize = (theme: Theme, variantOrAs: VariantOrAs) => {
     h2: theme.fontSize.headline2,
     h3: theme.fontSize.headline3,
     h4: theme.fontSize.headline4,
-    h5: theme.fontSize.bodyLarge,
+    h5: theme.fontSize.bodyMedium,
     h6: theme.fontSize.bodyLarge,
     p: theme.fontSize.bodySmall,
     span: theme.fontSize.bodySmall,

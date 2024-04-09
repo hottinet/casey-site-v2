@@ -27,21 +27,21 @@ export const useBreakpointsIsGreaterThan = (breakpoint: BreakpointSize) => {
   );
 };
 
-interface UseSizeByBreakpointArgs {
-  base: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
+interface UseXByBreakpointArgs<T> {
+  base: T;
+  sm?: T;
+  md?: T;
+  lg?: T;
+  xl?: T;
 }
 
-export const useSizeByBreakpoint = ({
+export const useXByBreakpoint = <T>({
   base,
   sm,
   md,
   lg,
   xl,
-}: UseSizeByBreakpointArgs) => {
+}: UseXByBreakpointArgs<T>) => {
   const smUp = useBreakpointsAtLeast('sm');
   const mdUp = useBreakpointsAtLeast('md');
   const lgUp = useBreakpointsAtLeast('lg');
@@ -64,3 +64,6 @@ export const useSizeByBreakpoint = ({
 
   return size;
 };
+
+export const useSizeByBreakpoint = (args: UseXByBreakpointArgs<number>) =>
+  useXByBreakpoint<number>(args);

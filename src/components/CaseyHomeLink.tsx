@@ -43,7 +43,8 @@ export function CaseyHomeLink() {
       <NameText fontWeight="bold" letterSpacing="3%" textTransform="uppercase">
         {CASEY_BRADFORD.map((letter, index) =>
           letter ? (
-            <Letter index={index} key={letter}>
+            // eslint-disable-next-line react/no-array-index-key
+            <Letter index={index} key={`${letter}${index}`}>
               {letter}
             </Letter>
           ) : (

@@ -6,8 +6,7 @@ import { Layout } from '~/components/meta/Layout';
 import { Text } from '~/components/typography/Text';
 import ExternalVideo from '~/components/videos/ExternalVideo';
 import Video from '~/components/videos/Video';
-import { NON_BREAKING_SPACE } from '~/constants/characterEntitites';
-import { HOME_ROUTE } from '~/constants/routing';
+import { CORE_PROGRAMS_ROUTE } from '~/constants/routing';
 import { NAV_BAR_HEIGHT, SM_NAV_BAR_HEIGHT } from '~/constants/styles';
 import { pxToRem } from '~/utils/pxToRem';
 import { useBreakpointsLessThan } from '~/utils/useBreakpoints';
@@ -16,10 +15,7 @@ function ZOLA_ONBOARDING() {
   const belowSm = useBreakpointsLessThan('sm');
   const belowMd = useBreakpointsLessThan('md');
   return (
-    <Layout
-      nextPageHref={HOME_ROUTE}
-      nextPageLabel={`Back${NON_BREAKING_SPACE}to${NON_BREAKING_SPACE}Home`}
-    >
+    <Layout nextPageHref={CORE_PROGRAMS_ROUTE}>
       <FlexBox flexDirection="column" gap={80}>
         <ContentContainer
           gap={32}
@@ -254,7 +250,14 @@ function ZOLA_ONBOARDING() {
         </ContentContainer>
         <ContentContainer gap={24}>
           <Text as="h1" lineHeight={1.1} variant="headline4">
-            Learning from the final product
+            Prioritizing an emotional experience can have a large imapct
+          </Text>
+          <Text as="p" variant="bodySmall">
+            Even though our main goal with this project was not tied to a
+            specific KPI, after launch we saw a huge increase in users
+            completing the onboarding on their first session with the app. This
+            means that couples are abandoning the flow less and they are getting
+            into the app and Zola products faster.
           </Text>
           {belowSm ? (
             <ExternalVideo
@@ -269,18 +272,6 @@ function ZOLA_ONBOARDING() {
               title="Demo of zola onboarding"
             />
           )}
-          <FlexBox flexDirection="column" gap={8}>
-            <Text as="h3" variant="subtitle3">
-              Prioritizing an emotional experience can move the needle
-            </Text>
-            <Text as="p" variant="bodySmall">
-              Even though our main goal with this project was not tied to a
-              specific KPI, after launch we saw a huge increase in users
-              completing the onboarding on their first session with the app.
-              This means that couples are abandoning the flow less and they are
-              getting into the app and Zola products faster.
-            </Text>
-          </FlexBox>
         </ContentContainer>
       </FlexBox>
     </Layout>
