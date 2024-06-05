@@ -5,10 +5,6 @@ export type StickerData = {
 
 export const STICKER_DATA: StickerData[] = [
   {
-    src: '/About/caligirl.png',
-    alt: 'California girl living in new york',
-  },
-  {
     src: '/About/sake.png',
     alt: 'trying every sake bar in NYC',
   },
